@@ -142,6 +142,52 @@ a{color:inherit;text-decoration:none}
 .iconBtn svg{width:18px;height:18px;flex:0 0 auto}
 .iconBtn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
 
+/* 無料特典（Download） */
+.downloadWrap{
+  background:rgba(255,255,255,.76);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+}
+.downloadGrid{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:14px;
+  align-items:start;
+}
+.downloadCard{
+  background:#fff;
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:16px;
+  padding:16px;
+}
+.downloadCard h3{margin:0 0 10px;font-size:16px}
+.downloadCard p{margin:0 0 10px;color:var(--muted);font-weight:850;font-size:13px;line-height:1.8}
+.kvFree{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 10px;border-radius:999px;
+  border:1px solid rgba(27,37,51,.12);
+  background:#fff;color:#243042;
+  font-weight:1000;font-size:12px;
+}
+.listDot{margin:10px 0 0;padding-left:18px;color:#2a3647;line-height:1.9}
+.noteSmall{margin-top:10px;color:var(--muted);font-weight:850;font-size:12px;line-height:1.8}
+.formFrame{
+  background:#fff;
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:16px;
+  overflow:hidden;
+  min-height:720px;
+}
+.formFrame iframe{
+  width:100%;
+  height:720px;
+  border:0;
+  display:block;
+  background:#fff;
+}
+
 @media (prefers-reduced-motion:no-preference){
   .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
   .reveal.show{opacity:1;transform:none}
@@ -153,6 +199,9 @@ a{color:inherit;text-decoration:none}
   .ctas{grid-template-columns:1fr}
   .grid3,.grid2,.priceGrid{grid-template-columns:1fr}
   .kindleGrid{grid-template-columns:1fr}
+  .downloadGrid{grid-template-columns:1fr}
+  .formFrame{min-height:820px}
+  .formFrame iframe{height:820px}
   .menu{display:none}
   .hero{background-attachment:scroll}
   .hTitle{font-size:44px}
@@ -172,6 +221,7 @@ a{color:inherit;text-decoration:none}
         <a href="./index.html#about">理念</a>
         <a href="./index.html#values">バリュー</a>
         <a href="./index.html#services">サービス</a>
+        <a href="./index.html#download">無料特典</a>
         <a href="./index.html#pricing">料金</a>
         <a href="./column.html">コラム</a>
         <a href="./index.html#books">書籍</a>
@@ -193,7 +243,7 @@ a{color:inherit;text-decoration:none}
           私たちは<strong>食品企業</strong>に寄り添い、理想論ではなく<strong>実務で回る仕組み</strong>を一緒に作ります。
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="./index.html#consult">30分オンライン無料相談</a>
+          <a class="btn primary" href="./index.html#download">無料特典を受け取る</a>
           <a class="btn ghost" href="./index.html#pricing">料金を見る</a>
           <a class="btn" href="./column.html">コラム</a>
         </div>
@@ -228,9 +278,9 @@ a{color:inherit;text-decoration:none}
         <span class="btn dark">書籍</span>
       </a>
 
-      <a class="cta hoverlift reveal" href="./index.html#consult" aria-label="まずはご相談（30分無料で現状整理）">
-        <div><b>まずはご相談</b><div class="sub">30分無料で現状整理</div></div>
-        <span class="btn dark">相談</span>
+      <a class="cta hoverlift reveal" href="./index.html#download" aria-label="無料特典（テンプレートを受け取る）">
+        <div><b>無料特典</b><div class="sub">テンプレート配布中</div></div>
+        <span class="btn dark">DL</span>
       </a>
 
     </div>
@@ -313,6 +363,59 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<!-- ▼ 無料特典ダウンロード（Googleフォーム埋め込み） -->
+<section class="section" id="download" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">無料特典ダウンロード</h2>
+    <p class="sectionLead reveal">
+      食品安全を、すべての企業へ。<br>
+      <span class="kvFree">無料</span> JFS-B適合を見据えた「HACCP構築テンプレート（Excel）」を配布しています。<br>
+      中小食品企業でも、無理なく“現場で回る”形に整えるための叩き台としてご活用ください。
+    </p>
+
+    <div class="downloadWrap reveal">
+      <div class="downloadGrid">
+
+        <div class="downloadCard">
+          <h3>このテンプレートでできること</h3>
+          <p>
+            HACCPが「形だけ」になっていないか、JFS-B取得に向けて何が足りないか、<br>
+            ハザード分析の妥当性に不安がないか――。<br>
+            テンプレートを埋めることで、現状整理と不足点の把握が進みます。
+          </p>
+
+          <ul class="listDot">
+            <li>HACCP1：食品安全チームメンバー表</li>
+            <li>HACCP2,3：製品説明書</li>
+            <li>HACCP4,5：フローダイアグラム</li>
+            <li>HACCP6：ハザード分析シート</li>
+            <li>HACCP7～12：HACCPプラン</li>
+          </ul>
+
+          <p class="noteSmall">
+            ※ご登録いただいたメールアドレスには、テンプレート送付のための自動返信メールをお送りします。<br>
+            必要な方に必要な情報だけをお届けする方針のため、しつこい営業は行いません。<br>
+          </p>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+            <a class="btn primary" href="./index.html#download-form">フォームへ進む</a>
+            <a class="btn" href="./index.html#consult">30分無料相談</a>
+          </div>
+        </div>
+
+        <div class="formFrame" id="download-form" aria-label="無料特典ダウンロードフォーム">
+          <iframe
+            title="無料特典ダウンロード（Googleフォーム）"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfYBBSft2vTDkPJCtlWfXVTtDEARFZUi04H6mtis2j3q7cSaw/viewform?embedded=true">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ▲ 無料特典ダウンロード -->
+
 <!-- ▼ Kindleで学ぶ（書籍紹介） -->
 <section class="section" id="books" style="padding-top:10px">
   <div class="container">
@@ -346,10 +449,10 @@ a{color:inherit;text-decoration:none}
             <img src="./assets/img/kindle-HACCP.jpg" alt="書籍表紙：食品安全で会社を強くする（HACCP編）">
           </div>
           <div class="bookMeta">
-            <p class="bookTitle">食品安全で会社を強くする ～現役監査員が教える監査ポイント～ HACCP編 ～（JFS-B）</p>
+            <p class="bookTitle">食品安全で会社を強くする ～現役監査員が教える監査ポイント～ HACCP編</p>
             <p class="bookDesc">監査員の視点で、HACCPの「見られるポイント」「落ちやすいポイント」を整理。文書よりも、現場で回る設計にフォーカス。</p>
             <div class="bookTagRow">
-              <span class="bookTag"><strong>対象</strong>：HACCP（JFS-B）</span>
+              <span class="bookTag"><strong>対象</strong>：HACCP</span>
               <span class="bookTag"><strong>用途</strong>：監査対策</span>
             </div>
           </div>

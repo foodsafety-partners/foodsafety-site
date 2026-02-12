@@ -61,15 +61,74 @@ a{color:inherit;text-decoration:none}
 .ctas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.65);
   border-radius:18px;padding:14px;box-shadow:0 12px 26px rgba(24,32,48,.10)}
 
-/* ★ここがポイント：cta を a にして「カード全体をクリック可」に */
+/* CTA：カード全体クリック（a） */
 .cta{
   background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;
   display:flex;gap:12px;align-items:center;justify-content:space-between;
   cursor:pointer;
 }
 .cta:hover{border-color:rgba(44,86,122,.25)}
+.cta:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
 .cta b{display:block;font-size:15px}
 .cta .sub{font-size:12px;color:var(--muted);font-weight:850}
+
+/* Kindleセクション */
+.kindleWrap{
+  background:rgba(255,255,255,.76);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+}
+.kindleGrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.book{
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:14px;
+  display:flex;gap:14px;align-items:center;
+}
+.book:hover{border-color:rgba(44,86,122,.25)}
+.book:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
+.bookCover{
+  width:92px; aspect-ratio:2/3;
+  border-radius:12px; overflow:hidden;
+  border:1px solid rgba(27,37,51,.12);
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+  background:#fff;
+  flex:0 0 auto;
+}
+.bookCover img{width:100%;height:100%;object-fit:cover;display:block}
+.bookMeta{min-width:0}
+.bookTitle{
+  font-weight:1000;
+  margin:0 0 6px;
+  line-height:1.55;
+}
+.bookDesc{
+  margin:0;
+  color:var(--muted);
+  font-weight:850;
+  font-size:12.5px;
+  line-height:1.75;
+}
+.bookTagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.bookTag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 10px;border-radius:999px;
+  border:1px solid rgba(27,37,51,.12);
+  background:#fff;color:#243042;
+  font-weight:900;font-size:12px;
+}
+.bookTag strong{font-weight:1000}
+.kindleNote{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-weight:850;
+  font-size:12px;
+  line-height:1.8;
+}
 
 .section{padding:56px 0 66px}
 .sectionTitle{text-align:center;margin:0 0 14px;font-size:22px}
@@ -104,6 +163,7 @@ a{color:inherit;text-decoration:none}
   .heroGrid{grid-template-columns:1fr;padding-top:36px}
   .ctas{grid-template-columns:1fr}
   .grid3,.grid2,.priceGrid{grid-template-columns:1fr}
+  .kindleGrid{grid-template-columns:1fr}
   .menu{display:none}
   .hero{background-attachment:scroll}
   .hTitle{font-size:44px}
@@ -125,6 +185,7 @@ a{color:inherit;text-decoration:none}
         <a href="./index.html#services">サービス</a>
         <a href="./index.html#pricing">料金</a>
         <a href="./column.html">コラム</a>
+        <a href="./index.html#books">書籍</a>
         <a href="./index.html#contact">お問い合わせ</a>
       </nav>
       <a class="btn primary" href="./index.html#consult">無料相談</a>
@@ -168,19 +229,17 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="ctas">
 
-      <!-- ★カード全体がクリックできる -->
       <a class="cta hoverlift reveal" href="./column.html" aria-label="コラムで学ぶ（食品安全の考え方）">
         <div><b>コラムで学ぶ</b><div class="sub">食品安全の考え方</div></div>
         <span class="btn dark">読む</span>
       </a>
 
-      <!-- ★カード全体がクリックできる -->
-      <a class="cta hoverlift reveal" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener" aria-label="Kindleで学ぶ（監査員目線を知る）">
+      <!-- ここは “書籍セクション” に飛ばす（相対） -->
+      <a class="cta hoverlift reveal" href="./index.html#books" aria-label="Kindleで学ぶ（書籍紹介へ）">
         <div><b>Kindleで学ぶ</b><div class="sub">監査員目線を知る</div></div>
         <span class="btn dark">書籍</span>
       </a>
 
-      <!-- ★カード全体がクリックできる -->
       <a class="cta hoverlift reveal" href="./index.html#consult" aria-label="まずはご相談（30分無料で現状整理）">
         <div><b>まずはご相談</b><div class="sub">30分無料で現状整理</div></div>
         <span class="btn dark">相談</span>
@@ -193,7 +252,7 @@ a{color:inherit;text-decoration:none}
 <section class="section" id="about">
   <div class="container">
     <h2 class="sectionTitle reveal">ミッション / ビジョン</h2>
-    <p class="sectionLead reveal">
+    <p class="sectionLead reveal>
       私たちは、誠実に、実務に根差した支援を行います。
       お客様の自立性を大切にし、現実的な制約（人員・時間・運用負荷）を踏まえて
       「現場で続く食品安全」を一緒に作ります。
@@ -265,6 +324,60 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </section>
+
+<!-- ▼ 追加：Kindleで学ぶ（書籍紹介） -->
+<section class="section" id="books" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">Kindleで学ぶ（書籍紹介）</h2>
+    <p class="sectionLead reveal">
+      現場で「そのまま使える」監査ポイントと考え方を、短時間で整理できます。<br>
+      表紙をクリックするとAmazonへ移動します（別タブで開きます）。
+    </p>
+
+    <div class="kindleWrap reveal">
+      <div class="kindleGrid">
+
+        <!-- Book 1 -->
+        <a class="book hoverlift" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer" aria-label="書籍：食品安全で会社を強くする ～現役監査員が教える監査ポイント～ HACCP編（Amazonへ）">
+          <div class="bookCover" aria-hidden="true">
+            <!-- 画像ファイル名：ここを合わせて配置してください -->
+            <img src="./assets/img/kindle-haccp.webp" alt="書籍表紙：食品安全で会社を強くする（HACCP編）">
+          </div>
+          <div class="bookMeta">
+            <p class="bookTitle">食品安全で会社を強くする ～現役監査員が教える監査ポイント～ HACCP編</p>
+            <p class="bookDesc">監査員の視点で、HACCPの「見られるポイント」「落ちやすいポイント」を整理。文書よりも、現場で回る設計にフォーカス。</p>
+            <div class="bookTagRow">
+              <span class="bookTag"><strong>対象</strong>：HACCP</span>
+              <span class="bookTag"><strong>用途</strong>：監査対策</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Book 2 -->
+        <a class="book hoverlift" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer" aria-label="書籍（Amazonへ）">
+          <div class="bookCover" aria-hidden="true">
+            <!-- 画像ファイル名：ここを合わせて配置してください -->
+            <img src="./assets/img/kindle-book2.webp" alt="書籍表紙（Amazonリンク）">
+          </div>
+          <div class="bookMeta">
+            <p class="bookTitle">Kindle書籍（Amazonリンク）</p>
+            <p class="bookDesc">食品安全の実務に役立つテーマを、監査の観点で短く分かりやすくまとめています。</p>
+            <div class="bookTagRow">
+              <span class="bookTag"><strong>視点</strong>：監査員目線</span>
+              <span class="bookTag"><strong>用途</strong>：現場改善</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="kindleNote">
+        ※書籍リンクはAmazonへ遷移します。外部サイトのため、内容・価格・掲載情報はAmazon側で変更される場合があります。
+      </p>
+    </div>
+  </div>
+</section>
+<!-- ▲ 追加：Kindleで学ぶ（書籍紹介） -->
 
 <section class="section" id="pricing" style="padding-top:10px">
   <div class="container">

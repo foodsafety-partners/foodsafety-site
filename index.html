@@ -40,7 +40,7 @@ a{color:inherit;text-decoration:none}
   background:
     radial-gradient(1200px 560px at 28% 22%, rgba(255,255,255,.18), transparent 62%),
     linear-gradient(180deg, rgba(10,18,32,.70), rgba(10,18,32,.28)),
-    url("assets/img/hero.webp");
+    url("./assets/img/hero.webp");
   background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,.18)}
 @media (min-width: 981px){.hero{background-attachment:fixed}}
 .heroGrid{padding:84px 0 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
@@ -60,7 +60,14 @@ a{color:inherit;text-decoration:none}
 .ctaRow{margin-top:-36px;position:relative;z-index:30}
 .ctas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.65);
   border-radius:18px;padding:14px;box-shadow:0 12px 26px rgba(24,32,48,.10)}
-.cta{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+
+/* ★ここがポイント：cta を a にして「カード全体をクリック可」に */
+.cta{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;
+  display:flex;gap:12px;align-items:center;justify-content:space-between;
+  cursor:pointer;
+}
+.cta:hover{border-color:rgba(44,86,122,.25)}
 .cta b{display:block;font-size:15px}
 .cta .sub{font-size:12px;color:var(--muted);font-weight:850}
 
@@ -104,23 +111,23 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 <div id="progress"></div>
-<a id="toTop" href="#" aria-label="ページ先頭へ">↑</a>
+<a id="toTop" href="./index.html#" aria-label="ページ先頭へ">↑</a>
 
 <header class="header">
   <div class="container">
     <div class="nav">
-      <a class="brand" href="index.html" aria-label="食品安全パートナーズ">
-        <img src="assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
       </a>
       <nav class="menu" aria-label="メニュー">
-        <a href="#about">理念</a>
-        <a href="#values">バリュー</a>
-        <a href="#services">サービス</a>
-        <a href="#pricing">料金</a>
-        <a href="column.html">コラム</a>
-        <a href="#contact">お問い合わせ</a>
+        <a href="./index.html#about">理念</a>
+        <a href="./index.html#values">バリュー</a>
+        <a href="./index.html#services">サービス</a>
+        <a href="./index.html#pricing">料金</a>
+        <a href="./column.html">コラム</a>
+        <a href="./index.html#contact">お問い合わせ</a>
       </nav>
-      <a class="btn primary" href="#consult">無料相談</a>
+      <a class="btn primary" href="./index.html#consult">無料相談</a>
     </div>
   </div>
 </header>
@@ -136,9 +143,9 @@ a{color:inherit;text-decoration:none}
           私たちは<strong>食品企業</strong>に寄り添い、理想論ではなく<strong>実務で回る仕組み</strong>を一緒に作ります。
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="#consult">30分オンライン無料相談</a>
-          <a class="btn ghost" href="#pricing">料金を見る</a>
-          <a class="btn" href="column.html">コラム</a>
+          <a class="btn primary" href="./index.html#consult">30分オンライン無料相談</a>
+          <a class="btn ghost" href="./index.html#pricing">料金を見る</a>
+          <a class="btn" href="./column.html">コラム</a>
         </div>
         <p class="hNote">
           ※過度に「立派な文書」を目指すのではなく、現場の人が継続できる設計を重視します。<br>
@@ -147,10 +154,10 @@ a{color:inherit;text-decoration:none}
       </div>
 
       <div class="photoCard reveal">
-        <div class="frame big hoverlift"><img src="assets/img/photo1.webp" alt="食品工場の衛生管理（写真）"></div>
+        <div class="frame big hoverlift"><img src="./assets/img/photo1.webp" alt="食品工場の衛生管理（写真）"></div>
         <div class="stack">
-          <div class="frame small hoverlift"><img src="assets/img/photo2.webp" alt="温度管理（写真）"></div>
-          <div class="frame small hoverlift"><img src="assets/img/photo3.webp" alt="教育・点検（写真）"></div>
+          <div class="frame small hoverlift"><img src="./assets/img/photo2.webp" alt="温度管理（写真）"></div>
+          <div class="frame small hoverlift"><img src="./assets/img/photo3.webp" alt="教育・点検（写真）"></div>
         </div>
       </div>
     </div>
@@ -160,18 +167,25 @@ a{color:inherit;text-decoration:none}
 <section class="ctaRow">
   <div class="container">
     <div class="ctas">
-      <div class="cta hoverlift reveal">
+
+      <!-- ★カード全体がクリックできる -->
+      <a class="cta hoverlift reveal" href="./column.html" aria-label="コラムで学ぶ（食品安全の考え方）">
         <div><b>コラムで学ぶ</b><div class="sub">食品安全の考え方</div></div>
-        <a class="btn dark" href="column.html">読む</a>
-      </div>
-      <div class="cta hoverlift reveal">
-        <div><b>kindle学ぶ</b><div class="sub">監査員目線を知る</div></div>
-        <a class="btn dark" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener">書籍</a>
-      </div>
-      <div class="cta hoverlift reveal">
+        <span class="btn dark">読む</span>
+      </a>
+
+      <!-- ★カード全体がクリックできる -->
+      <a class="cta hoverlift reveal" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener" aria-label="Kindleで学ぶ（監査員目線を知る）">
+        <div><b>Kindleで学ぶ</b><div class="sub">監査員目線を知る</div></div>
+        <span class="btn dark">書籍</span>
+      </a>
+
+      <!-- ★カード全体がクリックできる -->
+      <a class="cta hoverlift reveal" href="./index.html#consult" aria-label="まずはご相談（30分無料で現状整理）">
         <div><b>まずはご相談</b><div class="sub">30分無料で現状整理</div></div>
-        <a class="btn dark" href="#consult">相談</a>
-      </div>
+        <span class="btn dark">相談</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -309,7 +323,7 @@ a{color:inherit;text-decoration:none}
         <div style="font-weight:1000">メール：<a href="mailto:foodsafety.partners@gmail.com" style="text-decoration:underline">foodsafety.partners@gmail.com</a></div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn primary" href="mailto:foodsafety.partners@gmail.com?subject=無料相談（30分）申込み&body=【会社名】%0D%0A【ご担当者名】%0D%0A【相談したい内容】%0D%0A">無料相談を申し込む</a>
-          <a class="btn" href="column.html">まずコラムを読む</a>
+          <a class="btn" href="./column.html">まずコラムを読む</a>
         </div>
       </div>
     </div>

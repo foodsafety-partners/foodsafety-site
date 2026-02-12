@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム②｜食品安全パートナーズ｜HACCPの“記録が続かない”を解決する運用設計</title>
+<meta name="description" content="HACCPの記録が続かない問題を、努力ではなく設計で解決。中小食品企業向けに、記録・是正・教育・検証の最小構成と定着のコツを図解で解説。食品安全コンサル・ISO22000支援にも通じる考え方。">
+<meta name="keywords" content="HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援, 記録, 是正処置, 検証, JFS-B">
+<style>:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(27,37,51,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:42px;width:auto}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
+.menu a{opacity:.82;text-decoration:none}
+.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff;text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+
+.hero{
+  background:
+    radial-gradient(900px 420px at 26% 20%, rgba(255,255,255,.18), transparent 62%),
+    linear-gradient(180deg, rgba(10,18,32,.72), rgba(10,18,32,.30)),
+    url("./assets/img/hero.webp");
+  background-size:cover;background-position:center;
+  border-bottom:1px solid rgba(255,255,255,.18);
+  color:#fff;
+}
+.heroInner{padding:56px 0 40px}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:12px;letter-spacing:.04em;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 10px}
+.h1{margin:12px 0 10px;font-size:34px;line-height:1.25;font-weight:1000;text-shadow:0 3px 18px rgba(0,0,0,.35)}
+.lead{margin:0;color:rgba(255,255,255,.92);font-weight:850;line-height:1.9;max-width:860px}
+.metaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.20);
+  background:rgba(255,255,255,.14);color:#fff;font-weight:900;font-size:12px}
+
+.section{padding:26px 0 54px}
+.article{
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:18px;
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+  overflow:hidden;
+}
+.articleInner{padding:22px}
+.toc{
+  background:rgba(238,241,246,.75);
+  border-top:1px solid rgba(27,37,51,.08);
+  border-bottom:1px solid rgba(27,37,51,.08);
+  padding:14px 22px;
+}
+.toc b{display:block;margin-bottom:8px}
+.toc a{display:block;color:var(--accent2);text-decoration:none;font-weight:900;font-size:13px;padding:6px 0}
+.toc a:hover{text-decoration:underline}
+
+h2{margin:24px 0 10px;font-size:20px}
+h3{margin:18px 0 8px;font-size:16px}
+p{margin:0 0 12px;color:#2a3647;font-weight:850;line-height:1.95;font-size:14px}
+ul{margin:0 0 12px;padding-left:18px;color:#2a3647;line-height:1.9;font-weight:850;font-size:14px}
+
+.callout{
+  border-left:6px solid var(--accent);
+  background:#fff;
+  border:1px solid rgba(27,37,51,.10);
+  border-left-width:6px;
+  border-radius:16px;
+  padding:14px;
+  margin:14px 0;
+}
+.callout b{display:block;margin-bottom:6px}
+.note{color:var(--muted);font-size:12.5px;font-weight:850;line-height:1.9;margin:6px 0 0}
+
+.figure{
+  border:1px solid rgba(27,37,51,.12);
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  margin:12px 0 16px;
+}
+.figureHeader{
+  padding:10px 12px;
+  background:rgba(238,241,246,.7);
+  border-bottom:1px solid rgba(27,37,51,.10);
+  font-weight:1000;
+  font-size:13px;
+}
+.figure pre{
+  margin:0;
+  padding:12px;
+  white-space:pre-wrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  font-size:12.5px;
+  line-height:1.7;
+  color:#1f2a3a;
+}
+
+.ctaBar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:16px;
+  padding-top:16px;
+  border-top:1px solid rgba(27,37,51,.10);
+}
+.ctaBar .left{font-weight:1000}
+.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+
+@media(max-width:980px){
+  .menu{display:none}
+  .h1{font-size:28px}
+  .ctaBar{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+      </a>
+      <nav class="menu" aria-label="メニュー">
+        <a href="./column.html">コラム一覧</a>
+        <a href="./index.html#download">無料特典</a>
+        <a href="./index.html#books">書籍</a>
+        <a href="./index.html#consult">無料相談</a>
+      </nav>
+      <a class="btn primary" href="./index.html#download">無料特典</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="heroInner">
+      <div class="kicker">コラム②｜運用設計 / 記録</div>
+      <h1 class="h1">HACCPの“記録が続かない”を解決する。<br>中小食品企業のための、運用設計と定着のコツ</h1>
+      <p class="lead">
+        書類は作れたのに、記録が続かない。担当者が変わると崩れる。監査前だけ慌てて整える——。<br>
+        これは珍しい失敗ではなく、「仕組みの設計が“人と時間の現実”に合っていない」ことが原因です。<br>
+        この記事では、HACCP構築支援と食品安全コンサルの現場でよく効く、定着のための設計ポイントを図解で整理します。
+        ISO22000支援にも通じる“回し方”の考え方です。
+      </p>
+      <div class="metaRow">
+        <span class="pill">食品安全コンサル</span>
+        <span class="pill">ISO22000支援</span>
+        <span class="pill">運用定着</span>
+      </div>
+      <div class="metaRow" style="margin-top:16px">
+        <a class="btn primary" href="./index.html#download">無料テンプレート</a>
+        <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+        <a class="btn" href="./column.html">コラム一覧へ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="article">
+      <div class="toc">
+        <b>目次（コラム②）</b>
+        <a href="#c2s1">1. なぜ「記録だけ」が続かないのか</a>
+        <a href="#c2s2">2. 図解：運用が回る会社の“仕組みの骨格”</a>
+        <a href="#c2s3">3. 記録を続ける3原則（現場に合わせる）</a>
+        <a href="#c2s4">4. 是正処置を“前向きな改善”に変える方法</a>
+        <a href="#c2s5">5. 教育・力量を軽くする設計（ISO22000支援の考え方）</a>
+        <a href="#c2s6">6. 監査前に崩れないための「検証」と「見える化」</a>
+        <a href="#c2s7">7. まとめ：少人数でも回るHACCPへ</a>
+      </div>
+
+      <div class="articleInner">
+
+        <h2 id="c2s1">1. なぜ「記録だけ」が続かないのか</h2>
+        <p>
+          記録が続かないのは、担当者の意識が低いからではありません。多くの場合、記録の作り方が
+          「現場の動作」や「人員配置」に合っていません。中小食品企業では、現場は多能工で動き、繁忙時間帯は秒単位でタスクが積み上がります。
+          そこに“記録のための作業”が追加されると、最初に削られるのが記録です。
+        </p>
+        <p>
+          さらに、記録が続かないと、審査では「やっていない」と見なされやすくなります。
+          実際はやっていても、証拠が残らなければ説明が難しい。ここにストレスが生まれ、HACCPの運用そのものが嫌になってしまうことがあります。
+        </p>
+        <div class="callout">
+          <b>結論</b>
+          <p style="margin:0">
+            記録は“努力”で続けるのではなく、<br>
+            “続いてしまう設計”にするのがHACCP構築支援の基本です。
+          </p>
+        </div>
+
+        <h2 id="c2s2">2. 図解：運用が回る会社の“仕組みの骨格”</h2>
+        <p>
+          運用が回っている会社は、特別な人材がいるというより、仕組みの骨格がシンプルです。
+          ISO22000支援の現場でも同様で、「役割」「頻度」「判断基準」「異常時のルート」が明確です。
+        </p>
+        <div class="figure">
+          <div class="figureHeader">図1：運用が回る仕組みの骨格（最小構成）</div>
+          <pre>
+日々（現場）：
+  ・測る/見る（モニタリング）→ その場で記録
+  ・異常が出たら「止める/隔離」→ 是正をメモ
+
+週次（責任者）：
+  ・記録の抜け/傾向をざっと確認（5〜10分）
+  ・再発しそうなら対策を決める（小さくで良い）
+
+月次（チーム）：
+  ・重要な逸脱/クレーム/変更点を共有
+  ・ハザード分析や手順の見直しが必要か判断
+
+年次（仕組み）：
+  ・検証（妥当性の確認）→ 目標/教育/改善の更新
+          </pre>
+        </div>
+        <p>
+          ここで重要なのは、「頻度の設計」です。全部を毎日やろうとすると必ず破綻します。
+          逆に、日々は“最低限の現場チェック”、週次は“抜けの確認”、月次は“見直しの判断”に役割分担すると、少人数でも回ります。
+        </p>
+
+        <h2 id="c2s3">3. 記録を続ける3原則（現場に合わせる）</h2>
+        <h3>原則①：記録は“作業のついで”にする</h3>
+        <p>
+          例：中心温度を測るなら、温度計の近くに記録紙（またはタブレット）を置く。
+          記録場所が遠いだけで、記録率は落ちます。記録は「行動導線」に合わせるのが鉄則です。
+        </p>
+        <h3>原則②：判断が必要な記録は、欄を減らす</h3>
+        <p>
+          記録欄が多いと、考える時間が増えます。忙しい現場では“考える記録”が最初に止まります。
+          「OK/NG」「数値」「署名」程度に絞り、例外（NG）だけメモ欄に書ける設計が続きやすいです。
+        </p>
+        <h3>原則③：異常時の行動を、記録フォーマットに埋め込む</h3>
+        <p>
+          異常時に迷うと止まります。だから、記録用紙に「異常時：①隔離 ②責任者へ連絡 ③原因 ④対策」のチェック欄があるだけで、
+          是正処置が“自然に”回り始めます。
+        </p>
+        <div class="figure">
+          <div class="figureHeader">図2：続く記録フォーマットのイメージ（例）</div>
+          <pre>
+【日次 温度管理】（1分で終わる）
+日時：____  ライン：____  製品：____
+測定値：____ ℃   判定：[ ]OK  [ ]NG
+
+NGの場合（該当するものにチェック）
+[ ]製品隔離  [ ]再加熱/再冷却  [ ]廃棄  [ ]責任者連絡
+原因（簡単に）：____________________
+対策（簡単に）：____________________
+担当：____  確認：____
+          </pre>
+        </div>
+
+        <h2 id="c2s4">4. 是正処置を“前向きな改善”に変える方法</h2>
+        <p>
+          是正処置が嫌われる理由は、「犯人探し」になりやすいからです。
+          でも本来、是正処置は“仕組みを強くする材料”です。食品安全コンサルの現場では、次のルールを置くと空気が変わります。
+        </p>
+        <ul>
+          <li>個人責任より「仕組みの原因」を先に探す（手順・設備・教育・負荷）</li>
+          <li>対策は“大きく”より“小さく確実に”（貼り紙、置き場所、チェック欄、頻度変更）</li>
+          <li>再発防止は「誰が見ても同じ行動になる」形へ（判断を減らす）</li>
+        </ul>
+        <p>
+          JFS-Bでも、ISO22000支援でも、是正処置は“改善が回るか”の重要ポイントです。
+          逸脱がゼロであることより、逸脱が起きたときに「正しく扱える」ことが評価されます。
+        </p>
+
+        <h2 id="c2s5">5. 教育・力量を軽くする設計（ISO22000支援の考え方）</h2>
+        <p>
+          教育は必要ですが、全員に座学を増やすほど負担が大きくなります。
+          そこでおすすめなのが、「教育を減らす」方向の設計です。つまり、教育で補うのではなく、仕組みで迷わせない。
+        </p>
+        <ul>
+          <li>作業手順は“文章”より“写真＋短文”（3行で）</li>
+          <li>判断が必要な箇所は「例外」だけ責任者判断に寄せる</li>
+          <li>力量の証拠は“チェックリスト”で残す（できた/できないを記録）</li>
+        </ul>
+        <p>
+          ISO22000支援では、力量（competence）を“説明できる形”にすることが重要です。
+          とはいえ、分厚い教育記録は必要ありません。業務に合わせた簡易チェックで十分に機能します。
+        </p>
+
+        <h2 id="c2s6">6. 監査前に崩れないための「検証」と「見える化」</h2>
+        <p>
+          監査前だけ慌てて整えると、現場が疲弊します。崩れない仕組みは、普段から「ざっと見る」仕組みがあります。
+          ここで鍵になるのが検証（verification）と見える化です。
+        </p>
+        <div class="figure">
+          <div class="figureHeader">図3：検証（verification）の最小セット</div>
+          <pre>
+毎週：抜けチェック（記録がある/ない）→ 5分
+毎月：傾向チェック（NGが増えた工程は？）→ 15分
+四半期：現場確認（フローは現実と合ってる？）→ 30分
+年次：ハザード分析の見直し判断（変更点・クレーム）→ 60分
+          </pre>
+        </div>
+        <p>
+          検証を「難しい活動」にしないことが大切です。やることは、<b>①抜けを見る ②傾向を見る ③必要なら直す</b>。
+          この3点が回れば、HACCPは“仕組み”として強くなっていきます。
+        </p>
+
+        <h2 id="c2s7">7. まとめ：少人数でも回るHACCPへ</h2>
+        <p>
+          記録が続かない問題は、現場のせいではなく“設計”で解決できます。
+          中小食品企業の現実（人員・時間・多能工）に合わせて、記録を軽くし、異常時の行動をフォーマットに埋め込み、
+          週次・月次の“ざっと確認”で検証を回す。これが、JFS-Bにも強い運用になります。
+        </p>
+        <p>
+          食品安全コンサルとして私たちが大切にしているのは、立派な文書ではなく、現場で続く設計です。
+          HACCP構築支援やISO22000支援の視点も活かしながら、無理なく回る形へ一緒に整えます。
+        </p>
+
+        <div class="callout">
+          <b>資料・相談の活用について（必要なときだけ）</b>
+          <p style="margin:0">
+            無料テンプレートで整理してみて、「ここだけ判断に迷う」「仕組みを軽くしたい」などがあれば、30分で現状整理をお手伝いします。<br>
+            現状整理のみでもOKです。無理なご提案はいたしません。
+          </p>
+        </div>
+
+        <div class="ctaBar">
+          <div class="left">無料特典：JFS-B適合を見据えたHACCP構築テンプレート（Excel）</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn primary" href="./index.html#download">無料で受け取る</a>
+            <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+            <a class="btn" href="./column.html">コラム一覧へ</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 食品安全パートナーズ</div>
+</footer>
+
+</body>
+</html>

@@ -4,217 +4,238 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>食品事故が起きる企業の特徴｜食品安全パートナーズ</title>
-<meta name="description" content="食品事故が起きる企業の共通点とは。HACCP、JFS-B、ISO22000の観点から、事故を未然に防ぐ組織の特徴を解説します。">
-<style>
-body{margin:0;font-family:"Noto Sans JP",system-ui;background:#f4f6fa;color:#1b2533;line-height:1.9}
-.container{max-width:900px;margin:0 auto;padding:40px 20px}
-h1{font-size:28px;margin-bottom:20px}
-h2{font-size:20px;margin-top:40px}
-p{margin:16px 0}
-a{text-decoration:none;color:#2c567a;font-weight:700}
-.back{margin-bottom:30px;display:inline-block}
-.cta{
-  margin-top:50px;
-  padding:25px;
+<meta name="description" content="食品事故が起きる企業に共通する特徴を、HACCP・JFS-B・ISO22000の観点から整理。事故を未然に防ぐための実務ポイントを解説します。">
+<meta name="keywords" content="食品事故, HACCP, JFS-B, ISO22000, 食品安全コンサル, 中小食品企業">
+<style>:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
+#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
+#toTop.show{opacity:1;transform:none}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(27,37,51,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:40px;width:auto}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
+.menu a{opacity:.82}
+.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+.btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
+
+.section{padding:44px 0 66px}
+.sectionTitle{text-align:center;margin:0 0 14px;font-size:22px}
+.sectionLead{text-align:center;margin:0 auto 18px;color:var(--muted);font-weight:850;font-size:13px;max-width:860px;line-height:1.9}
+
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:18px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
+.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
+  background:#fff;color:#243042;font-weight:900;font-size:12px}
+
+.articleHead{
+  background:
+    radial-gradient(1200px 520px at 25% 20%, rgba(224,135,42,.18), transparent 55%),
+    radial-gradient(1000px 520px at 80% 80%, rgba(44,86,122,.16), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.92));
+  border-bottom:1px solid rgba(27,37,51,.08);
+}
+.breadcrumbs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-weight:850;font-size:12px;padding:14px 0 0}
+.breadcrumbs a{text-decoration:underline}
+.h1{margin:10px 0 0;font-size:32px;line-height:1.25;font-weight:1000}
+.metaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0 0;color:var(--muted);font-weight:850;font-size:12px}
+.metaDot{opacity:.7}
+
+.prose{line-height:2.0;color:#273244;font-weight:850}
+.prose h2{margin:32px 0 8px;font-size:20px;line-height:1.5;color:var(--ink)}
+.prose h3{margin:22px 0 6px;font-size:16px;line-height:1.6;color:var(--ink)}
+.prose p{margin:12px 0}
+.prose ul{margin:10px 0 10px 18px;padding:0}
+.prose li{margin:7px 0}
+.k{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(224,135,42,.10);border:1px solid rgba(224,135,42,.22);font-weight:1000}
+.note{margin:14px 0;color:var(--muted);font-size:12.5px;line-height:1.85}
+
+.figure{
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:16px;
+  background:#fff;
+  padding:14px;
+  margin:16px 0;
+  box-shadow:0 10px 20px rgba(24,32,48,.06);
+}
+.figureTitle{font-weight:1000;margin:0 0 10px}
+.diagram{
   border-radius:14px;
-  background:#ffffff;
-  border:1px solid #d9dde6;
+  border:1px solid rgba(27,37,51,.10);
+  background:
+    radial-gradient(600px 220px at 18% 15%, rgba(224,135,42,.18), transparent 55%),
+    radial-gradient(520px 220px at 80% 75%, rgba(44,86,122,.16), transparent 60%),
+    linear-gradient(180deg, rgba(238,241,246,.9), rgba(255,255,255,1));
+  padding:14px;
 }
-.btn{
-  display:inline-block;
-  padding:12px 18px;
-  margin-top:15px;
-  border-radius:10px;
-  background:#e0872a;
-  color:#fff;
+.flow{display:grid;gap:10px}
+.box{
+  border:1px solid rgba(27,37,51,.12);
+  border-radius:14px;
+  background:#fff;
+  padding:12px;
 }
-</style>
+.box b{display:block;font-weight:1000;margin-bottom:4px}
+.arrow{display:flex;justify-content:center;color:var(--muted);font-weight:1000}
+
+.callout{
+  border-left:6px solid var(--accent);
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;padding:14px;margin:16px 0
+}
+.ctaCard{
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 14px 26px rgba(24,32,48,.10);
+}
+.ctaGrid{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+.pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px}
+.pager a{font-weight:1000;color:var(--accent2);text-decoration:underline}
+
+.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
+  .reveal.show{opacity:1;transform:none}
+  .hoverlift{transition:transform .18s ease, box-shadow .18s ease}
+  .hoverlift:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
+}
+@media(max-width:980px){
+  .menu{display:none}
+  .h1{font-size:28px}
+}</style>
 </head>
 <body>
+<div id="progress"></div>
+<a id="toTop" href="./column-4.html#" aria-label="ページ先頭へ">↑</a>
 
-<div class="container">
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+      </a>
+      <nav class="menu" aria-label="メニュー">
+        <a href="./index.html#services">サービス</a>
+        <a href="./index.html#download">無料特典</a>
+        <a href="./index.html#books">書籍</a>
+        <a href="./index.html#consult">無料相談</a>
+        <a href="./column.html">コラム一覧</a>
+      </nav>
+      <a class="btn primary" href="./index.html#consult">無料相談</a>
+    </div>
+  </div>
+</header>
 
-<a href="./column.html" class="back">← コラム一覧へ戻る</a>
+<!-- 見出し -->
+<section class="articleHead">
+  <div class="container">
+    <div class="breadcrumbs reveal">
+      <a href="./index.html">トップ</a><span class="metaDot">/</span>
+      <a href="./column.html">コラム</a><span class="metaDot">/</span>
+      <span>食品事故が起きる企業の特徴</span>
+    </div>
 
-<h1>食品事故が起きる企業の特徴とは？<br>事故を防ぐ組織との決定的な違い</h1>
+    <h1 class="h1 reveal">食品事故が起きる企業の特徴とは？<br>事故を防ぐ組織との決定的な違い</h1>
 
-<p>
-食品事故は「運が悪かった」のではなく、
-多くの場合、いくつかの共通した兆候があります。
-</p>
+    <div class="metaRow reveal" aria-label="記事メタ情報">
+      <span class="tag">HACCP</span>
+      <span class="tag">JFS-B</span>
+      <span class="tag">ISO22000</span>
+      <span class="metaDot">•</span>
+      <span>読了目安：6〜8分</span>
+    </div>
 
-<p>
-HACCPやJFS-B、ISO22000といった規格を取得していても、
-事故が起きる企業と、長年安定している企業の差は明確です。
-</p>
+    <div style="height:18px"></div>
+  </div>
+</section>
 
-<p>
-今回は、食品事故が起きやすい企業の特徴と、
-未然に防ぐために必要な視点を整理します。
-</p>
+<section class="section">
+  <div class="container">
+    <div class="card reveal">
+      <div class="prose">
+        <p>
+          食品事故は「運が悪かった」では片付けられません。多くの場合、事故の前には小さな兆候があり、
+          それが見過ごされた結果として表面化します。
+        </p>
+        <p>
+          HACCP、JFS-B、ISO22000といった枠組みを導入していても、<span class="k">運用の中身</span>が伴わなければ事故は起きます。
+          ここでは、事故が起きやすい企業に共通する特徴と、未然に防ぐための実務ポイントを整理します。
+        </p>
 
-<h2>① 記録が目的化している</h2>
+        <div class="figure">
+          <p class="figureTitle">図解：食品事故が起きるまでの典型パターン</p>
+          <div class="diagram" role="img" aria-label="小さな異常が放置され事故につながる流れの図解">
+            <div class="flow">
+              <div class="box"><b>小さな異常</b>記録のブレ／現場の違和感／手順逸脱</div>
+              <div class="arrow">↓</div>
+              <div class="box"><b>見過ごし</b>「忙しい」「いつも通り」「問題なし」で処理</div>
+              <div class="arrow">↓</div>
+              <div class="box"><b>蓄積</b>原因が残ったまま、同じ条件が繰り返される</div>
+              <div class="arrow">↓</div>
+              <div class="box"><b>顕在化</b>クレーム／回収／行政対応／信用失墜</div>
+            </div>
+          </div>
+          <p class="note">※「重大事故」は、突然ではなく“蓄積の結果”として起きることが多いです。</p>
+        </div>
 
-<p>
-事故が起きる企業の典型例は、
-「記録を残すこと」が目的になっている状態です。
-</p>
+        <h2>特徴① 記録が「目的化」している</h2>
+        <p>
+          事故が起きる企業でよく見られるのが、記録が「埋めるための作業」になっている状態です。
+          例えば、点検表は埋まっているのに、異常値があっても気づけない（気づいても止められない）。
+        </p>
+        <p>
+          記録は“証拠”であると同時に、<span class="k">異常を発見して行動につなげる道具</span>です。
+          「異常の定義」「判断」「対応」が紐づいていないと、記録は事故を防ぎません。
+        </p>
 
-<p>
-・とりあえず温度は書いている<br>
-・点検表は埋まっている<br>
-・チェック欄はすべて○になっている
-</p>
+        <div class="callout">
+          <b>実務の要点</b><br>
+          点検表の設計では、<strong>「逸脱したら誰が・いつまでに・何をするか」</strong>までをセットにします。
+        </div>
 
-<p>
-しかし、そこに<strong>“判断”や“意味”がありません。</strong>
-</p>
+        <h2>特徴② ハザード分析が形だけになっている</h2>
+        <p>
+          HACCPの中核はハザード分析です。ここが弱いと、想定外の事故に非常に脆くなります。
+        </p>
+        <ul>
+          <li>ひな形をそのまま流用し、工程の実態と一致していない</li>
+          <li>管理基準の根拠（なぜその温度・時間・頻度か）が説明できない</li>
+          <li>PRP/OPRP/CCPの整理が曖昧で、管理の優先順位が見えない</li>
+        </ul>
+        <p>
+          重要なのは「紙の完成度」ではなく、<span class="k">自社工程を理解して説明できる状態</span>です。
+        </p>
 
-<p>
-記録は証拠であると同時に、異常を発見するための道具です。
-異常値に気づく設計になっていなければ、
-事故は時間の問題になります。
-</p>
+        <h2>特徴③ 属人化している</h2>
+        <p>
+          食品安全が特定の担当者に依存していると、担当者の不在・異動・退職で運用が崩れます。
+          「分かる人が一人だけ」になっている仕組みは、事故の温床になりやすいです。
+        </p>
+        <p>
+          事故を防ぐ企業は、仕組みが人を支えます。担当者が変わっても回るように、
+          役割・手順・判断基準が共有されています。
+        </p>
 
-<h2>② ハザード分析が形だけになっている</h2>
-
-<p>
-HACCPの中核はハザード分析です。
-</p>
-
-<p>
-しかし、
-・「他社のひな形をそのまま使っている」<br>
-・「なぜその管理基準なのか説明できない」<br>
-・「自社工程との整合が取れていない」
-</p>
-
-<p>
-この状態では、
-想定外の事故に弱くなります。
-</p>
-
-<p>
-事故は多くの場合、
-“想定していなかったハザード”から発生します。
-</p>
-
-<p>
-本当に重要なのは、
-<strong>自社の工程を深く理解すること</strong>です。
-</p>
-
-<h2>③ 属人化している</h2>
-
-<p>
-事故が起きやすい企業では、
-食品安全が「特定の担当者任せ」になっています。
-</p>
-
-<p>
-その担当者が不在になると、
-管理レベルが一気に下がる。
-</p>
-
-<p>
-これは非常に危険な状態です。
-</p>
-
-<p>
-安全な企業は、
-仕組みが人を支えます。
-</p>
-
-<p>
-担当者が変わっても、
-同じレベルで回る設計になっています。
-</p>
-
-<h2>④ 問題が共有されない</h2>
-
-<p>
-ヒヤリ・ハットや軽微な不適合を、
-「大したことない」と流す文化は危険です。
-</p>
-
-<p>
-事故は突然起きるのではなく、
-小さなサインの積み重ねで発生します。
-</p>
-
-<p>
-問題を早期に共有し、
-改善に結びつける組織ほど、
-重大事故を防いでいます。
-</p>
-
-<h2>⑤ 経営が食品安全を“コスト”と見ている</h2>
-
-<p>
-事故が起きる企業の最大の特徴は、
-経営層が食品安全を「必要経費」としてしか見ていないことです。
-</p>
-
-<p>
-安全はコストではなく、
-企業の信用そのものです。
-</p>
-
-<p>
-食品事故は、
-売上よりも信用を失わせます。
-</p>
-
-<h2>事故を防ぐ企業の共通点</h2>
-
-<p>
-では、事故を防ぐ企業は何が違うのでしょうか。
-</p>
-
-<p>
-✔ ハザード分析を自社で理解している<br>
-✔ 記録が“判断の道具”になっている<br>
-✔ 属人化していない<br>
-✔ 小さな異常を放置しない<br>
-✔ 経営が食品安全を戦略と捉えている
-</p>
-
-<p>
-特別なことをしているわけではありません。
-</p>
-
-<p>
-<strong>「仕組みが本当に回っているか」を常に問い続けているだけです。</strong>
-</p>
-
-<h2>まとめ</h2>
-
-<p>
-食品事故は、
-突然起きるように見えて、
-実は予兆があります。
-</p>
-
-<p>
-規格取得はゴールではありません。
-</p>
-
-<p>
-本当に重要なのは、
-“運用が続く設計”になっているかどうかです。
-</p>
-
-<div class="cta">
-<p><strong>資料・相談の活用について</strong></p>
-<p>
-HACCPやJFS-Bの構築に不安がある場合は、
-無料テンプレートをご活用ください。
-現状整理から始めたい方には、
-30分オンライン相談も行っています。
-</p>
-<a href="./download.html" class="btn">無料テンプレートを受け取る</a>
-</div>
-
-</div>
-</body>
-</html>
+        <h2>特徴④ 問題が共有されない（ヒヤリ・ハットが潰れる）</h2>
+        <p>
+          「大したことではない」「今は忙しい」で小さな異常が流される

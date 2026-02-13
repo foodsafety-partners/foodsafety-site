@@ -131,6 +131,20 @@ a{color:inherit;text-decoration:none}
 .bookTag strong{font-weight:1000}
 .kindleNote{margin:12px 0 0;color:var(--muted);font-weight:850;font-size:12px;line-height:1.8}
 
+/* ▼ Kindle Unlimited 導線（index用：既存世界観に合わせる） */
+.kuGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
+.kuCard{
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:16px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.kuCard:hover{border-color:rgba(44,86,122,.25)}
+.kuTitle{margin:0;font-weight:1000;line-height:1.55;font-size:16px}
+.kuList{margin:0;padding-left:18px;color:#2a3647;line-height:1.9;font-weight:850}
+.kuNote{margin:0;color:var(--muted);font-weight:850;font-size:12px;line-height:1.8}
+.kuBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+@media(max-width:980px){.kuGrid{grid-template-columns:1fr}}
+/* ▲ Kindle Unlimited 導線 */
+
 /* メール：アドレスは表示しない・アイコンボタン */
 .iconBtn{
   display:inline-flex;align-items:center;gap:10px;
@@ -248,6 +262,7 @@ a{color:inherit;text-decoration:none}
         <a href="./index.html#pricing">料金</a>
         <a href="./column.html">コラム一覧</a>
         <a href="./index.html#books">書籍</a>
+        <a href="./index.html#kindleunlimited">無料で読む</a>
         <a href="./index.html#contact">お問い合わせ</a>
       </nav>
       <a class="btn primary" href="./index.html#consult">無料相談</a>
@@ -545,6 +560,49 @@ a{color:inherit;text-decoration:none}
 </section>
 <!-- ▲ Kindleで学ぶ（書籍紹介） -->
 
+<!-- ▼ Kindle Unlimited 無料体験導線（追加） -->
+<section class="section" id="kindleunlimited" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">Kindle Unlimitedなら、無料で読むこともできます</h2>
+    <p class="sectionLead reveal">
+      Amazonの30日間無料体験を利用すれば、書籍を「まず無料で」読むことができます。<br>
+      続けるかどうかは読んでから判断でOKです。
+    </p>
+
+    <div class="kindleWrap reveal">
+      <div class="kuGrid">
+
+        <div class="kuCard hoverlift">
+          <p class="kuTitle">無料体験のポイント</p>
+          <ul class="kuList">
+            <li>初回30日間無料</li>
+            <li>期間内の解約で費用は発生しません</li>
+            <li>スマホ／タブレット／PCで読めます</li>
+            <li>まず「学ぶ」ところから始められます</li>
+          </ul>
+          <p class="kuNote">※無料体験終了後は月額料金が発生します。継続しない場合は期間内に解約可能です。</p>
+        </div>
+
+        <div class="kuCard hoverlift">
+          <p class="kuTitle">まずは無料で読む</p>
+          <p class="kuNote">
+            HACCPやJFS-Bは、仕組みの理解と運用設計が肝になります。<br>
+            「現場で回る形」の考え方を、短時間で整理できます。
+          </p>
+          <div class="kuBtns">
+            <a class="btn primary" href="https://amzn.to/4qEGAjn" target="_blank" rel="noopener noreferrer" aria-label="Kindle Unlimited 30日間無料体験（Amazonへ）">30日間無料で読む</a>
+            <a class="btn dark" href="./index.html#books" aria-label="書籍紹介へ戻る">書籍を見る</a>
+            <a class="btn" href="./index.html#consult" aria-label="無料相談へ">相談する</a>
+          </div>
+          <p class="kuNote" style="margin-top:10px">※当サイトはAmazonアソシエイト・プログラムの参加者です。</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ▲ Kindle Unlimited 無料体験導線（追加） -->
+
 <section class="section" id="pricing" style="padding-top:10px">
   <div class="container">
     <h2 class="sectionTitle reveal">料金</h2>
@@ -637,7 +695,10 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <footer class="footer">
-  <div class="container">© 食品安全パートナーズ</div>
+  <div class="container">
+    © 食品安全パートナーズ<br>
+    <span style="font-size:12px">※当サイトはAmazonアソシエイト・プログラムの参加者です。</span>
+  </div>
 </footer>
 
 <script>(() => {

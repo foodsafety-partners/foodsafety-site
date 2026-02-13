@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム③｜食品安全パートナーズ｜審査で効く「説明できるHACCP」</title>
+<meta name="description" content="審査で効く「説明できるHACCP」を作るために、CCP/OPRP/PRPの整理、検証・是正の最小セット、根拠の作り方を図解で解説。中小食品企業のHACCP構築支援に。JFS-BやISO22000支援にも通じる実務の考え方。">
+<meta name="keywords" content="JFS-B, HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援, CCP, OPRP, PRP, 検証, 是正処置">
+<style>:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(27,37,51,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:42px;width:auto}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
+.menu a{opacity:.82;text-decoration:none}
+.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff;text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+
+.hero{
+  background:
+    radial-gradient(900px 420px at 26% 20%, rgba(255,255,255,.18), transparent 62%),
+    linear-gradient(180deg, rgba(10,18,32,.72), rgba(10,18,32,.30)),
+    url("./assets/img/hero.webp");
+  background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,.18);
+  color:#fff;
+}
+.heroInner{padding:56px 0 40px}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:12px;letter-spacing:.04em;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 10px}
+.h1{margin:12px 0 10px;font-size:34px;line-height:1.25;font-weight:1000;text-shadow:0 3px 18px rgba(0,0,0,.35)}
+.lead{margin:0;color:rgba(255,255,255,.92);font-weight:850;line-height:1.9;max-width:900px}
+
+.section{padding:26px 0 54px}
+.article{
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:18px;
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+  overflow:hidden;
+}
+.articleInner{padding:22px}
+.toc{
+  background:rgba(238,241,246,.75);
+  border-top:1px solid rgba(27,37,51,.08);
+  border-bottom:1px solid rgba(27,37,51,.08);
+  padding:14px 22px;
+}
+.toc b{display:block;margin-bottom:8px}
+.toc a{display:block;color:var(--accent2);text-decoration:none;font-weight:900;font-size:13px;padding:6px 0}
+.toc a:hover{text-decoration:underline}
+
+h2{margin:24px 0 10px;font-size:20px}
+h3{margin:18px 0 8px;font-size:16px}
+p{margin:0 0 12px;color:#2a3647;font-weight:850;line-height:1.95;font-size:14px}
+ul{margin:0 0 12px;padding-left:18px;color:#2a3647;line-height:1.9;font-weight:850;font-size:14px}
+
+.callout{
+  border-left:6px solid var(--accent);
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;
+  padding:14px;margin:14px 0;
+}
+.callout b{display:block;margin-bottom:6px}
+.note{color:var(--muted);font-size:12.5px;font-weight:850;line-height:1.9;margin:6px 0 0}
+
+.figure{
+  border:1px solid rgba(27,37,51,.12);background:#fff;border-radius:16px;overflow:hidden;margin:12px 0 16px;
+}
+.figureHeader{padding:10px 12px;background:rgba(238,241,246,.7);border-bottom:1px solid rgba(27,37,51,.10);font-weight:1000;font-size:13px}
+.figure pre{margin:0;padding:12px;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:12.5px;line-height:1.7;color:#1f2a3a}
+
+.navLinks{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  margin-top:16px;padding-top:16px;border-top:1px solid rgba(27,37,51,.10);
+}
+.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+@media(max-width:980px){
+  .menu{display:none}
+  .h1{font-size:28px}
+  .navLinks{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+      </a>
+      <nav class="menu" aria-label="メニュー">
+        <a href="./column.html">コラム一覧</a>
+        <a href="./index.html#download">無料特典</a>
+        <a href="./index.html#consult">無料相談</a>
+      </nav>
+      <a class="btn primary" href="./index.html#download">無料特典</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="heroInner">
+      <div class="kicker">コラム③｜審査対応 / 根拠 / 検証</div>
+      <h1 class="h1">審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット</h1>
+      <p class="lead">
+        “やっているのに伝わらない”——審査で起きがちなもったいない状態です。<br>
+        中小食品企業の現実に合わせて、CCP/OPRP/PRPの整理と、根拠・検証・是正の作り方を図解でまとめます。<br>
+        JFS-BでもISO22000支援でも共通するのは「一貫した説明ができること」です。
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <a class="btn primary" href="./index.html#download">無料特典</a>
+        <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+        <a class="btn" href="./column.html">コラム一覧へ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="article">
+
+      <!-- 上部ナビ（一覧／前後） -->
+      <div class="toc">
+        <b>ナビゲーション</b>
+        <a href="./column.html">一覧へ戻る</a>
+        <a href="./column-2.html">← 前の記事：記録が続かないを解決する</a>
+      </div>
+
+      <div class="toc">
+        <b>目次</b>
+        <a href="#c3s1">1. 「伝わらない」HACCPで起きていること</a>
+        <a href="#c3s2">2. 図解：CCP / OPRP / PRP を整理する考え方</a>
+        <a href="#c3s3">3. 審査で強い“根拠”の作り方（3点セット）</a>
+        <a href="#c3s4">4. 検証（verification）の最小セット</a>
+        <a href="#c3s5">5. 逸脱・是正を「仕組みの改善」に変える</a>
+        <a href="#c3s6">6. よくある質問：どこまで作り込めば良い？</a>
+        <a href="#c3s7">7. まとめ</a>
+      </div>
+
+      <div class="articleInner">
+
+        <h2 id="c3s1">1. 「伝わらない」HACCPで起きていること</h2>
+        <p>
+          審査での指摘は、書類が無いことより「説明がつながらない」ことから起きます。典型例は次の3つです。
+        </p>
+        <ul>
+          <li>ハザード分析で重要と評価したのに、プラン側の管理が弱い（または逆）</li>
+          <li>工程図はあるが、現場の動線・設備・作業が反映されていない</li>
+          <li>逸脱時の扱い（隔離・判断・再発防止）が運用として固定されていない</li>
+        </ul>
+        <div class="callout">
+          <b>ポイント</b>
+          <p style="margin:0">
+            審査で強いのは「一貫性」です。<br>
+            何を重要と考え、なぜそう判断し、どう管理しているか。これが一本の線で説明できる状態を目指します。
+          </p>
+        </div>
+
+        <h2 id="c3s2">2. 図解：CCP / OPRP / PRP を整理する考え方</h2>
+        <p>
+          CCP/OPRP/PRPが混ざると、監視や記録が過剰になり、続かなくなります。逆に薄すぎると、重要管理が説明できません。
+          “管理の重さ”を整理するだけで、運用がぐっと現実的になります。
+        </p>
+
+        <div class="figure">
+          <div class="figureHeader">図：管理の重さ（PRP → OPRP → CCP）</div>
+          <pre>
+PRP（一般衛生）：
+  ・日常の衛生基盤（清掃、防虫、手洗い、異物、温度の基本管理 等）
+  ・「守れているか」を点検で確認（記録は最小）
+
+OPRP（運用上の前提条件）：
+  ・特定のハザードを、工程に紐づけて管理するが、CCPほどではない
+  ・監視はするが、運用負荷は現実的に（頻度・記録を最小化）
+
+CCP（重要管理点）：
+  ・逸脱が製品安全に直結し、後工程で取り返しにくい
+  ・管理基準・監視・是正・検証が最も厳密（ただし数は絞る）
+          </pre>
+        </div>
+
+        <p>
+          迷ったときは、次の問いで整理すると判断が揺れにくいです。
+        </p>
+        <ul>
+          <li>逸脱したときに製品安全へ直結するか（影響の大きさ）</li>
+          <li>後工程で取り返せるか（リカバリー可能性）</li>
+          <li>現場が確実に監視・記録を継続できるか（運用現実性）</li>
+        </ul>
+
+        <h2 id="c3s3">3. 審査で強い“根拠”の作り方（3点セット）</h2>
+        <p>
+          HACCP構築支援でよくお伝えするのが「根拠の3点セット」です。これがあると、説明が途切れにくくなります。
+        </p>
+
+        <div class="figure">
+          <div class="figureHeader">図：根拠の3点セット</div>
+          <pre>
+(1) 現場根拠：工程・設備・作業実態（現物確認）
+(2) 製品根拠：製品特性・保存・用途・喫食者（製品説明）
+(3) 説明根拠：規格/法令/社内実績（クレーム、検査、温度記録 等）
+          </pre>
+        </div>
+
+        <p>
+          例えば「加熱で病原微生物を管理する」と決めたなら、
+          加熱条件・測定方法・設備能力（現場根拠）と、製品の特性（製品根拠）、
+          そして社内の検査・記録・要求（説明根拠）が一緒に出せる状態が理想です。
+        </p>
+
+        <h2 id="c3s4">4. 検証（verification）の最小セット</h2>
+        <p>
+          検証は“難しい活動”にしなくて大丈夫です。目的は「決めた管理が機能しているか」を確認し、必要なら改善すること。
+          中小食品企業でも回る最小セットは次の通りです。
+        </p>
+
+        <div class="figure">
+          <div class="figureHeader">図：検証の最小セット（現実的な頻度）</div>
+          <pre>
+毎週（5分）：記録の抜け／NGの有無を確認
+毎月（15分）：NGやクレームの傾向を見る（工程別・原因別）
+四半期（30分）：現場確認（工程図・手順が現実と一致しているか）
+年次（60分）：変更点を棚卸し（原料、設備、工程、外注、表示、苦情 等）
+          </pre>
+        </div>
+
+        <div class="callout">
+          <b>コツ</b>
+          <p style="margin:0">
+            検証は「全部を細かく見る」ではなく、<br>
+            “異常と変化”に気づける仕組みを作ることが目的です。
+          </p>
+        </div>
+
+        <h2 id="c3s5">5. 逸脱・是正を「仕組みの改善」に変える</h2>
+        <p>
+          逸脱が起きること自体は珍しくありません。重要なのは、起きたときに“正しく扱える”ことです。
+          JFS-BでもISO22000支援でも、是正処置は改善の中心になります。
+        </p>
+        <ul>
+          <li>まず隔離（止める／分ける）→影響範囲を固定する</li>
+          <li>判断基準を決める（再加工、廃棄、評価、出荷可否）</li>
+          <li>再発防止は「判断を減らす」方向へ（置き場、チェック欄、頻度変更）</li>
+        </ul>
+        <p>
+          是正が“責任追及”に見えると、記録が隠れます。だからこそ、仕組みの原因（手順・設備・教育・負荷）から先に見立てます。
+          これだけで、現場の心理的ハードルが下がります。
+        </p>
+
+        <h2 id="c3s6">6. よくある質問：どこまで作り込めば良い？</h2>
+        <p>
+          目安は「説明できる最小構成」です。具体的には、次が揃うと強いです。
+        </p>
+        <ul>
+          <li>工程図が現場と一致している（現物確認済み）</li>
+          <li>重要ハザードの根拠が3点セットで語れる</li>
+          <li>CCP/OPRP/PRPの役割分担が明確で、記録が続いている</li>
+          <li>逸脱時の扱いがフォーマット化され、迷わない</li>
+          <li>検証が最小セットで回っている</li>
+        </ul>
+
+        <h2 id="c3s7">7. まとめ</h2>
+        <p>
+          審査で効くのは、立派な書類ではなく“一貫した説明”です。CCP/OPRP/PRPを整理し、根拠を3点セットで揃え、
+          検証と是正を最小セットで回す。これが、中小食品企業でも続くHACCPの現実解です。
+        </p>
+
+        <div class="callout">
+          <b>資料・相談の活用について（必要なときだけ）</b>
+          <p style="margin:0">
+            無料テンプレートで整理してみて、CCP/OPRP/PRPの整理や、根拠のつながりに不安が残る場合は、30分で一緒に整理できます。<br>
+            現状整理のみでもOKです。無理なご提案はいたしません。
+          </p>
+        </div>
+
+        <div class="navLinks">
+          <div style="font-weight:1000">関連記事ナビ</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="./column-2.html">前の記事</a>
+            <a class="btn" href="./column.html">一覧へ</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 食品安全パートナーズ</div>
+</footer>
+
+</body>
+</html>

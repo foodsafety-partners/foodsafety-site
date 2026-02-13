@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>形だけのHACCPを卒業する｜食品安全パートナーズ コラム</title>
-<meta name="description" content="形だけのHACCPを卒業し、JFS-Bを見据えた『現場で回る仕組み』を作るための要点を図解で整理。工程把握・根拠づくり・運用負荷設計・検証の考え方を解説します。">
-<meta name="keywords" content="JFS-B, HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援">
+<title>形だけのHACCPを卒業する｜食品安全パートナーズ</title>
+<meta name="description" content="形だけのHACCPから脱却する方法を解説。JFS-Bを見据えた現場で回る仕組みの作り方を図解で整理します。">
+<meta name="keywords" content="HACCP, JFS-B, 食品安全, ハザード分析, 食品安全コンサル, 中小食品企業">
 <style>:root{
   --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
   --accent:#e0872a; --accent2:#2c567a;
@@ -19,496 +19,179 @@ a{color:inherit;text-decoration:none}
 .container{max-width:var(--w);margin:0 auto;padding:0 18px}
 
 #progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
-#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
+#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;
   box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
 #toTop.show{opacity:1;transform:none}
 
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
-  border-bottom:1px solid rgba(27,37,51,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:40px;width:auto}
-.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042;margin-left:auto;margin-right:10px}
-.menu a{opacity:.82}
-.menu a:hover{opacity:1}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
-.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
-.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
-.btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-
-.hero{
-  position:relative;
-  background:
-    radial-gradient(1000px 360px at 22% 18%, rgba(255,255,255,.40), transparent 60%),
-    linear-gradient(180deg, rgba(10,18,32,.68), rgba(10,18,32,.32)),
-    url("./assets/img/hero.webp");
-  background-size:cover;background-position:center;
-  border-bottom:1px solid rgba(255,255,255,.18);
-}
-.heroInner{padding:92px 0 34px}
-.kicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:12px;letter-spacing:.04em;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 10px}
-.h1{color:#fff;font-weight:1000;font-size:34px;line-height:1.25;margin:12px 0 10px;text-shadow:0 3px 18px rgba(0,0,0,.35)}
-.sub{color:rgba(255,255,255,.92);font-weight:850;margin:0 0 14px;line-height:1.9;max-width:920px}
-.metaRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.12);color:#fff;font-weight:900;font-size:12px}
-
-.breadcrumb{padding:12px 0;color:rgba(255,255,255,.88);font-weight:850;font-size:12px}
-.breadcrumb a{opacity:.92;text-decoration:underline}
-.breadcrumb span{opacity:.9}
-
-.article{padding:24px 0 64px}
-.card{
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(27,37,51,.10);
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 10px 20px rgba(24,32,48,.08);
-}
-.toc{
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-  margin:14px 0 18px;
-}
-.toc b{display:block;margin-bottom:8px}
-.toc a{display:block;padding:8px 10px;border-radius:12px;font-weight:900;color:#243042}
-.toc a:hover{background:rgba(44,86,122,.08)}
-.toc a:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-
-.prose{line-height:2.0;color:#253244;font-weight:850}
-.prose h2{margin:22px 0 10px;font-size:20px}
-.prose h3{margin:16px 0 8px;font-size:16px}
-.prose p{margin:10px 0}
-.prose ul{margin:10px 0 10px 20px}
-.prose li{margin:6px 0}
-.hr{height:1px;background:var(--line);margin:18px 0}
-
-.note{
-  border-left:6px solid var(--accent);
-  background:#fff;
-  border:1px solid rgba(27,37,51,.10);
-  border-left-width:6px;
-  border-radius:16px;
-  padding:14px;
-  margin:14px 0;
-}
-.note b{display:block;margin-bottom:6px}
-
-.figure{
-  border-radius:18px;
-  border:1px solid rgba(27,37,51,.10);
-  background:#fff;
-  box-shadow:0 14px 26px rgba(24,32,48,.08);
-  padding:14px;
-  margin:14px 0;
-}
-.figTitle{font-weight:1000;margin:0 0 8px}
-.diagram{
-  border-radius:16px;
-  border:1px dashed rgba(27,37,51,.18);
-  background:linear-gradient(180deg, rgba(238,241,246,.9), rgba(255,255,255,.9));
-  padding:14px;
-}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.box{
-  border-radius:14px;
-  border:1px solid rgba(27,37,51,.10);
-  background:#fff;
-  padding:12px;
-}
-.box .hd{font-weight:1000;margin:0 0 6px}
-.box .tx{margin:0;color:var(--muted);font-weight:850;font-size:12.5px;line-height:1.85}
-
-.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.tag{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 10px;border-radius:999px;
-  border:1px solid rgba(27,37,51,.12);
-  background:#fff;color:#243042;
-  font-weight:900;font-size:12px;
-}
-
-.navArticle{
-  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-  margin-top:18px;
-}
-.navArticle a{display:inline-flex;align-items:center;gap:10px}
-.navArticle .btn{padding:10px 12px}
-
-.ctaPanel{
-  margin-top:20px;
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-}
-.ctaPanel h3{margin:0 0 6px;font-size:16px}
-.ctaPanel p{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.9}
-.ctaBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-
-.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
-
-@media (prefers-reduced-motion:no-preference){
-  .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
-  .reveal.show{opacity:1;transform:none}
-}
+.header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid var(--line);background:#fff}
+.btn.primary{background:var(--accent);color:#fff;border:none}
+.section{padding:50px 0}
+.h1{font-size:30px;font-weight:1000;line-height:1.3}
+.meta{color:var(--muted);font-size:12px;font-weight:850;margin-top:6px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.prose{line-height:2;font-weight:850}
+.prose h2{margin-top:30px;font-size:20px}
+.callout{border-left:6px solid var(--accent);background:#fff;border:1px solid var(--line);border-left-width:6px;border-radius:16px;padding:14px;margin:20px 0}
+.ctaCard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:30px}
+.footer{padding:20px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
 @media(max-width:980px){
-  .menu{display:none}
-  .heroInner{padding-top:74px}
-  .h1{font-size:30px}
-  .grid2{grid-template-columns:1fr}
-}</style>
+.menu{display:none}
+.h1{font-size:26px}
+}
+</style>
 </head>
 <body>
+
 <div id="progress"></div>
-<a id="toTop" href="./column-1.html#" aria-label="ページ先頭へ">↑</a>
+<a id="toTop" href="#">↑</a>
 
 <header class="header">
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
-        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
-      </a>
-      <nav class="menu" aria-label="メニュー">
-        <a href="./index.html#services">サービス</a>
-        <a href="./download.html">無料特典</a>
-        <a href="./index.html#books">書籍</a>
-        <a href="./index.html#consult">無料相談</a>
-      </nav>
-      <a class="btn primary" href="./download.html">無料特典</a>
-    </div>
-  </div>
+<div class="container nav">
+<a href="./index.html"><strong>食品安全パートナーズ</strong></a>
+<nav class="menu">
+<a href="./column.html">コラム一覧</a>
+<a href="./index.html#download">無料特典</a>
+<a href="./index.html#consult">無料相談</a>
+</nav>
+<a class="btn primary" href="./index.html#consult">無料相談</a>
+</div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div class="heroInner reveal">
-      <div class="breadcrumb">
-        <a href="./index.html">トップ</a> <span>›</span> <a href="./column.html">コラム一覧</a> <span>›</span> <span>記事</span>
-      </div>
-      <div class="kicker">コラム（HACCP / JFS-B）</div>
-      <h1 class="h1">形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</h1>
-      <p class="sub">
-        HACCPが「整っているように見える」のに、現場では続かない——。その原因は、文書の出来よりも<strong>運用負荷</strong>と<strong>根拠のつながり</strong>にあります。<br>
-        この記事では、中小食品企業でも無理なく回る形にするための考え方を、工程把握→ハザード分析→管理手段→検証まで一気通貫で整理します。
-      </p>
-      <div class="metaRow" aria-label="記事タグ">
-        <span class="pill">JFS-B</span>
-        <span class="pill">HACCP構築支援</span>
-        <span class="pill">運用設計</span>
-        <span class="pill">食品安全コンサル</span>
-      </div>
-    </div>
+<section class="section">
+<div class="container">
+
+<h1 class="h1">形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</h1>
+<div class="meta">HACCP / JFS-B / ハザード分析 | 読了目安：約7分</div>
+
+<div class="card" style="margin-top:20px">
+<div class="prose">
+
+<p>
+HACCPを導入したのに、現場が変わらない。
+記録はあるのに、安心感がない。
+</p>
+
+<p>
+それは「文書を作った」だけで、「仕組みを設計していない」状態かもしれません。
+</p>
+
+<h2>形だけのHACCPとは</h2>
+
+<p>
+・ハザード分析がテンプレートのまま  
+・CCPが多すぎる  
+・是正措置が曖昧  
+・検証が形骸化  
+</p>
+
+<p>
+これらはすべて、“設計不足”から起こります。
+</p>
+
+<h2>回る仕組みの条件</h2>
+
+<ul>
+<li>重要工程に集中している</li>
+<li>判断基準が明確</li>
+<li>異常時の動きが決まっている</li>
+<li>担当者が変わっても継続できる</li>
+</ul>
+
+<div class="callout">
+<strong>ポイント</strong><br>
+HACCPは「文書」ではなく「設計」で決まります。
+</div>
+
+<h2>JFS-Bを見据える理由</h2>
+
+<p>
+JFS-Bは単なる規格ではありません。
+“運用できる仕組み”を求めています。
+</p>
+
+<p>
+審査前に慌てないためにも、日常運用の設計が重要です。
+</p>
+
+<h2>まとめ</h2>
+
+<p>
+食品安全は、取得して終わりではありません。
+回る仕組みを作ることが、本当のスタートです。
+</p>
+
+</div>
+</div>
+
+<!-- 通常CTA -->
+<div class="ctaCard">
+<p style="font-weight:1000;margin-bottom:6px">資料・相談の活用について</p>
+<p>
+まずは無料テンプレートで全体像を整理できます。<br>
+現状整理のみの30分相談も可能です。
+</p>
+<a class="btn primary" href="./download.html">無料テンプレートを見る</a>
+</div>
+
+<!-- ▼ Kindle Unlimited 導線 -->
+<div class="ctaCard">
+
+  <p style="margin:0 0 6px;font-weight:1000">
+    まずは無料で学ぶという選択肢
+  </p>
+
+  <p style="margin:0;line-height:1.9">
+    書籍はKindle Unlimitedの30日間無料体験でも読むことができます。<br>
+    期間内の解約で費用は発生しません。
+  </p>
+
+  <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+
+    <a class="btn primary"
+       href="https://amzn.to/4qEGAjn"
+       target="_blank"
+       rel="noopener noreferrer">
+       今すぐ無料で読む
+    </a>
+
+    <a class="btn"
+       href="./index.html#books">
+       書籍を見る
+    </a>
+
   </div>
+
+  <p style="margin-top:10px;font-size:12px;color:var(--muted);line-height:1.8">
+    ※無料体験終了後は月額料金が発生します。期間内解約可能です。<br>
+    ※当サイトはAmazonアソシエイト・プログラムの参加者です。
+  </p>
+
+</div>
+<!-- ▲ Kindle Unlimited 導線 -->
+
+<div style="margin-top:30px">
+<a href="./column.html" style="font-weight:1000;color:var(--accent2);text-decoration:underline">← コラム一覧へ戻る</a>
+</div>
+
+</div>
 </section>
 
-<main class="article">
-  <div class="container">
-
-    <div class="toc reveal" aria-label="目次">
-      <b>目次</b>
-      <a href="#s1">1. 形だけのHACCPになってしまう3つのサイン</a>
-      <a href="#s2">2. 「現場で回る」HACCPの設計思想（最小で回す）</a>
-      <a href="#s3">3. 工程把握のコツ：フローダイアグラムで迷子にならない</a>
-      <a href="#s4">4. ハザード分析：根拠を“見える化”する（図解）</a>
-      <a href="#s5">5. 管理手段の整理：PRP / OPRP / CCPを誤らない</a>
-      <a href="#s6">6. 検証・是正：審査で効く「説明できる」最小セット</a>
-      <a href="#s7">7. 運用負荷を下げる：記録を続ける仕組み（図解）</a>
-      <a href="#s8">8. 資料と相談の活用について（必要なときだけ）</a>
-    </div>
-
-    <article class="card prose reveal">
-
-      <h2 id="s1">1. 形だけのHACCPになってしまう3つのサイン</h2>
-      <p>
-        HACCPは「作った瞬間」より、「3か月後・半年後に回っているか」で価値が決まります。
-        次の3つが出ている場合、仕組みは<strong>文書中心</strong>になっている可能性が高いです。
-      </p>
-      <ul>
-        <li><strong>記録が途切れる／まとめ書きが常態化</strong>（現場に負担が乗りすぎている）</li>
-        <li><strong>CCPやOPRPの理由を説明できない</strong>（根拠と管理手段がつながっていない）</li>
-        <li><strong>不適合が出たとき、是正が“その場しのぎ”になる</strong>（判断基準・流れが決まっていない）</li>
-      </ul>
-
-      <div class="note">
-        <b>ポイント</b>
-        <div>HACCPは「項目を埋める」よりも、<strong>判断の筋道</strong>と<strong>現場の負荷</strong>を先に設計すると失敗しにくくなります。</div>
-      </div>
-
-      <div class="hr"></div>
-
-      <h2 id="s2">2. 「現場で回る」HACCPの設計思想（最小で回す）</h2>
-      <p>
-        中小食品企業では、専任者・専用システム・十分な時間がないことが多いです。
-        だからこそ、最初から「完璧」を目指すより、<strong>最小のセットで回し、改善で育てる</strong>のが現実的です。
-      </p>
-
-      <div class="figure">
-        <p class="figTitle">図解：回るHACCPの基本構造（最小セット）</p>
-        <div class="diagram">
-          <div class="grid2">
-            <div class="box">
-              <p class="hd">① 根拠</p>
-              <p class="tx">工程把握 → ハザード分析 → 許容レベル（基準）の設定</p>
-            </div>
-            <div class="box">
-              <p class="hd">② 管理</p>
-              <p class="tx">PRP/OPRP/CCPの整理 → 監視方法 → 記録（最短）</p>
-            </div>
-            <div class="box">
-              <p class="hd">③ 反応</p>
-              <p class="tx">逸脱時の判断基準 → 是正処置（製品・工程） → 再発防止</p>
-            </div>
-            <div class="box">
-              <p class="hd">④ 確認</p>
-              <p class="tx">検証（レビュー/内部監査/傾向分析）→ 改善へつなぐ</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        JFS-Bでも「構築していること」より「<strong>運用できていること</strong>」が重要です。
-        そのため、HACCP構築支援の現場では、まず<strong>運用負荷を先に見積もる</strong>ことから始めます。
-      </p>
-
-      <div class="hr"></div>
-
-      <h2 id="s3">3. 工程把握のコツ：フローダイアグラムで迷子にならない</h2>
-      <p>
-        フローダイアグラムは、キレイさより「危害要因の入口が拾えるか」が目的です。
-        よくある失敗は、工程を細かくしすぎて、逆に重要ポイントが埋もれることです。
-      </p>
-
-      <h3>工程の切り方（おすすめ）</h3>
-      <ul>
-        <li><strong>危害要因が変わるところで区切る</strong>（加熱、冷却、金属探知、アレルゲン切替など）</li>
-        <li><strong>“誰が・どこで・何をするか”が想像できる粒度</strong>にする</li>
-        <li>設備やラインが複数ある場合は、<strong>代表工程＋差分</strong>で整理する</li>
-      </ul>
-
-      <div class="note">
-        <b>ミニチェック</b>
-        <div>「原料受入」から「出荷」まで、途中で<strong>温度・時間・交差汚染・異物</strong>のリスクが変わる地点がすべて工程に反映されていますか？</div>
-      </div>
-
-      <div class="hr"></div>
-
-      <h2 id="s4">4. ハザード分析：根拠を“見える化”する（図解）</h2>
-      <p>
-        審査で強いHACCPは、ハザード分析が「表」ではなく「<strong>説明の筋道</strong>」として成立しています。
-        つまり、<strong>なぜそのハザードを重要と判断したのか</strong>が、工程・管理手段と矛盾なくつながっている状態です。
-      </p>
-
-      <div class="figure">
-        <p class="figTitle">図解：ハザード分析の「根拠」テンプレ思考</p>
-        <div class="diagram">
-          <div class="grid2">
-            <div class="box">
-              <p class="hd">工程で起こり得るハザード</p>
-              <p class="tx">生物（増殖/汚染）、化学（残留/混入）、物理（破片）</p>
-            </div>
-            <div class="box">
-              <p class="hd">根拠（情報源）</p>
-              <p class="tx">法規・ガイドライン、原料規格、工程条件、過去不良、学術情報</p>
-            </div>
-            <div class="box">
-              <p class="hd">評価（重要度）</p>
-              <p class="tx">発生可能性 × 影響（重篤度）＝管理必要性</p>
-            </div>
-            <div class="box">
-              <p class="hd">管理手段へ</p>
-              <p class="tx">PRP / OPRP / CCP のどれで管理するか、基準と監視へ接続</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h3>“根拠不足”でよくある例</h3>
-      <ul>
-        <li>「重要」としているが、<strong>基準値や許容範囲が曖昧</strong></li>
-        <li>CCPにしているが、<strong>工程条件（温度/時間等）の設定理由が説明できない</strong></li>
-        <li>PRPで管理しているが、<strong>逸脱時の判断と是正が決まっていない</strong></li>
-      </ul>
-
-      <div class="hr"></div>
-
-      <h2 id="s5">5. 管理手段の整理：PRP / OPRP / CCPを誤らない</h2>
-      <p>
-        JFS-Bを見据える場合、PRP/OPRP/CCPの整理は「用語」よりも<strong>管理の強度</strong>で考えると失敗しにくいです。
-      </p>
-
-      <div class="figure">
-        <p class="figTitle">図解：管理の強度で整理する（実務向け）</p>
-        <div class="diagram">
-          <div class="grid2">
-            <div class="box">
-              <p class="hd">PRP（前提条件）</p>
-              <p class="tx">日常の衛生管理。清掃、害虫、交差汚染対策、教育など。逸脱は「改善」で管理。</p>
-            </div>
-            <div class="box">
-              <p class="hd">OPRP（重要な運用管理）</p>
-              <p class="tx">工程の中で重要。基準と監視はあるが、CCPほど致命的ではない。逸脱時の対応を明確に。</p>
-            </div>
-            <div class="box">
-              <p class="hd">CCP（重要管理点）</p>
-              <p class="tx">逸脱が製品安全に直結。基準値・監視・是正が「止める/分ける/評価する」まで含めて必須。</p>
-            </div>
-            <div class="box">
-              <p class="hd">迷ったら</p>
-              <p class="tx">「逸脱したとき、製品をどう扱う？」が決められるかで判断。決められないなら設計が先。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="note">
-        <b>監査員目線</b>
-        <div>分類名より、「基準」「監視」「逸脱時の扱い」「記録の一貫性」が説明できるかが評価の中心です。</div>
-      </div>
-
-      <div class="hr"></div>
-
-      <h2 id="s6">6. 検証・是正：審査で効く「説明できる」最小セット</h2>
-      <p>
-        “やっているのに伝わらない”の多くは、<strong>検証と是正が点で存在</strong>していることが原因です。
-        最小セットは次の3つです。
-      </p>
-      <ul>
-        <li><strong>① 日々の監視</strong>：基準に対して「OK/NG」が判断できる（記録も最短で）</li>
-        <li><strong>② 逸脱時の是正</strong>：製品の扱い（隔離/廃棄/再加工）＋工程是正が決まっている</li>
-        <li><strong>③ 検証</strong>：一定頻度で「仕組みが効いているか」を確認（レビュー/内部監査/傾向分析）</li>
-      </ul>
-
-      <div class="figure">
-        <p class="figTitle">図解：逸脱時の流れ（迷わないための型）</p>
-        <div class="diagram">
-          <div class="grid2">
-            <div class="box">
-              <p class="hd">A. 事実確認</p>
-              <p class="tx">何が・いつ・どこで・どれだけ逸脱したか（範囲を切る）</p>
-            </div>
-            <div class="box">
-              <p class="hd">B. 製品の扱い</p>
-              <p class="tx">隔離 → 評価 → 出荷可否。判断基準（再加熱・検査・廃棄等）</p>
-            </div>
-            <div class="box">
-              <p class="hd">C. 工程の是正</p>
-              <p class="tx">原因仮説 → 応急処置 → 再発防止（教育/条件見直し/設備）</p>
-            </div>
-            <div class="box">
-              <p class="hd">D. 検証に反映</p>
-              <p class="tx">逸脱の傾向、内部監査、マネジメントレビューへ（改善の根拠）</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-
-      <h2 id="s7">7. 運用負荷を下げる：記録を続ける仕組み（図解）</h2>
-      <p>
-        記録が続かないとき、「現場の意識」ではなく<strong>仕組みの設計</strong>を疑うのが正解です。
-        続く記録は、次の3点が揃っています。
-      </p>
-
-      <div class="figure">
-        <p class="figTitle">図解：続く記録の3条件</p>
-        <div class="diagram">
-          <div class="grid2">
-            <div class="box">
-              <p class="hd">① 記入が“10秒で終わる”</p>
-              <p class="tx">チェック式・数値は最小・例外だけ記述。記入欄を増やさない。</p>
-            </div>
-            <div class="box">
-              <p class="hd">② 判断が“迷わない”</p>
-              <p class="tx">基準・許容範囲・逸脱時の行動が同じ紙/同じ画面にある。</p>
-            </div>
-            <div class="box">
-              <p class="hd">③ 回収・保管が“自動に近い”</p>
-              <p class="tx">置き場固定、回収タイミング固定、責任者固定。人に依存しない。</p>
-            </div>
-            <div class="box">
-              <p class="hd">＋現場に合わせる</p>
-              <p class="tx">紙/Excel/スマホ等、現場が確実に使える媒体を選ぶ（背伸びしない）。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        ISO22000支援の現場でも同じで、「記録が残る」ことが、検証・改善の土台になります。
-        まずは<strong>最小の記録で回して</strong>、必要に応じて精度を上げる方が、結果的に早く安定します。
-      </p>
-
-      <div class="hr"></div>
-
-      <h2 id="s8">8. 資料と相談の活用について（必要なときだけ）</h2>
-      <p>
-        ここまでの内容を自社で当てはめるとき、最初につまずきやすいのは「ハザード分析の根拠」と「記録の設計」です。
-        もし整理の補助が必要であれば、無料特典のテンプレート（Excel）を使うと、全体像の把握がスムーズになります。
-      </p>
-
-      <div class="ctaPanel" role="region" aria-label="資料と相談の案内">
-        <h3>資料・相談のご案内</h3>
-        <p>
-          無料特典：JFS-B適合を見据えたHACCP構築テンプレート（Excel）をご用意しています。<br>
-          また、資料を使って不安が出た場合は、30分の無料相談で「現状整理のみ」でも対応可能です（売り込みは行いません）。
-        </p>
-        <div class="ctaBtns">
-          <a class="btn primary" href="./download.html">無料特典を受け取る</a>
-          <a class="btn dark" href="./index.html#consult">30分無料相談</a>
-          <a class="btn" href="./column.html">コラム一覧へ</a>
-        </div>
-      </div>
-
-      <div class="navArticle" aria-label="記事ナビゲーション">
-        <a class="btn" href="./column.html">← 一覧へ</a>
-        <a class="btn dark" href="./column-2.html">次の記事 →</a>
-      </div>
-
-      <div class="tagRow" aria-label="記事タグ（下部）">
-        <span class="tag">JFS-B</span>
-        <span class="tag">HACCP</span>
-        <span class="tag">運用</span>
-        <span class="tag">食品安全コンサル</span>
-        <span class="tag">中小食品企業</span>
-      </div>
-
-    </article>
-
-  </div>
-</main>
-
 <footer class="footer">
-  <div class="container">© 食品安全パートナーズ</div>
+© 食品安全パートナーズ
 </footer>
 
-<script>(() => {
-  const toTop = document.getElementById("toTop");
-  const bar = document.getElementById("progress");
-  const onScroll = () => {
-    const d = document.documentElement;
-    const max = (d.scrollHeight - d.clientHeight) || 1;
-    bar.style.width = (d.scrollTop / max) * 100 + "%";
-    toTop.classList.toggle("show", d.scrollTop > 600);
-  };
-  window.addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
+<script>
+const bar=document.getElementById("progress");
+const toTop=document.getElementById("toTop");
+window.addEventListener("scroll",()=>{
+const d=document.documentElement;
+bar.style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100+"%";
+toTop.classList.toggle("show",d.scrollTop>400);
+});
+</script>
 
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const targets = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.12 });
-    targets.forEach(el => io.observe(el));
-  }
-})();</script>
 </body>
 </html>

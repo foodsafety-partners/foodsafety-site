@@ -97,6 +97,13 @@ a{color:inherit;text-decoration:none}
 
 .footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
 
+/* 追加：公開前カード（リンク無効） */
+.cardLink.disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
 @media (prefers-reduced-motion:no-preference){
   .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
   .reveal.show{opacity:1;transform:none}
@@ -136,53 +143,13 @@ a{color:inherit;text-decoration:none}
       中小食品企業でも無理なく回る形に落とし込むことを大切にしています。
     </p>
 
-    <!-- 人気TOP3 -->
+    <!-- 人気TOP3（JSで自動生成） -->
     <div class="panel reveal" id="popular">
       <div class="splitHead">
         <h2>人気コラム TOP3</h2>
-        <div class="mini">※並び順は「人気順」の想定（必要なら後で入れ替えできます）</div>
+        <div class="mini">※並び順は「人気順」の想定（配列のpopularRankで管理）</div>
       </div>
-
-      <div class="grid3">
-        <a class="cardLink" href="./column-1.html" aria-label="人気1位：形だけのHACCPを卒業する（記事へ）">
-          <div class="cover">
-            <div style="display:flex;gap:10px;align-items:flex-start">
-              <span class="badgeNo" aria-hidden="true">1</span>
-              <h3>形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</h3>
-            </div>
-          </div>
-          <p class="excerpt">工程把握／ハザード分析の根拠／運用負荷の設計。審査前に慌てないための筋の通った作り方を図解で整理。</p>
-          <div class="tagRow">
-            <span class="tag">JFS-B</span><span class="tag">HACCP</span><span class="tag">運用</span>
-          </div>
-        </a>
-
-        <a class="cardLink" href="./column-2.html" aria-label="人気2位：記録が続かないを解決（記事へ）">
-          <div class="cover">
-            <div style="display:flex;gap:10px;align-items:flex-start">
-              <span class="badgeNo" aria-hidden="true">2</span>
-              <h3>HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ</h3>
-            </div>
-          </div>
-          <p class="excerpt">記録・是正・教育を“努力”から“続く設計”へ。少人数でも回る仕組みの骨格を図解で解説します。</p>
-          <div class="tagRow">
-            <span class="tag">運用</span><span class="tag">ISO22000</span><span class="tag">食品安全コンサル</span>
-          </div>
-        </a>
-
-        <a class="cardLink" href="./column-3.html" aria-label="人気3位：説明できるHACCP（記事へ）">
-          <div class="cover">
-            <div style="display:flex;gap:10px;align-items:flex-start">
-              <span class="badgeNo" aria-hidden="true">3</span>
-              <h3>審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット</h3>
-            </div>
-          </div>
-          <p class="excerpt">“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を図解で整理します。</p>
-          <div class="tagRow">
-            <span class="tag">HACCP</span><span class="tag">JFS-B</span><span class="tag">検証</span>
-          </div>
-        </a>
-      </div>
+      <div class="grid3" id="popularGrid"></div>
 
       <div class="ctaBar">
         <a class="btn dark" href="./index.html#consult">30分無料相談</a>
@@ -191,40 +158,15 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <!-- すべてのコラム -->
+    <!-- すべてのコラム（JSで自動生成） -->
     <div style="height:16px"></div>
     <div class="panel reveal" id="all">
       <div class="splitHead">
         <h2>すべてのコラム</h2>
-        <div class="mini">サムネ画像は不要です（表紙風プレースホルダを自動生成しています）</div>
+        <div class="mini">追加は配列に1行足すだけ（サムネは表紙風を自動生成）</div>
       </div>
 
-      <div class="grid4">
-        <!-- 1 -->
-        <a class="cardLink" href="./column-1.html" aria-label="コラム：形だけのHACCPを卒業する（記事へ）">
-          <div class="cover"><h3>形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</h3></div>
-          <p class="excerpt">工程把握と根拠の作り方、運用負荷の設計を整理。</p>
-          <div class="tagRow"><span class="tag">JFS-B</span><span class="tag">HACCP</span><span class="tag">運用</span></div>
-        </a>
-        <!-- 2 -->
-        <a class="cardLink" href="./column-2.html" aria-label="コラム：記録が続かないを解決（記事へ）">
-          <div class="cover"><h3>HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ</h3></div>
-          <p class="excerpt">少人数でも回る記録・是正・教育の設計。</p>
-          <div class="tagRow"><span class="tag">運用</span><span class="tag">ISO22000</span><span class="tag">食品安全コンサル</span></div>
-        </a>
-        <!-- 3 -->
-        <a class="cardLink" href="./column-3.html" aria-label="コラム：説明できるHACCP（記事へ）">
-          <div class="cover"><h3>審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット</h3></div>
-          <p class="excerpt">監査員目線で“整合”と“根拠”を作る。</p>
-          <div class="tagRow"><span class="tag">HACCP</span><span class="tag">JFS-B</span><span class="tag">検証</span></div>
-        </a>
-        <!-- 4（将来追加用：例） -->
-        <a class="cardLink" href="./column-4.html" aria-label="コラム：近日公開（準備中）">
-          <div class="cover"><h3>（準備中）<br>ISO22000の“運用が重い”を軽くする設計</h3></div>
-          <p class="excerpt">公開までの仮カードです。後で差し替えできます。</p>
-          <div class="tagRow"><span class="tag">ISO22000</span><span class="tag">運用</span><span class="tag">改善</span></div>
-        </a>
-      </div>
+      <div class="grid4" id="allGrid"></div>
 
       <div class="ctaBar">
         <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
@@ -238,7 +180,110 @@ a{color:inherit;text-decoration:none}
   <div class="container">© 食品安全パートナーズ</div>
 </footer>
 
-<script>(() => {
+<script>
+(() => {
+  // =========================
+  // ここだけ編集すればOK：コラム一覧データ
+  // published: true ならリンク有効 / false なら準備中表示
+  // popularRank: 1〜3 を付けたものが人気TOP3に表示
+  // =========================
+  const columns = [
+    {
+      id: 1,
+      href: "./column-1.html",
+      title: "形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方",
+      excerpt: "工程把握／ハザード分析の根拠／運用負荷の設計。審査前に慌てないための筋の通った作り方を図解で整理。",
+      tags: ["JFS-B","HACCP","運用"],
+      published: true,
+      popularRank: 1
+    },
+    {
+      id: 2,
+      href: "./column-2.html",
+      title: "HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ",
+      excerpt: "記録・是正・教育を“努力”から“続く設計”へ。少人数でも回る仕組みの骨格を図解で解説します。",
+      tags: ["運用","ISO22000","食品安全コンサル"],
+      published: true,
+      popularRank: 2
+    },
+    {
+      id: 3,
+      href: "./column-3.html",
+      title: "審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット",
+      excerpt: "“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を図解で整理します。",
+      tags: ["HACCP","JFS-B","検証"],
+      published: true,
+      popularRank: 3
+    },
+
+    // ▼ ここから追加分（あなたの実ファイルに合わせて増やす）
+    // column-4.html があるなら published:true にしてOK
+    {
+      id: 4,
+      href: "./column-4.html",
+      title: "食品事故が起きる企業の特徴。<br>「仕組み」より先に整えるべき4つの癖",
+      excerpt: "事故は偶然ではなく、日常の“癖”が積み上がって起きます。典型パターンと、今すぐ直せる打ち手を整理。",
+      tags: ["運用","教育","マネジメント"],
+      published: true
+    },
+    // column-5.html（経営者向け）
+    {
+      id: 5,
+      href: "./column-5.html",
+      title: "経営者のための食品安全。<br>投資対効果が出る“最小の仕組み”と意思決定",
+      excerpt: "現場に丸投げしない。事故・監査・取引要件に強い体制を、コストを抑えて作る考え方を整理。",
+      tags: ["経営","リスク","体制"],
+      published: true
+    }
+  ];
+
+  // ---------- DOM参照 ----------
+  const popularGrid = document.getElementById("popularGrid");
+  const allGrid = document.getElementById("allGrid");
+
+  // ---------- カード生成 ----------
+  const esc = (s) => String(s ?? "");
+  const renderTags = (tags=[]) => tags.map(t => `<span class="tag">${esc(t)}</span>`).join("");
+
+  function cardHTML(c, { showRank=false } = {}) {
+    const isDisabled = !c.published;
+    const cls = `cardLink${isDisabled ? " disabled" : ""}`;
+    const hrefAttr = isDisabled ? "" : `href="${esc(c.href)}"`;
+    const aria = isDisabled
+      ? `aria-label="コラム${c.id}：準備中"`
+      : `aria-label="コラム${c.id}：記事へ"`;
+
+    const rankBadge = showRank
+      ? `<span class="badgeNo" aria-hidden="true">${esc(c.popularRank)}</span>`
+      : "";
+
+    const titleBlock = showRank
+      ? `<div style="display:flex;gap:10px;align-items:flex-start">${rankBadge}<h3>${c.title}</h3></div>`
+      : `<h3>${c.title}</h3>`;
+
+    const excerpt = isDisabled ? "準備中（公開後に自動で一覧に反映されます）" : esc(c.excerpt);
+
+    return `
+      <a class="${cls}" ${hrefAttr} ${aria}>
+        <div class="cover">${titleBlock}</div>
+        <p class="excerpt">${excerpt}</p>
+        <div class="tagRow">${renderTags(c.tags)}</div>
+      </a>
+    `;
+  }
+
+  // ---------- 人気TOP3 ----------
+  const popular = columns
+    .filter(c => Number(c.popularRank) >= 1 && Number(c.popularRank) <= 3)
+    .sort((a,b) => a.popularRank - b.popularRank);
+
+  popularGrid.innerHTML = popular.map(c => cardHTML(c, { showRank:true })).join("");
+
+  // ---------- すべてのコラム ----------
+  const all = [...columns].sort((a,b) => a.id - b.id);
+  allGrid.innerHTML = all.map(c => cardHTML(c)).join("");
+
+  // ---------- スクロールUI ----------
   const toTop = document.getElementById("toTop");
   const bar = document.getElementById("progress");
   const onScroll = () => {
@@ -250,6 +295,7 @@ a{color:inherit;text-decoration:none}
   window.addEventListener("scroll", onScroll, { passive:true });
   onScroll();
 
+  // ---------- reveal ----------
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const targets = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
@@ -257,6 +303,7 @@ a{color:inherit;text-decoration:none}
     }, { threshold: 0.12 });
     targets.forEach(el => io.observe(el));
   }
-})();</script>
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム①｜食品安全パートナーズ｜形だけのHACCPを卒業する</title>
+<meta name="description" content="中小食品企業向けに、JFS-Bを見据えたHACCPの作り方を図解で解説。形だけのHACCPを脱し、ハザード分析の妥当性と運用定着を支えるポイントを食品安全コンサルの視点で整理。ISO22000支援にも通じる考え方。">
+<meta name="keywords" content="JFS-B, HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援, ハザード分析, フローダイアグラム">
+<style>:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(27,37,51,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:42px;width:auto}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
+.menu a{opacity:.82;text-decoration:none}
+.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff;text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+
+.hero{
+  background:
+    radial-gradient(900px 420px at 26% 20%, rgba(255,255,255,.18), transparent 62%),
+    linear-gradient(180deg, rgba(10,18,32,.72), rgba(10,18,32,.30)),
+    url("./assets/img/hero.webp");
+  background-size:cover;background-position:center;
+  border-bottom:1px solid rgba(255,255,255,.18);
+  color:#fff;
+}
+.heroInner{padding:56px 0 40px}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:12px;letter-spacing:.04em;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 10px}
+.h1{margin:12px 0 10px;font-size:34px;line-height:1.25;font-weight:1000;text-shadow:0 3px 18px rgba(0,0,0,.35)}
+.lead{margin:0;color:rgba(255,255,255,.92);font-weight:850;line-height:1.9;max-width:860px}
+
+.section{padding:26px 0 54px}
+.article{
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:18px;
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+  overflow:hidden;
+}
+.articleInner{padding:22px}
+.toc{
+  background:rgba(238,241,246,.75);
+  border-top:1px solid rgba(27,37,51,.08);
+  border-bottom:1px solid rgba(27,37,51,.08);
+  padding:14px 22px;
+}
+.toc b{display:block;margin-bottom:8px}
+.toc a{display:block;color:var(--accent2);text-decoration:none;font-weight:900;font-size:13px;padding:6px 0}
+.toc a:hover{text-decoration:underline}
+
+h2{margin:24px 0 10px;font-size:20px}
+h3{margin:18px 0 8px;font-size:16px}
+p{margin:0 0 12px;color:#2a3647;font-weight:850;line-height:1.95;font-size:14px}
+ul{margin:0 0 12px;padding-left:18px;color:#2a3647;line-height:1.9;font-weight:850;font-size:14px}
+
+.figure{
+  border:1px solid rgba(27,37,51,.12);
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  margin:12px 0 16px;
+}
+.figureHeader{
+  padding:10px 12px;
+  background:rgba(238,241,246,.7);
+  border-bottom:1px solid rgba(27,37,51,.10);
+  font-weight:1000;
+  font-size:13px;
+}
+.figure pre{
+  margin:0;padding:12px;white-space:pre-wrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  font-size:12.5px;line-height:1.7;color:#1f2a3a;
+}
+.callout{
+  border-left:6px solid var(--accent);
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;
+  padding:14px;margin:14px 0;
+}
+.callout b{display:block;margin-bottom:6px}
+.note{color:var(--muted);font-size:12.5px;font-weight:850;line-height:1.9;margin:6px 0 0}
+
+.navLinks{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  margin-top:16px;padding-top:16px;border-top:1px solid rgba(27,37,51,.10);
+}
+.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+@media(max-width:980px){
+  .menu{display:none}
+  .h1{font-size:28px}
+  .navLinks{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+      </a>
+      <nav class="menu" aria-label="メニュー">
+        <a href="./column.html">コラム一覧</a>
+        <a href="./index.html#download">無料特典</a>
+        <a href="./index.html#consult">無料相談</a>
+      </nav>
+      <a class="btn primary" href="./index.html#download">無料特典</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="heroInner">
+      <div class="kicker">コラム①｜JFS-B / HACCP</div>
+      <h1 class="h1">形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</h1>
+      <p class="lead">
+        「書類は整ったが運用が続かない」「ハザード分析の根拠が薄い」「フローダイアグラムが現場と違う」——。<br>
+        中小食品企業で起きやすい課題を、食品安全コンサルの視点で整理します。ISO22000支援にも通じる“筋の通った作り方”を図解つきでまとめました。
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <a class="btn primary" href="./index.html#download">無料特典</a>
+        <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+        <a class="btn" href="./column.html">コラム一覧へ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="article">
+
+      <!-- 上部ナビ（一覧／前後） -->
+      <div class="toc">
+        <b>ナビゲーション</b>
+        <a href="./column.html">一覧へ戻る</a>
+        <a href="./column-2.html">次の記事：記録が続かないを解決する →</a>
+      </div>
+
+      <div class="toc">
+        <b>目次</b>
+        <a href="#c1s1">1. なぜHACCPが「形だけ」になるのか</a>
+        <a href="#c1s2">2. JFS-Bを見据えると、何が変わる？</a>
+        <a href="#c1s3">3. 図解：HACCP構築の全体像（迷子にならない地図）</a>
+        <a href="#c1s4">4. ハザード分析の“妥当性”を作る3つの根拠</a>
+        <a href="#c1s5">5. よくあるつまずきと、現場で回すコツ</a>
+        <a href="#c1s6">6. 無料特典（テンプレート）の使い方（最短ルート）</a>
+        <a href="#c1s7">7. まとめ</a>
+      </div>
+
+      <div class="articleInner">
+
+        <h2 id="c1s1">1. なぜHACCPが「形だけ」になるのか</h2>
+        <p>
+          HACCPが形だけになる原因は、能力不足ではなく「設計の順序」と「負荷設計」の問題であることが多いです。
+          特に中小食品企業では、担当者が兼務で、時間も人手も限られます。ここで“完璧な書類”を目指すと作成負荷が高くなり、
+          いつの間にか「更新されない」「現場と違う」「記録が残らない」状態になります。
+        </p>
+        <p>形だけになると、審査で痛いのは“書類の有無”よりも、次のギャップです。</p>
+        <ul>
+          <li>フローダイアグラムと現場の動線・設備・工程が一致していない</li>
+          <li>ハザード分析の根拠が説明できない（なぜその危害要因？なぜその管理？）</li>
+          <li>管理基準やモニタリングが、実際の運用と噛み合っていない</li>
+        </ul>
+        <div class="callout">
+          <b>ポイント</b>
+          <p style="margin:0">
+            「HACCP＝書類作成」ではありません。<br>
+            HACCPは、“危害要因を減らすための運用設計”です。書類はその設計図と証拠（記録）に過ぎません。
+          </p>
+        </div>
+
+        <h2 id="c1s2">2. JFS-Bを見据えると、何が変わる？</h2>
+        <p>
+          JFS-Bは、HACCPだけでなく、一般衛生管理（PRP）や管理の仕組み（教育、力量、点検、是正、文書化など）を含めて、
+          “食品安全の運用が継続できるか”を見ます。つまり、HACCPプラン単体の出来栄えよりも、運用の筋が通っているかが重要になります。
+        </p>
+        <p>
+          この考え方は、ISO22000支援でも同じです。ISO22000はFSMSとして、方針・役割・コミュニケーション・検証・改善など、
+          運用を回すための仕組み全体を求めます。JFS-Bを見据えると、「HACCPを作る」ではなく「HACCPが回る仕組みを作る」へ視点が変わります。
+        </p>
+
+        <h2 id="c1s3">3. 図解：HACCP構築の全体像（迷子にならない地図）</h2>
+        <p>全体像（何をどの順で作るか）を先に固定すると、迷子が減り、やり直しも少なくなります。</p>
+
+        <div class="figure">
+          <div class="figureHeader">図：HACCP構築の全体像（最短ルート）</div>
+          <pre>
+[前提] 一般衛生（PRP）を最低限“運用できる形”にする
+  └ 清掃・防虫・異物・温度・手洗い・アレルゲン等（現場の実態に合わせる）
+
+(1) チーム編成
+  └ 役割・権限・連絡ルートを明確にする
+
+(2) 製品説明
+  └ 原材料 / 製品特性 / 保存・流通 / 想定用途（喫食者含む）
+
+(3) 工程把握
+  └ フローダイアグラム作成 → 現場で確認して修正
+
+(4) ハザード分析
+  └ 抽出 → リスク評価 → 管理手段 → 妥当性の根拠
+
+(5) HACCPプラン
+  └ 基準・モニタリング・是正・検証・記録（現場で回る負荷へ）
+          </pre>
+        </div>
+
+        <h2 id="c1s4">4. ハザード分析の“妥当性”を作る3つの根拠</h2>
+        <p>
+          妥当性の鍵は「根拠を残す」ことです。難しい論文だけが根拠ではありません。中小食品企業でも実務として積み上げられます。
+        </p>
+
+        <h3>根拠①：工程・設備に基づく“現場根拠”</h3>
+        <p>加熱・冷却・充填・包装など、工程の実態（設備能力、測定方法、動線）から説明できる状態にします。</p>
+
+        <h3>根拠②：原材料・製品特性に基づく“製品根拠”</h3>
+        <p>pH、水分活性、保存条件、喫食者（想定用途）で重要度が変わるため、製品説明を薄くしないことが重要です。</p>
+
+        <h3>根拠③：規格・法令・社内実績に基づく“説明根拠”</h3>
+        <p>JFS-B要求意図、関連法令、取引先要求、過去の不良・クレーム、検査結果、温度記録などを根拠として紐づけます。</p>
+
+        <div class="figure">
+          <div class="figureHeader">図：ハザード分析を「説明できる」状態にする流れ</div>
+          <pre>
+危害要因（何が起きうる？）
+  ↓ どの工程で？（工程根拠）
+  ↓ 影響は？（重篤度）
+  ↓ 起きやすさは？（発生可能性）
+  ↓ どう管理する？（管理手段）
+  ↓ なぜそれで足りる？（妥当性の根拠）
+  ↓ 現場で回る？（監視・是正・検証・記録）
+          </pre>
+        </div>
+
+        <h2 id="c1s5">5. よくあるつまずきと、現場で回すコツ</h2>
+        <h3>つまずき①：フローダイアグラムが“机上”</h3>
+        <p>ラインを実際に歩き、原料入口→製品出口まで、人・モノ・器具の流れを確認し、図を修正するのが近道です。</p>
+
+        <h3>つまずき②：CCPが多すぎる（またはゼロ）</h3>
+        <p>CCPを増やすほど監視・記録が破綻しやすくなります。PRP/OPRP/CCPの役割分担を整理し、負荷が現実的か優先しましょう。</p>
+
+        <h3>つまずき③：記録が続かない</h3>
+        <p>記録は「現場の動作に合わせる」。測る場所の近くに記録、例外（NG）だけ書く欄など、小さな設計で継続率が上がります。</p>
+
+        <div class="callout">
+          <b>現場で回すための考え方</b>
+          <p style="margin:0">
+            最初から100点を狙うより、回る形で開始して、改善で強くする。<br>
+            これが中小食品企業のHACCP構築支援で最も現実的です。
+          </p>
+        </div>
+
+        <h2 id="c1s6">6. 無料特典（テンプレート）の使い方（最短ルート）</h2>
+        <ul>
+          <li><b>Step1：</b>チームと役割を明確化</li>
+          <li><b>Step2：</b>製品説明（特性・用途・保存）を言語化</li>
+          <li><b>Step3：</b>フロー作成→現場確認→修正</li>
+          <li><b>Step4：</b>ハザード分析に根拠を残す</li>
+          <li><b>Step5：</b>現場で回る負荷でプラン化</li>
+        </ul>
+
+        <h2 id="c1s7">7. まとめ</h2>
+        <p>
+          HACCPを形だけにしない鍵は、工程の現物確認、ハザード分析の根拠、そして運用負荷に合わせた設計です。
+          JFS-BやISO22000支援の視点で“仕組みとしての強さ”を意識すると、審査対応も楽になります。
+        </p>
+
+        <div class="callout">
+          <b>資料・相談の活用について（必要なときだけ）</b>
+          <p style="margin:0">
+            無料テンプレートで現状を整理してみて、判断に迷う箇所があれば、30分で一緒に整理できます。<br>
+            現状整理のみでもOKです。無理なご提案はいたしません。
+          </p>
+          <p class="note">※メール送信はトップの「無料相談」からご利用ください。</p>
+        </div>
+
+        <div class="navLinks">
+          <div style="font-weight:1000">関連記事ナビ</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="./column.html">一覧へ</a>
+            <a class="btn dark" href="./column-2.html">次の記事</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 食品安全パートナーズ</div>
+</footer>
+
+</body>
+</html>

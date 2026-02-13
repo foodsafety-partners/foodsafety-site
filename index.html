@@ -6,7 +6,8 @@
 <title>食品安全パートナーズ｜食品安全コンサルティング</title>
 <meta name="description" content="食品企業向けに、実践的で持続可能な食品安全支援サービスを提供。食品安全 コンサル、ISO22000 支援、HACCP 構築支援、FSSC22000 取得支援、JFS対応。">
 <meta name="keywords" content="食品安全 コンサル, ISO22000 支援, HACCP 構築支援, FSSC22000 取得支援, 中小食品企業, JFS">
-<style>:root{
+<style>
+:root{
   --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
   --accent:#e0872a; --accent2:#2c567a;
   --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
@@ -18,647 +19,117 @@ body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Robo
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--w);margin:0 auto;padding:0 18px}
 
-#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
-#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
-  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
-#toTop.show{opacity:1;transform:none}
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px}
+.btn{padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid var(--line);background:#fff}
+.btn.primary{background:var(--accent);color:#fff;border:none}
+.section{padding:60px 0}
+.sectionTitle{text-align:center;font-size:22px;margin-bottom:14px}
+.sectionLead{text-align:center;color:var(--muted);font-weight:850;font-size:14px}
 
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
-  border-bottom:1px solid rgba(27,37,51,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:42px;width:auto}
-.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
-.menu a{opacity:.82}
-.menu a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
-.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
-.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
-.btn.ghost{background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.20)}
-
-.hero{position:relative;min-height:650px;overflow:hidden;
-  background:
-    radial-gradient(1200px 560px at 28% 22%, rgba(255,255,255,.18), transparent 62%),
-    linear-gradient(180deg, rgba(10,18,32,.70), rgba(10,18,32,.28)),
-    url("./assets/img/hero.webp");
-  background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,.18)}
-@media (min-width: 981px){.hero{background-attachment:fixed}}
-.heroGrid{padding:84px 0 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
-.hKicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:12px;letter-spacing:.04em;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 10px}
-.hTitle{color:#fff;font-weight:1000;font-size:52px;line-height:1.04;margin:10px 0 10px;text-shadow:0 3px 18px rgba(0,0,0,.35)}
-.hSub{color:rgba(255,255,255,.92);font-weight:850;margin:0 0 16px;line-height:1.85}
-.hNote{color:rgba(255,255,255,.82);font-weight:850;font-size:13px;line-height:1.8;margin:12px 0 0}
-
-.photoCard{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
-.frame{border-radius:16px;overflow:hidden;border:6px solid rgba(255,255,255,.34);box-shadow:var(--shadow);background:#fff}
-.frame img{width:100%;height:100%;object-fit:cover;display:block}
-.big{min-height:350px}
-.stack{display:grid;grid-template-rows:1fr 1fr;gap:14px}
-.small{min-height:168px}
-
-.ctaRow{margin-top:-36px;position:relative;z-index:30}
-.ctas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;padding:14px;box-shadow:0 12px 26px rgba(24,32,48,.10)}
-.cta{
-  background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;
-  display:flex;gap:12px;align-items:center;justify-content:space-between;
-  cursor:pointer;
-}
-.cta:hover{border-color:rgba(44,86,122,.25)}
-.cta:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-.cta b{display:block;font-size:15px}
-.cta .sub{font-size:12px;color:var(--muted);font-weight:850}
-
-.section{padding:56px 0 66px}
-.sectionTitle{text-align:center;margin:0 0 14px;font-size:22px}
-.sectionLead{text-align:center;margin:0 auto 26px;color:var(--muted);font-weight:850;font-size:13px;max-width:860px;line-height:1.9}
-
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:16px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
-.card h3{margin:0 0 8px;font-size:16px}
-.card p{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.7}
-
-.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
-  background:#fff;color:#243042;font-weight:900;font-size:12px}
-
-.priceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.price{background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:18px;padding:18px;box-shadow:0 14px 26px rgba(24,32,48,.10)}
-.price .name{font-weight:1000;font-size:16px;margin:0 0 6px}
-.price .yen{font-weight:1000;font-size:26px;margin:0 0 10px}
-.price ul{margin:0;padding-left:18px;color:#2a3647;line-height:1.9}
-.price .meta{margin-top:10px;color:var(--muted);font-weight:850;font-size:12px}
-
-.callout{border-left:6px solid var(--accent);background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;padding:14px;margin:16px 0}
-.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
-
-/* Kindleセクション（あなたの既存のまま） */
-.kindleWrap{
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-}
-.kindleGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.book{
-  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:14px;
-  display:flex;gap:14px;align-items:center;
-}
-.book:hover{border-color:rgba(44,86,122,.25)}
-.book:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-.bookCover{
-  width:92px; aspect-ratio:2/3;
-  border-radius:12px; overflow:hidden;
-  border:1px solid rgba(27,37,51,.12);
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-  background:#fff;
-  flex:0 0 auto;
-}
-.bookCover img{width:100%;height:100%;object-fit:cover;display:block}
-.bookMeta{min-width:0}
-.bookTitle{font-weight:1000;margin:0 0 6px;line-height:1.55}
-.bookDesc{margin:0;color:var(--muted);font-weight:850;font-size:12.5px;line-height:1.75}
-.bookTagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.bookTag{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 10px;border-radius:999px;
-  border:1px solid rgba(27,37,51,.12);
-  background:#fff;color:#243042;
-  font-weight:900;font-size:12px;
-}
-.bookTag strong{font-weight:1000}
-.kindleNote{margin:12px 0 0;color:var(--muted);font-weight:850;font-size:12px;line-height:1.8}
-
-/* メール：アドレスは表示しない・アイコンボタン */
-.iconBtn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:11px 14px;border-radius:12px;
-  font-weight:1000;border:1px solid rgba(27,37,51,.12);
-  background:#fff;
-}
-.iconBtn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
-.iconBtn svg{width:18px;height:18px;flex:0 0 auto}
-.iconBtn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-
-/* ▼ 人気コラムTOP3（番号付き＋一覧＆無料特典導線） */
-.popWrap{
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-}
-.popGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.popCard{
-  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:14px;
-  display:flex;flex-direction:column;gap:10px;
-}
-.popCard:hover{border-color:rgba(44,86,122,.25)}
-.popCard:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-.popHead{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.rank{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:34px;height:34px;border-radius:12px;
-  background:rgba(44,86,122,.10);border:1px solid rgba(44,86,122,.18);
-  font-weight:1000;color:#243042;
-}
-.popThumb{
-  border-radius:14px;border:1px solid rgba(27,37,51,.10);
-  background:
-    radial-gradient(600px 220px at 18% 15%, rgba(224,135,42,.20), transparent 55%),
-    radial-gradient(520px 220px at 80% 75%, rgba(44,86,122,.18), transparent 60%),
-    linear-gradient(180deg, rgba(238,241,246,.9), rgba(255,255,255,1));
-  padding:14px;min-height:126px;
-}
-.popTitle{margin:0;font-weight:1000;line-height:1.55}
-.popDesc{margin:0;color:var(--muted);font-weight:850;font-size:12.5px;line-height:1.8}
-.popTags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
-.popTag{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 10px;border-radius:999px;
-  border:1px solid rgba(27,37,51,.12);
-  background:#fff;color:#243042;
-  font-weight:900;font-size:12px;
-}
-.popFoot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:10px}
-.popLink{color:var(--accent2);font-weight:1000;text-decoration:underline}
-/* ▲ 人気コラムTOP3 */
-
-/* ▼ 無料特典（download）導線：index用 */
-.downloadWrap{
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-  margin-top:14px;
-}
-.downloadCard{
-  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:16px;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
-}
-.downloadCard:hover{border-color:rgba(44,86,122,.25)}
-.downloadTitle{font-weight:1000;margin:0 0 6px}
-.downloadDesc{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.85}
-.downloadBadges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 10px;border-radius:999px;
-  border:1px solid rgba(27,37,51,.12);background:#fff;color:#243042;
-  font-weight:900;font-size:12px;
-}
-.badge strong{font-weight:1000}
-/* ▲ 無料特典（download）導線 */
-
-@media (prefers-reduced-motion:no-preference){
-  .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
-  .reveal.show{opacity:1;transform:none}
-  .hoverlift{transition:transform .18s ease, box-shadow .18s ease}
-  .hoverlift:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
-}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.kindleGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.book{display:flex;gap:14px}
+.book img{width:100px;border-radius:12px}
+.footer{padding:20px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
 @media(max-width:980px){
-  .heroGrid{grid-template-columns:1fr;padding-top:36px}
-  .ctas{grid-template-columns:1fr}
-  .grid3,.grid2,.priceGrid{grid-template-columns:1fr}
-  .kindleGrid{grid-template-columns:1fr}
-  .popGrid{grid-template-columns:1fr}
-  .menu{display:none}
-  .hero{background-attachment:scroll}
-  .hTitle{font-size:44px}
-}</style>
+.kindleGrid{grid-template-columns:1fr}
+.menu{display:none}
+}
+</style>
 </head>
 <body>
-<div id="progress"></div>
-<a id="toTop" href="./index.html#" aria-label="ページ先頭へ">↑</a>
 
 <header class="header">
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
-        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
-      </a>
-      <nav class="menu" aria-label="メニュー">
-        <a href="./index.html#about">理念</a>
-        <a href="./index.html#values">バリュー</a>
-        <a href="./index.html#services">サービス</a>
-        <a href="./index.html#columns">コラム</a>
-        <a href="./index.html#download">無料特典</a>
-        <a href="./index.html#pricing">料金</a>
-        <a href="./column.html">コラム一覧</a>
-        <a href="./index.html#books">書籍</a>
-        <a href="./index.html#contact">お問い合わせ</a>
-      </nav>
-      <a class="btn primary" href="./index.html#consult">無料相談</a>
-    </div>
-  </div>
+<div class="container nav">
+<a href="./index.html"><strong>食品安全パートナーズ</strong></a>
+<nav class="menu">
+<a href="#books">書籍</a>
+<a href="#consult">無料相談</a>
+<a href="./column.html">コラム</a>
+</nav>
+<a class="btn primary" href="#consult">無料相談</a>
+</div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div class="heroGrid">
-      <div class="reveal">
-        <div class="hKicker">ブランドメッセージ</div>
-        <h1 class="hTitle">食品安全を<br>すべての企業へ</h1>
-        <p class="hSub">
-          食品安全はみんなのもの。<br>
-          私たちは<strong>食品企業</strong>に寄り添い、理想論ではなく<strong>実務で回る仕組み</strong>を一緒に作ります。
-        </p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="./index.html#consult">30分オンライン無料相談</a>
-          <a class="btn ghost" href="./index.html#pricing">料金を見る</a>
-          <a class="btn" href="./column.html">コラム一覧</a>
-        </div>
-        <p class="hNote">
-          ※過度に「立派な文書」を目指すのではなく、現場の人が継続できる設計を重視します。<br>
-          食品安全 コンサルとして、HACCP 構築 / JFS規格 / ISO22000 / FSSC22000 取得支援 に対応します。
-        </p>
-      </div>
+<!-- 書籍紹介 -->
+<section class="section" id="books">
+<div class="container">
+<h2 class="sectionTitle">Kindleで学ぶ（書籍紹介）</h2>
+<p class="sectionLead">現場で回る食品安全の仕組みを解説しています。</p>
 
-      <div class="photoCard reveal">
-        <div class="frame big hoverlift"><img src="./assets/img/photo1.webp" alt="食品工場の衛生管理（写真）"></div>
-        <div class="stack">
-          <div class="frame small hoverlift"><img src="./assets/img/photo2.webp" alt="温度管理（写真）"></div>
-          <div class="frame small hoverlift"><img src="./assets/img/photo3.webp" alt="教育・点検（写真）"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="kindleGrid">
+
+<a class="card book" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank">
+<img src="./assets/img/kindle-FSMS.jpg">
+<div>
+<strong>食品安全で会社を強くする（食品安全マネジメントシステム編）</strong>
+<p>JFS-Bを軸に食品安全の全体像を整理。</p>
+</div>
+</a>
+
+<a class="card book" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank">
+<img src="./assets/img/kindle-HACCP.jpg">
+<div>
+<strong>食品安全で会社を強くする（HACCP編）</strong>
+<p>監査員目線でHACCPの本質を解説。</p>
+</div>
+</a>
+
+</div>
+</div>
 </section>
 
-<section class="ctaRow">
-  <div class="container">
-    <div class="ctas">
+<!-- Kindle Unlimited 導線 -->
+<section class="section" id="kindleunlimited">
+<div class="container">
+<div class="card">
+<h2 class="sectionTitle">Kindle Unlimitedなら無料で読めます</h2>
+<p class="sectionLead">
+Amazonの30日間無料体験を利用すれば、書籍を実質0円で読むことができます。
+</p>
 
-      <a class="cta hoverlift reveal" href="./column.html" aria-label="コラムで学ぶ（食品安全の考え方）">
-        <div><b>コラムで学ぶ</b><div class="sub">食品安全の考え方</div></div>
-        <span class="btn dark">読む</span>
-      </a>
+<ul style="line-height:1.9;font-weight:850">
+<li>30日間無料</li>
+<li>期間内解約で費用発生なし</li>
+<li>スマホ・PC対応</li>
+</ul>
 
-      <a class="cta hoverlift reveal" href="./index.html#books" aria-label="Kindleで学ぶ（書籍紹介へ）">
-        <div><b>Kindleで学ぶ</b><div class="sub">監査員目線を知る</div></div>
-        <span class="btn dark">書籍</span>
-      </a>
+<div style="margin-top:18px">
+<a class="btn primary"
+href="https://amzn.to/4qEGAjn"
+target="_blank"
+rel="noopener">
+今すぐ無料で読む
+</a>
+</div>
 
-      <a class="cta hoverlift reveal" href="./index.html#consult" aria-label="まずはご相談（30分無料で現状整理）">
-        <div><b>まずはご相談</b><div class="sub">30分無料で現状整理</div></div>
-        <span class="btn dark">相談</span>
-      </a>
+<p style="margin-top:12px;font-size:12px;color:var(--muted)">
+※無料体験終了後は月額料金が発生します。期間内解約可能です。
+</p>
 
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
-<!-- ▼ 無料特典（ダウンロード）アピール -->
-<section class="section" id="download" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">無料特典（テンプレート配布）</h2>
-    <p class="sectionLead reveal">
-      JFS-B適合を見据えた「HACCP構築テンプレート（Excel）」を無料でご提供します。<br>
-      中小食品企業でも“現場で続く形”で整理できる構成です。
-    </p>
-
-    <div class="downloadWrap reveal">
-      <div class="downloadCard hoverlift">
-        <div style="min-width:260px;flex:1 1 560px">
-          <p class="downloadTitle">JFS-B適合を見据えた HACCP構築テンプレート（Excel）</p>
-          <p class="downloadDesc">
-            HACCP1〜12（チーム表／製品説明書／フローダイアグラム／ハザード分析／HACCPプラン）を一式で整理。<br>
-            受け取り案内に加え、食品安全の運用に役立つ情報やサービスのご案内をお届けする場合があります（配信停止はいつでも可能です）。
-          </p>
-          <div class="downloadBadges" aria-label="特典のポイント">
-            <span class="badge"><strong>内容</strong>：HACCP1〜12</span>
-            <span class="badge"><strong>対象</strong>：JFS-B / HACCP</span>
-            <span class="badge"><strong>用途</strong>：構築の全体像</span>
-            <span class="badge"><strong>形式</strong>：Excel</span>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-          <a class="btn primary" href="./download.html" aria-label="無料特典ダウンロードページへ">無料で受け取る</a>
-          <a class="btn dark" href="./index.html#consult" aria-label="30分無料相談へ">無料相談</a>
-          <a class="btn" href="./column.html" aria-label="コラム一覧へ">コラム</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ▲ 無料特典（ダウンロード）アピール -->
-
-<!-- ▼ 人気コラム TOP3（アクセスが多い順：手動で並べ替え運用） -->
-<section class="section" id="columns" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">人気コラム（TOP3）</h2>
-    <p class="sectionLead reveal">
-      中小食品企業でも「現場で続く」食品安全へ。<br>
-      JFS-B / HACCP構築支援 / ISO22000支援の観点から、実務で効くポイントを整理しています。
-    </p>
-
-    <div class="popWrap reveal">
-      <div class="popGrid">
-
-        <!-- 1位 -->
-        <a class="popCard hoverlift" href="./column-1.html" aria-label="人気コラム1位：形だけのHACCPを卒業する">
-          <div class="popHead">
-            <span class="rank">1</span>
-            <span class="btn dark">読む</span>
-          </div>
-          <div class="popThumb" aria-hidden="true">
-            <p class="popTitle">形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</p>
-          </div>
-          <p class="popDesc">工程把握／ハザード分析の根拠／運用負荷の設計。審査前に慌てないための“筋の通った作り方”を図解で整理。</p>
-          <div class="popTags">
-            <span class="popTag">JFS-B</span><span class="popTag">HACCP構築支援</span><span class="popTag">ハザード分析</span>
-          </div>
-        </a>
-
-        <!-- 2位 -->
-        <a class="popCard hoverlift" href="./column-2.html" aria-label="人気コラム2位：記録が続かないを解決する">
-          <div class="popHead">
-            <span class="rank">2</span>
-            <span class="btn dark">読む</span>
-          </div>
-          <div class="popThumb" aria-hidden="true">
-            <p class="popTitle">HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ</p>
-          </div>
-          <p class="popDesc">記録・是正・教育を“努力”から“続く設計”へ。少人数でも回る仕組みの骨格を図解で解説。</p>
-          <div class="popTags">
-            <span class="popTag">運用</span><span class="popTag">ISO22000支援</span><span class="popTag">食品安全コンサル</span>
-          </div>
-        </a>
-
-        <!-- 3位 -->
-        <a class="popCard hoverlift" href="./column-3.html" aria-label="人気コラム3位：審査で効く整え方">
-          <div class="popHead">
-            <span class="rank">3</span>
-            <span class="btn dark">読む</span>
-          </div>
-          <div class="popThumb" aria-hidden="true">
-            <p class="popTitle">審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット</p>
-          </div>
-          <p class="popDesc">“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を図解で整理します。</p>
-          <div class="popTags">
-            <span class="popTag">HACCP</span><span class="popTag">JFS-B</span><span class="popTag">検証</span>
-          </div>
-        </a>
-
-      </div>
-
-      <div class="popFoot">
-        <a class="popLink" href="./column.html">すべてのコラムを見る →</a>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
-          <a class="btn" href="./index.html#consult">無料相談</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ▲ 人気コラム TOP3 -->
-
-<section class="section" id="about">
-  <div class="container">
-    <h2 class="sectionTitle reveal">ミッション / ビジョン</h2>
-    <p class="sectionLead reveal">
-      私たちは、誠実に、実務に根差した支援を行います。
-      お客様の自立性を大切にし、現実的な制約（人員・時間・運用負荷）を踏まえて
-      「現場で続く食品安全」を一緒に作ります。
-    </p>
-
-    <div class="grid2">
-      <div class="card reveal hoverlift">
-        <h3>ミッション</h3>
-        <p>すべての食品関連企業に、持続可能で実践的な食品安全の仕組みを届ける。</p>
-      </div>
-      <div class="card reveal hoverlift">
-        <h3>ビジョン</h3>
-        <p>食品企業が、自信を持って食品安全を語れる社会を実現する。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="values" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">バリュー</h2>
-    <p class="sectionLead reveal">
-      「やるべき理由を明確に」<br>
-      仕組みの設計だけでなく、日常業務への落とし込みと定着を支援します。
-    </p>
-
-    <div class="grid3">
-      <div class="card reveal hoverlift">
-        <h3>実践主義</h3>
-        <p>理論ではなく、現場で回る仕組みを構築します。文書が目的にならないよう、運用と記録が自然に残る設計を重視します。</p>
-      </div>
-      <div class="card reveal hoverlift">
-        <h3>自立性</h3>
-        <p>企業規模によって支援の方法を柔軟にします。中小企業から大企業まで、豊富な経験をもとに専門家としての支援を提供します。</p>
-      </div>
-      <div class="card reveal hoverlift">
-        <h3>持続可能性</h3>
-        <p>取得して終わりではなく、継続運用できる体制を支援します。担当者が変わっても崩れにくい仕組みを目指します。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="services" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">サービス内容（対応規格）</h2>
-    <p class="sectionLead reveal">
-      対象：HACCP / JFS / ISO22000 / FSSC22000。<br>
-      目的（審査対応・取引要件・現場改善）と現状に合わせて、無理のない順序で整えます。
-    </p>
-
-    <div class="grid2">
-      <div class="card reveal hoverlift">
-        <h3>HACCP 構築支援</h3>
-        <p>危害要因分析から管理手段の設計まで、現場で運用し続けられるHACCPを一緒に作ります。</p>
-      </div>
-      <div class="card reveal hoverlift">
-        <h3>JFS 支援</h3>
-        <p>国内食品企業に導入しやすい枠組み。段階的にレベルアップできる設計と、運用定着を支援します。</p>
-      </div>
-      <div class="card reveal hoverlift">
-        <h3>ISO22000 支援</h3>
-        <p>食品安全マネジメントシステム（FSMS）を、経営と現場が無理なくつながる形で構築・運用できるよう支援します。</p>
-      </div>
-      <div class="card reveal hoverlift">
-        <h3>FSSC22000 取得支援</h3>
-        <p>ISO22000を土台に追加要求を含むスキームに対応。審査観点・取引要件を踏まえ、現実的な導入を支援します。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ▼ Kindleで学ぶ（書籍紹介） -->
-<section class="section" id="books" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">Kindleで学ぶ（書籍紹介）</h2>
-    <p class="sectionLead reveal">
-      現場で「そのまま使える」監査ポイントと考え方を、短時間で整理できます。<br>
-      表紙をクリックするとAmazonへ移動します（別タブで開きます）。
-    </p>
-
-    <div class="kindleWrap reveal">
-      <div class="kindleGrid">
-
-        <!-- FSMS編 → Amazonリンク②（B0DS1Y43H6） -->
-        <a class="book hoverlift" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer" aria-label="書籍：食品安全で会社を強くする（食品安全マネジメントシステム編）（Amazonへ）">
-          <div class="bookCover" aria-hidden="true">
-            <img src="./assets/img/kindle-FSMS.jpg" alt="書籍表紙：食品安全で会社を強くする（食品安全マネジメントシステム編）">
-          </div>
-          <div class="bookMeta">
-            <p class="bookTitle">食品安全で会社を強くする: ～現役監査員が教える監査ポイント～ 食品安全の仕組み（食品安全マネジメントシステム）編 食品安全規格（JFS-B）徹底解説</p>
-            <p class="bookDesc">食品安全の仕組みを「監査で見られる観点」から整理。JFS-Bの要求意図と運用の要点を、現場で回る形に落とし込みます。</p>
-            <div class="bookTagRow">
-              <span class="bookTag"><strong>対象</strong>：FSMS / JFS-B</span>
-              <span class="bookTag"><strong>用途</strong>：仕組み作り</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- HACCP編 → Amazonリンク①（B0GMWP6JP7） -->
-        <a class="book hoverlift" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer" aria-label="書籍：食品安全で会社を強くする（HACCP編）（Amazonへ）">
-          <div class="bookCover" aria-hidden="true">
-            <img src="./assets/img/kindle-HACCP.jpg" alt="書籍表紙：食品安全で会社を強くする（HACCP編）">
-          </div>
-          <div class="bookMeta">
-            <p class="bookTitle">食品安全で会社を強くする ～現役監査員が教える監査ポイント～ HACCP編</p>
-            <p class="bookDesc">監査員の視点で、HACCPの「見られるポイント」「落ちやすいポイント」を整理。文書よりも、現場で回る設計にフォーカス。</p>
-            <div class="bookTagRow">
-              <span class="bookTag"><strong>対象</strong>：HACCP（JFS-B）</span>
-              <span class="bookTag"><strong>用途</strong>：監査対策</span>
-            </div>
-          </div>
-        </a>
-
-      </div>
-
-      <p class="kindleNote">
-        ※書籍リンクはAmazonへ遷移します。外部サイトのため、内容・価格・掲載情報はAmazon側で変更される場合があります。
-      </p>
-    </div>
-  </div>
-</section>
-<!-- ▲ Kindleで学ぶ（書籍紹介） -->
-
-<section class="section" id="pricing" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">料金</h2>
-    <p class="sectionLead reveal">
-      まずは現状に合わせて最小構成からご提案します。<br>
-      <span class="tag">※個別の支援プランあり</span>
-    </p>
-
-    <div class="priceGrid">
-      <div class="price reveal hoverlift">
-        <p class="name">食品安全体制診断</p>
-        <p class="yen">10万円（税込）</p>
-        <ul>
-          <li>書類レビュー</li>
-          <li>ヒアリング</li>
-          <li>改善提案書提出</li>
-        </ul>
-        <div class="meta">まずは現状を整理して改善方針を明確にしたい企業様向け</div>
-      </div>
-
-      <div class="price reveal hoverlift">
-        <p class="name">3か月改善支援プログラム</p>
-        <p class="yen">45万円（税込）</p>
-        <ul>
-          <li>体制再構築</li>
-          <li>文書整備</li>
-          <li>運用定着支援</li>
-        </ul>
-        <div class="meta">短期間で基盤を整え、次の審査・取引要件に備えたい企業様向け</div>
-      </div>
-
-      <div class="price reveal hoverlift">
-        <p class="name">顧問契約</p>
-        <p class="yen">月額15万円（税込）</p>
-        <ul>
-          <li>継続改善支援</li>
-          <li>内部監査支援</li>
-          <li>審査対応サポート</li>
-        </ul>
-        <div class="meta">食品安全を経営基盤として継続強化したい企業様向け</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="consult" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">30分オンライン無料相談</h2>
-    <p class="sectionLead reveal">
-      いきなり契約のご提案はいたしません。<br>
-      まずは現状整理から始めましょう。課題、目標、審査予定などを伺い、最適な進め方を一緒に整理いたします。
-    </p>
-
-    <div class="callout reveal hoverlift" style="max-width:920px;margin:0 auto">
-      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
-        <div style="font-weight:1000">メールでご連絡</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="iconBtn primary" href="mailto:foodsafety.partners@gmail.com?subject=無料相談（30分）申込み&body=【会社名】%0D%0A【ご担当者名】%0D%0A【相談したい内容】%0D%0A" aria-label="メールで無料相談を申し込む">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path fill="currentColor" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.63 4.41c.1.08.24.12.37.12s.27-.04.37-.12L18.2 6H6.2Zm12.8 2.13-4.93 3.86c-.6.47-1.47.47-2.07 0L7.1 8.13 6 7.28v10.22c0 .83.67 1.5 1.5 1.5h11c.83 0 1.5-.67 1.5-1.5V7.28l-1 .85Z"/>
-            </svg>
-            <span>無料相談を申し込む</span>
-          </a>
-          <a class="btn" href="./column.html">まずコラムを読む</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contact" style="padding-top:10px">
-  <div class="container">
-    <h2 class="sectionTitle reveal">お問い合わせ</h2>
-    <p class="sectionLead reveal">
-      食品安全は、企業の信頼を支える基盤です。<br>
-      「現場で続く仕組み」を一緒に作ることを大切にし、食品安全 コンサルとして実務に根差した支援を行います。<br>
-      ご相談内容が固まっていなくても問題ございません。まずはお気軽にご連絡ください。
-    </p>
-
-    <div class="card reveal hoverlift" style="max-width:920px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
-      <div style="font-weight:1000">メールでお問い合わせ</div>
-      <a class="iconBtn primary" href="mailto:foodsafety.partners@gmail.com?subject=お問い合わせ&body=【会社名】%0D%0A【ご担当者名】%0D%0A【ご相談内容】%0D%0A" aria-label="メールで問い合わせ">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.63 4.41c.1.08.24.12.37.12s.27-.04.37-.12L18.2 6H6.2Zm12.8 2.13-4.93 3.86c-.6.47-1.47.47-2.07 0L7.1 8.13 6 7.28v10.22c0 .83.67 1.5 1.5 1.5h11c.83 0 1.5-.67 1.5-1.5V7.28l-1 .85Z"/>
-        </svg>
-        <span>メールを作成</span>
-      </a>
-    </div>
-  </div>
+<!-- 無料相談 -->
+<section class="section" id="consult">
+<div class="container">
+<h2 class="sectionTitle">30分オンライン無料相談</h2>
+<p class="sectionLead">
+食品安全の仕組みを整えたい方へ。まずは現状整理から始めましょう。
+</p>
+<a class="btn primary" href="mailto:foodsafety.partners@gmail.com">
+無料相談を申し込む
+</a>
+</div>
 </section>
 
 <footer class="footer">
-  <div class="container">© 食品安全パートナーズ</div>
+<p>© 食品安全パートナーズ</p>
+<p>※当サイトはAmazonアソシエイト・プログラムの参加者です。</p>
 </footer>
 
-<script>(() => {
-  const toTop = document.getElementById("toTop");
-  const bar = document.getElementById("progress");
-  const onScroll = () => {
-    const d = document.documentElement;
-    const max = (d.scrollHeight - d.clientHeight) || 1;
-    bar.style.width = (d.scrollTop / max) * 100 + "%";
-    toTop.classList.toggle("show", d.scrollTop > 600);
-  };
-  window.addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
-
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const targets = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.12 });
-    targets.forEach(el => io.observe(el));
-  }
-})();</script>
 </body>
 </html>

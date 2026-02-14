@@ -8,11 +8,15 @@
 <meta name="keywords" content="JFS-B, JFS-B審査, HACCP構築, ハザード分析, 食品安全コンサル, 中小食品企業">
 
 <style>
+/* ============================================================
+   [EDIT MARKER #CSS] column-3 と同じ 1カラム記事デザイン（インライン版）
+   ※ 外部CSS（article.css）は読み込まない：2カラム/目次の原因になりやすい
+   ============================================================ */
 :root{
   --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
   --accent:#e0872a; --accent2:#2c567a;
   --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
-  --w:1080px;
+  --w:980px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -38,44 +42,32 @@ a{color:inherit;text-decoration:none}
 .btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
 .btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
 
+.section{padding:44px 0 66px}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:18px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
+  background:#fff;color:#243042;font-weight:900;font-size:12px}
+
 .articleHead{
   background:
     radial-gradient(1200px 520px at 25% 20%, rgba(224,135,42,.18), transparent 55%),
     radial-gradient(1000px 520px at 80% 80%, rgba(44,86,122,.16), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.86));
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.92));
   border-bottom:1px solid rgba(27,37,51,.08);
 }
 .breadcrumbs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-weight:850;font-size:12px;padding:14px 0 0}
 .breadcrumbs a{text-decoration:underline}
-.h1{margin:10px 0 0;font-size:34px;line-height:1.25;font-weight:1000}
-.metaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 0;color:var(--muted);font-weight:850;font-size:12px}
+.h1{margin:10px 0 0;font-size:32px;line-height:1.25;font-weight:1000}
+.metaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0 0;color:var(--muted);font-weight:850;font-size:12px}
 .metaDot{opacity:.7}
-.tag{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
-  background:#fff;color:#243042;font-weight:900;font-size:12px}
-
-.section{padding:22px 0 66px}
-.grid{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:start}
-@media(max-width:980px){
-  .grid{grid-template-columns:1fr}
-  .menu{display:none}
-  .h1{font-size:28px}
-}
-
-.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:18px;padding:18px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
-.toc{position:sticky;top:86px}
-.toc h3{margin:0 0 10px;font-size:14px}
-.toc a{display:block;padding:9px 10px;border-radius:12px;border:1px solid rgba(27,37,51,.10);background:#fff;margin:8px 0;color:#243042;font-weight:900;font-size:13px;opacity:.92}
-.toc a:hover{opacity:1;border-color:rgba(44,86,122,.25)}
 
 .prose{line-height:2.0;color:#273244;font-weight:850}
-.prose h2{margin:34px 0 10px;font-size:20px;line-height:1.55;color:var(--ink);scroll-margin-top:110px}
+.prose h2{margin:32px 0 8px;font-size:20px;line-height:1.5;color:var(--ink)}
 .prose h3{margin:22px 0 6px;font-size:16px;line-height:1.6;color:var(--ink)}
 .prose p{margin:12px 0}
 .prose ul{margin:10px 0 10px 18px;padding:0}
 .prose li{margin:7px 0}
 .k{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(224,135,42,.10);border:1px solid rgba(224,135,42,.22);font-weight:1000}
-.small{margin:10px 0 0;color:var(--muted);font-weight:850;font-size:12.5px;line-height:1.85}
-.hr{height:1px;background:rgba(27,37,51,.10);margin:18px 0}
+.note{margin:14px 0;color:var(--muted);font-size:12.5px;line-height:1.85}
 
 .callout{
   border-left:6px solid var(--accent);
@@ -88,7 +80,7 @@ a{color:inherit;text-decoration:none}
   padding:16px;
   box-shadow:0 14px 26px rgba(24,32,48,.10);
 }
-.ctaGrid{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.ctaGrid{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 
 .pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px}
 .pager a{font-weight:1000;color:var(--accent2);text-decoration:underline}
@@ -98,6 +90,10 @@ a{color:inherit;text-decoration:none}
 @media (prefers-reduced-motion:no-preference){
   .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
   .reveal.show{opacity:1;transform:none}
+}
+@media(max-width:980px){
+  .menu{display:none}
+  .h1{font-size:28px}
 }
 </style>
 </head>
@@ -112,13 +108,18 @@ a{color:inherit;text-decoration:none}
       <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
         <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
       </a>
+
+      <!-- ============================================================
+           [EDIT MARKER #NAV] ナビ（必要ならリンク先を統一）
+           ============================================================ -->
       <nav class="menu" aria-label="メニュー">
         <a href="./index.html#services">サービス</a>
-        <a href="./index.html#download">無料特典</a>
+        <a href="./download.html">無料特典</a>
         <a href="./index.html#books">書籍</a>
         <a href="./index.html#consult">無料相談</a>
         <a href="./column.html">コラム一覧</a>
       </nav>
+
       <a class="btn primary" href="./download.html">無料特典</a>
     </div>
   </div>
@@ -148,216 +149,163 @@ a{color:inherit;text-decoration:none}
 
 <section class="section">
   <div class="container">
-    <div class="grid">
 
-      <!-- ============================================================
-           [EDIT MARKER #TOC] 目次（見出しを増減したらここも合わせて修正）
-           ============================================================ -->
-      <aside class="toc reveal" aria-label="目次">
-        <div class="card">
-          <h3>目次</h3>
-          <a href="#s0">導入：何を見られるのか分からない不安</a>
-          <a href="#s1">ポイント① フローダイアグラムの整合性</a>
-          <a href="#s2">ポイント② ハザード分析の妥当性</a>
-          <a href="#s3">ポイント③ 設備・備品の管理</a>
-          <a href="#s4">ポイント④ 記録の継続性</a>
-          <a href="#s5">ポイント⑤ 清掃・衛生状態</a>
-          <a href="#s6">中小食品企業がつまずきやすい理由</a>
-          <a href="#s7">今からできる対策</a>
-          <a href="#s8">無料テンプレートのご案内</a>
-          <a href="#s9">まとめ</a>
+    <!-- ============================================================
+         [EDIT MARKER #BODY] 本文（ここが消えると“目次だけ”になります）
+         ============================================================ -->
+    <div class="card reveal">
+      <div class="prose">
+
+        <p>
+          JFS-B審査を前に、「何を見られるのか分からない」という不安を抱えていませんか。<br>
+          特に中小食品企業では、人手や時間に限りがある中でHACCP構築を進めるため、準備が本当に足りているのか分からないという声を多く聞きます。
+        </p>
+
+        <p>
+          JFS-B審査は、単に書類がそろっているかを見る場ではありません。<br>
+          <span class="k">「仕組みが実際に機能しているか」</span>が確認されます。<br>
+          本記事では、食品安全コンサルとして現場を支援する中で見えてきた、JFS-B審査で実際に見られる5つのポイントを整理します。
+        </p>
+
+        <h2>1. フローダイアグラムの整合性</h2>
+        <p>
+          まず確認されるのが、フローダイアグラムと実際の製造工程が一致しているかどうかです。<br>
+          書類上は正しく見えても、現場と違っているケースは少なくありません。
+        </p>
+        <p>
+          特に中小食品企業では、工程変更があっても図の更新が後回しになることがあります。<br>
+          JFS-B審査では、現場を歩きながら図と照合されるため、差異はすぐに分かります。
+        </p>
+        <p>
+          HACCP構築の第一歩は、現場と一致したフローダイアグラムの整備です。
+        </p>
+
+        <h2>2. ハザード分析の妥当性</h2>
+        <p>
+          次に重要なのがハザード分析です。<br>
+          単に危害要因を書き出しているだけでは不十分で、「なぜその管理手段なのか」という根拠が問われます。
+        </p>
+        <p>特に、</p>
+        <ul>
+          <li>重要管理点（CCP）の設定根拠</li>
+          <li>管理基準の妥当性</li>
+          <li>OPRPとの区分</li>
+        </ul>
+        <p>
+          これらの説明が曖昧だと、審査で指摘を受けやすくなります。<br>
+          JFS-B審査では、ハザード分析の考え方そのものが理解されているかが見られています。
+        </p>
+
+        <h2>3. 製造現場設備・備品の管理</h2>
+        <p>
+          書類だけでなく、設備や備品の管理状況も確認されます。
+        </p>
+        <ul>
+          <li>温度計の校正</li>
+          <li>異物混入対策</li>
+          <li>設備の劣化管理</li>
+        </ul>
+        <p>
+          これらは形式ではなく、日常管理として実施されているかが重要です。<br>
+          HACCP構築は書類作成ではなく、運用設計であることがここで問われます。
+        </p>
+
+        <h2>4. 記録の継続性</h2>
+        <p>
+          「記録はありますか？」ではなく、「続いていますか？」がポイントです。
+        </p>
+        <p>
+          記録が途中で止まっていたり、まとめて記入されていたりすると、仕組みが機能していないと判断されます。
+        </p>
+        <p>
+          中小食品企業では人手不足により記録が負担になることがあります。<br>
+          だからこそ、無理のない設計が重要です。
+        </p>
+
+        <h2>5. 製造現場の清掃・衛生状態</h2>
+        <p>
+          最後に見られるのは、現場の基本的な衛生状態です。
+        </p>
+        <p>
+          清掃が徹底されているか、整理整頓が保たれているか。<br>
+          これは特別な技術ではなく、日々の習慣です。
+        </p>
+        <p>
+          JFS-B審査では、「この会社は食品安全を大切にしているか」という姿勢も見られています。
+        </p>
+
+        <h2>中小食品企業がつまずきやすい理由</h2>
+        <p>
+          多くの中小食品企業が審査前に不安を抱える理由は、主に次の3つです。
+        </p>
+        <ul>
+          <li>人手不足で専任担当がいない</li>
+          <li>業務が属人化している</li>
+          <li>形式重視で実務に落ちていない</li>
+        </ul>
+        <p>
+          これは能力の問題ではなく、体制の問題です。<br>
+          だからこそ、食品安全コンサルの役割は「完璧な書類」を作ることではなく、「続く仕組み」を設計することにあります。
+        </p>
+
+        <h2>今からできる対策</h2>
+        <p>審査前にまず確認すべきは、次の書類です。</p>
+        <ul>
+          <li>フローダイアグラム</li>
+          <li>ハザード分析シート</li>
+          <li>HACCPプラン</li>
+          <li>記録様式</li>
+        </ul>
+        <p>
+          すべてを一度に完璧にしようとする必要はありません。<br>
+          優先順位は、「リスクが高い工程」から見直すことです。
+        </p>
+        <p>
+          JFS-Bは特別な企業だけのものではありません。<br>
+          中小食品企業でも、段階的に整えていくことができます。
+        </p>
+
+        <h2>無料テンプレートのご案内</h2>
+        <p>
+          具体的な様式例や整理の仕方については、<br>
+          <span class="k">JFS-B適合を見据えたHACCP構築テンプレート（Excel）</span>を無料配布しています。
+        </p>
+        <p>
+          ハザード分析シートやHACCPプランの基本構造を確認したい方は、実務の参考としてご活用ください。
+        </p>
+
+        <div class="ctaCard">
+          <p style="margin:0 0 6px;font-weight:1000">無料テンプレート（Excel）</p>
+          <p style="margin:0">JFS-B審査前に「まず何を整えるか」を、様式例で確認できます。</p>
+          <div class="ctaGrid">
+            <a class="btn primary" href="./download.html">無料テンプレートを受け取る</a>
+            <a class="btn" href="./index.html#consult">30分無料相談</a>
+          </div>
+          <p class="note" style="margin-bottom:0">
+            ※必要な方にだけ、関連サービスのご案内を差し上げます（状況に合わない提案は行いません）。
+          </p>
         </div>
-      </aside>
 
-      <!-- ============================================================
-           [EDIT MARKER #BODY] 本文（ここが無いと「目次だけ」になります）
-           ============================================================ -->
-      <article class="card reveal">
-        <div class="prose">
+        <h2>まとめ</h2>
+        <p>
+          JFS-B審査は、完璧さを競う場ではありません。<br>
+          仕組みが理解され、現場で機能しているかを確認する場です。
+        </p>
+        <p>
+          食品安全は、特別な企業のものではありません。<br>
+          中小食品企業でも、正しい順序で整えれば、確実に前進できます。
+        </p>
+        <p>私たちは、その一歩を支える存在でありたいと考えています。</p>
+        <p style="font-weight:1000;">食品安全を、すべての企業へ。</p>
 
-          <p id="s0">
-            JFS-B審査を前に、「何を見られるのか分からない」という不安を抱えていませんか。<br>
-            特に中小食品企業では、人手や時間に限りがある中でHACCP構築を進めるため、
-            準備が本当に足りているのか分からないという声を多く聞きます。
-          </p>
-
-          <p>
-            JFS-B審査は、単に書類がそろっているかを見る場ではありません。<br>
-            <span class="k">「仕組みが実際に機能しているか」</span>が確認されます。<br>
-            本記事では、食品安全コンサルとして現場を支援する中で見えてきた、JFS-B審査で実際に見られる5つのポイントを整理します。
-          </p>
-
-          <div class="hr"></div>
-
-          <h2 id="s1">ポイント① フローダイアグラムの整合性</h2>
-          <p>
-            まず確認されるのが、フローダイアグラムと実際の製造工程が一致しているかどうかです。<br>
-            書類上は正しく見えても、現場と違っているケースは少なくありません。
-          </p>
-          <p>
-            特に中小食品企業では、工程変更があっても図の更新が後回しになることがあります。<br>
-            JFS-B審査では、現場を歩きながら図と照合されるため、差異はすぐに分かります。
-          </p>
-          <p>
-            HACCP構築の第一歩は、現場と一致したフローダイアグラムの整備です。
-          </p>
-
-          <div class="callout">
-            <b>チェックのコツ</b><br>
-            「工程名は合っているか」だけでなく、<strong>人の動線・原料の流れ・一時保管</strong>まで現場と一致しているかを確認します。
-          </div>
-
-          <h2 id="s2">ポイント② ハザード分析の妥当性</h2>
-          <p>
-            次に重要なのがハザード分析です。<br>
-            単に危害要因を書き出しているだけでは不十分で、「なぜその管理手段なのか」という根拠が問われます。
-          </p>
-
-          <p>特に、</p>
-          <ul>
-            <li>重要管理点（CCP）の設定根拠</li>
-            <li>管理基準の妥当性</li>
-            <li>OPRPとの区分</li>
-          </ul>
-
-          <p>
-            これらの説明が曖昧だと、審査で指摘を受けやすくなります。<br>
-            JFS-B審査では、ハザード分析の考え方そのものが理解されているかが見られています。
-          </p>
-
-          <h2 id="s3">ポイント③ 製造現場設備・備品の管理</h2>
-          <p>書類だけでなく、設備や備品の管理状況も確認されます。</p>
-
-          <ul>
-            <li>温度計の校正</li>
-            <li>異物混入対策</li>
-            <li>設備の劣化管理</li>
-          </ul>
-
-          <p>
-            これらは形式ではなく、日常管理として実施されているかが重要です。<br>
-            HACCP構築は書類作成ではなく、運用設計であることがここで問われます。
-          </p>
-
-          <h2 id="s4">ポイント④ 記録の継続性</h2>
-          <p>「記録はありますか？」ではなく、「続いていますか？」がポイントです。</p>
-
-          <p>
-            記録が途中で止まっていたり、まとめて記入されていたりすると、
-            仕組みが機能していないと判断されます。
-          </p>
-
-          <p>
-            中小食品企業では人手不足により記録が負担になることがあります。<br>
-            だからこそ、無理のない設計が重要です。
-          </p>
-
-          <h2 id="s5">ポイント⑤ 製造現場の清掃・衛生状態</h2>
-          <p>最後に見られるのは、現場の基本的な衛生状態です。</p>
-
-          <p>
-            清掃が徹底されているか、整理整頓が保たれているか。<br>
-            これは特別な技術ではなく、日々の習慣です。
-          </p>
-
-          <p>
-            JFS-B審査では、「この会社は食品安全を大切にしているか」という姿勢も見られています。
-          </p>
-
-          <div class="hr"></div>
-
-          <h2 id="s6">中小食品企業がつまずきやすい理由</h2>
-          <p>多くの中小食品企業が審査前に不安を抱える理由は、主に次の3つです。</p>
-
-          <ul>
-            <li>人手不足で専任担当がいない</li>
-            <li>業務が属人化している</li>
-            <li>形式重視で実務に落ちていない</li>
-          </ul>
-
-          <p>
-            これは能力の問題ではなく、体制の問題です。<br>
-            だからこそ、食品安全コンサルの役割は「完璧な書類」を作ることではなく、
-            <span class="k">「続く仕組み」を設計すること</span>にあります。
-          </p>
-
-          <h2 id="s7">今からできる対策</h2>
-          <p>審査前にまず確認すべきは、次の書類です。</p>
-
-          <ul>
-            <li>フローダイアグラム</li>
-            <li>ハザード分析シート</li>
-            <li>HACCPプラン</li>
-            <li>記録様式</li>
-          </ul>
-
-          <p>
-            すべてを一度に完璧にしようとする必要はありません。<br>
-            優先順位は、「リスクが高い工程」から見直すことです。
-          </p>
-
-          <div class="callout">
-            <b>実務の進め方（おすすめ）</b><br>
-            ①フローと現場の一致 → ②ハザード分析の根拠づけ → ③CCP/OPRPの説明整理 → ④記録の最小セット化 → ⑤教育・周知
-          </div>
-
-          <p>
-            JFS-Bは特別な企業だけのものではありません。<br>
-            中小食品企業でも、段階的に整えていくことができます。
-          </p>
-
-          <h2 id="s8">無料テンプレートのご案内</h2>
-          <p>
-            具体的な様式例や整理の仕方については、<br>
-            JFS-B適合を見据えたHACCP構築テンプレート（Excel）を無料配布しています。
-          </p>
-
-          <p>
-            ハザード分析シートやHACCPプランの基本構造を確認したい方は、実務の参考としてご活用ください。
-          </p>
-
-          <div class="ctaCard">
-            <p style="margin:0 0 6px;font-weight:1000">無料テンプレート</p>
-            <p style="margin:0;line-height:1.9">
-              JFS-B審査前の「確認ポイント」を、様式の形に落とし込んだテンプレートです。<br>
-              現状整理に使うだけでもOKです。
-            </p>
-            <div class="ctaGrid">
-              <a class="btn primary" href="./download.html">無料テンプレートを受け取る</a>
-              <a class="btn dark" href="./index.html#consult">30分無料相談</a>
-              <a class="btn" href="./column.html">コラム一覧へ</a>
-            </div>
-            <p class="small" style="margin-bottom:0">
-              ※必要な方にだけ、関連サービスのご案内を差し上げます（状況に合わない提案は行いません）。
-            </p>
-          </div>
-
-          <h2 id="s9">まとめ</h2>
-          <p>
-            JFS-B審査は、完璧さを競う場ではありません。<br>
-            仕組みが理解され、現場で機能しているかを確認する場です。
-          </p>
-
-          <p>
-            食品安全は、特別な企業のものではありません。<br>
-            中小食品企業でも、正しい順序で整えれば、確実に前進できます。
-          </p>
-
-          <p>私たちは、その一歩を支える存在でありたいと考えています。</p>
-
-          <p style="font-weight:1000;margin-top:8px;">
-            食品安全を、すべての企業へ。
-          </p>
-
-          <div class="pager">
-            <a href="./column-6.html">← 前の記事へ</a>
-            <a href="./column.html">一覧へ戻る →</a>
-          </div>
-
+        <div class="pager">
+          <a href="./column-6.html">← 前の記事へ</a>
+          <a href="./column.html">一覧へ →</a>
         </div>
-      </article>
 
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -365,8 +313,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">© 食品安全パートナーズ</div>
 </footer>
 
-<script>
-(() => {
+<script>(() => {
   const toTop = document.getElementById("toTop");
   const bar = document.getElementById("progress");
   const onScroll = () => {
@@ -385,8 +332,6 @@ a{color:inherit;text-decoration:none}
     }, { threshold: 0.12 });
     targets.forEach(el => io.observe(el));
   }
-})();
-</script>
-
+})();</script>
 </body>
 </html>

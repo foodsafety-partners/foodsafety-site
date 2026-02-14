@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>コラム｜食品安全パートナーズ</title>
-<meta name="description" content="食品安全パートナーズのコラム一覧。JFS-B、HACCP、ISO22000支援、運用定着など、現場で続く食品安全の考え方を整理します。">
-<meta name="keywords" content="JFS-B, HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援">
+<title>【EDIT】コラム4のタイトル｜食品安全パートナーズ</title>
+<meta name="description" content="【EDIT】コラム4のdescription（120字前後）">
+<meta name="keywords" content="【EDIT】JFS-B, HACCP, 中小食品企業, 食品安全コンサル, ハザード分析">
 <style>:root{
   --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
   --accent:#e0872a; --accent2:#2c567a;
   --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
-  --w:1180px;
+  --w:980px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -25,10 +25,10 @@ a{color:inherit;text-decoration:none}
 
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
   border-bottom:1px solid rgba(27,37,51,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{height:40px;width:auto}
-.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042;margin-left:auto;margin-right:10px}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
 .menu a{opacity:.82}
 .menu a:hover{opacity:1}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
@@ -36,73 +36,51 @@ a{color:inherit;text-decoration:none}
 .btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
 .btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
 
-.section{padding:44px 0 66px;scroll-margin-top:90px}
-.sectionTitle{text-align:center;margin:0 0 10px;font-size:22px}
-.sectionLead{text-align:center;margin:0 auto 22px;color:var(--muted);font-weight:850;font-size:13px;max-width:900px;line-height:1.9}
+.section{padding:44px 0 66px}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:18px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
+.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
+  background:#fff;color:#243042;font-weight:900;font-size:12px}
 
-.panel{
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-
-.cardLink{
-  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:18px;
-  padding:14px; display:flex; flex-direction:column; gap:12px;
-}
-.cardLink:hover{border-color:rgba(44,86,122,.25)}
-.cardLink:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-
-.cover{
-  border-radius:16px;
-  border:1px solid rgba(27,37,51,.10);
+.articleHead{
   background:
-    radial-gradient(1000px 400px at 25% 15%, rgba(255,255,255,.65), transparent 60%),
-    linear-gradient(135deg, rgba(44,86,122,.25), rgba(224,135,42,.22)),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+    radial-gradient(1200px 520px at 25% 20%, rgba(224,135,42,.18), transparent 55%),
+    radial-gradient(1000px 520px at 80% 80%, rgba(44,86,122,.16), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.92));
+  border-bottom:1px solid rgba(27,37,51,.08);
+}
+.breadcrumbs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-weight:850;font-size:12px;padding:14px 0 0}
+.breadcrumbs a{text-decoration:underline}
+.h1{margin:10px 0 0;font-size:32px;line-height:1.25;font-weight:1000}
+.metaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0 0;color:var(--muted);font-weight:850;font-size:12px}
+.metaDot{opacity:.7}
+
+.prose{line-height:2.0;color:#273244;font-weight:850}
+.prose h2{margin:32px 0 8px;font-size:20px;line-height:1.5;color:var(--ink)}
+.prose h3{margin:22px 0 6px;font-size:16px;line-height:1.6;color:var(--ink)}
+.prose p{margin:12px 0}
+.prose ul{margin:10px 0 10px 18px;padding:0}
+.prose li{margin:7px 0}
+.k{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(224,135,42,.10);border:1px solid rgba(224,135,42,.22);font-weight:1000}
+.note{margin:14px 0;color:var(--muted);font-size:12.5px;line-height:1.85}
+
+.callout{
+  border-left:6px solid var(--accent);
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;padding:14px;margin:16px 0
+}
+.ctaCard{
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:18px;
   padding:16px;
-  min-height:130px;
-  display:flex;align-items:flex-end;
-  box-shadow:0 12px 26px rgba(24,32,48,.08);
+  box-shadow:0 14px 26px rgba(24,32,48,.10);
 }
-.cover h3{margin:0;font-size:18px;line-height:1.35;letter-spacing:.01em}
+.ctaGrid{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 
-.excerpt{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.8}
-.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
-.tag{
-  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;
-  border:1px solid rgba(27,37,51,.12);background:#fff;color:#243042;
-  font-weight:900;font-size:12px;
-}
-.badgeNo{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:28px;height:28px;border-radius:999px;
-  background:rgba(44,86,122,.14);
-  border:1px solid rgba(44,86,122,.18);
-  font-weight:1000;
-}
-
-.splitHead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 10px}
-.splitHead h2{margin:0;font-size:18px}
-.splitHead .mini{color:var(--muted);font-weight:850;font-size:12px}
-
-.ctaBar{
-  display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;
-  margin-top:14px;
-}
+.pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px}
+.pager a{font-weight:1000;color:var(--accent2);text-decoration:underline}
 
 .footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
-
-/* 追加：公開前カード（リンク無効） */
-.cardLink.disabled{
-  opacity:.6;
-  cursor:not-allowed;
-  pointer-events:none;
-}
 
 @media (prefers-reduced-motion:no-preference){
   .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
@@ -110,13 +88,12 @@ a{color:inherit;text-decoration:none}
 }
 @media(max-width:980px){
   .menu{display:none}
-  .grid3,.grid4{grid-template-columns:1fr}
-  .cover{min-height:120px}
+  .h1{font-size:28px}
 }</style>
 </head>
 <body>
 <div id="progress"></div>
-<a id="toTop" href="./column.html#" aria-label="ページ先頭へ">↑</a>
+<a id="toTop" href="./column-4.html#" aria-label="ページ先頭へ">↑</a>
 
 <header class="header">
   <div class="container">
@@ -129,48 +106,88 @@ a{color:inherit;text-decoration:none}
         <a href="./download.html">無料特典</a>
         <a href="./index.html#books">書籍</a>
         <a href="./index.html#consult">無料相談</a>
+        <a href="./column.html">コラム一覧</a>
       </nav>
       <a class="btn primary" href="./download.html">無料特典</a>
     </div>
   </div>
 </header>
 
-<section class="section">
+<section class="articleHead">
   <div class="container">
-    <h1 class="sectionTitle reveal">コラム</h1>
-    <p class="sectionLead reveal">
-      JFS-B／HACCP／ISO22000支援、そして「運用が続く」設計の考え方を、現場目線で整理します。<br>
-      中小食品企業でも無理なく回る形に落とし込むことを大切にしています。
-    </p>
-
-    <!-- 人気TOP3（JSで自動生成） -->
-    <div class="panel reveal" id="popular">
-      <div class="splitHead">
-        <h2>人気コラム TOP3</h2>
-        <div class="mini">※並び順は「人気順」の想定（配列のpopularRankで管理）</div>
-      </div>
-      <div class="grid3" id="popularGrid"></div>
-
-      <div class="ctaBar">
-        <a class="btn dark" href="./index.html#consult">30分無料相談</a>
-        <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
-        <a class="btn" href="./index.html">トップへ戻る</a>
-      </div>
+    <div class="breadcrumbs reveal">
+      <a href="./index.html">トップ</a><span class="metaDot">/</span>
+      <a href="./column.html">コラム</a><span class="metaDot">/</span>
+      <span>【EDIT】コラム4の短い表示名</span>
     </div>
 
-    <!-- すべてのコラム（JSで自動生成） -->
-    <div style="height:16px"></div>
-    <div class="panel reveal" id="all">
-      <div class="splitHead">
-        <h2>すべてのコラム</h2>
-        <div class="mini">追加は配列に1行足すだけ（サムネは表紙風を自動生成）</div>
-      </div>
+    <!-- [EDIT MARKER #C] H1（タイトル） -->
+    <h1 class="h1 reveal">【EDIT】コラム4のタイトル<br>（改行したい場合は<br>を入れる）</h1>
 
-      <div class="grid4" id="allGrid"></div>
+    <!-- [EDIT MARKER #D] タグ（必要なら変更） -->
+    <div class="metaRow reveal" aria-label="記事メタ情報">
+      <span class="tag">【EDIT】タグ</span>
+      <span class="tag">【EDIT】タグ</span>
+      <span class="tag">【EDIT】タグ</span>
+      <span class="metaDot">•</span>
+      <span>読了目安：【EDIT】分</span>
+    </div>
 
-      <div class="ctaBar">
-        <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
-        <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+    <div style="height:18px"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card reveal">
+      <div class="prose">
+
+        <!-- ======================================================
+             [EDIT MARKER #E] ★ここに「あなたのコラム4本文」を貼り付け
+             例：<p>〜</p> / <h2>〜</h2> / <ul><li>〜</li></ul>
+             ====================================================== -->
+
+        <p>【EDIT】ここに導入文（審査前の不安や現場の悩みへの共感）</p>
+
+        <h2>【EDIT】見出し（H2）</h2>
+        <p>【EDIT】本文</p>
+
+        <h3>【EDIT】小見出し（H3）</h3>
+        <ul>
+          <li>【EDIT】箇条書き</li>
+          <li>【EDIT】箇条書き</li>
+        </ul>
+
+        <div class="callout">
+          <b>【EDIT】現場で使える一言・チェックポイント</b><br>
+          【EDIT】ここに短い実務ポイント
+        </div>
+
+        <h2>まとめ</h2>
+        <p>【EDIT】まとめ文（理念で締めるならここ）</p>
+        <p><span class="k">食品安全を、すべての企業へ。</span></p>
+
+        <!-- [EDIT MARKER #F] 無料特典CTA -->
+        <div class="ctaCard">
+          <p style="margin:0 0 6px;font-weight:1000">無料テンプレートのご案内</p>
+          <p style="margin:0">
+            JFS-B適合を見据えたHACCP構築テンプレート（Excel）を無料で配布しています。<br>
+            具体的な様式例のたたき台としてご活用ください。
+          </p>
+          <div class="ctaGrid">
+            <a class="btn primary" href="./download.html">無料テンプレートを見る</a>
+            <a class="btn" href="./index.html#consult">30分無料相談</a>
+          </div>
+          <p class="note" style="margin-bottom:0">
+            ※必要な方にだけ、関連サービスのご案内を差し上げます（状況に合わない提案は行いません）。
+          </p>
+        </div>
+
+        <div class="pager">
+          <a href="./column.html">← 一覧へ</a>
+          <a href="./column-3.html">前の記事へ →</a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -180,134 +197,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">© 食品安全パートナーズ</div>
 </footer>
 
-<script>
-(() => {
-  // ============================================================
-  // [EDIT MARKER #A] コラム一覧データ（ここだけ編集すればOK）
-  // - published: true ならリンク有効 / false なら準備中表示（リンク無効）
-  // - popularRank: 1〜3 を付けたものが人気TOP3に表示
-  // - TOP3（index.htmlと同じ並びに統一）
-  //    1位: column-7 / 2位: column-1 / 3位: column-2
-  // ============================================================
-  const columns = [
-    // ====== 人気TOP3（popularRank を 1〜3 に振る）======
-    {
-      id: 7,
-      href: "./column-7.html",
-      title: "JFS-B審査で実際に見られる5つのポイント<br>【中小食品企業向け】",
-      excerpt: "JFS-B審査で確認されやすい「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を、審査前に“何から点検するか”の順序で整理。限られた人手でもHACCP構築を前に進めたい中小食品企業向けの実務ポイントです。",
-      tags: ["JFS-B審査","HACCP構築","ハザード分析","中小食品企業"],
-      published: true,
-      popularRank: 1
-    },
-    {
-      id: 1,
-      href: "./column-1.html",
-      title: "形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方",
-      excerpt: "HACCP構築でつまずきやすい「工程把握→ハザード分析→管理手段の根拠」を、JFS-Bの審査観点に合わせて解説。審査で“説明できる”形に整える順序が分かります。",
-      tags: ["HACCP構築","JFS-B","工程把握","ハザード分析"],
-      published: true,
-      popularRank: 2
-    },
-    {
-      id: 2,
-      href: "./column-2.html",
-      title: "HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ",
-      excerpt: "人手不足・属人化でも回る「記録の最小セット」と運用ルール（頻度／責任者／是正の流れ）を整理。JFS-B審査前に慌てないための“継続できる仕組み”が分かります。",
-      tags: ["記録","運用定着","中小食品企業","HACCP"],
-      published: true,
-      popularRank: 3
-    },
-
-    // ====== ここから下：全コラム一覧（id順に並べると管理が楽）======
-    {
-      id: 3,
-      href: "./column-3.html",
-      title: "審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット",
-      excerpt: "“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を整理します。",
-      tags: ["HACCP","JFS-B","検証","是正"],
-      published: true
-    },
-
-    /* ==========================================================
-       [EDIT MARKER #B] column-4.html は未作成：準備中として表示
-       - published:false のためリンク無効（クリックできない）
-       - column-4.html を作ったら published:true に変更するだけ
-       ========================================================== */
-    {
-      id: 4,
-      href: "./column-4.html",
-      title: "食品事故が起きる企業の特徴。<br>「仕組み」より先に整えるべき4つの癖",
-      excerpt: "準備中（公開後に自動でリンクが有効になります）",
-      tags: ["運用","教育","マネジメント"],
-      published: false
-    },
-
-    {
-      id: 5,
-      href: "./column-5.html",
-      title: "経営者のための食品安全。<br>投資対効果が出る“最小の仕組み”と意思決定",
-      excerpt: "現場に丸投げしない。事故・監査・取引要件に強い体制を、コストを抑えて作る考え方を整理。",
-      tags: ["経営","リスク","体制"],
-      published: true
-    },
-    {
-      id: 6,
-      href: "./column-6.html",
-      title: "食品安全は“コスト”ではなく“信用の投資”<br>経営者が押さえる3つの意思決定",
-      excerpt: "食品安全を「信用への投資」と捉え、事故確率を下げる“要所”に集中する設計を整理。HACCP／JFS-B／ISO22000の観点で、①停止基準②回る最小セット③報告文化を実務目線で解説します。",
-      tags: ["経営","食品安全","HACCP","JFS-B","ISO22000"],
-      published: true
-    }
-  ];
-
-  // ---------- DOM参照 ----------
-  const popularGrid = document.getElementById("popularGrid");
-  const allGrid = document.getElementById("allGrid");
-
-  // ---------- カード生成 ----------
-  const esc = (s) => String(s ?? "");
-  const renderTags = (tags=[]) => tags.map(t => `<span class="tag">${esc(t)}</span>`).join("");
-
-  function cardHTML(c, { showRank=false } = {}) {
-    const isDisabled = !c.published;
-    const cls = `cardLink${isDisabled ? " disabled" : ""}`;
-    const hrefAttr = isDisabled ? "" : `href="${esc(c.href)}"`;
-    const aria = isDisabled
-      ? `aria-label="コラム${c.id}：準備中"`
-      : `aria-label="コラム${c.id}：記事へ"`;
-
-    const rankBadge = showRank
-      ? `<span class="badgeNo" aria-hidden="true">${esc(c.popularRank)}</span>`
-      : "";
-
-    const titleBlock = showRank
-      ? `<div style="display:flex;gap:10px;align-items:flex-start">${rankBadge}<h3>${c.title}</h3></div>`
-      : `<h3>${c.title}</h3>`;
-
-    const excerpt = isDisabled ? "準備中（公開後に自動で一覧に反映されます）" : esc(c.excerpt);
-
-    return `
-      <a class="${cls}" ${hrefAttr} ${aria}>
-        <div class="cover">${titleBlock}</div>
-        <p class="excerpt">${excerpt}</p>
-        <div class="tagRow">${renderTags(c.tags)}</div>
-      </a>
-    `;
-  }
-
-  // ---------- 人気TOP3 ----------
-  const popular = columns
-    .filter(c => Number(c.popularRank) >= 1 && Number(c.popularRank) <= 3)
-    .sort((a,b) => a.popularRank - b.popularRank);
-
-  popularGrid.innerHTML = popular.map(c => cardHTML(c, { showRank:true })).join("");
-
-  // ---------- すべてのコラム ----------
-  const all = [...columns].sort((a,b) => a.id - b.id);
-  allGrid.innerHTML = all.map(c => cardHTML(c)).join("");
-
-  // ---------- スクロールUI ----------
+<script>(() => {
   const toTop = document.getElementById("toTop");
   const bar = document.getElementById("progress");
   const onScroll = () => {
@@ -319,7 +209,6 @@ a{color:inherit;text-decoration:none}
   window.addEventListener("scroll", onScroll, { passive:true });
   onScroll();
 
-  // ---------- reveal ----------
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const targets = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
@@ -327,7 +216,6 @@ a{color:inherit;text-decoration:none}
     }, { threshold: 0.12 });
     targets.forEach(el => io.observe(el));
   }
-})();
-</script>
+})();</script>
 </body>
 </html>

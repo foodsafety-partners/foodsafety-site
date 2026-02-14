@@ -187,33 +187,54 @@ a{color:inherit;text-decoration:none}
   // published: true ならリンク有効 / false なら準備中表示
   // popularRank: 1〜3 を付けたものが人気TOP3に表示
   // =========================
+
+  /* ============================================================
+     [EDIT MARKER #1] 人気TOP3の並び替えはここ！
+     popularRank を 1〜3 に振り直すだけで、TOP3が入れ替わります。
+     （index.html と同じ並びに統一：1=column-7 / 2=column-1 / 3=column-2）
+     ============================================================ */
+
   const columns = [
+    {
+      id: 7,
+      href: "./column-7.html",
+      title: "JFS-B審査で実際に見られる5つのポイント<br>【中小食品企業向け】",
+      excerpt: "JFS-B審査で確認されやすい「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を、現場で使える観点で整理。審査前の不安を“やること”に落とし込みます。",
+      tags: ["JFS-B審査","HACCP構築","ハザード分析"],
+      published: true,
+      popularRank: 1
+    },
     {
       id: 1,
       href: "./column-1.html",
       title: "形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方",
-      excerpt: "工程把握／ハザード分析の根拠／運用負荷の設計。審査前に慌てないための筋の通った作り方を図解で整理。",
-      tags: ["JFS-B","HACCP","運用"],
+      excerpt: "HACCP構築でつまずきやすい「工程把握→危害要因分析→管理手段の根拠」を、JFS-Bの審査観点に合わせて解説。“説明できる”形に整える順序が分かります。",
+      tags: ["HACCP構築","JFS-B","工程把握"],
       published: true,
-      popularRank: 1
+      popularRank: 2
     },
     {
       id: 2,
       href: "./column-2.html",
       title: "HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ",
-      excerpt: "記録・是正・教育を“努力”から“続く設計”へ。少人数でも回る仕組みの骨格を図解で解説します。",
-      tags: ["運用","ISO22000","食品安全コンサル"],
+      excerpt: "人手不足・属人化でも回る「記録の最小セット」と運用ルール（頻度／責任者／是正の流れ）を整理。審査前に慌てないための、継続できる仕組みづくりが分かります。",
+      tags: ["記録","運用定着","中小食品企業"],
       published: true,
-      popularRank: 2
+      popularRank: 3
     },
+
+    /* ============================================================
+       [EDIT MARKER #2] ここから下：全コラム一覧（追加・修正はここ）
+       既存の column-3〜6 など、あなたの実ファイルに合わせて増やしてください。
+       ============================================================ */
+
     {
       id: 3,
       href: "./column-3.html",
       title: "審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット",
       excerpt: "“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を図解で整理します。",
       tags: ["HACCP","JFS-B","検証"],
-      published: true,
-      popularRank: 3
+      published: true
     },
 
     // ▼ ここから追加分（あなたの実ファイルに合わせて増やす）
@@ -226,6 +247,7 @@ a{color:inherit;text-decoration:none}
       tags: ["運用","教育","マネジメント"],
       published: true
     },
+
     // column-5.html（経営者向け）
     {
       id: 5,
@@ -235,6 +257,8 @@ a{color:inherit;text-decoration:none}
       tags: ["経営","リスク","体制"],
       published: true
     }
+
+    // column-6.html がある場合は、ここに追記してください（id:6）
   ];
 
   // ---------- DOM参照 ----------

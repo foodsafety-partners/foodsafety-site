@@ -197,6 +197,10 @@ a{color:inherit;text-decoration:none}
     radial-gradient(520px 220px at 80% 75%, rgba(44,86,122,.18), transparent 60%),
     linear-gradient(180deg, rgba(238,241,246,.9), rgba(255,255,255,1));
   padding:14px;min-height:126px;
+
+  /* ★修正：タイトルが上に寄り、上の不自然な空白を作らない */
+  display:flex;
+  align-items:flex-start;
 }
 .popTitle{margin:0;font-weight:1000;line-height:1.55}
 .popDesc{margin:0;color:var(--muted);font-weight:850;font-size:12.5px;line-height:1.8}
@@ -208,7 +212,10 @@ a{color:inherit;text-decoration:none}
   background:#fff;color:#243042;
   font-weight:900;font-size:12px;
 }
-.popFoot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:10px}
+.popFoot{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  margin-top:10px;
+}
 .popLink{color:var(--accent2);font-weight:1000;text-decoration:underline}
 /* ▲ 人気コラムTOP3 */
 
@@ -415,8 +422,10 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-POPULAR-START] 人気コラムTOP3（並び替え・差し替えはここだけ）
-  ルール：このブロックの中だけ入れ替えると安全です
+  [REPLACE-POPULAR-START] 人気コラムTOP3
+  ★修正点：
+  - 「popGridの入れ子」をやめる（これがレイアウト崩れ・空白の原因）
+  - popFootは popGrid の外に出す（グリッド計算が安定）
 ========================================================= -->
 <section class="section" id="columns" style="padding-top:10px">
   <div class="container">
@@ -427,67 +436,64 @@ a{color:inherit;text-decoration:none}
     </p>
 
     <div class="popWrap reveal">
+
+      <!-- ★ここは「popGrid 1つだけ」 -->
       <div class="popGrid">
 
-        <!-- [REPLACE-POPULAR-1-START] 1位カード（ここ丸ごと差し替えOK） -->
-<!-- ====== [REPLACE START] 人気コラムTOP3：このブロックを丸ごと差し替え ====== -->
-<div class="popGrid">
+        <!-- 1位：column-7 -->
+        <a class="popCard hoverlift" href="./column-7.html" aria-label="人気コラム1位：JFS-B審査で実際に見られる5つのポイント（中小食品企業向け）">
+          <div class="popHead">
+            <span class="rank">1</span>
+            <span class="btn dark">読む</span>
+          </div>
+          <div class="popThumb" aria-hidden="true">
+            <p class="popTitle">JFS-B審査で実際に見られる5つのポイント<br>【中小食品企業向け】</p>
+          </div>
+          <p class="popDesc">
+            JFS-B審査で確認されやすい「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を、現場で使える観点で整理。審査前の不安を“やること”に落とし込みます。
+          </p>
+          <div class="popTags">
+            <span class="popTag">JFS-B審査</span><span class="popTag">HACCP構築</span><span class="popTag">ハザード分析</span>
+          </div>
+        </a>
 
-  <!-- 1位：column-7（JFS-B審査ニーズを最優先） -->
-  <a class="popCard hoverlift" href="./column-7.html" aria-label="人気コラム1位：JFS-B審査で実際に見られる5つのポイント（中小食品企業向け）">
-    <div class="popHead">
-      <span class="rank">1</span>
-      <span class="btn dark">読む</span>
-    </div>
-    <div class="popThumb" aria-hidden="true">
-      <p class="popTitle">JFS-B審査で実際に見られる5つのポイント<br>【中小食品企業向け】</p>
-    </div>
-    <p class="popDesc">
-      JFS-B審査で確認されやすい「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を、現場で使える観点で整理。審査前の不安を“やること”に落とし込みます。
-    </p>
-    <div class="popTags">
-      <span class="popTag">JFS-B審査</span><span class="popTag">HACCP構築</span><span class="popTag">ハザード分析</span>
-    </div>
-  </a>
+        <!-- 2位：column-1 -->
+        <a class="popCard hoverlift" href="./column-1.html" aria-label="人気コラム2位：形だけのHACCPを卒業する（JFS-Bを見据えた現場で回る仕組み）">
+          <div class="popHead">
+            <span class="rank">2</span>
+            <span class="btn dark">読む</span>
+          </div>
+          <div class="popThumb" aria-hidden="true">
+            <p class="popTitle">形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</p>
+          </div>
+          <p class="popDesc">
+            HACCP構築でつまずきやすい「工程把握→危害要因分析→管理手段の根拠」を、JFS-Bの審査観点に合わせて解説。“説明できる”形に整える順序が分かります。
+          </p>
+          <div class="popTags">
+            <span class="popTag">HACCP構築</span><span class="popTag">JFS-B</span><span class="popTag">工程把握</span>
+          </div>
+        </a>
 
-  <!-- 2位：column-1（HACCP構築の王道キーワードで流入を広げる） -->
-  <a class="popCard hoverlift" href="./column-1.html" aria-label="人気コラム2位：形だけのHACCPを卒業する（JFS-Bを見据えた現場で回る仕組み）">
-    <div class="popHead">
-      <span class="rank">2</span>
-      <span class="btn dark">読む</span>
-    </div>
-    <div class="popThumb" aria-hidden="true">
-      <p class="popTitle">形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</p>
-    </div>
-    <p class="popDesc">
-      HACCP構築でつまずきやすい「工程把握→危害要因分析→管理手段の根拠」を、JFS-Bの審査観点に合わせて解説。“説明できる”形に整える順序が分かります。
-    </p>
-    <div class="popTags">
-      <span class="popTag">HACCP構築</span><span class="popTag">JFS-B</span><span class="popTag">工程把握</span>
-    </div>
-  </a>
+        <!-- 3位：column-2 -->
+        <a class="popCard hoverlift" href="./column-2.html" aria-label="人気コラム3位：HACCPの記録が続かないを解決する（中小食品企業の運用設計）">
+          <div class="popHead">
+            <span class="rank">3</span>
+            <span class="btn dark">読む</span>
+          </div>
+          <div class="popThumb" aria-hidden="true">
+            <p class="popTitle">HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ</p>
+          </div>
+          <p class="popDesc">
+            人手不足・属人化でも回る「記録の最小セット」と運用ルール（頻度／責任者／是正の流れ）を整理。審査前に慌てないための、継続できる仕組みづくりが分かります。
+          </p>
+          <div class="popTags">
+            <span class="popTag">記録</span><span class="popTag">運用定着</span><span class="popTag">中小食品企業</span>
+          </div>
+        </a>
 
-  <!-- 3位：column-2（中小企業の悩み直撃：継続運用＝検索＆CTRが強い） -->
-  <a class="popCard hoverlift" href="./column-2.html" aria-label="人気コラム3位：HACCPの記録が続かないを解決する（中小食品企業の運用設計）">
-    <div class="popHead">
-      <span class="rank">3</span>
-      <span class="btn dark">読む</span>
-    </div>
-    <div class="popThumb" aria-hidden="true">
-      <p class="popTitle">HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ</p>
-    </div>
-    <p class="popDesc">
-      人手不足・属人化でも回る「記録の最小セット」と運用ルール（頻度／責任者／是正の流れ）を整理。審査前に慌てないための、継続できる仕組みづくりが分かります。
-    </p>
-    <div class="popTags">
-      <span class="popTag">記録</span><span class="popTag">運用定着</span><span class="popTag">中小食品企業</span>
-    </div>
-  </a>
+      </div><!-- /.popGrid -->
 
-</div>
-<!-- ====== [REPLACE END] 人気コラムTOP3：このブロックを丸ごと差し替え ====== -->
-
-      <!-- [REPLACE-POPULAR-FOOT-START] TOP3下の導線 -->
+      <!-- ★popFootはグリッドの外（崩れない） -->
       <div class="popFoot">
         <a class="popLink" href="./column.html">すべてのコラムを見る →</a>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -495,9 +501,8 @@ a{color:inherit;text-decoration:none}
           <a class="btn" href="./index.html#consult">無料相談</a>
         </div>
       </div>
-      <!-- [REPLACE-POPULAR-FOOT-END] -->
 
-    </div>
+    </div><!-- /.popWrap -->
   </div>
 </section>
 <!-- =========================================================
@@ -516,7 +521,6 @@ a{color:inherit;text-decoration:none}
 　　　  お客様の自立性を大切にし、現実的な制約（人員・時間・運用負荷）を踏まえて<br class="pc">
 　　　  「現場で続く食品安全」を一緒に作ります。
 </p>
-
 
     <div class="grid2">
       <div class="card reveal hoverlift">

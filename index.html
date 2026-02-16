@@ -155,6 +155,31 @@ a{color:inherit;text-decoration:none}
 .cta b{display:block;font-size:15px}
 .cta .sub{font-size:12px;color:var(--muted);font-weight:850}
 
+/* ▼ 追加：中小向けページ導線カード（既存デザインに合わせた見た目） */
+.altWrap{
+  background:rgba(255,255,255,.76);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+  margin-top:14px;
+}
+.altCard{
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:16px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.altCard:hover{border-color:rgba(44,86,122,.25)}
+.altTitle{font-weight:1000;margin:0 0 6px}
+.altDesc{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.85}
+.altBadges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.altBadge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 10px;border-radius:999px;
+  border:1px solid rgba(27,37,51,.12);background:#fff;color:#243042;
+  font-weight:900;font-size:12px;
+}
+/* ▲ 追加：中小向けページ導線カード */
+
 .section{padding:56px 0 66px}
 .sectionTitle{text-align:center;margin:0 0 14px;font-size:22px}
 .sectionLead{text-align:center;margin:0 auto 26px;color:var(--muted);font-weight:850;font-size:13px;max-width:860px;line-height:1.9}
@@ -366,6 +391,12 @@ a{color:inherit;text-decoration:none}
         <a href="#pricing">料金</a>
         <a href="./pricing.html">料金詳細</a>
 
+        <!-- ★追加：中小食品企業向けSEOページ（chusho.html） -->
+        <a href="./chusho.html"
+           onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'header_chusho'});">
+          中小企業向け
+        </a>
+
         <a href="./column.html">コラム一覧</a>
         <a href="#books">書籍</a>
         <a href="#kindleunlimited">無料で読む</a>
@@ -405,6 +436,12 @@ a{color:inherit;text-decoration:none}
           </a>
 
           <a class="btn" href="./column.html">コラム一覧</a>
+
+          <!-- ★追加：ヒーロー内にも“中小向け”を追加（回遊＆SEOの内部リンク強化） -->
+          <a class="btn dark" href="./chusho.html"
+             onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'hero_chusho'});">
+            中小企業向け（HACCP・JFS-B）
+          </a>
         </div>
 
         <p class="hNote">
@@ -429,11 +466,52 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-CTA3-START]
+  ★追加：ヒーロー直下に「中小食品企業向け」専用導線（おすすめ）
 ========================================================= -->
-<section class="ctaRow">
+<section class="ctaRow" aria-label="主要導線">
   <div class="container">
-    <div class="ctas">
+
+    <!-- ▼中小向けページ導線（先頭に強い内部リンクを作る） -->
+    <div class="altWrap reveal" style="margin-top:10px">
+      <div class="altCard hoverlift">
+        <div style="min-width:260px;flex:1 1 560px">
+          <p class="altTitle">中小食品企業向け：食品安全コンサル（HACCP・JFS-B対応）</p>
+          <p class="altDesc">
+            人手不足・属人化でも「現場で続く」食品安全の仕組みへ。<br>
+            専用ページで、よくある悩み／支援内容／流れ／FAQ／導線をまとめています。
+          </p>
+          <div class="altBadges" aria-label="中小向けページのポイント">
+            <span class="altBadge">中小食品企業</span>
+            <span class="altBadge">HACCP構築</span>
+            <span class="altBadge">JFS-B審査対応</span>
+            <span class="altBadge">無料相談CTA</span>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <a class="btn dark"
+             href="./chusho.html"
+             aria-label="中小食品企業向けページへ"
+             onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'card_chusho'});">
+            中小向けページを見る
+          </a>
+          <a class="btn primary"
+             href="./download.html"
+             onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'card_download_from_index'});">
+            無料特典（テンプレート）
+          </a>
+          <a class="btn"
+             href="./pricing.html"
+             onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'card_pricing_from_index'});">
+            料金詳細
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ▲中小向けページ導線 -->
+
+    <!-- ▼既存CTA3（そのまま） -->
+    <div class="ctas" style="margin-top:14px">
 
       <a class="cta hoverlift reveal" href="./column.html" aria-label="コラムで学ぶ（食品安全の考え方）">
         <div><b>コラムで学ぶ</b><div class="sub">食品安全の考え方</div></div>
@@ -451,10 +529,11 @@ a{color:inherit;text-decoration:none}
       </a>
 
     </div>
+    <!-- ▲既存CTA3 -->
   </div>
 </section>
 <!-- =========================================================
-  [REPLACE-CTA3-END]
+  /追加ここまで
 ========================================================= -->
 
 

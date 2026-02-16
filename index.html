@@ -24,34 +24,57 @@
   <meta name="description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。HACCP構築、JFS-B審査対応、ISO22000/FSSC22000取得支援。無料テンプレ（Excel）配布中。">
   <meta name="keywords" content="食品安全 コンサル, HACCP 構築支援, JFS-B 審査, ISO22000 支援, FSSC22000 取得支援, 中小食品企業">
 
+  <!-- ★検索エンジン向け -->
+  <meta name="robots" content="index,follow">
+
   <!-- ★SEO：canonical（トップは / に統一するのが無難） -->
   <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/">
 
-  <!-- ★SNS：OG（最低限） -->
+  <!-- ★favicon（今回はロゴを流用：本来は 32/48px など推奨） -->
+  <link rel="icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
+  <link rel="shortcut icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
+
+  <!-- ★SNS：OGP（1セットに統一） -->
+  <meta property="og:site_name" content="食品安全パートナーズ">
   <meta property="og:type" content="website">
   <meta property="og:title" content="食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ">
-  <meta property="og:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。無料テンプレ配布中。">
+  <meta property="og:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。HACCP構築、JFS-B審査対応、ISO22000/FSSC22000取得支援。無料テンプレ（Excel）配布中。">
   <meta property="og:url" content="https://foodsafety-partners.github.io/foodsafety-site/">
-  <!-- og:image は用意できる場合だけ。無ければ削除でOK -->
-  <!-- <meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/ogp.jpg"> -->
+  <meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
+  <meta property="og:image:alt" content="食品安全パートナーズ ロゴ">
 
-  <!-- ★構造化データ（Organization / WebSite） -->
+  <!-- ★SNS：Twitterカード（OGPと整合） -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ">
+  <meta name="twitter:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。無料テンプレ（Excel）配布中。">
+  <meta name="twitter:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
+
+  <!-- ★構造化データ（Organization / WebSite）※重複を排除して1セットのみ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "食品安全パートナーズ",
     "url": "https://foodsafety-partners.github.io/foodsafety-site/",
-    "sameAs": [],
-    "description": "中小食品企業向けの食品安全コンサルティング。HACCP・JFS-B・ISO22000・FSSC22000に対応。"
+    "logo": "https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png",
+    "description": "中小食品企業向けの食品安全コンサルティング。HACCP・JFS-B・ISO22000・FSSC22000に対応。",
+    "sameAs": []
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebSite",
     "name":"食品安全パートナーズ",
     "url":"https://foodsafety-partners.github.io/foodsafety-site/",
+    "publisher":{
+      "@type":"Organization",
+      "name":"食品安全パートナーズ",
+      "url":"https://foodsafety-partners.github.io/foodsafety-site/",
+      "logo":"https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png"
+    },
     "potentialAction":{
       "@type":"SearchAction",
       "target":"https://foodsafety-partners.github.io/foodsafety-site/column.html?q={search_term_string}",
@@ -62,28 +85,6 @@
   <!-- =========================================================
     [REPLACE-HEAD-END]
   ========================================================= -->
-<!-- SEO / OGP -->
-<meta property="og:site_name" content="食品安全パートナーズ">
-<meta property="og:title" content="食品安全パートナーズ｜食品安全コンサルティング">
-<meta property="og:description" content="食品企業向けに、実践的で持続可能な食品安全支援サービスを提供。HACCP・JFS・ISO22000支援。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://foodsafety-partners.github.io/foodsafety-site/">
-<meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="食品安全パートナーズ｜食品安全コンサルティング">
-<meta name="twitter:description" content="食品企業向けに、実践的で持続可能な食品安全支援サービスを提供。HACCP・JFS・ISO22000支援。">
-
-<!-- Site name / Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "食品安全パートナーズ",
-  "url": "https://foodsafety-partners.github.io/foodsafety-site/",
-  "logo": "https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png"
-}
-</script>
 
 <style>
 /* =========================================================

@@ -24,14 +24,14 @@
   <meta name="description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。HACCP構築、JFS-B審査対応、ISO22000/FSSC22000取得支援。無料テンプレ（Excel）配布中。">
   <meta name="keywords" content="食品安全 コンサル, HACCP 構築支援, JFS-B 審査, ISO22000 支援, FSSC22000 取得支援, 中小食品企業">
 
-  <!-- ★SEO：canonical（公開URLに合わせる） -->
-  <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/index.html">
+  <!-- ★SEO：canonical（トップは / に統一するのが無難） -->
+  <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/">
 
   <!-- ★SNS：OG（最低限） -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ">
   <meta property="og:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。無料テンプレ配布中。">
-  <meta property="og:url" content="https://foodsafety-partners.github.io/foodsafety-site/index.html">
+  <meta property="og:url" content="https://foodsafety-partners.github.io/foodsafety-site/">
   <!-- og:image は用意できる場合だけ。無ければ削除でOK -->
   <!-- <meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/ogp.jpg"> -->
 
@@ -51,7 +51,12 @@
     "@context":"https://schema.org",
     "@type":"WebSite",
     "name":"食品安全パートナーズ",
-    "url":"https://foodsafety-partners.github.io/foodsafety-site/"
+    "url":"https://foodsafety-partners.github.io/foodsafety-site/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://foodsafety-partners.github.io/foodsafety-site/column.html?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
   }
   </script>
   <!-- =========================================================
@@ -329,7 +334,6 @@ a{color:inherit;text-decoration:none}
         <a href="#about">理念</a>
         <a href="#values">バリュー</a>
 
-        <!-- ★サービス詳細ページを新設する前提でリンクを追加 -->
         <a href="#services">対応規格</a>
         <a href="./service.html">サービス詳細</a>
 
@@ -369,7 +373,14 @@ a{color:inherit;text-decoration:none}
 
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn primary" href="#consult">30分オンライン無料相談</a>
-          <a class="btn ghost" href="#pricing">料金を見る</a>
+
+          <!-- ★変更：トップの“料金”導線は、要点(#pricing) + 詳細(pricing.html) の2段にして迷いを減らす -->
+          <a class="btn ghost" href="#pricing">料金の要点</a>
+          <a class="btn" href="./pricing.html"
+             onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'hero_pricing_detail'});">
+            料金詳細
+          </a>
+
           <a class="btn" href="./column.html">コラム一覧</a>
         </div>
 
@@ -558,7 +569,6 @@ a{color:inherit;text-decoration:none}
 
 <!-- =========================================================
   [REPLACE-ABOUT-START]
-  ★全角インデント（変な空白）を除去して整形
 ========================================================= -->
 <section class="section" id="about">
   <div class="container">
@@ -813,7 +823,11 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <div style="display:flex;justify-content:center;margin-top:16px" class="reveal">
-      <a class="btn dark" href="./pricing.html">料金詳細を見る</a>
+      <a class="btn dark"
+         href="./pricing.html"
+         onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'index_pricing_detail'});">
+        料金詳細を見る
+      </a>
     </div>
   </div>
 </section>

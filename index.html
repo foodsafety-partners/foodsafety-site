@@ -1,29 +1,62 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta name="google-site-verification" content="M9sBRfhnvKEn96W_RlYFbuy9_WDfgd11KCCqLQrDwU4" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8KX0R29GW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Search Console verification -->
+  <meta name="google-site-verification" content="M9sBRfhnvKEn96W_RlYFbuy9_WDfgd11KCCqLQrDwU4" />
 
-  gtag('config', 'G-F8KX0R29GW');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8KX0R29GW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F8KX0R29GW');
+  </script>
 
-  
-<!-- =========================================================
-  [REPLACE-HEAD-START] ここは通常触らない（title/description/keywordsを変える時だけ）
-========================================================= -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>食品安全パートナーズ｜食品安全コンサルティング</title>
-<meta name="description" content="食品企業向けに、実践的で持続可能な食品安全支援サービスを提供。食品安全 コンサル、ISO22000 支援、HACCP 構築支援、FSSC22000 取得支援、JFS対応。">
-<meta name="keywords" content="食品安全 コンサル, ISO22000 支援, HACCP 構築支援, FSSC22000 取得支援, 中小食品企業, JFS">
-<!-- =========================================================
-  [REPLACE-HEAD-END]
-========================================================= -->
+  <!-- =========================================================
+    [REPLACE-HEAD-START] ここは通常触らない（title/description/keywordsを変える時だけ）
+  ========================================================= -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ★SEO：title/description を “総合トップ” 用に最適化 -->
+  <title>食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ</title>
+  <meta name="description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。HACCP構築、JFS-B審査対応、ISO22000/FSSC22000取得支援。無料テンプレ（Excel）配布中。">
+  <meta name="keywords" content="食品安全 コンサル, HACCP 構築支援, JFS-B 審査, ISO22000 支援, FSSC22000 取得支援, 中小食品企業">
+
+  <!-- ★SEO：canonical（公開URLに合わせる） -->
+  <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/index.html">
+
+  <!-- ★SNS：OG（最低限） -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ">
+  <meta property="og:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。無料テンプレ配布中。">
+  <meta property="og:url" content="https://foodsafety-partners.github.io/foodsafety-site/index.html">
+  <!-- og:image は用意できる場合だけ。無ければ削除でOK -->
+  <!-- <meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/ogp.jpg"> -->
+
+  <!-- ★構造化データ（Organization / WebSite） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "食品安全パートナーズ",
+    "url": "https://foodsafety-partners.github.io/foodsafety-site/",
+    "sameAs": [],
+    "description": "中小食品企業向けの食品安全コンサルティング。HACCP・JFS-B・ISO22000・FSSC22000に対応。"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"食品安全パートナーズ",
+    "url":"https://foodsafety-partners.github.io/foodsafety-site/"
+  }
+  </script>
+  <!-- =========================================================
+    [REPLACE-HEAD-END]
+  ========================================================= -->
 
 <style>
 /* =========================================================
@@ -155,7 +188,7 @@ a{color:inherit;text-decoration:none}
 .bookTag strong{font-weight:1000}
 .kindleNote{margin:12px 0 0;color:var(--muted);font-weight:850;font-size:12px;line-height:1.8}
 
-/* ▼ Kindle Unlimited 導線（index用：既存世界観に合わせる） */
+/* ▼ Kindle Unlimited 導線（index用） */
 .kuGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
 .kuCard{
   background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:16px;
@@ -169,7 +202,7 @@ a{color:inherit;text-decoration:none}
 @media(max-width:980px){.kuGrid{grid-template-columns:1fr}}
 /* ▲ Kindle Unlimited 導線 */
 
-/* メール：アドレスは表示しない・アイコンボタン */
+/* メール：アイコンボタン */
 .iconBtn{
   display:inline-flex;align-items:center;gap:10px;
   padding:11px 14px;border-radius:12px;
@@ -180,7 +213,7 @@ a{color:inherit;text-decoration:none}
 .iconBtn svg{width:18px;height:18px;flex:0 0 auto}
 .iconBtn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
 
-/* ▼ 人気コラムTOP3（番号付き＋一覧＆無料特典導線） */
+/* ▼ 人気コラムTOP3 */
 .popWrap{
   background:rgba(255,255,255,.76);
   border:1px solid rgba(255,255,255,.65);
@@ -209,8 +242,6 @@ a{color:inherit;text-decoration:none}
     radial-gradient(520px 220px at 80% 75%, rgba(44,86,122,.18), transparent 60%),
     linear-gradient(180deg, rgba(238,241,246,.9), rgba(255,255,255,1));
   padding:14px;min-height:126px;
-
-  /* ★修正：タイトルが上に寄り、上の不自然な空白を作らない */
   display:flex;
   align-items:flex-start;
 }
@@ -229,9 +260,8 @@ a{color:inherit;text-decoration:none}
   margin-top:10px;
 }
 .popLink{color:var(--accent2);font-weight:1000;text-decoration:underline}
-/* ▲ 人気コラムTOP3 */
 
-/* ▼ 無料特典（download）導線：index用 */
+/* ▼ 無料特典導線（index用） */
 .downloadWrap{
   background:rgba(255,255,255,.76);
   border:1px solid rgba(255,255,255,.65);
@@ -255,7 +285,6 @@ a{color:inherit;text-decoration:none}
   font-weight:900;font-size:12px;
 }
 .badge strong{font-weight:1000}
-/* ▲ 無料特典（download）導線 */
 
 @media (prefers-reduced-motion:no-preference){
   .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
@@ -281,10 +310,13 @@ a{color:inherit;text-decoration:none}
 
 <body>
 <div id="progress"></div>
-<a id="toTop" href="./index.html#" aria-label="ページ先頭へ">↑</a>
+<a id="toTop" href="#top" aria-label="ページ先頭へ">↑</a>
+
+<!-- トップアンカー -->
+<div id="top"></div>
 
 <!-- =========================================================
-  [REPLACE-HEADER-START] ヘッダーメニュー（リンク追加/順序変更するならここ）
+  [REPLACE-HEADER-START]
 ========================================================= -->
 <header class="header">
   <div class="container">
@@ -293,18 +325,26 @@ a{color:inherit;text-decoration:none}
         <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
       </a>
       <nav class="menu" aria-label="メニュー">
-        <a href="./index.html#about">理念</a>
-        <a href="./index.html#values">バリュー</a>
-        <a href="./index.html#services">サービス</a>
-        <a href="./index.html#columns">コラム</a>
-        <a href="./index.html#download">無料特典</a>
-        <a href="./index.html#pricing">料金</a>
+        <!-- ★同一ページ内は ./index.html を省略（読み込み効率＆見やすさ） -->
+        <a href="#about">理念</a>
+        <a href="#values">バリュー</a>
+
+        <!-- ★サービス詳細ページを新設する前提でリンクを追加 -->
+        <a href="#services">対応規格</a>
+        <a href="./service.html">サービス詳細</a>
+
+        <a href="#columns">人気コラム</a>
+        <a href="#download">無料特典</a>
+
+        <a href="#pricing">料金</a>
+        <a href="./pricing.html">料金詳細</a>
+
         <a href="./column.html">コラム一覧</a>
-        <a href="./index.html#books">書籍</a>
-        <a href="./index.html#kindleunlimited">無料で読む</a>
-        <a href="./index.html#contact">お問い合わせ</a>
+        <a href="#books">書籍</a>
+        <a href="#kindleunlimited">無料で読む</a>
+        <a href="#contact">お問い合わせ</a>
       </nav>
-      <a class="btn primary" href="./index.html#consult">無料相談</a>
+      <a class="btn primary" href="#consult">無料相談</a>
     </div>
   </div>
 </header>
@@ -314,7 +354,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-HERO-START] ファーストビュー（キャッチ/サブ文言/ボタン変更ならここ）
+  [REPLACE-HERO-START]
 ========================================================= -->
 <section class="hero">
   <div class="container">
@@ -327,13 +367,11 @@ a{color:inherit;text-decoration:none}
           私たちは<strong>食品企業</strong>に寄り添い、理想論ではなく<strong>実務で回る仕組み</strong>を一緒に作ります。
         </p>
 
-        <!-- [REPLACE-HERO-BTNS-START] ヒーローのボタン群 -->
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="./index.html#consult">30分オンライン無料相談</a>
-          <a class="btn ghost" href="./index.html#pricing">料金を見る</a>
+          <a class="btn primary" href="#consult">30分オンライン無料相談</a>
+          <a class="btn ghost" href="#pricing">料金を見る</a>
           <a class="btn" href="./column.html">コラム一覧</a>
         </div>
-        <!-- [REPLACE-HERO-BTNS-END] -->
 
         <p class="hNote">
           ※過度に「立派な文書」を目指すのではなく、現場の人が継続できる設計を重視します。<br>
@@ -341,7 +379,6 @@ a{color:inherit;text-decoration:none}
         </p>
       </div>
 
-      <!-- [REPLACE-HERO-IMAGES-START] 画像差し替えならここ -->
       <div class="photoCard reveal">
         <div class="frame big hoverlift"><img src="./assets/img/photo1.webp" alt="食品工場の衛生管理（写真）"></div>
         <div class="stack">
@@ -349,8 +386,6 @@ a{color:inherit;text-decoration:none}
           <div class="frame small hoverlift"><img src="./assets/img/photo3.webp" alt="教育・点検（写真）"></div>
         </div>
       </div>
-      <!-- [REPLACE-HERO-IMAGES-END] -->
-
     </div>
   </div>
 </section>
@@ -360,7 +395,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-CTA3-START] 3つの導線カード（リンク/文言変更ならここ）
+  [REPLACE-CTA3-START]
 ========================================================= -->
 <section class="ctaRow">
   <div class="container">
@@ -371,12 +406,12 @@ a{color:inherit;text-decoration:none}
         <span class="btn dark">読む</span>
       </a>
 
-      <a class="cta hoverlift reveal" href="./index.html#books" aria-label="Kindleで学ぶ（書籍紹介へ）">
+      <a class="cta hoverlift reveal" href="#books" aria-label="Kindleで学ぶ（書籍紹介へ）">
         <div><b>Kindleで学ぶ</b><div class="sub">監査員目線を知る</div></div>
         <span class="btn dark">書籍</span>
       </a>
 
-      <a class="cta hoverlift reveal" href="./index.html#consult" aria-label="まずはご相談（30分無料で現状整理）">
+      <a class="cta hoverlift reveal" href="#consult" aria-label="まずはご相談（30分無料で現状整理）">
         <div><b>まずはご相談</b><div class="sub">30分無料で現状整理</div></div>
         <span class="btn dark">相談</span>
       </a>
@@ -390,7 +425,8 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-DOWNLOAD-START] 無料特典ブロック（登録導線・文言変更するならここ）
+  [REPLACE-DOWNLOAD-START]
+  ★計測：無料特典ボタンにイベント送信を追加（lead_click）
 ========================================================= -->
 <section class="section" id="download" style="padding-top:10px">
   <div class="container">
@@ -416,13 +452,16 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <!-- [REPLACE-DOWNLOAD-BTNS-START] 無料特典ブロックのボタン群 -->
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-          <a class="btn primary" href="./download.html" aria-label="無料特典ダウンロードページへ">無料で受け取る</a>
-          <a class="btn dark" href="./index.html#consult" aria-label="30分無料相談へ">無料相談</a>
+          <a class="btn primary"
+             href="./download.html"
+             aria-label="無料特典ダウンロードページへ"
+             onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'index_download_button'});">
+            無料で受け取る
+          </a>
+          <a class="btn dark" href="#consult" aria-label="30分無料相談へ">無料相談</a>
           <a class="btn" href="./column.html" aria-label="コラム一覧へ">コラム</a>
         </div>
-        <!-- [REPLACE-DOWNLOAD-BTNS-END] -->
 
       </div>
     </div>
@@ -434,10 +473,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-POPULAR-START] 人気コラムTOP3
-  ★修正点：
-  - 「popGridの入れ子」をやめる（これがレイアウト崩れ・空白の原因）
-  - popFootは popGrid の外に出す（グリッド計算が安定）
+  [REPLACE-POPULAR-START]
 ========================================================= -->
 <section class="section" id="columns" style="padding-top:10px">
   <div class="container">
@@ -448,11 +484,8 @@ a{color:inherit;text-decoration:none}
     </p>
 
     <div class="popWrap reveal">
-
-      <!-- ★ここは「popGrid 1つだけ」 -->
       <div class="popGrid">
 
-        <!-- 1位：column-7 -->
         <a class="popCard hoverlift" href="./column-7.html" aria-label="人気コラム1位：JFS-B審査で実際に見られる5つのポイント（中小食品企業向け）">
           <div class="popHead">
             <span class="rank">1</span>
@@ -469,7 +502,6 @@ a{color:inherit;text-decoration:none}
           </div>
         </a>
 
-        <!-- 2位：column-1 -->
         <a class="popCard hoverlift" href="./column-1.html" aria-label="人気コラム2位：形だけのHACCPを卒業する（JFS-Bを見据えた現場で回る仕組み）">
           <div class="popHead">
             <span class="rank">2</span>
@@ -486,7 +518,6 @@ a{color:inherit;text-decoration:none}
           </div>
         </a>
 
-        <!-- 3位：column-2 -->
         <a class="popCard hoverlift" href="./column-2.html" aria-label="人気コラム3位：HACCPの記録が続かないを解決する（中小食品企業の運用設計）">
           <div class="popHead">
             <span class="rank">3</span>
@@ -503,18 +534,21 @@ a{color:inherit;text-decoration:none}
           </div>
         </a>
 
-      </div><!-- /.popGrid -->
+      </div>
 
-      <!-- ★popFootはグリッドの外（崩れない） -->
       <div class="popFoot">
         <a class="popLink" href="./column.html">すべてのコラムを見る →</a>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
-          <a class="btn" href="./index.html#consult">無料相談</a>
+          <a class="btn primary"
+             href="./download.html"
+             onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'index_pop_download'});">
+            無料特典（テンプレート）
+          </a>
+          <a class="btn" href="#consult">無料相談</a>
         </div>
       </div>
 
-    </div><!-- /.popWrap -->
+    </div>
   </div>
 </section>
 <!-- =========================================================
@@ -523,16 +557,17 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-ABOUT-START] ミッション/ビジョン（文章差し替えならここ）
+  [REPLACE-ABOUT-START]
+  ★全角インデント（変な空白）を除去して整形
 ========================================================= -->
 <section class="section" id="about">
   <div class="container">
     <h2 class="sectionTitle reveal">ミッション / ビジョン</h2>
-　　　<p class="sectionLead reveal">
-　　　  私たちは、誠実に、実務に根差した支援を行います。<br class="pc">
-　　　  お客様の自立性を大切にし、現実的な制約（人員・時間・運用負荷）を踏まえて<br class="pc">
-　　　  「現場で続く食品安全」を一緒に作ります。
-</p>
+    <p class="sectionLead reveal">
+      私たちは、誠実に、実務に根差した支援を行います。<br>
+      お客様の自立性を大切にし、現実的な制約（人員・時間・運用負荷）を踏まえて<br>
+      「現場で続く食品安全」を一緒に作ります。
+    </p>
 
     <div class="grid2">
       <div class="card reveal hoverlift">
@@ -552,7 +587,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-VALUES-START] バリュー（文言差し替えならここ）
+  [REPLACE-VALUES-START]
 ========================================================= -->
 <section class="section" id="values" style="padding-top:10px">
   <div class="container">
@@ -584,14 +619,16 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-SERVICES-START] サービス（文章差し替えならここ）
+  [REPLACE-SERVICES-START]
+  ★indexは“概要”に留め、詳細は service.html へ誘導
 ========================================================= -->
 <section class="section" id="services" style="padding-top:10px">
   <div class="container">
-    <h2 class="sectionTitle reveal">サービス内容（対応規格）</h2>
+    <h2 class="sectionTitle reveal">対応規格（概要）</h2>
     <p class="sectionLead reveal">
       対象：HACCP / JFS / ISO22000 / FSSC22000。<br>
-      目的（審査対応・取引要件・現場改善）と現状に合わせて、無理のない順序で整えます。
+      目的（審査対応・取引要件・現場改善）と現状に合わせて、無理のない順序で整えます。<br>
+      具体的な進め方・成果物・期間は <a href="./service.html" style="text-decoration:underline;color:var(--accent2);font-weight:1000;">サービス詳細</a> にまとめています。
     </p>
 
     <div class="grid2">
@@ -600,17 +637,21 @@ a{color:inherit;text-decoration:none}
         <p>危害要因分析から管理手段の設計まで、現場で運用し続けられるHACCPを一緒に作ります。</p>
       </div>
       <div class="card reveal hoverlift">
-        <h3>JFS 支援</h3>
-        <p>国内食品企業に導入しやすい枠組み。段階的にレベルアップできる設計と、運用定着を支援します。</p>
+        <h3>JFS 支援（JFS-B含む）</h3>
+        <p>段階的にレベルアップできる設計と、審査観点を踏まえた運用定着を支援します。</p>
       </div>
       <div class="card reveal hoverlift">
         <h3>ISO22000 支援</h3>
-        <p>食品安全マネジメントシステム（FSMS）を、経営と現場が無理なくつながる形で構築・運用できるよう支援します。</p>
+        <p>FSMSを、経営と現場が無理なくつながる形で構築・運用できるよう支援します。</p>
       </div>
       <div class="card reveal hoverlift">
         <h3>FSSC22000 取得支援</h3>
         <p>ISO22000を土台に追加要求を含むスキームに対応。審査観点・取引要件を踏まえ、現実的な導入を支援します。</p>
       </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;margin-top:16px" class="reveal">
+      <a class="btn dark" href="./service.html">サービス詳細を見る</a>
     </div>
   </div>
 </section>
@@ -620,7 +661,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-BOOKS-START] Kindle書籍（書籍差し替えならここ）
+  [REPLACE-BOOKS-START]
 ========================================================= -->
 <section class="section" id="books" style="padding-top:10px">
   <div class="container">
@@ -675,7 +716,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-KU-START] Kindle Unlimited導線（リンク/文言変更ならここ）
+  [REPLACE-KU-START]
 ========================================================= -->
 <section class="section" id="kindleunlimited" style="padding-top:10px">
   <div class="container">
@@ -707,8 +748,8 @@ a{color:inherit;text-decoration:none}
           </p>
           <div class="kuBtns">
             <a class="btn primary" href="https://amzn.to/4qEGAjn" target="_blank" rel="noopener noreferrer" aria-label="Kindle Unlimited 30日間無料体験（Amazonへ）">30日間無料で読む</a>
-            <a class="btn dark" href="./index.html#books" aria-label="書籍紹介へ戻る">書籍を見る</a>
-            <a class="btn" href="./index.html#consult" aria-label="無料相談へ">相談する</a>
+            <a class="btn dark" href="#books" aria-label="書籍紹介へ戻る">書籍を見る</a>
+            <a class="btn" href="#consult" aria-label="無料相談へ">相談する</a>
           </div>
           <p class="kuNote" style="margin-top:10px">※当サイトはAmazonアソシエイト・プログラムの参加者です。</p>
         </div>
@@ -723,14 +764,17 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-PRICING-START] 料金（値段/文言/項目変更ならここ）
+  [REPLACE-PRICING-START]
+  ★indexは“要点”に留め、詳細は pricing.html へ誘導
 ========================================================= -->
 <section class="section" id="pricing" style="padding-top:10px">
   <div class="container">
-    <h2 class="sectionTitle reveal">料金</h2>
+    <h2 class="sectionTitle reveal">料金（要点）</h2>
     <p class="sectionLead reveal">
       まずは現状に合わせて最小構成からご提案します。<br>
       <span class="tag">※個別の支援プランあり</span>
+      <br>
+      詳細条件・範囲は <a href="./pricing.html" style="text-decoration:underline;color:var(--accent2);font-weight:1000;">料金詳細</a> をご確認ください。
     </p>
 
     <div class="priceGrid">
@@ -767,6 +811,10 @@ a{color:inherit;text-decoration:none}
         <div class="meta">食品安全を経営基盤として継続強化したい企業様向け</div>
       </div>
     </div>
+
+    <div style="display:flex;justify-content:center;margin-top:16px" class="reveal">
+      <a class="btn dark" href="./pricing.html">料金詳細を見る</a>
+    </div>
   </div>
 </section>
 <!-- =========================================================
@@ -775,7 +823,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-CONSULT-START] 無料相談導線（文言/メール文変更ならここ）
+  [REPLACE-CONSULT-START]
 ========================================================= -->
 <section class="section" id="consult" style="padding-top:10px">
   <div class="container">
@@ -789,7 +837,10 @@ a{color:inherit;text-decoration:none}
       <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
         <div style="font-weight:1000">メールでご連絡</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="iconBtn primary" href="mailto:foodsafety.partners@gmail.com?subject=無料相談（30分）申込み&body=【会社名】%0D%0A【ご担当者名】%0D%0A【相談したい内容】%0D%0A" aria-label="メールで無料相談を申し込む">
+          <a class="iconBtn primary"
+             href="mailto:foodsafety.partners@gmail.com?subject=無料相談（30分）申込み&body=【会社名】%0D%0A【ご担当者名】%0D%0A【相談したい内容】%0D%0A"
+             aria-label="メールで無料相談を申し込む"
+             onclick="gtag('event','consult_click',{'event_category':'consult','event_label':'index_mail_consult'});">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path fill="currentColor" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.63 4.41c.1.08.24.12.37.12s.27-.04.37-.12L18.2 6H6.2Zm12.8 2.13-4.93 3.86c-.6.47-1.47.47-2.07 0L7.1 8.13 6 7.28v10.22c0 .83.67 1.5 1.5 1.5h11c.83 0 1.5-.67 1.5-1.5V7.28l-1 .85Z"/>
             </svg>
@@ -807,7 +858,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-CONTACT-START] お問い合わせ（文言/メール文変更ならここ）
+  [REPLACE-CONTACT-START]
 ========================================================= -->
 <section class="section" id="contact" style="padding-top:10px">
   <div class="container">
@@ -820,7 +871,10 @@ a{color:inherit;text-decoration:none}
 
     <div class="card reveal hoverlift" style="max-width:920px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
       <div style="font-weight:1000">メールでお問い合わせ</div>
-      <a class="iconBtn primary" href="mailto:foodsafety.partners@gmail.com?subject=お問い合わせ&body=【会社名】%0D%0A【ご担当者名】%0D%0A【ご相談内容】%0D%0A" aria-label="メールで問い合わせ">
+      <a class="iconBtn primary"
+         href="mailto:foodsafety.partners@gmail.com?subject=お問い合わせ&body=【会社名】%0D%0A【ご担当者名】%0D%0A【ご相談内容】%0D%0A"
+         aria-label="メールで問い合わせ"
+         onclick="gtag('event','contact_click',{'event_category':'contact','event_label':'index_mail_contact'});">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.63 4.41c.1.08.24.12.37.12s.27-.04.37-.12L18.2 6H6.2Zm12.8 2.13-4.93 3.86c-.6.47-1.47.47-2.07 0L7.1 8.13 6 7.28v10.22c0 .83.67 1.5 1.5 1.5h11c.83 0 1.5-.67 1.5-1.5V7.28l-1 .85Z"/>
         </svg>
@@ -835,7 +889,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-FOOTER-START] フッター（表記変更ならここ）
+  [REPLACE-FOOTER-START]
 ========================================================= -->
 <footer class="footer">
   <div class="container">
@@ -849,7 +903,7 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  [REPLACE-SCRIPT-START] JS（基本触らない）
+  [REPLACE-SCRIPT-START]
 ========================================================= -->
 <script>(() => {
   const toTop = document.getElementById("toTop");

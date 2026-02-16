@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Search Console verification（※必要なら残す：全ページ共通でもOK） -->
+  <meta name="google-site-verification" content="M9sBRfhnvKEn96W_RlYFbuy9_WDfgd11KCCqLQrDwU4" />
+
+  <!-- Google tag (gtag.js)（※index同様：全ページ共通で計測したいなら残す） -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8KX0R29GW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F8KX0R29GW');
+  </script>
+
+  <!-- =========================================================
+    SEO（chusho.html 専用）
+  ========================================================= -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>中小食品企業のための食品安全コンサル｜HACCP・JFS-B対応｜食品安全パートナーズ</title>
+  <meta name="description" content="中小食品企業向けに、HACCP構築・JFS-B審査対応を「現場で続く形」で支援。形だけで終わらせない食品安全コンサル。無料テンプレ（Excel）配布中。30分オンライン無料相談。">
+  <meta name="keywords" content="食品安全 コンサル 中小, 食品安全 コンサル, 中小食品企業 HACCP, JFS-B 審査 対応, HACCP 構築 支援">
+
+  <!-- canonical（公開URLに合わせる） -->
+  <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/chusho.html">
+
+  <!-- OG（最低限） -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="中小食品企業のための食品安全コンサル｜HACCP・JFS-B対応｜食品安全パートナーズ">
+  <meta property="og:description" content="中小食品企業向けに、HACCP構築・JFS-B審査対応を「現場で続く形」で支援。無料テンプレ配布中。">
+  <meta property="og:url" content="https://foodsafety-partners.github.io/foodsafety-site/chusho.html">
+  <!-- og:image は用意できる場合だけ -->
+  <!-- <meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/ogp.jpg"> -->
+
+  <!-- 構造化データ（FAQ + Service） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"中小食品企業のための食品安全コンサル｜HACCP・JFS-B対応",
+    "url":"https://foodsafety-partners.github.io/foodsafety-site/chusho.html",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"食品安全パートナーズ",
+      "url":"https://foodsafety-partners.github.io/foodsafety-site/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "serviceType":"食品安全コンサルティング（中小食品企業向け）",
+    "provider":{
+      "@type":"Organization",
+      "name":"食品安全パートナーズ",
+      "url":"https://foodsafety-partners.github.io/foodsafety-site/"
+    },
+    "areaServed":"JP",
+    "description":"中小食品企業向けに、HACCP構築・JFS-B審査対応を、現場で続く運用設計として支援します。"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"まだ文書が整っていなくても相談できますか？",
+        "acceptedAnswer":{"@type":"Answer","text":"はい、問題ありません。現状の運用・記録・体制をヒアリングし、優先順位を整理したうえで最小構成から整えます。"}
+      },
+      {
+        "@type":"Question",
+        "name":"JFS-Bの審査が近いのですが間に合いますか？",
+        "acceptedAnswer":{"@type":"Answer","text":"審査時期と現状によります。まずは重要項目（ハザード分析、根拠、CCP管理、記録、教育）に絞り、短期で整えるプランをご提案します。"}
+      },
+      {
+        "@type":"Question",
+        "name":"現場が忙しくて記録が続きません。",
+        "acceptedAnswer":{"@type":"Answer","text":"記録の最小セット化、頻度の適正化、責任分担の設計で改善できます。現場で回る運用に落とし込みます。"}
+      },
+      {
+        "@type":"Question",
+        "name":"オンラインだけで支援できますか？",
+        "acceptedAnswer":{"@type":"Answer","text":"はい、可能です。オンラインでのヒアリング・レビュー・改善指示で進められます。必要に応じて現地対応もご相談ください。"}
+      }
+    ]
+  }
+  </script>
+
+<style>
+/* =========================================================
+  index.html と統一感あるデザイン（同系統の変数・ボタン・カード）
+========================================================= */
+:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
+#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
+#toTop.show{opacity:1;transform:none}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(27,37,51,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:42px;width:auto}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
+.menu a{opacity:.82}
+.menu a:hover{opacity:1}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+.btn.ghost{background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.20)}
+
+.section{padding:56px 0 66px}
+.sectionTitle{text-align:center;margin:0 0 14px;font-size:22px}
+.sectionLead{text-align:center;margin:0 auto 26px;color:var(--muted);font-weight:850;font-size:13px;max-width:900px;line-height:1.9}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:16px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
+.card h3{margin:0 0 8px;font-size:16px}
+.card p{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.75}
+
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 10px;border-radius:999px;
+  border:1px solid rgba(27,37,51,.12);background:#fff;color:#243042;
+  font-weight:900;font-size:12px;
+}
+.badge strong{font-weight:1000}
+
+.callout{border-left:6px solid var(--accent);background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;padding:14px;margin:16px 0}
+.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+
+.iconBtn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 14px;border-radius:12px;
+  font-weight:1000;border:1px solid rgba(27,37,51,.12);
+  background:#fff;
+}
+.iconBtn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.iconBtn svg{width:18px;height:18px;flex:0 0 auto}
+.iconBtn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
+
+/* chusho 専用：ヒーロー */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 560px at 28% 22%, rgba(255,255,255,.18), transparent 62%),
+    linear-gradient(180deg, rgba(10,18,32,.78), rgba(10,18,32,.32)),
+    url("./assets/img/hero.webp");
+  background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,.18)
+}
+@media (min-width: 981px){.hero{background-attachment:fixed}}
+.heroGrid{padding:72px 0 48px;display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}
+.hKicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:12px;letter-spacing:.04em;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 10px}
+.hTitle{color:#fff;font-weight:1000;font-size:44px;line-height:1.10;margin:10px 0 10px;text-shadow:0 3px 18px rgba(0,0,0,.35)}
+.hSub{color:rgba(255,255,255,.92);font-weight:850;margin:0 0 14px;line-height:1.9}
+.hNote{color:rgba(255,255,255,.82);font-weight:850;font-size:13px;line-height:1.8;margin:12px 0 0}
+
+.heroCard{
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 14px 26px rgba(24,32,48,.18);
+}
+.heroCard h2{margin:0 0 8px;font-size:16px}
+.heroCard ul{margin:0;padding-left:18px;line-height:1.9;color:#2a3647;font-weight:850}
+.heroBadges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+
+/* FAQ */
+.faq{
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:14px;
+}
+.faq details{border-top:1px solid rgba(27,37,51,.10);padding:12px 0}
+.faq details:first-child{border-top:none}
+.faq summary{cursor:pointer;font-weight:1000}
+.faq p{margin:10px 0 0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.85}
+
+/* ステップ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:14px;
+  box-shadow:0 10px 20px rgba(24,32,48,.08);
+}
+.step .num{
+  width:34px;height:34px;border-radius:12px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(44,86,122,.10);border:1px solid rgba(44,86,122,.18);
+  font-weight:1000;
+}
+.step h3{margin:10px 0 6px;font-size:15px}
+.step p{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.75}
+
+.ctaBox{
+  background:rgba(255,255,255,.76);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 12px 26px rgba(24,32,48,.10);
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
+  .reveal.show{opacity:1;transform:none}
+  .hoverlift{transition:transform .18s ease, box-shadow .18s ease}
+  .hoverlift:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
+}
+@media(max-width:980px){
+  .heroGrid{grid-template-columns:1fr;padding:42px 0 34px}
+  .grid3,.grid2,.steps{grid-template-columns:1fr}
+  .menu{display:none}
+  .hero{background-attachment:scroll}
+  .hTitle{font-size:38px}
+}
+</style>
+</head>
+
+<body>
+<div id="progress"></div>
+<a id="toTop" href="#top" aria-label="ページ先頭へ">↑</a>
+<div id="top"></div>
+
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ トップへ">
+        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+      </a>
+      <nav class="menu" aria-label="メニュー">
+        <a href="./index.html">総合トップ</a>
+        <a href="#problems">よくある悩み</a>
+        <a href="#solution">支援内容</a>
+        <a href="#flow">支援の流れ</a>
+        <a href="#faq">FAQ</a>
+        <a href="#download">無料特典</a>
+        <a href="#cta">無料相談</a>
+      </nav>
+      <a class="btn primary" href="#cta"
+         onclick="gtag('event','consult_click',{'event_category':'consult','event_label':'chusho_header_cta'});">
+        無料相談
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- =========================================================
+  1. ファーストビュー
+========================================================= -->
+<section class="hero" aria-label="中小食品企業向け 食品安全コンサル">
+  <div class="container">
+    <div class="heroGrid">
+      <div class="reveal">
+        <div class="hKicker">中小食品企業向け｜食品安全コンサル</div>
+
+        <h1 class="hTitle">食品安全コンサル（中小食品企業向け）<br>HACCP・JFS-Bを“現場で続く形”に</h1>
+
+        <p class="hSub">
+          「形だけで終わるHACCP」を卒業し、審査対応・取引要件・現場改善につながる仕組みへ。<br>
+          監査員目線で、<strong>やるべき順序</strong>と<strong>最小構成</strong>を一緒に設計します。
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="#cta"
+             onclick="gtag('event','consult_click',{'event_category':'consult','event_label':'chusho_hero_cta'});">
+            30分オンライン無料相談
+          </a>
+          <a class="btn dark" href="./pricing.html"
+             onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'chusho_hero_pricing'});">
+            料金詳細を見る
+          </a>
+          <a class="btn" href="./download.html"
+             onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'chusho_hero_download'});">
+            無料テンプレを受け取る
+          </a>
+        </div>
+
+        <p class="hNote">
+          狙うキーワード：<strong>「食品安全 コンサル 中小」</strong><br>
+          ※このページは中小食品企業向けのSEO特化ページです。総合トップは <a href="./index.html" style="text-decoration:underline;color:#fff;font-weight:1000;">index.html</a> をご覧ください。
+        </p>
+      </div>
+
+      <aside class="heroCard reveal hoverlift" aria-label="このページで分かること">
+        <h2>このページで分かること</h2>
+        <ul>
+          <li>中小食品企業がつまずく「原因」と「優先順位」</li>
+          <li>HACCP / JFS-B を“回る運用”にする具体策</li>
+          <li>支援の流れ（短期で整える設計）</li>
+          <li>無料特典（Excelテンプレ）と無料相談の導線</li>
+        </ul>
+        <div class="heroBadges" aria-label="対応領域">
+          <span class="badge"><strong>対象</strong>：中小食品企業</span>
+          <span class="badge"><strong>対応</strong>：HACCP / JFS-B</span>
+          <span class="badge"><strong>特徴</strong>：現場で続く</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+  2. 中小食品企業が抱える悩み
+========================================================= -->
+<section class="section" id="problems">
+  <div class="container">
+    <h2 class="sectionTitle reveal">中小食品企業が抱えやすい悩み</h2>
+    <p class="sectionLead reveal">
+      「人が足りない」「現場が回らない」「誰も責任を持てない」——。<br>
+      まずは“よくある詰まりどころ”を明確にし、手を付ける順番を間違えないことが重要です。
+    </p>
+
+    <div class="grid3">
+      <div class="card reveal hoverlift">
+        <h3>審査が近いのに、何から手を付ければいいか分からない</h3>
+        <p>HACCPやJFS-Bは「全部やる」ではなく、審査で見られるポイントから優先順位を付けるのが近道です。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>文書はあるが、現場の運用とつながっていない</h3>
+        <p>手順書が立派でも、記録・教育・是正が回らなければ評価されません。“回る形”に再設計します。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>記録が続かない（忙しい・属人化・温度差）</h3>
+        <p>記録の最小セット化、頻度の適正化、責任分担の設計で、現場負荷を下げながら継続できます。</p>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="card reveal hoverlift">
+        <h3>ハザード分析の根拠が説明できない</h3>
+        <p>監査では「なぜその管理か」「なぜCCPか」が問われます。根拠の作り方をセットで整えます。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>担当者が変わると仕組みが崩れる</h3>
+        <p>属人化しない運用設計（役割・教育・記録の型）で、担当交代でも回る仕組みにします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+  3. なぜ失敗するのか
+========================================================= -->
+<section class="section" id="why" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">なぜ「形だけのHACCP」になってしまうのか</h2>
+    <p class="sectionLead reveal">
+      失敗の原因は「やる気」ではなく、<strong>設計の順序</strong>と<strong>運用への落とし込み</strong>にあります。
+    </p>
+
+    <div class="grid3">
+      <div class="card reveal hoverlift">
+        <h3>原因①：書類を先に整え、現場が後回し</h3>
+        <p>文書は“結果”です。工程・現場・記録の実態を踏まえず作ると、運用がズレて崩れます。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>原因②：ハザード分析が「表だけ」になっている</h3>
+        <p>根拠がない分析は審査で詰まります。工程・危害要因・管理手段の“筋道”を作る必要があります。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>原因③：記録・教育・是正が仕組み化されていない</h3>
+        <p>最小セット、頻度、責任者、逸脱時の動きが決まっていないと、忙しい現場では必ず止まります。</p>
+      </div>
+    </div>
+
+    <div class="callout reveal hoverlift" style="max-width:920px;margin:18px auto 0">
+      <div style="font-weight:1000;margin-bottom:6px">ポイント</div>
+      <div style="color:var(--muted);font-weight:850;line-height:1.85;font-size:13px">
+        中小食品企業の食品安全は、<strong>「最小構成で回す」→「審査に耐える根拠を追加」→「定着」</strong>の順が最短です。<br>
+        この順番で支援します。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+  4. 食品安全パートナーズができること
+========================================================= -->
+<section class="section" id="solution" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">食品安全パートナーズができること（中小食品企業向け）</h2>
+    <p class="sectionLead reveal">
+      「やるべきこと」を増やすのではなく、<strong>現場で続く最小構成</strong>を作り、審査・取引要件に耐える形へ整えます。
+    </p>
+
+    <div class="grid2">
+      <div class="card reveal hoverlift">
+        <h3>HACCPを“回る形”に再設計</h3>
+        <p>工程把握 → ハザード分析 → 管理手段の根拠 → 記録設計まで、監査で説明できる筋道を作ります。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>JFS-B審査の「見られるポイント」に集中</h3>
+        <p>重要項目（根拠／CCP／記録／教育／是正）を優先し、短期で整える現実的なロードマップを引きます。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>現場負荷を下げる記録・頻度・責任分担の設計</h3>
+        <p>記録の最小セット化、頻度の適正化、責任者の決め方で「続く」状態を作ります。</p>
+      </div>
+      <div class="card reveal hoverlift">
+        <h3>審査前の“詰まり”を潰すレビュー</h3>
+        <p>審査で突っ込まれやすい箇所（根拠、整合、運用証跡）をレビューし、説明できる形に整えます。</p>
+      </div>
+    </div>
+
+    <div class="ctaBox reveal" style="max-width:980px;margin:18px auto 0">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:1000">料金は状況により最小構成からご提案します</div>
+          <div style="color:var(--muted);font-weight:850;font-size:13px;line-height:1.8;margin-top:4px">
+            詳細条件・支援範囲は <a href="./pricing.html" style="text-decoration:underline;color:var(--accent2);font-weight:1000;">料金詳細</a> をご確認ください。
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn dark" href="./pricing.html"
+             onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'chusho_solution_pricing'});">
+            料金詳細へ
+          </a>
+          <a class="btn primary" href="#cta"
+             onclick="gtag('event','consult_click',{'event_category':'consult','event_label':'chusho_solution_cta'});">
+            無料相談
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+  5. 支援の流れ
+========================================================= -->
+<section class="section" id="flow" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">支援の流れ（最短で“審査に耐える形”へ）</h2>
+    <p class="sectionLead reveal">
+      中小食品企業の現実（人員・時間・運用負荷）を踏まえ、最小構成から段階的に整えます。
+    </p>
+
+    <div class="steps">
+      <div class="step reveal hoverlift">
+        <span class="num">1</span>
+        <h3>現状整理（ヒアリング）</h3>
+        <p>審査予定、現状の運用、記録、体制を確認し、優先順位を決めます。</p>
+      </div>
+      <div class="step reveal hoverlift">
+        <span class="num">2</span>
+        <h3>最小構成の設計</h3>
+        <p>回る運用を前提に、記録・頻度・責任分担・是正の流れを設計します。</p>
+      </div>
+      <div class="step reveal hoverlift">
+        <span class="num">3</span>
+        <h3>根拠と整合を補強</h3>
+        <p>ハザード分析、CCP根拠、管理手段の妥当性を整え、説明できる形にします。</p>
+      </div>
+      <div class="step reveal hoverlift">
+        <span class="num">4</span>
+        <h3>定着（教育・運用）</h3>
+        <p>教育、運用ルール、記録レビューで“続く状態”へ。審査前レビューも対応します。</p>
+      </div>
+    </div>
+
+    <div class="callout reveal hoverlift" style="max-width:920px;margin:18px auto 0">
+      <div style="font-weight:1000;margin-bottom:6px">短期で整える場合の考え方</div>
+      <div style="color:var(--muted);font-weight:850;line-height:1.85;font-size:13px">
+        審査が近い場合は「全部」ではなく、<strong>審査で確実に見られる項目</strong>に集中して整えます。<br>
+        まず無料相談で、期限と現状から現実的なプランを一緒に組み立てます。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+  6. FAQ
+========================================================= -->
+<section class="section" id="faq" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">よくある質問（FAQ）</h2>
+    <p class="sectionLead reveal">
+      中小食品企業の支援で、よくいただく質問をまとめました。
+    </p>
+
+    <div class="faq reveal hoverlift" role="region" aria-label="FAQ">
+      <details>
+        <summary>まだ文書が整っていなくても相談できますか？</summary>
+        <p>はい、問題ありません。現状の運用・記録・体制をヒアリングし、優先順位を整理したうえで最小構成から整えます。</p>
+      </details>
+      <details>
+        <summary>JFS-Bの審査が近いのですが間に合いますか？</summary>
+        <p>審査時期と現状によります。重要項目（ハザード分析、根拠、CCP管理、記録、教育）に絞り、短期で整えるプランをご提案します。</p>
+      </details>
+      <details>
+        <summary>現場が忙しくて記録が続きません。</summary>
+        <p>記録の最小セット化、頻度の適正化、責任分担の設計で改善できます。現場で回る運用に落とし込みます。</p>
+      </details>
+      <details>
+        <summary>オンラインだけで支援できますか？</summary>
+        <p>はい、可能です。オンラインでのヒアリング・レビュー・改善指示で進められます。必要に応じて現地対応もご相談ください。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+  7. 無料特典導線
+========================================================= -->
+<section class="section" id="download" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">無料特典（HACCP構築テンプレート：Excel）</h2>
+    <p class="sectionLead reveal">
+      中小食品企業でも「全体像」を一気に整理できる、HACCP構築テンプレート（Excel）を無料配布しています。<br>
+      まずはテンプレで現状を可視化してから相談するのもOKです。
+    </p>
+
+    <div class="ctaBox reveal" style="max-width:980px;margin:0 auto">
+      <div class="card hoverlift" style="margin:0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+        <div style="min-width:260px;flex:1 1 560px">
+          <div style="font-weight:1000;margin:0 0 6px">JFS-B適合を見据えた HACCP構築テンプレート（Excel）</div>
+          <div style="color:var(--muted);font-weight:850;font-size:13px;line-height:1.85">
+            HACCP1〜12（チーム表／製品説明書／フローダイアグラム／ハザード分析／HACCPプラン）を一式で整理。
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+            <span class="badge"><strong>内容</strong>：HACCP1〜12</span>
+            <span class="badge"><strong>対象</strong>：JFS-B / HACCP</span>
+            <span class="badge"><strong>形式</strong>：Excel</span>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="./download.html"
+             onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'chusho_download_cta'});">
+            無料で受け取る
+          </a>
+          <a class="btn dark" href="#cta"
+             onclick="gtag('event','consult_click',{'event_category':'consult','event_label':'chusho_download_to_consult'});">
+            相談もする
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+  8. 無料相談CTA
+========================================================= -->
+<section class="section" id="cta" style="padding-top:10px">
+  <div class="container">
+    <h2 class="sectionTitle reveal">30分オンライン無料相談（中小食品企業向け）</h2>
+    <p class="sectionLead reveal">
+      「いきなり契約」ではなく、まずは現状整理から。<br>
+      審査予定・取引要件・現場の運用状況を伺い、最短で整える優先順位をご提案します。
+    </p>
+
+    <div class="callout reveal hoverlift" style="max-width:920px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:1000">メールで無料相談を申し込む</div>
+          <div style="color:var(--muted);font-weight:850;font-size:13px;line-height:1.8;margin-top:4px">
+            相談内容が固まっていなくてもOKです。まずは状況を教えてください。
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="iconBtn primary"
+             href="mailto:foodsafety.partners@gmail.com?subject=【中小食品企業向け】無料相談（30分）申込み&body=【会社名】%0D%0A【ご担当者名】%0D%0A【所在地（都道府県）】%0D%0A【製品カテゴリ】%0D%0A【審査予定（あれば）】%0D%0A【相談したい内容】%0D%0A"
+             aria-label="メールで無料相談を申し込む"
+             onclick="gtag('event','consult_click',{'event_category':'consult','event_label':'chusho_mail_consult'});">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.63 4.41c.1.08.24.12.37.12s.27-.04.37-.12L18.2 6H6.2Zm12.8 2.13-4.93 3.86c-.6.47-1.47.47-2.07 0L7.1 8.13 6 7.28v10.22c0 .83.67 1.5 1.5 1.5h11c.83 0 1.5-.67 1.5-1.5V7.28l-1 .85Z"/>
+            </svg>
+            <span>無料相談を申し込む</span>
+          </a>
+
+          <a class="btn" href="./index.html"
+             onclick="gtag('event','nav_click',{'event_category':'nav','event_label':'chusho_back_to_index'});">
+            総合トップへ
+          </a>
+          <a class="btn dark" href="./pricing.html"
+             onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'chusho_cta_pricing'});">
+            料金詳細
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="sectionLead reveal" style="margin-top:14px">
+      ※このページ（chusho.html）は「食品安全 コンサル 中小」を狙うSEO特化ページです。<br>
+      会社全体の案内は <a href="./index.html" style="text-decoration:underline;color:var(--accent2);font-weight:1000;">index.html</a> をご覧ください。
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    © 食品安全パートナーズ<br>
+    <span style="font-size:12px">※当サイトはAmazonアソシエイト・プログラムの参加者です。</span>
+  </div>
+</footer>
+
+<script>(() => {
+  const toTop = document.getElementById("toTop");
+  const bar = document.getElementById("progress");
+  const onScroll = () => {
+    const d = document.documentElement;
+    const max = (d.scrollHeight - d.clientHeight) || 1;
+    bar.style.width = (d.scrollTop / max) * 100 + "%";
+    toTop.classList.toggle("show", d.scrollTop > 600);
+  };
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const targets = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+    targets.forEach(el => io.observe(el));
+  }
+})();</script>
+
+</body>
+</html>

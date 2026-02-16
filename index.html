@@ -30,7 +30,7 @@
   <!-- ★SEO：canonical（トップは / に統一するのが無難） -->
   <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/">
 
-  <!-- ★favicon（今回はロゴを流用：本来は 32/48px など推奨） -->
+  <!-- ★favicon -->
   <link rel="icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
   <link rel="shortcut icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
   <link rel="apple-touch-icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
@@ -44,13 +44,13 @@
   <meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
   <meta property="og:image:alt" content="食品安全パートナーズ ロゴ">
 
-  <!-- ★SNS：Twitterカード（OGPと整合） -->
+  <!-- ★SNS：Twitterカード -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ">
   <meta name="twitter:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。無料テンプレ（Excel）配布中。">
   <meta name="twitter:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
 
-  <!-- ★構造化データ（Organization / WebSite）※重複を排除して1セットのみ -->
+  <!-- ★構造化データ（Organization / WebSite） -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,7 +89,6 @@
 <style>
 /* =========================================================
   [REPLACE-STYLE-START]
-  ここは基本触らない（デザイン大改修のときのみ）
 ========================================================= */
 :root{
   --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
@@ -113,9 +112,28 @@ a{color:inherit;text-decoration:none}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{height:42px;width:auto}
-.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
-.menu a{opacity:.82}
+
+/* ▼ ヘッダー整理：詰まり対策（重要）
+   - リンク数を削減（HTML側）
+   - 日本語が1文字ずつ折り返されるのを防止（white-space:nowrap）
+*/
+.menu{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:900;
+  font-size:14px;
+  color:#243042;
+  flex-wrap:nowrap;
+  white-space:nowrap;
+}
+.menu a{
+  opacity:.82;
+  white-space:nowrap;          /* 1文字改行を防ぐ */
+  word-break:keep-all;
+}
 .menu a:hover{opacity:1}
+
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
 .btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
 .btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
@@ -155,7 +173,7 @@ a{color:inherit;text-decoration:none}
 .cta b{display:block;font-size:15px}
 .cta .sub{font-size:12px;color:var(--muted);font-weight:850}
 
-/* ▼ 追加：中小向けページ導線カード（既存デザインに合わせた見た目） */
+/* ▼ 追加：中小向けページ導線カード */
 .altWrap{
   background:rgba(255,255,255,.76);
   border:1px solid rgba(255,255,255,.65);
@@ -178,7 +196,7 @@ a{color:inherit;text-decoration:none}
   border:1px solid rgba(27,37,51,.12);background:#fff;color:#243042;
   font-weight:900;font-size:12px;
 }
-/* ▲ 追加：中小向けページ導線カード */
+/* ▲ 追加 */
 
 .section{padding:56px 0 66px}
 .sectionTitle{text-align:center;margin:0 0 14px;font-size:22px}
@@ -203,7 +221,7 @@ a{color:inherit;text-decoration:none}
 .callout{border-left:6px solid var(--accent);background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;padding:14px;margin:16px 0}
 .footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
 
-/* Kindleセクション（あなたの既存のまま） */
+/* Kindleセクション */
 .kindleWrap{
   background:rgba(255,255,255,.76);
   border:1px solid rgba(255,255,255,.65);
@@ -241,7 +259,7 @@ a{color:inherit;text-decoration:none}
 .bookTag strong{font-weight:1000}
 .kindleNote{margin:12px 0 0;color:var(--muted);font-weight:850;font-size:12px;line-height:1.8}
 
-/* ▼ Kindle Unlimited 導線（index用） */
+/* ▼ Kindle Unlimited 導線 */
 .kuGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
 .kuCard{
   background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:16px;
@@ -351,7 +369,7 @@ a{color:inherit;text-decoration:none}
   .grid3,.grid2,.priceGrid{grid-template-columns:1fr}
   .kindleGrid{grid-template-columns:1fr}
   .popGrid{grid-template-columns:1fr}
-  .menu{display:none}
+  .menu{display:none} /* モバイルは従来通り非表示 */
   .hero{background-attachment:scroll}
   .hTitle{font-size:44px}
 }
@@ -370,6 +388,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- =========================================================
   [REPLACE-HEADER-START]
+  ★ヘッダー整理：必要最小限だけ残す
 ========================================================= -->
 <header class="header">
   <div class="container">
@@ -377,31 +396,27 @@ a{color:inherit;text-decoration:none}
       <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
         <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
       </a>
-      <nav class="menu" aria-label="メニュー">
-        <!-- ★同一ページ内は ./index.html を省略（読み込み効率＆見やすさ） -->
-        <a href="#about">理念</a>
-        <a href="#values">バリュー</a>
 
-        <a href="#services">対応規格</a>
-        <a href="./service.html">サービス詳細</a>
+      <nav class="menu" aria-label="メニュー（主要導線）">
+        <a href="./service.html">サービス</a>
 
-        <a href="#columns">人気コラム</a>
-        <a href="#download">無料特典</a>
-
-        <a href="#pricing">料金</a>
-        <a href="./pricing.html">料金詳細</a>
-
-        <!-- ★追加：中小食品企業向けSEOページ（chusho.html） -->
         <a href="./chusho.html"
            onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'header_chusho'});">
           中小企業向け
         </a>
 
-        <a href="./column.html">コラム一覧</a>
-        <a href="#books">書籍</a>
-        <a href="#kindleunlimited">無料で読む</a>
+        <a href="#download">無料特典</a>
+
+        <a href="./pricing.html"
+           onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'header_pricing_detail'});">
+          料金
+        </a>
+
+        <a href="./column.html">コラム</a>
+
         <a href="#contact">お問い合わせ</a>
       </nav>
+
       <a class="btn primary" href="#consult">無料相談</a>
     </div>
   </div>
@@ -428,20 +443,17 @@ a{color:inherit;text-decoration:none}
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn primary" href="#consult">30分オンライン無料相談</a>
 
-          <!-- ★変更：トップの“料金”導線は、要点(#pricing) + 詳細(pricing.html) の2段にして迷いを減らす -->
-          <a class="btn ghost" href="#pricing">料金の要点</a>
           <a class="btn" href="./pricing.html"
              onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'hero_pricing_detail'});">
-            料金詳細
+            料金を見る
+          </a>
+
+          <a class="btn dark" href="./chusho.html"
+             onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'hero_chusho'});">
+            中小企業向けページ
           </a>
 
           <a class="btn" href="./column.html">コラム一覧</a>
-
-          <!-- ★追加：ヒーロー内にも“中小向け”を追加（回遊＆SEOの内部リンク強化） -->
-          <a class="btn dark" href="./chusho.html"
-             onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'hero_chusho'});">
-            中小企業向け（HACCP・JFS-B）
-          </a>
         </div>
 
         <p class="hNote">
@@ -466,12 +478,11 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- =========================================================
-  ★追加：ヒーロー直下に「中小食品企業向け」専用導線（おすすめ）
+  ★ヒーロー直下：中小向け導線 + 主要CTA
 ========================================================= -->
 <section class="ctaRow" aria-label="主要導線">
   <div class="container">
 
-    <!-- ▼中小向けページ導線（先頭に強い内部リンクを作る） -->
     <div class="altWrap reveal" style="margin-top:10px">
       <div class="altCard hoverlift">
         <div style="min-width:260px;flex:1 1 560px">
@@ -503,14 +514,12 @@ a{color:inherit;text-decoration:none}
           <a class="btn"
              href="./pricing.html"
              onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'card_pricing_from_index'});">
-            料金詳細
+            料金
           </a>
         </div>
       </div>
     </div>
-    <!-- ▲中小向けページ導線 -->
 
-    <!-- ▼既存CTA3（そのまま） -->
     <div class="ctas" style="margin-top:14px">
 
       <a class="cta hoverlift reveal" href="./column.html" aria-label="コラムで学ぶ（食品安全の考え方）">
@@ -529,17 +538,12 @@ a{color:inherit;text-decoration:none}
       </a>
 
     </div>
-    <!-- ▲既存CTA3 -->
   </div>
 </section>
-<!-- =========================================================
-  /追加ここまで
-========================================================= -->
 
 
 <!-- =========================================================
   [REPLACE-DOWNLOAD-START]
-  ★計測：無料特典ボタンにイベント送信を追加（lead_click）
 ========================================================= -->
 <section class="section" id="download" style="padding-top:10px">
   <div class="container">
@@ -732,7 +736,6 @@ a{color:inherit;text-decoration:none}
 
 <!-- =========================================================
   [REPLACE-SERVICES-START]
-  ★indexは“概要”に留め、詳細は service.html へ誘導
 ========================================================= -->
 <section class="section" id="services" style="padding-top:10px">
   <div class="container">
@@ -877,7 +880,6 @@ a{color:inherit;text-decoration:none}
 
 <!-- =========================================================
   [REPLACE-PRICING-START]
-  ★indexは“要点”に留め、詳細は pricing.html へ誘導
 ========================================================= -->
 <section class="section" id="pricing" style="padding-top:10px">
   <div class="container">

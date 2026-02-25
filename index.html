@@ -14,271 +14,1479 @@
     gtag('config', 'G-F8KX0R29GW');
   </script>
 
+  <!-- =========================================================
+    [REPLACE-HEAD-START] ここは通常触らない（title/description/keywordsを変える時だけ）
+  ========================================================= -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ★SEO：title/description を “総合トップ” 用に最適化 -->
   <title>食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ</title>
   <meta name="description"
     content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。HACCP構築、JFS-B審査対応、ISO22000/FSSC22000取得支援。無料テンプレート（Excel）配布中。">
   <meta name="keywords" content="食品安全 コンサル, HACCP 構築支援, JFS-B 審査, ISO22000 支援, FSSC22000 取得支援, 中小食品企業">
+
+  <!-- ★検索エンジン向け -->
   <meta name="robots" content="index,follow">
+
+  <!-- ★SEO：canonical（トップは / に統一するのが無難） -->
   <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/">
+
+  <!-- ★favicon -->
   <link rel="icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
-  <link rel="shortcut icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
+  <link rel="shortcut icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png"
+    type="image/png">
   <link rel="apple-touch-icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
 
-  <!-- SNS：OGP -->
+  <!-- ★SNS：OGP（1セットに統一） -->
   <meta property="og:site_name" content="食品安全パートナーズ">
   <meta property="og:type" content="website">
   <meta property="og:title" content="食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ">
-  <meta property="og:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。HACCP構築、JFS-B審査対応、ISO22000/FSSC22000取得支援。">
+  <meta property="og:description"
+    content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。HACCP構築、JFS-B審査対応、ISO22000/FSSC22000取得支援。無料テンプレート（Excel）配布中。">
   <meta property="og:url" content="https://foodsafety-partners.github.io/foodsafety-site/">
   <meta property="og:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
+  <meta property="og:image:alt" content="食品安全パートナーズ ロゴ">
+
+  <!-- ★SNS：Twitterカード -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="食品安全コンサル（HACCP・JFS-B・ISO22000）｜食品安全パートナーズ">
+  <meta name="twitter:description" content="中小食品企業向けに、現場で続く食品安全の仕組みを支援。無料テンプレート（Excel）配布中。">
+  <meta name="twitter:image" content="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
+
+  <!-- ★構造化データ（Organization / WebSite） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "食品安全パートナーズ",
+    "url": "https://foodsafety-partners.github.io/foodsafety-site/",
+    "logo": "https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png",
+    "description": "中小食品企業向けの食品安全コンサルティング。HACCP・JFS-B・ISO22000・FSSC22000に対応。",
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"食品安全パートナーズ",
+    "url":"https://foodsafety-partners.github.io/foodsafety-site/",
+    "publisher":{
+      "@type":"Organization",
+      "name":"食品安全パートナーズ",
+      "url":"https://foodsafety-partners.github.io/foodsafety-site/",
+      "logo":"https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png"
+    },
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://foodsafety-partners.github.io/foodsafety-site/column.html?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+  <!-- =========================================================
+    [REPLACE-HEAD-END]
+  ========================================================= -->
 
   <style>
-    /* 元のデザインのスタイル */
+    /* =========================================================
+  [REPLACE-STYLE-START]
+========================================================= */
     :root {
-      --ink: #1b2533; --muted: #5a6475; --line: #d9dde6; --accent: #e0872a; --accent2: #2c567a; --soft: #eef1f6;
-      --shadow: 0 16px 40px rgba(24, 32, 48, .18); --w: 1180px;
+      --ink: #1b2533;
+      --muted: #5a6475;
+      --line: #d9dde6;
+      --accent: #e0872a;
+      --accent2: #2c567a;
+      --soft: #eef1f6;
+      --shadow: 0 16px 40px rgba(24, 32, 48, .18);
+      --w: 1180px;
     }
-    * { box-sizing: border-box }
-    html { scroll-behavior: smooth }
-    body { margin: 0; font-family: "Noto Sans JP", sans-serif; background: var(--soft); color: var(--ink) }
-    a { color: inherit; text-decoration: none }
-    .container { max-width: var(--w); margin: 0 auto; padding: 0 18px }
-    #progress { position: fixed; left: 0; top: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); z-index: 9999 }
-    #toTop { position: fixed; right: 18px; bottom: 18px; padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(0, 0, 0, .12); background: rgba(255, 255, 255, .92); box-shadow: 0 10px 24px rgba(0,0,0,.12); opacity: 0; transform: translateY(8px); transition: .25s ease; z-index: 9999 }
-    #toTop.show { opacity: 1; transform: none }
-    .header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .86); backdrop-filter: saturate(1.2) blur(10px); border-bottom: 1px solid rgba(27, 37, 51, .08) }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 0 }
-    .brand img { height: 42px; width: auto }
-    .menu { display: flex; align-items: center; gap: 14px; font-weight: 900; font-size: 14px; color: #243042; flex-wrap: nowrap; white-space: nowrap; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 14px; border-radius: 12px; font-weight: 1000; border: 1px solid rgba(27, 37, 51, .12); background: #fff }
-    .btn.primary { background: var(--accent); color: #fff; border-color: rgba(255, 255, 255, .25); box-shadow: 0 10px 26px rgba(0, 0, 0, .14) }
-    .btn.dark { background: var(--accent2); color: #fff; border-color: rgba(255, 255, 255, .18) }
-    .hero { position: relative; min-height: 650px; overflow: hidden; background: linear-gradient(180deg, rgba(10, 18, 32, .70), rgba(10, 18, 32, .28)), url("https://foodsafety-partners.github.io/foodsafety-site/assets/img/hero.webp"); background-size: cover; background-position: center; border-bottom: 1px solid rgba(255, 255, 255, .18) }
-    .heroGrid { padding: 84px 0 64px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; align-items: center }
-    .hKicker { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-weight: 1000; font-size: 12px; background: rgba(255, 255, 255, .14); border-radius: 999px; padding: 8px 10px }
-    .hTitle { color: #fff; font-weight: 1000; font-size: 52px; line-height: 1.04; margin: 10px 0; text-shadow: 0 3px 18px rgba(0, 0, 0, .35) }
-    .hSub { color: rgba(255, 255, 255, .92); font-weight: 850; margin: 0 0 16px; line-height: 1.85 }
-    .photoCard { display: grid; grid-template-columns: 1.2fr .8fr; gap: 14px; }
-    .frame { border-radius: 16px; overflow: hidden; border: 6px solid rgba(255, 255, 255, .34); box-shadow: var(--shadow); background: #fff }
-    .frame img { width: 100%; height: 100%; object-fit: cover; display: block }
-    .ctaRow { margin-top: -36px; position: relative; z-index: 30 }
-    .ctas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; background: rgba(255, 255, 255, .76); border-radius: 18px; padding: 14px; box-shadow: 0 12px 26px rgba(24, 32, 48, .10) }
-    .cta { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: flex; gap: 12px; align-items: center; justify-content: space-between; cursor: pointer; }
-    .section { padding: 56px 0 66px }
-    .sectionTitle { text-align: center; margin: 0 0 14px; font-size: 22px }
-    .sectionLead { text-align: center; margin: 0 auto 26px; color: var(--muted); font-weight: 850; font-size: 13px; max-width: 860px; line-height: 1.9 }
-    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px }
-    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px }
-    .card { background: rgba(255, 255, 255, .94); border: 1px solid rgba(27, 37, 51, .10); border-radius: 16px; padding: 16px; box-shadow: 0 10px 20px rgba(24, 32, 48, .08) }
-    .priceGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px }
-    .price { background: #fff; border: 1px solid rgba(27, 37, 51, .10); border-radius: 18px; padding: 18px; box-shadow: 0 14px 26px rgba(24, 32, 48, .10) }
-    .footer { padding: 18px 0 28px; color: var(--muted); border-top: 1px solid var(--line); background: #fff; text-align:center; }
-    .kindleWrap { background: rgba(255, 255, 255, .76); border-radius: 18px; padding: 14px; box-shadow: 0 12px 26px rgba(24, 32, 48, .10); }
-    .kindleGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px }
-    .book { background: #fff; border: 1px solid rgba(27, 37, 51, .10); border-radius: 16px; padding: 14px; display: flex; gap: 14px; align-items: center; }
-    .bookCover { width: 92px; aspect-ratio: 2/3; border-radius: 12px; overflow: hidden; border: 1px solid rgba(27, 37, 51, .12); }
-    .popGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px }
-    .popCard { background: #fff; border: 1px solid rgba(27, 37, 51, .10); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
-    .iconBtn { display: inline-flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: 12px; font-weight: 1000; border: 1px solid rgba(27, 37, 51, .12); background: #fff; transition: all 0.2s ease; }
-    .iconBtn.primary { background: var(--accent); color: #fff; border-color: rgba(255, 255, 255, .25); }
 
-    /* モーダル用スタイル（追加分） */
-    .modal { display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.7); backdrop-filter:blur(5px); align-items:center; justify-content:center; }
-    .modal-content { background:#fff; padding:40px; border-radius:24px; width:90%; max-width:480px; position:relative; box-shadow:var(--shadow); }
-    .modal-form { display:flex; flex-direction:column; gap:16px; text-align:left; }
-    .modal-input { width:100%; padding:12px; border:1px solid var(--line); border-radius:12px; font-size:16px; }
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--soft);
+      color: var(--ink)
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .container {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 18px
+    }
+
+    #progress {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      z-index: 9999
+    }
+
+    #toTop {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, .12);
+      background: rgba(255, 255, 255, .92);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+      font-weight: 1000;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .25s ease;
+      z-index: 9999
+    }
+
+    #toTop.show {
+      opacity: 1;
+      transform: none
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .86);
+      backdrop-filter: saturate(1.2) blur(10px);
+      border-bottom: 1px solid rgba(27, 37, 51, .08)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .brand img {
+      height: 42px;
+      width: auto
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 900;
+      font-size: 14px;
+      color: #243042;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    .menu a {
+      opacity: .82;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    .menu a:hover {
+      opacity: 1
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-weight: 1000;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .25);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .14)
+    }
+
+    .btn.dark {
+      background: var(--accent2);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .18)
+    }
+
+    .btn.ghost {
+      background: rgba(255, 255, 255, .18);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .20)
+    }
+
+    .hero {
+      position: relative;
+      min-height: 650px;
+      overflow: hidden;
+      background:
+        radial-gradient(1200px 560px at 28% 22%, rgba(255, 255, 255, .18), transparent 62%),
+        linear-gradient(180deg, rgba(10, 18, 32, .70), rgba(10, 18, 32, .28)),
+        url("https://foodsafety-partners.github.io/foodsafety-site/assets/img/hero.webp");
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid rgba(255, 255, 255, .18)
+    }
+
+    @media (min-width: 981px) {
+      .hero {
+        background-attachment: fixed
+      }
+    }
+
+    .heroGrid {
+      padding: 84px 0 64px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: center
+    }
+
+    .hKicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 1000;
+      font-size: 12px;
+      letter-spacing: .04em;
+      background: rgba(255, 255, 255, .14);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      padding: 8px 10px
+    }
+
+    .hTitle {
+      color: #fff;
+      font-weight: 1000;
+      font-size: 52px;
+      line-height: 1.04;
+      margin: 10px 0 10px;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, .35)
+    }
+
+    .hSub {
+      color: rgba(255, 255, 255, .92);
+      font-weight: 850;
+      margin: 0 0 16px;
+      line-height: 1.85
+    }
+
+    .hNote {
+      color: rgba(255, 255, 255, .82);
+      font-weight: 850;
+      font-size: 13px;
+      line-height: 1.8;
+      margin: 12px 0 0
+    }
+
+    .photoCard {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: stretch
+    }
+
+    .frame {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 6px solid rgba(255, 255, 255, .34);
+      box-shadow: var(--shadow);
+      background: #fff
+    }
+
+    .frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .big {
+      min-height: 350px
+    }
+
+    .stack {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px
+    }
+
+    .small {
+      min-height: 168px
+    }
+
+    .ctaRow {
+      margin-top: -36px;
+      position: relative;
+      z-index: 30
+    }
+
+    .ctas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10)
+    }
+
+    .cta {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .cta:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .cta b {
+      display: block;
+      font-size: 15px
+    }
+
+    .cta .sub {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 850
+    }
+
+    .altWrap {
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+      margin-top: 14px;
+    }
+
+    .altCard {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .altCard:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .altTitle {
+      font-weight: 1000;
+      margin: 0 0 6px
+    }
+
+    .altDesc {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+      line-height: 1.85
+    }
+
+    .altBadges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .altBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      color: #243042;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 56px 0 66px
+    }
+
+    .sectionTitle {
+      text-align: center;
+      margin: 0 0 14px;
+      font-size: 22px
+    }
+
+    .sectionLead {
+      text-align: center;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+      max-width: 860px;
+      line-height: 1.9
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .card {
+      background: rgba(255, 255, 255, .94);
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 20px rgba(24, 32, 48, .08)
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 16px
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+      line-height: 1.7
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      color: #243042;
+      font-weight: 900;
+      font-size: 12px
+    }
+
+    .priceGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .price {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 14px 26px rgba(24, 32, 48, .10)
+    }
+
+    .price .name {
+      font-weight: 1000;
+      font-size: 16px;
+      margin: 0 0 6px
+    }
+
+    .price .yen {
+      font-weight: 1000;
+      font-size: 26px;
+      margin: 0 0 10px
+    }
+
+    .price ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #2a3647;
+      line-height: 1.9
+    }
+
+    .price .meta {
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12px
+    }
+
+    .callout {
+      border-left: 6px solid var(--accent);
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-left-width: 6px;
+      border-radius: 16px;
+      padding: 14px;
+      margin: 16px 0
+    }
+
+    .footer {
+      padding: 18px 0 28px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fff
+    }
+
+    .kindleWrap {
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+    }
+
+    .kindleGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px
+    }
+
+    .book {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .book:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .book:focus-visible {
+      outline: 3px solid rgba(224, 135, 42, .35);
+      outline-offset: 3px
+    }
+
+    .bookCover {
+      width: 92px;
+      aspect-ratio: 2/3;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(27, 37, 51, .12);
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+      background: #fff;
+      flex: 0 0 auto;
+    }
+
+    .bookCover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .bookMeta {
+      min-width: 0
+    }
+
+    .bookTitle {
+      font-weight: 1000;
+      margin: 0 0 6px;
+      line-height: 1.55
+    }
+
+    .bookDesc {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12.5px;
+      line-height: 1.75
+    }
+
+    .bookTagRow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .bookTag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      color: #243042;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .bookTag strong {
+      font-weight: 1000
+    }
+
+    .kindleNote {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12px;
+      line-height: 1.8
+    }
+
+    /* Kindle Unlimited 導線 */
+    .kuGrid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: stretch
+    }
+
+    .kuCard {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .kuCard:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .kuTitle {
+      margin: 0;
+      font-weight: 1000;
+      line-height: 1.55;
+      font-size: 16px
+    }
+
+    .kuList {
+      margin: 0;
+      padding-left: 18px;
+      color: #2a3647;
+      line-height: 1.9;
+      font-weight: 850
+    }
+
+    .kuNote {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12px;
+      line-height: 1.8
+    }
+
+    .kuBtns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto
+    }
 
     @media(max-width:980px) {
-      .heroGrid { grid-template-columns: 1fr; }
-      .ctas, .grid3, .grid2, .popGrid, .kindleGrid, .priceGrid { grid-template-columns: 1fr }
-      .menu { display: none }
-      .hTitle { font-size: 44px }
+      .kuGrid {
+        grid-template-columns: 1fr
+      }
     }
-    .reveal { opacity: 0; transform: translateY(14px); transition: .7s ease }
-    .reveal.show { opacity: 1; transform: none }
+
+    /* フォームへの遷移ボタン用アイコン */
+    .iconBtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-weight: 1000;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      transition: all 0.2s ease;
+    }
+
+    .iconBtn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .25);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .14)
+    }
+
+    .iconBtn.primary:hover {
+      background: var(--accent);
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+
+    .iconBtn svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto
+    }
+
+    .iconBtn:focus-visible {
+      outline: 3px solid rgba(224, 135, 42, .35);
+      outline-offset: 3px
+    }
+
+    /* 人気コラムTOP3 */
+    .popWrap {
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+    }
+
+    .popGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .popCard {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .popCard:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .popCard:focus-visible {
+      outline: 3px solid rgba(224, 135, 42, .35);
+      outline-offset: 3px
+    }
+
+    .popHead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px
+    }
+
+    .rank {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(44, 86, 122, .10);
+      border: 1px solid rgba(44, 86, 122, .18);
+      font-weight: 1000;
+      color: #243042;
+    }
+
+    .popThumb {
+      border-radius: 14px;
+      border: 1px solid rgba(27, 37, 51, .10);
+      background:
+        radial-gradient(600px 220px at 18% 15%, rgba(224, 135, 42, .20), transparent 55%),
+        radial-gradient(520px 220px at 80% 75%, rgba(44, 86, 122, .18), transparent 60%),
+        linear-gradient(180deg, rgba(238, 241, 246, .9), rgba(255, 255, 255, 1));
+      padding: 14px;
+      min-height: 126px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .popTitle {
+      margin: 0;
+      font-weight: 1000;
+      line-height: 1.55
+    }
+
+    .popDesc {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12.5px;
+      line-height: 1.8
+    }
+
+    .popTags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto
+    }
+
+    .popTag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      color: #243042;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .popFoot {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .popLink {
+      color: var(--accent2);
+      font-weight: 1000;
+      text-decoration: underline
+    }
+
+    /* 無料特典導線（index用） */
+    .downloadWrap {
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+      margin-top: 14px;
+    }
+
+    .downloadCard {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .downloadCard:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .downloadTitle {
+      font-weight: 1000;
+      margin: 0 0 6px
+    }
+
+    .downloadDesc {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+      line-height: 1.85
+    }
+
+    .downloadBadges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      color: #243042;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .badge strong {
+      font-weight: 1000
+    }
+
+    @media (prefers-reduced-motion:no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: .7s ease
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: none
+      }
+
+      .hoverlift {
+        transition: transform .18s ease, box-shadow .18s ease
+      }
+
+      .hoverlift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, .18)
+      }
+    }
+
+    @media(max-width:980px) {
+      .heroGrid {
+        grid-template-columns: 1fr;
+        padding-top: 36px
+      }
+
+      .ctas {
+        grid-template-columns: 1fr
+      }
+
+      .grid3,
+      .grid2,
+      .priceGrid {
+        grid-template-columns: 1fr
+      }
+
+      .kindleGrid {
+        grid-template-columns: 1fr
+      }
+
+      .popGrid {
+        grid-template-columns: 1fr
+      }
+
+      .menu {
+        display: none
+      }
+
+      .hero {
+        background-attachment: scroll
+      }
+
+      .hTitle {
+        font-size: 44px
+      }
+    }
   </style>
 </head>
 
 <body>
   <div id="progress"></div>
   <a id="toTop" href="#top" aria-label="ページ先頭へ">↑</a>
+
   <div id="top"></div>
 
   <header class="header">
     <div class="container">
       <div class="nav">
-        <a class="brand" href="./index.html"><img src="./assets/img/logo.png" alt="食品安全パートナーズ"></a>
-        <nav class="menu">
+        <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+          <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+        </a>
+
+        <nav class="menu" aria-label="メニュー（主要導線）">
           <a href="./service.html">サービス</a>
-          <a href="#" onclick="openAppModal(event)">JFS-Bアプリ</a>
-          <a href="./chusho.html">中小企業向け</a>
+          <a href="https://jfsb-audit.web.app/">JFS-Bアプリ</a>
+          <a href="./chusho.html"
+            onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'header_chusho'});">中小企業向け</a>
           <a href="#download">無料特典</a>
-          <a href="./pricing.html">料金</a>
+          <a href="./pricing.html"
+            onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'header_pricing_detail'});">料金</a>
           <a href="./column.html">コラム</a>
           <a href="#contact">お問い合わせ</a>
         </nav>
+
         <a class="btn primary" href="#consult">無料相談</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="heroGrid">
         <div class="reveal">
           <div class="hKicker">ブランドメッセージ</div>
           <h1 class="hTitle">食品安全を<br>すべての企業へ</h1>
-          <p class="hSub">理想論ではなく<strong>実務で回る仕組み</strong>を一緒に作ります。</p>
+          <p class="hSub">
+            食品安全はみんなのもの。<br>
+            私たちは<strong>食品企業</strong>に寄り添い、理想論ではなく<strong>実務で回る仕組み</strong>を一緒に作ります。
+          </p>
+
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <a class="btn primary" href="#consult">30分オンライン無料相談</a>
-            <a class="btn" href="./pricing.html">料金を見る</a>
-            <a class="btn dark" href="./chusho.html">中小企業向けページ</a>
+            <a class="btn" href="./pricing.html"
+              onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'hero_pricing_detail'});">料金を見る</a>
+            <a class="btn dark" href="./chusho.html"
+              onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'hero_chusho'});">中小企業向けページ</a>
+            <a class="btn" href="./column.html">コラム一覧</a>
+          </div>
+
+          <p class="hNote">
+            ※過度に「立派な文書」を目指すのではなく、現場の人が継続できる設計を重視します。<br>
+            食品安全 コンサルとして、HACCP 構築 / JFS規格 / ISO22000 / FSSC22000 取得支援 に対応します。
+          </p>
+        </div>
+
+        <div class="photoCard reveal">
+          <div class="frame big hoverlift"><img src="./assets/img/photo1.webp" alt="食品工場の衛生管理（写真）"></div>
+          <div class="stack">
+            <div class="frame small hoverlift"><img src="./assets/img/photo2.webp" alt="温度管理（写真）"></div>
+            <div class="frame small hoverlift"><img src="./assets/img/photo3.webp" alt="教育・点検（写真）"></div>
           </div>
         </div>
-        <div class="photoCard reveal">
-          <div class="frame big"><img src="./assets/img/photo1.webp" alt="工場衛生管理"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ctaRow" aria-label="主要導線">
+    <div class="container">
+      <div class="altWrap reveal" style="margin-top:10px">
+        <div class="altCard hoverlift">
+          <div style="min-width:260px;flex:1 1 560px">
+            <p class="altTitle">中小食品企業向け：食品安全コンサル（HACCP・JFS-B対応）</p>
+            <p class="altDesc">
+              人手不足・属人化でも「現場で続く」食品安全の仕組みへ。<br>
+              専用ページで、よくある悩み／支援内容／流れ／FAQ／導線をまとめています。
+            </p>
+            <div class="altBadges" aria-label="中小向けページのポイント">
+              <span class="altBadge">中小食品企業</span>
+              <span class="altBadge">HACCP構築</span>
+              <span class="altBadge">JFS-B審査対応</span>
+              <span class="altBadge">無料相談CTA</span>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <a class="btn dark" href="./chusho.html"
+              onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'card_chusho'});">中小向けページを見る</a>
+            <a class="btn primary" href="./download.html"
+              onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'card_download_from_index'});">無料特典（テンプレート）</a>
+            <a class="btn" href="./pricing.html"
+              onclick="gtag('event','pricing_click',{'event_category':'pricing','event_label':'card_pricing_from_index'});">料金</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ctas" style="margin-top:14px">
+        <a class="cta hoverlift reveal" href="./column.html">
+          <div><b>コラムで学ぶ</b>
+            <div class="sub">食品安全の考え方</div>
+          </div>
+          <span class="btn dark">読む</span>
+        </a>
+        <a class="cta hoverlift reveal" href="https://jfsb-audit.web.app/index.html" target="_blank">
+          <div><b>アプリで実践</b>
+            <div class="sub">JFS-B セルフチェック</div>
+          </div>
+          <span class="btn primary">📱 実践</span>
+        </a>
+        <a class="cta hoverlift reveal" href="#books">
+          <div><b>Kindleで学ぶ</b>
+            <div class="sub">監査員目線を知る</div>
+          </div>
+          <span class="btn dark">書籍</span>
+        </a>
+        <a class="cta hoverlift reveal" href="#consult">
+          <div><b>まずはご相談</b>
+            <div class="sub">30分無料で現状整理</div>
+          </div>
+          <span class="btn dark">相談</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="download" style="padding-top:10px">
+    <div class="container">
+      <h2 class="sectionTitle reveal">無料特典（テンプレート配布）</h2>
+      <p class="sectionLead reveal">
+        JFS-B適合を見据えた「HACCP構築テンプレート（Excel）」を無料でご提供します。<br>
+        中小食品企業でも“現場で続く形”で整理できる構成です。
+      </p>
+
+      <div class="downloadWrap reveal">
+        <div class="downloadCard hoverlift">
+          <div style="min-width:260px;flex:1 1 560px">
+            <p class="downloadTitle">JFS-B適合を見据えた HACCP構築テンプレート（Excel）</p>
+            <p class="downloadDesc">
+              HACCP1〜12（チーム表／製品説明書／フローダイアグラム／ハザード分析／HACCPプラン）を一式で整理。<br>
+              受け取り案内に加え、食品安全の運用に役立つ情報やサービスのご案内をお届けする場合があります。
+            </p>
+            <div class="downloadBadges" aria-label="特典のポイント">
+              <span class="badge"><strong>内容</strong>：HACCP1〜12</span>
+              <span class="badge"><strong>対象</strong>：JFS-B / HACCP</span>
+              <span class="badge"><strong>用途</strong>：構築の全体像</span>
+              <span class="badge"><strong>形式</strong>：Excel</span>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <a class="btn primary" href="./download.html"
+              onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'index_download_button'});">無料で受け取る</a>
+            <a class="btn dark" href="#consult">無料相談</a>
+            <a class="btn" href="./column.html">コラム</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Box -->
-  <section class="ctaRow">
-    <div class="container">
-      <div class="ctas">
-        <a class="cta hoverlift reveal" href="./column.html">
-          <div><b>コラムで学ぶ</b><div class="sub">食品安全の考え方</div></div>
-          <span class="btn dark">読む</span>
-        </a>
-        <a class="cta hoverlift reveal" href="#" onclick="openAppModal(event)">
-          <div><b>アプリで実践</b><div class="sub">JFS-B セルフチェック</div></div>
-          <span class="btn primary">📱 実践</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- コラム TOP3 -->
-  <section class="section" id="columns">
+  <section class="section" id="columns" style="padding-top:10px">
     <div class="container">
       <h2 class="sectionTitle reveal">人気コラム（TOP3）</h2>
-      <div class="popGrid reveal">
-        <a class="popCard hoverlift" href="./column-7.html">
-          <p class="popTitle">JFS-B審査で見られる5つのポイント</p>
-          <p class="popDesc">審査で確認されやすい要点を整理。</p>
-        </a>
-        <a class="popCard hoverlift" href="./column-1.html">
-          <p class="popTitle">形だけのHACCPを卒業する手段</p>
-          <p class="popDesc">JFS-B観点での現場運用法。</p>
-        </a>
-        <a class="popCard hoverlift" href="./column-2.html">
-          <p class="popTitle">記録が続かないを解決する</p>
-          <p class="popDesc">運用ルールを最小セットで整理。</p>
-        </a>
+      <p class="sectionLead reveal">
+        中小食品企業でも「現場で続く」食品安全へ。<br>
+        JFS-B / HACCP構築支援 / ISO22000支援の観点から、実務で効くポイントを整理しています。
+      </p>
+
+      <div class="popWrap reveal">
+        <div class="popGrid">
+          <a class="popCard hoverlift" href="./column-7.html">
+            <div class="popHead"><span class="rank">1</span><span class="btn dark">読む</span></div>
+            <div class="popThumb">
+              <p class="popTitle">JFS-B審査で実際に見られる5つのポイント<br>【中小食品企業向け】</p>
+            </div>
+            <p class="popDesc">JFS-B審査で確認されやすい「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を整理。</p>
+            <div class="popTags"><span class="popTag">JFS-B審査</span><span class="popTag">HACCP構築</span></div>
+          </a>
+          <a class="popCard hoverlift" href="./column-1.html">
+            <div class="popHead"><span class="rank">2</span><span class="btn dark">読む</span></div>
+            <div class="popThumb">
+              <p class="popTitle">形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</p>
+            </div>
+            <p class="popDesc">HACCP構築でつまずきやすい危害要因分析等を、JFS-Bの審査観点に合わせて解説。</p>
+            <div class="popTags"><span class="popTag">HACCP構築</span><span class="popTag">JFS-B</span></div>
+          </a>
+          <a class="popCard hoverlift" href="./column-2.html">
+            <div class="popHead"><span class="rank">3</span><span class="btn dark">読む</span></div>
+            <div class="popThumb">
+              <p class="popTitle">HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ</p>
+            </div>
+            <p class="popDesc">人手不足・属人化でも回る「記録の最小セット」と運用ルールを整理。</p>
+            <div class="popTags"><span class="popTag">記録</span><span class="popTag">運用定着</span></div>
+          </a>
+        </div>
+
+        <div class="popFoot">
+          <a class="popLink" href="./column.html">すべてのコラムを見る →</a>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn primary" href="./download.html"
+              onclick="gtag('event','lead_click',{'event_category':'lead','event_label':'index_pop_download'});">無料特典（テンプレート）</a>
+            <a class="btn" href="#consult">無料相談</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ミッション・ビジョン -->
   <section class="section" id="about">
     <div class="container">
       <h2 class="sectionTitle reveal">ミッション / ビジョン</h2>
+      <p class="sectionLead reveal">私たちは、誠実に、実務に根差した支援を行います。</p>
+      <div class="reveal card hoverlift" style="text-align:center; padding: 30px; margin-bottom: 20px;">
+        <h3 style="color:var(--accent2); font-size: 20px;">現場で「動き、続く」食品安全を。</h3>
+        <p style="font-size: 15px; max-width: 700px; margin: 10px auto;">
+          お客様の自立性を大切にし、現実的な制約を踏まえて、形だけではない「使える仕組み」を文化として定着させます。</p>
+      </div>
       <div class="grid2">
-        <div class="card reveal"><h3>ミッション</h3><p>持続可能で実践的な仕組みを届ける。</p></div>
-        <div class="card reveal"><h3>ビジョン</h3><p>自信を持って食品安全を語れる社会へ。</p></div>
+        <div class="card reveal hoverlift">
+          <h3>ミッション</h3>
+          <p>すべての食品関連企業に、持続可能で実践的な食品安全の仕組みを届ける。</p>
+        </div>
+        <div class="card reveal hoverlift">
+          <h3>ビジョン</h3>
+          <p>食品企業が、自信を持って食品安全を語れる社会を実現する。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- アプリ紹介 -->
-  <section class="section" id="app">
+  <section class="section" id="values" style="padding-top:10px">
     <div class="container">
-      <h2 class="sectionTitle reveal">JFS-B セルフチェックアプリ</h2>
-      <div class="kindleWrap reveal" style="background: linear-gradient(135deg, #004a99 0%, #002d5e 100%); color:white;">
-        <div style="padding:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-          <div>
-            <h3 style="color:white;">品質責任者のための「動く」ツール</h3>
-            <p>PDF報告書もスマホで完結。</p>
-            <a class="btn primary" href="#" onclick="openAppModal(event)">無料で試す 📱</a>
+      <h2 class="sectionTitle reveal">バリュー</h2>
+      <div class="grid3">
+        <div class="card reveal hoverlift">
+          <h3>実践主義</h3>
+          <p>理論ではなく、現場で回る仕組みを構築。記録が自然に残る設計を重視します。</p>
+        </div>
+        <div class="card reveal hoverlift">
+          <h3>自立性</h3>
+          <p>豊富な経験をもとに、専門家としてお客様の自走を全力で支援します。</p>
+        </div>
+        <div class="card reveal hoverlift">
+          <h3>持続可能性</h3>
+          <p>一時的な取得ではなく、担当者が変わっても崩れにくい仕組みを目指します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services" style="padding-top:10px">
+    <div class="container">
+      <h2 class="sectionTitle reveal">対応規格</h2>
+      <div class="grid2">
+        <div class="card reveal hoverlift">
+          <h3>HACCP 構築支援</h3>
+          <p>危害要因分析から設計まで、現場で運用し続けられる形を一緒に作ります。</p>
+        </div>
+        <div class="card reveal hoverlift">
+          <h3>JFS 支援（JFS-B含む）</h3>
+          <p>審査観点を踏まえた運用定着と、段階的なレベルアップを支援します。</p>
+        </div>
+        <div class="card reveal hoverlift">
+          <h3>ISO22000 支援</h3>
+          <p>FSMSを、経営と現場が無理なくつながる形で構築支援します。</p>
+        </div>
+        <div class="card reveal hoverlift">
+          <h3>FSSC22000 取得支援</h3>
+          <p>審査観点・取引要件を踏まえ、実力が伴う現実的な導入を支援します。</p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:16px" class="reveal"><a class="btn dark"
+          href="./service.html">サービス詳細を見る</a></div>
+    </div>
+  </section>
+
+  <section class="section" id="app" style="padding-top:10px">
+    <div class="container">
+      <h2 class="sectionTitle reveal">JFS-B 規格セルフチェックアプリ</h2>
+      <p class="sectionLead reveal">
+        書籍で学んだ要求事項を、現場ですぐにセルフ監査。診断から報告書作成まで、スマホ一つで完結します。
+      </p>
+
+      <div class="kindleWrap reveal"
+        style="background: linear-gradient(135deg, #004a99 0%, #002d5e 100%); border: none;">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding: 10px;">
+          <div style="flex: 1; min-width: 300px; color: white;">
+            <h3 style="color: white; font-size: 24px; margin-bottom: 15px;">品質責任者のための「動く」セルフチェックツール</h3>
+            <ul style="line-height: 2; font-weight: 800; font-size: 15px; margin-bottom: 25px;">
+              <li>✅ 書籍「JFS-B 規格徹底解説」の内容と完全連動</li>
+              <li>✅ 監査員の視点での「確認ポイント」を全項目に搭載</li>
+              <li>✅ 写真撮影と不適合メモをその場で記録</li>
+              <li>✅ ワンタップでPDF報告書を出力・共有</li>
+            </ul>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+              <a class="btn primary" href="https://jfsb-audit.web.app/index.html" target="_blank"
+                style="padding: 15px 30px; font-size: 16px;">アプリを無料で試す 📱</a>
+              <a class="btn ghost" href="./index.html#books" style="padding: 15px 30px;">本の内容を見る</a>
+            </div>
+          </div>
+          <div style="flex: 0 1 350px; position: relative;">
+            <!-- 簡易的なスマホイメージをCSSで表現 -->
+            <div
+              style="width: 220px; height: 440px; background: #fff; border: 10px solid #222; border-radius: 30px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; transform: rotate(5deg);">
+              <div
+                style="background: #004a99; height: 35px; color: white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold;">
+                JFS-B 監査アプリ</div>
+              <div style="padding: 15px;">
+                <div style="font-size: 10px; font-weight: bold; margin-bottom: 10px;">ダッシュボード</div>
+                <div
+                  style="height: 100px; border-radius: 10px; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: #004a99;">
+                  75%</div>
+                <div style="margin-top: 15px; height: 8px; background: #eee; border-radius: 4px;">
+                  <div style="width: 75%; height: 100%; background: #004a99; border-radius: 4px;"></div>
+                </div>
+                <div
+                  style="margin-top: 20px; background: #10b981; color: white; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold;">
+                  適合(OK)</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 料金表 -->
-  <section class="section" id="pricing">
+  <section class="section" id="books" style="padding-top:10px">
     <div class="container">
-      <h2 class="sectionTitle reveal">料金案内</h2>
-      <div class="priceGrid">
-        <div class="price reveal"><b>体制診断</b><p>10万円</p></div>
-        <div class="price reveal"><b>改善支援</b><p>45万円</p></div>
-        <div class="price reveal"><b>顧問契約</b><p>月額15万円</p></div>
+      <h2 class="sectionTitle reveal">Kindleで学ぶ（書籍紹介）</h2>
+      <div class="kindleWrap reveal">
+        <div class="kindleGrid">
+          <a class="book hoverlift" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank"
+            rel="noopener noreferrer">
+            <div class="bookCover"><img src="./assets/img/kindle-FSMS.jpg" alt="JFS-B徹底解説書"></div>
+            <div class="bookMeta">
+              <p class="bookTitle">食品安全で会社を強くする: JFS-B規格徹底解説</p>
+              <p class="bookDesc">「監査で見られる観点」を現場の言葉で整理。そのまま使える一冊。</p>
+            </div>
+          </a>
+          <a class="book hoverlift" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank"
+            rel="noopener noreferrer">
+            <div class="bookCover"><img src="./assets/img/kindle-HACCP.jpg" alt="HACCP編"></div>
+            <div class="bookMeta">
+              <p class="bookTitle">食品安全で会社を強くする: HACCP編</p>
+              <p class="bookDesc">監査員の視点で「落ちやすいポイント」を網羅。実践的な監査対策に。</p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- フッター：★プライバシーポリシーのリンクを追加 -->
-  <footer class="footer">
+  <section class="section" id="kindleunlimited" style="padding-top:10px">
     <div class="container">
-      © 食品安全パートナーズ<br>
-      <a href="./privacy-policy.html" style="font-size:12px; text-decoration:underline; opacity: 0.8; margin: 10px 0; display: inline-block;">プライバシーポリシー</a><br>
-      <span style="font-size:12px">※当サイトはAmazonアソシエイト・プログラムの参加者です。</span>
+      <h2 class="sectionTitle reveal">Kindle Unlimitedなら、無料で読むこともできます</h2>
+      <div class="kindleWrap reveal">
+        <div class="kuGrid">
+          <div class="kuCard hoverlift">
+            <p class="kuTitle">無料体験のポイント</p>
+            <ul class="kuList">
+              <li>初回30日間無料</li>
+              <li>期間内の解約で費用0円</li>
+              <li>まず「学ぶ」から始められます</li>
+            </ul>
+          </div>
+          <div class="kuCard hoverlift">
+            <p class="kuTitle">まずは無料で読む</p>
+            <div class="kuBtns">
+              <a class="btn primary" href="https://amzn.to/4qEGAjn" target="_blank"
+                rel="noopener noreferrer">30日間無料で読む</a>
+              <a class="btn" href="#consult">相談する</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="section" id="pricing" style="padding-top:10px">
+    <div class="container">
+      <h2 class="sectionTitle reveal">料金（要点）</h2>
+      <div class="priceGrid">
+        <div class="price reveal hoverlift">
+          <p class="name">食品安全体制診断</p>
+          <p class="yen">10万円（税込）</p>
+          <div class="meta">現状を整理し改善方針を明確にしたい企業様向け</div>
+        </div>
+        <div class="price reveal hoverlift">
+          <p class="name">3か月改善支援プログラム</p>
+          <p class="yen">45万円（税込）</p>
+          <div class="meta">短期間で基盤を整え審査等に備えたい企業様向け</div>
+        </div>
+        <div class="price reveal hoverlift">
+          <p class="name">顧問契約</p>
+          <p class="yen">月額15万円（税込）</p>
+          <div class="meta">経営基盤として継続強化したい企業様向け</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:16px" class="reveal"><a class="btn dark"
+          href="./pricing.html">料金詳細を見る</a></div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+  [REPLACE-CONSULT-START]
+  ★修正：メールからGoogleフォームへの統合
+========================================================= -->
+  <section class="section" id="consult" style="padding-top:10px">
+    <div class="container">
+      <h2 class="sectionTitle reveal">30分オンライン無料相談</h2>
+      <p class="sectionLead reveal">
+        いきなり契約のご提案はいたしません。まずは現状整理から始めましょう。<br>
+        課題、目標、審査予定などを伺い、最適な進め方を一緒に整理いたします。
+      </p>
+
+      <div class="callout reveal hoverlift" style="max-width:920px;margin:0 auto">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+          <div style="font-weight:1000">フォームでご連絡</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="iconBtn primary"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScGDYk9YIGDgjY-iC7NByLyyBNxj-da7g61DlKSft3U05EC2A/viewform?usp=pp_url&entry.1065046570=30%E5%88%86%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%EF%BC%88%E7%8F%BE%E7%8A%B6%E3%81%AE%E6%95%B4%E7%90%86%E3%83%BB%E3%82%A2%E3%83%89%E3%83%90%E3%82%A4%E3%82%B9%EF%BC%89"
+              target="_blank" rel="noopener noreferrer" aria-label="フォームで無料相談を申し込む"
+              onclick="gtag('event','consult_click',{'event_category':'consult','event_label':'index_form_consult'});">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.63 4.41c.1.08.24.12.37.12s.27-.04.37-.12L18.2 6H6.2Zm12.8 2.13-4.93 3.86c-.6.47-1.47.47-2.07 0L7.1 8.13 6 7.28v10.22c0 .83.67 1.5 1.5 1.5h11c.83 0 1.5-.67 1.5-1.5V7.28l-1 .85Z" />
+              </svg>
+              <span>フォームから無料相談を申し込む</span>
+            </a>
+            <a class="btn" href="./column.html">まずコラムを読む</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" style="padding-top:10px">
+    <div class="container">
+      <h2 class="sectionTitle reveal">お問い合わせ</h2>
+      <p class="sectionLead reveal">
+        具体的なご相談内容が固まっていなくても問題ございません。まずはお気軽にご連絡ください。
+      </p>
+
+      <div class="card reveal hoverlift"
+        style="max-width:920px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+        <div style="font-weight:1000">フォームでお問い合わせ</div>
+        <a class="iconBtn primary"
+          href="https://docs.google.com/forms/d/e/1FAIpQLScGDYk9YIGDgjY-iC7NByLyyBNxj-da7g61DlKSft3U05EC2A/viewform?usp=pp_url"
+          target="_blank" rel="noopener noreferrer" aria-label="お問い合わせフォームを開く"
+          onclick="gtag('event','contact_click',{'event_category':'contact','event_label':'index_form_contact'});">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor"
+              d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.63 4.41c.1.08.24.12.37.12s.27-.04.37-.12L18.2 6H6.2Zm12.8 2.13-4.93 3.86c-.6.47-1.47.47-2.07 0L7.1 8.13 6 7.28v10.22c0 .83.67 1.5 1.5 1.5h11c.83 0 1.5-.67 1.5-1.5V7.28l-1 .85Z" />
+          </svg>
+          <span>外部フォームを開く</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© 食品安全パートナーズ<br><span style="font-size:12px">※当サイトはAmazonアソシエイト・プログラムの参加者です。</span></div>
   </footer>
 
-  <!-- リード獲得用モーダル（追加分） -->
-  <div id="captureModal" class="modal">
-    <div class="modal-content">
-      <button onclick="document.getElementById('captureModal').style.display='none'" style="position:absolute; right:20px; top:20px; border:none; background:none; font-size:24px; cursor:pointer;">&times;</button>
-      <h2 style="margin-top:0; color:var(--accent2); font-size:22px; text-align:center;">JFS-Bアプリを始める</h2>
-      <p style="font-size:13px; color:var(--muted); text-align:center; margin-bottom:25px;">氏名とメールアドレスを入力して、<br>すぐにアプリをご利用いただけます。</p>
-      <form id="leadForm" class="modal-form">
-        <input type="text" id="userName" placeholder="お名前" required class="modal-input">
-        <input type="email" id="userEmail" placeholder="メールアドレス" required class="modal-input">
-        <div style="background:var(--soft); padding:10px; border-radius:10px; font-size:12px;">
-          <input type="checkbox" id="consent" required style="width:16px; height:16px;"> 
-          <a href="./privacy-policy.html" target="_blank" style="color:var(--accent2); text-decoration:underline;">プライバシーポリシー</a>に同意する
-        </div>
-        <button type="submit" style="background:var(--accent); color:#fff; border:none; padding:12px; border-radius:10px; font-weight:bold; cursor:pointer;">アプリを開く 📱</button>
-      </form>
-    </div>
-  </div>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-    const firebaseConfig = { apiKey: "AIzaSyBusBGffDwPhx-Tsx3QJ47b1BRfVovtCXI", authDomain: "jfsb-audit.firebaseapp.com", projectId: "jfsb-audit" };
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    window.openAppModal = (e) => { e && e.preventDefault(); document.getElementById('captureModal').style.display = 'flex'; };
-    document.getElementById('leadForm').onsubmit = async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('userEmail').value;
-      const name = document.getElementById('userName').value;
-      const btn = e.target.querySelector('button');
-      btn.innerText = "送信中..."; btn.disabled = true;
-      try {
-        const leadId = email.replace(/[^a-zA-Z0-9]/g, '_') + '_' + Date.now();
-        await setDoc(doc(db, 'leads', leadId), { name, email, signupDate: new Date().toISOString(), serverTimestamp: serverTimestamp(), source: 'OfficialSite_Index', consent: true });
-        window.location.href = `https://jfsb-audit.web.app/index.html?email=${encodeURIComponent(email)}`;
-      } catch (err) { window.location.href = "https://jfsb-audit.web.app/index.html"; }
-    };
-  </script>
-
   <script>(() => {
-    const toTop = document.getElementById("toTop");
-    const onScroll = () => { toTop.classList.toggle("show", document.documentElement.scrollTop > 600); };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    const targets = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.1 });
-    targets.forEach(el => io.observe(el));
-  })();</script>
+      const toTop = document.getElementById("toTop");
+      const bar = document.getElementById("progress");
+      const onScroll = () => {
+        const d = document.documentElement;
+        const max = (d.scrollHeight - d.clientHeight) || 1;
+        bar.style.width = (d.scrollTop / max) * 100 + "%";
+        toTop.classList.toggle("show", d.scrollTop > 600);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const targets = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+        }, { threshold: 0.12 });
+        targets.forEach(el => io.observe(el));
+      }
+    })();</script>
 </body>
+
 </html>

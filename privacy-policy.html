@@ -1,55 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>プライバシーポリシー｜食品安全パートナーズ</title>
-  <link rel="icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
+  
+  <link rel="icon" href="./assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap">
+
   <style>
     :root {
       --ink: #1b2533; --muted: #5a6475; --line: #d9dde6; --accent: #e0872a; --accent2: #2c567a; --soft: #eef1f6;
+      --shadow: 0 16px 40px rgba(24, 32, 48, .18); --w: 1180px;
     }
-    body {
-      margin: 0; font-family: "Noto Sans JP", sans-serif; background: var(--soft); color: var(--ink); line-height: 1.8;
-    }
-    .container { max-width: 800px; margin: 40px auto; padding: 40px; background: #fff; border-radius: 24px; box-shadow: 0 16px 40px rgba(24, 32, 48, .1); }
-    h1 { color: var(--accent2); font-size: 24px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 30px; }
-    h2 { font-size: 18px; margin-top: 30px; color: var(--ink); }
-    p, li { font-size: 14px; color: var(--muted); }
-    .footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--muted); }
-    .back-link { display: inline-block; margin-bottom: 20px; color: var(--accent2); text-decoration: underline; font-size: 14px; font-weight: bold; }
+    * { box-sizing: border-box }
+    body { margin: 0; font-family: "Noto Sans JP", sans-serif; background: var(--soft); color: var(--ink); line-height: 1.8; }
+    a { color: var(--accent2); text-decoration: underline; }
+    
+    .header { background: #fff; border-bottom: 1px solid var(--line); padding: 12px 0; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    .brand img { height: 38px; width: auto; vertical-align: middle; }
+    
+    .main { background: #fff; border-radius: 20px; margin: 40px auto; padding: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    h1 { font-size: 24px; font-weight: 900; color: var(--accent2); margin-top: 0; border-bottom: 2px solid var(--soft); padding-bottom: 15px; }
+    h3 { font-size: 18px; font-weight: 900; margin-top: 30px; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+    h3::before { content: ""; display: inline-block; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; }
+    
+    p, li { font-size: 15px; color: #333; }
+    ul { padding-left: 20px; }
+    .footer { text-align: center; padding: 40px 0; font-size: 12px; color: var(--muted); }
+    
+    @media(max-width:600px) { .main { padding: 25px; margin: 20px auto; } h1 { font-size: 20px; } }
   </style>
 </head>
+
 <body>
+  <header class="header">
+    <div class="container">
+      <a href="./index.html" class="brand"><img src="./assets/img/logo.png" alt="食品安全パートナーズ"></a>
+    </div>
+  </header>
+
   <div class="container">
-    <a href="./index.html" class="back-link">← トップページに戻る</a>
-    <h1>プライバシーポリシー（個人情報保護方針）</h1>
+    <main class="main">
+      <h1>プライバシーポリシー（個人情報保護方針）</h1>
+      
+      <p>食品安全パートナーズ（以下、「当事業」といいます）は、当事業が提供する「JFS-B 適合セルフチェックアプリ」（以下、「本サービス」といいます）における利用者の個人情報の取扱いについて、以下のとおり定めます。</p>
+
+      <h3>第1条（取得する個人情報）</h3>
+      <p>当事業は、本サービスの提供にあたり、以下の情報を取得します。</p>
+      <ul>
+        <li>氏名（担当者名）、メールアドレス、組織名、役職</li>
+        <li>サービスの利用履歴、アクセスログ</li>
+      </ul>
+
+      <h3>第2条（利用目的）</h3>
+      <p>取得した個人情報は、以下の目的で利用します。</p>
+      <ul>
+        <li>本サービスの提供・運営（アカウント管理・本人確認）</li>
+        <li>メールマガジン、新機能、セミナー、書籍等のご案内（営業・マーケティング）</li>
+        <li>お問い合わせへの対応</li>
+      </ul>
+
+      <h3>第3条（個人情報の管理）</h3>
+      <p>当事業は、個人情報の漏洩や紛失を防ぐため、適切な安全管理措置（Firebase等のセキュアなインフラ利用を含む）を講じます。</p>
+
+      <h3>第4条（第三者提供の制限）</h3>
+      <p>法令に基づく場合を除き、あらかじめ本人の同意を得ることなく第三者に個人情報を提供することはありません。</p>
+
+      <div style="margin-top: 40px; border-top: 1px solid var(--soft); padding-top: 20px; text-align: right; font-size: 13px; color: var(--muted);">
+        附則：2026年2月25日 制定
+      </div>
+    </main>
     
-    <p>食品安全パートナーズ（以下、「当事業」といいます）は、当事業が提供する「JFS-B 内部監査アプリ」における利用者の個人情報の取扱いについて、以下のとおり定めます。</p>
-
-    <h2>第1条（取得する個人情報）</h2>
-    <p>当事業は、本サービスの提供にあたり、以下の情報を取得します。</p>
-    <ul>
-      <li>氏名（担当者名）、メールアドレス、組織名、役職</li>
-      <li>サービスの利用履歴、アクセスログ</li>
-    </ul>
-
-    <h2>第2条（利用目的）</h2>
-    <p>取得した個人情報は、以下の目的で利用します。</p>
-    <ul>
-      <li>本サービスの提供・運営（アカウント管理・本人確認）</li>
-      <li>メールマガジン、新機能、セミナー、書籍等のご案内（営業・マーケティング）</li>
-      <li>お問い合わせへの対応</li>
-    </ul>
-
-    <h2>第3条（個人情報の管理）</h2>
-    <p>当事業は、個人情報の漏洩や紛失を防ぐため、適切な安全管理措置（Firebase等のセキュアなインフラ利用を含む）を講じます。</p>
-
-    <h2>第4条（第三者提供の制限）</h2>
-    <p>法令に基づく場合を除き、あらかじめ本人の同意を得ることなく第三者に個人情報を提供することはありません。</p>
-
-    <p style="margin-top:40px; font-size:12px;">附則：2026年2月25日 制定</p>
+    <div style="text-align: center; margin-bottom: 40px;">
+      <a href="./index.html" style="text-decoration: none; font-weight: bold; font-size: 14px;">← トップページに戻る</a>
+    </div>
   </div>
-  <div class="footer">© 食品安全パートナーズ</div>
+
+  <footer class="footer">
+    © 食品安全パートナーズ
+  </footer>
 </body>
+
 </html>

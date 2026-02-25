@@ -33,31 +33,34 @@
         .hTitle { font-size: 40px; font-weight: 900; line-height: 1.2; margin: 0 0 20px; }
         .hSub { font-size: 18px; opacity: 0.9; max-width: 630px; margin: 0 auto 30px; }
 
-        .app-mockup { max-width: 700px; margin: -20px auto 40px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 8px solid #fff; background: #fff; }
+        .app-mockup { max-width: 780px; margin: -20px auto 40px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 8px solid #fff; background: #fff; }
         .app-mockup img { width: 100%; height: auto; display: block; }
-        .mockup-label { background: #f8f9fa; padding: 10px; text-align: center; font-size: 13px; color: var(--muted); font-weight: bold; border-top: 1px solid #eee; }
+        .mockup-label { background: #f1f4f8; padding: 12px; text-align: center; font-size: 14px; color: var(--accent2); font-weight: bold; border-top: 1px solid #eee; }
 
         .section { padding: 60px 0; }
         .sTitle { text-align: center; font-size: 28px; font-weight: 900; margin-bottom: 40px; color: var(--accent2); }
         
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .fCard { background: #fff; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .fImg { width: 100%; border-radius: 12px; margin-bottom: 20px; border: 1px solid #eee; }
-        .fIcon { font-size: 32px; margin-bottom: 10px; display: block; }
-        .fTitle { font-size: 20px; font-weight: 900; margin-bottom: 12px; color: var(--accent2); }
-        .fText { font-size: 15px; color: var(--muted); margin: 0; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+        .fCard { background: #fff; padding: 35px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .fCard:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .fImg { width: 100%; border-radius: 12px; margin-bottom: 20px; border: 1px solid #eee; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .fTitle { font-size: 22px; font-weight: 900; margin-bottom: 15px; color: var(--accent2); display: flex; align-items: center; gap: 10px; }
+        .fText { font-size: 16px; color: var(--muted); margin: 0; line-height: 1.7; }
         
-        .problem { background: #fff; padding: 40px; border-radius: 24px; margin-bottom: 40px; border: 2px dashed var(--line); }
-        .problem h3 { color: #d63031; margin-top: 0; text-align: center; font-size: 22px; }
+        .problem { background: #fff; padding: 40px; border-radius: 24px; margin-bottom: 60px; border: 2px dashed var(--line); }
+        .problem h3 { color: #d63031; margin-top: 0; text-align: center; font-size: 22px; margin-bottom: 25px; }
         .pList { list-style: none; padding: 0; }
-        .pList li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 12px; font-size: 16px; }
+        .pList li { padding: 15px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; font-size: 16px; }
+        .pList li:last-child { border-bottom: none; }
 
-        .cta-banner { background: var(--accent2); color: white; padding: 60px 30px; border-radius: 30px; text-align: center; margin-top: 40px; }
+        .cta-banner { background: var(--accent2); color: white; padding: 70px 30px; border-radius: 40px; text-align: center; margin-top: 60px; box-shadow: 0 20px 50px rgba(44, 86, 122, 0.3); }
+        .cta-banner h2 { font-size: 32px; margin-bottom: 20px; }
         .footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: #fff; }
 
-        @media(max-width:600px) { 
-            .hTitle { font-size: 30px; }
+        @media(max-width:640px) { 
+            .hTitle { font-size: 32px; }
             .features { grid-template-columns: 1fr; }
+            .fCard { padding: 25px; }
         }
     </style>
 </head>
@@ -84,7 +87,7 @@
         <!-- メイン：監査レポート画面 -->
         <div class="app-mockup">
             <img src="./app-report.png" alt="JFS-B監査レポート画面（PC版イメージ）">
-            <div class="mockup-label">📊 監査結果をリアルタイムで可視化（レポート画面）</div>
+            <div class="mockup-label">✅ 監査結果をひと目で可視化。改善の優先順位が明確になります。</div>
         </div>
     </div>
 
@@ -102,39 +105,32 @@
         <h2 class="sTitle">このアプリができること</h2>
         <div class="features">
             <!-- 特徴1：詳細画面イメージ -->
-            <div class="fCard">
+            <div class="fCard border">
                 <img src="./app-detail.png" class="fImg" alt="JFS-B要求事項の詳細画面">
-                <span class="fIcon">🔍</span>
-                <h3 class="fTitle">要求事項を正しく理解</h3>
-                <p class="fText">JFS-Bの複雑な要求事項を分かりやすく解説。初心者でも迷わずセルフチェックが進められます。</p>
+                <h3 class="fTitle">🔍 要求事項を正しく理解</h3>
+                <p class="fText">JFS-Bの複雑な要求事項を専門家が分かりやすく解説。初心者でも「何を確認すべきか」迷わずセルフチェックが進められます。</p>
             </div>
             
             <div class="fCard">
-                <div style="height: 180px; display: flex; align-items: center; justify-content: center; font-size: 60px; background: #f8f9fa; border-radius: 12px; margin-bottom: 20px;">📥</div>
-                <span class="fIcon">📊</span>
-                <h3 class="fTitle">Excel・PDF出力</h3>
-                <p class="fText">チェック結果はPDFだけでなくExcel形式でも抽出可能。社内資料への加工も自由自在です。</p>
+                <h3 class="fTitle">📥 Excel・PDF レポート出力</h3>
+                <p class="fText">チェック結果はPDFだけでなくExcel形式でも抽出可能。社内資料への二次加工や、審査機関への提出書類としても自由自在に活用できます。</p>
             </div>
 
             <div class="fCard">
-                <div style="height: 180px; display: flex; align-items: center; justify-content: center; font-size: 60px; background: #eceff1; border-radius: 12px; margin-bottom: 20px;">💻</div>
-                <span class="fIcon">📱</span>
-                <h3 class="fTitle">PC・スマホ両対応</h3>
-                <p class="fText">現場ではスマホ、事務所ではPC。クラウド同期でいつでもどこでも最新データにアクセスできます。</p>
+                <h3 class="fTitle">💻 PC・スマホ・タブレット対応</h3>
+                <p class="fText">現場では機動力のあるスマホ、事務所では一覧性の高いPCの大きな画面で。デバイスを問わず、いつでも最新のデータにアクセス可能です。</p>
             </div>
 
             <div class="fCard">
-                <div style="height: 180px; display: flex; align-items: center; justify-content: center; font-size: 60px; background: #e8eaf6; border-radius: 12px; margin-bottom: 20px;">📸</div>
-                <span class="fIcon">📷</span>
-                <h3 class="fTitle">現場証拠を即保存</h3>
-                <p class="fText">不適合箇所をその場で撮影。写真付きの報告書が自動で作成され、審査準備が各段に楽になります。</p>
+                <h3 class="fTitle">📷 現場証拠をその場で保存</h3>
+                <p class="fText">不適合箇所や改善の証拠をその場で撮影・登録。写真付きの報告書が自動構成されるため、審査前の書類整理の手間が大幅に削減されます。</p>
             </div>
         </div>
     </section>
 
     <section class="cta-banner container">
         <h2>「JFS-B適合」への確信を、<br>すべての食品組織へ。</h2>
-        <p style="margin-bottom: 30px; opacity: 0.9;">自社の現状を正しく可視化し、より高い食品安全レベルを目指しましょう。</p>
+        <p style="margin-bottom: 35px; opacity: 0.9; font-size: 18px;">自社の現状を正確に可視化し、より高い食品安全レベルを目指しましょう。</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform?usp=pp_url&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" class="btn primary">無料で利用登録（アプリURLを送信）</a>
     </section>
 

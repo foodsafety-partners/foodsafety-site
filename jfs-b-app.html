@@ -33,26 +33,32 @@
         .hTitle { font-size: 40px; font-weight: 900; line-height: 1.2; margin: 0 0 20px; }
         .hSub { font-size: 18px; opacity: 0.9; max-width: 630px; margin: 0 auto 30px; }
 
-        .app-mockup { max-width: 600px; margin: -20px auto 40px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 8px solid #fff; background: #fff; }
+        .app-mockup { max-width: 700px; margin: -20px auto 40px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 8px solid #fff; background: #fff; }
         .app-mockup img { width: 100%; height: auto; display: block; }
+        .mockup-label { background: #f8f9fa; padding: 10px; text-align: center; font-size: 13px; color: var(--muted); font-weight: bold; border-top: 1px solid #eee; }
 
         .section { padding: 60px 0; }
         .sTitle { text-align: center; font-size: 28px; font-weight: 900; margin-bottom: 40px; color: var(--accent2); }
         
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .fCard { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
-        .fIcon { font-size: 40px; margin-bottom: 15px; display: block; }
-        .fTitle { font-size: 18px; font-weight: 900; margin-bottom: 10px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .fCard { background: #fff; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .fImg { width: 100%; border-radius: 12px; margin-bottom: 20px; border: 1px solid #eee; }
+        .fIcon { font-size: 32px; margin-bottom: 10px; display: block; }
+        .fTitle { font-size: 20px; font-weight: 900; margin-bottom: 12px; color: var(--accent2); }
+        .fText { font-size: 15px; color: var(--muted); margin: 0; }
         
         .problem { background: #fff; padding: 40px; border-radius: 24px; margin-bottom: 40px; border: 2px dashed var(--line); }
-        .problem h3 { color: #d63031; margin-top: 0; text-align: center; }
+        .problem h3 { color: #d63031; margin-top: 0; text-align: center; font-size: 22px; }
         .pList { list-style: none; padding: 0; }
-        .pList li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 10px; font-size: 15px; }
+        .pList li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 12px; font-size: 16px; }
 
-        .cta-banner { background: var(--accent2); color: white; padding: 50px 30px; border-radius: 24px; text-align: center; margin-top: 40px; }
+        .cta-banner { background: var(--accent2); color: white; padding: 60px 30px; border-radius: 30px; text-align: center; margin-top: 40px; }
         .footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: #fff; }
 
-        @media(max-width:600px) { .hTitle { font-size: 30px; } }
+        @media(max-width:600px) { 
+            .hTitle { font-size: 30px; }
+            .features { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 
@@ -75,9 +81,10 @@
     </section>
 
     <div class="container">
+        <!-- メイン：監査レポート画面 -->
         <div class="app-mockup">
-            <!-- アップロードした画像の名前に合わせて src を書き換えてください -->
-            <img src="./photo1.png" alt="JFS-Bセルフチェックアプリの画面例">
+            <img src="./app-report.png" alt="JFS-B監査レポート画面（PC版イメージ）">
+            <div class="mockup-label">📊 監査結果をリアルタイムで可視化（レポート画面）</div>
         </div>
     </div>
 
@@ -94,32 +101,40 @@
 
         <h2 class="sTitle">このアプリができること</h2>
         <div class="features">
+            <!-- 特徴1：詳細画面イメージ -->
             <div class="fCard">
+                <img src="./app-detail.png" class="fImg" alt="JFS-B要求事項の詳細画面">
                 <span class="fIcon">🔍</span>
-                <h3 class="fTitle">適合セルフチェック</h3>
-                <p>要求事項ごとに適合状況を判定。現場でリアルタイムに現状を把握できます。</p>
+                <h3 class="fTitle">要求事項を正しく理解</h3>
+                <p class="fText">JFS-Bの複雑な要求事項を分かりやすく解説。初心者でも迷わずセルフチェックが進められます。</p>
             </div>
+            
             <div class="fCard">
-                <span class="fIcon">💻</span>
-                <h3 class="fTitle">PC・スマホ両対応</h3>
-                <p>現場ではスマホやタブレット、事務所ではPCの大きな画面で。デバイスを選ばず利用可能です。</p>
-            </div>
-            <div class="fCard">
-                <span class="fIcon">📥</span>
+                <div style="height: 180px; display: flex; align-items: center; justify-content: center; font-size: 60px; background: #f8f9fa; border-radius: 12px; margin-bottom: 20px;">📥</div>
+                <span class="fIcon">📊</span>
                 <h3 class="fTitle">Excel・PDF出力</h3>
-                <p>チェック結果はPDFだけでなくExcel形式でも抽出可能。社内資料への加工も自由自在です。</p>
+                <p class="fText">チェック結果はPDFだけでなくExcel形式でも抽出可能。社内資料への加工も自由自在です。</p>
             </div>
+
             <div class="fCard">
-                <span class="fIcon">📸</span>
+                <div style="height: 180px; display: flex; align-items: center; justify-content: center; font-size: 60px; background: #eceff1; border-radius: 12px; margin-bottom: 20px;">💻</div>
+                <span class="fIcon">📱</span>
+                <h3 class="fTitle">PC・スマホ両対応</h3>
+                <p class="fText">現場ではスマホ、事務所ではPC。クラウド同期でいつでもどこでも最新データにアクセスできます。</p>
+            </div>
+
+            <div class="fCard">
+                <div style="height: 180px; display: flex; align-items: center; justify-content: center; font-size: 60px; background: #e8eaf6; border-radius: 12px; margin-bottom: 20px;">📸</div>
+                <span class="fIcon">📷</span>
                 <h3 class="fTitle">現場証拠を即保存</h3>
-                <p>不適合箇所をその場で撮影・登録。写真付きの報告書が自動で構成されます。</p>
+                <p class="fText">不適合箇所をその場で撮影。写真付きの報告書が自動で作成され、審査準備が各段に楽になります。</p>
             </div>
         </div>
     </section>
 
     <section class="cta-banner container">
         <h2>「JFS-B適合」への確信を、<br>すべての食品組織へ。</h2>
-        <p>自社の現状を正しく可視化し、より高い食品安全レベルを目指しましょう。</p>
+        <p style="margin-bottom: 30px; opacity: 0.9;">自社の現状を正しく可視化し、より高い食品安全レベルを目指しましょう。</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform?usp=pp_url&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" class="btn primary">無料で利用登録（アプリURLを送信）</a>
     </section>
 

@@ -1,0 +1,96 @@
+import React from 'react';
+import { X } from 'lucide-react';
+
+export default function PrivacyPolicy({ isOpen, onClose }) {
+    if (!isOpen) return null;
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+            {/* Backdrop */}
+            <div 
+                className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" 
+                onClick={onClose}
+            ></div>
+
+            {/* Modal */}
+            <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden animate-in fade-in zoom-in duration-200">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b sticky top-0 bg-white z-10">
+                    <h2 className="text-xl font-bold text-gray-900">プライバシーポリシー</h2>
+                    <button 
+                        onClick={onClose}
+                        className="p-2 rounded-full hover:bg-gray-100 text-gray-500 transition-colors"
+                    >
+                        <X size={20} />
+                    </button>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 overflow-y-auto p-6 text-sm text-gray-600 leading-relaxed space-y-6">
+                    <section>
+                        <h3 className="text-base font-bold text-gray-900 mb-2">はじめに</h3>
+                        <p>
+                            食品安全パートナーズ（以下、「当事業」といいます）は、当事業が提供する「JFS-B 内部監査アプリ」（以下、「本サービス」といいます）における、ユーザー（以下、「利用者」といいます）の個人情報の取扱いについて、個人情報の保護に関する法律（以下、「個人情報保護法」といいます）を遵守するとともに、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます）を定めます。
+                        </p>
+                    </section>
+
+                    <section>
+                        <h4 className="font-bold text-gray-900 mb-2">第1条（取得する個人情報の項目）</h4>
+                        <p>当事業は、本サービスの提供にあたり、以下の個人情報を適正かつ公正な手段によって取得します。</p>
+                        <ul className="list-disc ml-5 mt-2 space-y-1">
+                            <li><strong>アカウント登録情報</strong>: 氏名（または担当者名）、メールアドレス、組織名、パスワード、役職</li>
+                            <li><strong>利用データ</strong>: 本サービス内での監査入力内容、設定情報、アクセスログ、端末識別情報、ブラウザタイプ</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4 className="font-bold text-gray-900 mb-2">第2条（個人情報の利用目的）</h4>
+                        <p>当事業は、取得した個人情報を以下の目的の範囲内で利用します。</p>
+                        <ol className="list-decimal ml-5 mt-2 space-y-1">
+                            <li><strong>サービス提供・運営</strong>: 本サービスのアカウント管理、本人確認、監査レポート作成機能の提供</li>
+                            <li><strong>営業・マーケティング</strong>: 当事業が提供する他のサービス、新機能、セミナー、書籍、キャンペーン等のご案内（メールマガジンの配信等）</li>
+                            <li><strong>サポート・連絡</strong>: 利用者からのお問い合わせへの対応、重要なお知らせ（メンテナンス情報、規約改定等）の通知</li>
+                            <li><strong>改善・開発</strong>: 本サービスの利便性向上、利用状況の統計的分析、新たなサービスの開発</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h4 className="font-bold text-gray-900 mb-2">第3条（個人情報の第三者提供）</h4>
+                        <p>当事業は、個人情報保護法その他の法令に基づき認められる場合を除き、あらかじめ利用者の同意を得ることなく、第三者に対して個人情報を提供することはありません。</p>
+                    </section>
+
+                    <section>
+                        <h4 className="font-bold text-gray-900 mb-2">第4条（個人情報の委託）</h4>
+                        <p>当事業は、利用目的の達成に必要な範囲内において、個人情報の取扱いの全部または一部を外部に委託することがあります（例：クラウドサーバー「Firebase」の利用等）。この場合、当事業は委託先に対して必要かつ適切な監督を行います。</p>
+                    </section>
+
+                    <section>
+                        <h4 className="font-bold text-gray-900 mb-2">第5条（個人情報の開示・訂正・利用停止等）</h4>
+                        <p>利用者は、当事業に対し、自身の個人情報の開示、内容の訂正、追加または削除、利用の停止、消去を請求することができます。当事業は、利用者本人からの請求であることを確認したうえで、遅滞なく対応します。</p>
+                    </section>
+
+                    <section>
+                        <h4 className="font-bold text-gray-900 mb-2">第6条（情報セキュリティ）</h4>
+                        <p>当事業は、個人情報の漏洩、滅失または毀損の防止その他の個人情報の安全管理のために、適切な組織的、人的、物理的、かつ技術的な安全管理措置を講じます。</p>
+                    </section>
+
+                    <section>
+                        <p className="text-xs text-gray-400 mt-8">
+                            附則：2026年2月25日 制定
+                        </p>
+                    </section>
+                </div>
+
+                {/* Footer */}
+                <div className="p-4 border-t bg-gray-50 flex justify-end">
+                    <button
+                        onClick={onClose}
+                        className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                    >
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}

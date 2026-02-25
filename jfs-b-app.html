@@ -1,23 +1,132 @@
-<!-- C:\Users\hikar\gemini\antigravity\scratch\food_safety_business\app-v2\jfs-b-app.html -->
 <!doctype html>
 <html lang="ja">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JFS-B 適合セルフチェックアプリ｜食品安全パートナーズ</title>
-  <style>
-    :root { --accent: #e0872a; --accent2: #2c567a; --soft: #eef1f6; }
-    body { font-family: sans-serif; background: var(--soft); text-align: center; padding: 60px 20px; color: #1b2533; line-height: 1.6; }
-    .btn { background: var(--accent); color: white; padding: 18px 40px; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    h1 { font-size: 28px; color: var(--accent2); }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JFS-B 適合セルフチェックアプリ｜食品安全パートナーズ</title>
+    <meta name="description" content="JFS-B規格への適合状況をスマホで効率的にセルフチェック。現場で確認、その場で写真登録、PDFレポートを即作成。">
+
+    <link rel="icon" href="./assets/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap">
+
+    <style>
+        :root {
+            --ink: #1b2533; --muted: #5a6475; --line: #d9dde6; --accent: #e0872a; --accent2: #2c567a; --soft: #eef1f6;
+            --shadow: 0 16px 40px rgba(24, 32, 48, .18); --w: 1180px;
+        }
+        * { box-sizing: border-box }
+        html { scroll-behavior: smooth }
+        body { margin: 0; font-family: "Noto Sans JP", sans-serif; background: var(--soft); color: var(--ink); line-height: 1.6; }
+        a { color: inherit; text-decoration: none }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 18px }
+        
+        .header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .86); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(27, 37, 51, .08) }
+        .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0 }
+        .brand img { height: 38px; width: auto }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 12px; font-weight: 1000; border: none; cursor: pointer; transition: 0.2s; text-decoration: none; }
+        .btn.primary { background: var(--accent); color: #fff; box-shadow: 0 10px 20px rgba(224, 135, 42, 0.3); }
+        .btn.primary:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        
+        .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(135deg, #004a99 0%, #002d5e 100%); color: white; border-radius: 0 0 40px 40px; }
+        .hKicker { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 99px; font-size: 14px; font-weight: bold; margin-bottom: 16px; }
+        .hTitle { font-size: 40px; font-weight: 900; line-height: 1.2; margin: 0 0 20px; }
+        .hSub { font-size: 18px; opacity: 0.9; max-width: 630px; margin: 0 auto 30px; }
+
+        .section { padding: 60px 0; }
+        .sTitle { text-align: center; font-size: 28px; font-weight: 900; margin-bottom: 40px; color: var(--accent2); }
+        
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .fCard { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
+        .fIcon { font-size: 40px; margin-bottom: 15px; display: block; }
+        .fTitle { font-size: 18px; font-weight: 900; margin-bottom: 10px; }
+        .fDesc { font-size: 14px; color: var(--muted); }
+
+        .problem { background: #fff; padding: 40px; border-radius: 24px; margin-bottom: 40px; border: 2px dashed var(--line); }
+        .problem h3 { color: #d63031; margin-top: 0; text-align: center; }
+        .pList { list-style: none; padding: 0; }
+        .pList li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 10px; font-size: 15px; }
+
+        .cta-banner { background: var(--accent2); color: white; padding: 50px 30px; border-radius: 24px; text-align: center; margin-top: 40px; }
+        .cta-banner h2 { margin: 0 0 15px; }
+        .cta-banner p { opacity: 0.8; margin-bottom: 25px; }
+
+        .footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: #fff; }
+
+        @media(max-width:600px) {
+            .hTitle { font-size: 30px; }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>不適合を見逃さない。<br>JFS-B適合証明を、もっと身近に。</h1>
-  <p>自組織のJFS-B適合状況をスマホで素早くチェック。<br>現場の「現在地」を可視化し、審査への確かな自信を。</p>
-  <a href="https://jfsb-audit.web.app/" class="btn">今すぐセルフチェックを始める 📱</a>
-  <div style="margin-top: 40px;">
-    <a href="./privacy-policy.html" style="font-size:12px; color: #5a6475;">プライバシーポリシー</a>
-  </div>
+    <header class="header">
+        <div class="container" style="max-width: var(--w);">
+            <div class="nav">
+                <a class="brand" href="./index.html"><img src="./assets/img/logo.png" alt="食品安全パートナーズ"></a>
+                <a href="./index.html" style="font-size: 14px; font-weight: bold; color: var(--accent2);">← 公式サイト</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hKicker">JFS-B 適合セルフチェックツール</div>
+            <h1 class="hTitle">不適合を見逃さない。<br>適合証明を、もっと身近に。</h1>
+            <p class="hSub">自組織のJFS-B適合状況をスマホで素早くチェック。現場の「現在地」を可視化し、審査への確かな自信を。</p>
+            <a href="https://jfsb-audit.web.app/" class="btn primary">今すぐセルフチェックを始める 📱</a>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="problem">
+            <h3>こんなお悩み、ありませんか？</h3>
+            <ul class="pList">
+                <li>❌ 自社がJFS-Bの要求事項を本当に満たせているか不安</li>
+                <li>❌ 適合確認の記録管理がアナログで時間がかかる</li>
+                <li>❌ 要求事項の解釈が難しく、確認ポイントが分からない</li>
+                <li>❌ 適合の証拠（現場状況）を手軽に写真で残したい</li>
+            </ul>
+        </div>
+
+        <h2 class="sTitle">このアプリができること</h2>
+        <div class="features">
+            <div class="fCard">
+                <span class="fIcon">🔍</span>
+                <h3 class="fTitle">適合セルフチェック</h3>
+                <p class="fDesc">要求事項ごとに適合状況を選択。現場でリアルタイムに現状を把握できます。</p>
+            </div>
+            <div class="fCard">
+                <span class="fIcon">📸</span>
+                <h3 class="fTitle">現場証拠を即保存</h3>
+                <p class="fDesc">確認した現場の写真をその場で登録。不適合箇所の記録もスムーズです。</p>
+            </div>
+            <div class="fCard">
+                <span class="fIcon">📑</span>
+                <h3 class="fTitle">PDFレポート出力</h3>
+                <p class="fDesc">チェック結果をPDFで即時作成。社内共有や改善指示にそのまま使えます。</p>
+            </div>
+            <div class="fCard">
+                <span class="fIcon">💡</span>
+                <h3 class="fTitle">確認ポイントのガイド</h3>
+                <p class="fDesc">各項目に「着眼点」を内蔵。専門知識を補いながら確かな判定を支援します。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner container">
+        <h2>「JFS-B適合」への確信を<br>すべての食品組織へ</h2>
+        <p>自組織の現状を正しく可視化し、より高い食品安全レベルを目指しましょう。</p>
+        <a href="https://jfsb-audit.web.app/" class="btn primary">無料でアプリを開く</a>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            © 食品安全パートナーズ<br>
+            <a href="./privacy-policy.html" style="text-decoration: underline;">プライバシーポリシー</a>
+        </div>
+    </footer>
 </body>
+
 </html>

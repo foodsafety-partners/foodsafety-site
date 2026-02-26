@@ -495,7 +495,7 @@
         .book-fsm {
             left: 20px;
             top: 0;
-            background-image: url('./public/kindle-FSMS.jpg.png');
+            background-image: url('./kindle-FSMS.jpg.png');
             background-size: cover;
             background-position: center;
             z-index: 2;
@@ -507,7 +507,7 @@
         .book-haccp {
             right: 40px;
             top: 40px;
-            background-image: url('./public/kindle-HACCP.jpg.png');
+            background-image: url('./kindle-HACCP.jpg.png');
             background-size: cover;
             background-position: center;
             z-index: 1;
@@ -768,7 +768,7 @@
 
     <header>
         <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html" class="logo">
-            <img src="./public/logo.png" alt="食品安全パートナーズ" style="height: 40px;">
+            <img src="./logo.png" alt="食品安全パートナーズ" style="height: 40px;">
             <span>食品安全パートナーズ</span>
         </a>
         <nav>
@@ -832,13 +832,13 @@
             <div class="mockup-col-left fade-in-up-delay">
                 <div class="phone-frame phone-vertical">
                     <div class="frame-content">
-                        <img src="./public/dashboard-ss.png" alt="Dashboard"
+                        <img src="./dashboard-ss.png" alt="Dashboard"
                             onerror="this.src='./public/dashboard-ss.png.png'">
                     </div>
                 </div>
                 <div class="phone-frame phone-vertical">
                     <div class="frame-content">
-                        <img src="./public/audit-ss.png" alt="Audit" onerror="this.src='./public/audit-ss.png.png'">
+                        <img src="./audit-ss.png" alt="Audit" onerror="this.src='./public/audit-ss.png.png'">
                     </div>
                 </div>
             </div>
@@ -852,7 +852,7 @@
                         <div class="pc-screen">
                             <div class="frame-content">
                                 <!-- Placeholder PC image, reuse dashboard for now -->
-                                <img src="./public/dashboard-ss.png" alt="PC Dashboard"
+                                <img src="./dashboard-ss.png" alt="PC Dashboard"
                                     onerror="this.src='./public/dashboard-ss.png.png'">
                             </div>
                         </div>
@@ -864,8 +864,7 @@
                 <!-- Horizontal Phone Mockup -->
                 <div class="phone-frame phone-horizontal">
                     <div class="frame-content">
-                        <img src="./public/report-ss.png" alt="Report Screen"
-                            onerror="this.src='./public/report-ss.png.png'">
+                        <img src="./report-ss.png" alt="Report Screen" onerror="this.src='./public/report-ss.png.png'">
                     </div>
                 </div>
 
@@ -1036,7 +1035,7 @@
         }
 
         // Form submission handling
-        document.getElementById('leadForm').onsubmit = async function (e) {
+        document.getElementById('leadForm').onsubmit = function (e) {
             e.preventDefault();
             const submitBtn = e.target.querySelector('button');
             const originalText = submitBtn.innerText;
@@ -1046,34 +1045,17 @@
                 return;
             }
 
-            const name = document.getElementById('userName').value;
             const email = document.getElementById('userEmail').value;
 
-            try {
-                submitBtn.disabled = true;
-                submitBtn.innerText = '送信中...';
+            // Construct Google Form URL with pre-filled email and consent
+            const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform";
+            const formUrl = `${baseUrl}?usp=pp_url&entry.193868272=${encodeURIComponent(email)}&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82`;
 
-                // Save to leads collection using email as document ID (or auto ID)
-                // Using a combination of email and timestamp for uniqueness if needed, but email is usually enough for a lead
-                const leadId = email.replace(/[^a-zA-Z0-9]/g, '_') + '_' + Date.now();
-                await setDoc(doc(db, 'leads', leadId), {
-                    name,
-                    email,
-                    signupDate: new Date().toISOString(),
-                    serverTimestamp: serverTimestamp(),
-                    source: 'Landing Page (LP)',
-                    consent: true
-                });
+            submitBtn.disabled = true;
+            submitBtn.innerText = '移動中...';
 
-                console.log('Lead captured successfully');
-                // Redirect to the actual app with email parameter for auto-fill
-                window.location.href = `https://jfsb-audit.web.app/?email=${encodeURIComponent(email)}&utm_source=lp`;
-            } catch (error) {
-                console.error('Error capturing lead:', error);
-                alert('エラーが発生しました。もう一度お試しください。');
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalText;
-            }
+            // Redirect to Google Form
+            window.location.href = formUrl;
         };
     </script>
 

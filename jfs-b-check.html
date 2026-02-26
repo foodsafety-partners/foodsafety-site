@@ -75,24 +75,6 @@
             margin: 0 auto;
         }
 
-        .fade-in-down {
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .fade-in-up-delay {
-            animation: fadeInUp 1s ease-out both;
-            animation-delay: 0.2s;
-        }
-
-        .fade-in-up-long {
-            animation: fadeInUp 1.2s ease-out both;
-            animation-delay: 0.4s;
-        }
-
         .badge {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(5px);
@@ -190,13 +172,7 @@
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .phone-frame:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-            z-index: 10;
+            transition: transform 0.3s ease;
         }
 
         .phone-vertical {
@@ -285,7 +261,7 @@
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
             margin-bottom: 60px;
             position: relative;
@@ -305,7 +281,7 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
@@ -314,32 +290,135 @@
 
         .feature-card {
             background: #fdfdfd;
-            padding: 30px;
-            border-radius: 20px;
+            padding: 40px;
+            border-radius: 24px;
             border: 1px solid #eee;
             transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
             background: #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .kindle-section {
-            padding: 100px 5%;
-            background: #fdfdfd;
+            padding: 120px 5%;
+            background: #f8fbff;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 60px;
+            gap: 80px;
             flex-wrap: wrap;
+        }
+
+        .kindle-info {
+            flex: 1;
+            min-width: 320px;
+            max-width: 600px;
+        }
+
+        .kindle-info h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .kindle-info p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .book-links {
+            display: grid;
+            gap: 20px;
+        }
+
+        .book-link-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .book-link-item:hover {
+            transform: translateX(10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .ku-card {
+            margin-top: 40px;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .ku-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(230, 126, 34, 0.3);
+        }
+
+        .ku-badge {
+            background: white;
+            color: #e67e22;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            white-space: nowrap;
         }
 
         .kindle-visual {
             flex: 1;
             min-width: 300px;
-            display: center;
+            display: flex;
             justify-content: center;
             perspective: 2000px;
         }
@@ -347,36 +426,34 @@
         .book-container {
             position: relative;
             width: 400px;
-            height: 300px;
+            height: 320px;
             transform-style: preserve-3d;
             transform: rotateY(-10deg) rotateX(10deg);
         }
 
         .book-mockup {
-            width: 180px;
-            height: 270px;
+            width: 190px;
+            height: 280px;
             position: absolute;
-            background: white;
             border-radius: 2px 8px 8px 2px;
             box-shadow: 15px 25px 50px rgba(0, 0, 0, 0.2);
-            transition: 0.5s;
             background-size: cover;
             background-position: center;
             border-left: 4px solid rgba(255, 255, 255, 0.1);
         }
 
         .book-fsm {
-            left: 20px;
+            left: 40px;
             top: 0;
-            background-image: url('./book1.png?v=6');
+            background-image: url('./book1.png?v=7');
             z-index: 2;
-            transform: translateZ(50px);
+            transform: translateZ(60px);
         }
 
         .book-haccp {
-            right: 40px;
+            right: 60px;
             top: 40px;
-            background-image: url('./book2.png?v=6');
+            background-image: url('./book2.png?v=7');
             z-index: 1;
             transform: rotateY(-5deg);
         }
@@ -389,59 +466,72 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
             align-items: center;
             justify-content: center;
         }
 
         .modal-content {
             background: #fff;
-            padding: 40px;
-            border-radius: 20px;
+            padding: 50px;
+            border-radius: 24px;
             width: 90%;
             max-width: 500px;
             position: relative;
             text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
         }
 
         .close-modal {
             position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 1.5rem;
+            right: 25px;
+            top: 25px;
+            font-size: 1.8rem;
             cursor: pointer;
-            color: #888;
+            color: #bbb;
         }
 
         .submit-button {
             width: 100%;
             background: var(--accent-color);
             color: white;
-            padding: 15px;
+            padding: 18px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: bold;
+            font-size: 1.25rem;
             cursor: pointer;
-            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        footer a {
+            color: #95a5a6;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(40px);
             }
 
             to {
@@ -452,15 +542,19 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .hero {
-                padding: 60px 5%;
+                padding: 80px 5% 120px;
             }
 
             .app-mockup {
-                margin-top: -40px;
+                margin-top: -60px;
+            }
+
+            .kindle-section {
+                gap: 40px;
             }
         }
     </style>
@@ -470,22 +564,23 @@
 
     <header>
         <a href="./index.html" class="logo">
-            <img src="./assets/img/logo.png" alt="食品安全パートナーズ" style="height: 40px;">
+            <img src="./assets/img/logo.png" alt="食品安全パートナーズ" style="height: 480px;">
             <span>食品安全パートナーズ</span>
         </a>
         <nav>
-            <a href="./index.html" style="text-decoration: none; color: var(--primary-color); font-weight: bold;">公式サイト
-                TOP</a>
+            <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html"
+                style="text-decoration: none; color: var(--primary-color); font-weight: bold;">公式サイト TOP</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="fade-in-down"><span class="badge">食品安全の「自走」を支える無料ツール</span></div>
-            <h1 class="fade-in-up">「やらされる点検」から、<br>「会社を強くする活動」へ。</h1>
-            <p class="fade-in-up-delay">JFS-Bセルフチェックの全項目をスマホ1台で完結。<br>品質管理・品質保証チームの日々の努力を成果に変え、<br>現場の自信を積み上げます。</p>
-            <div class="fade-in-up-long">
+            <div style="animation: fadeInUp 0.8s ease-out;"><span class="badge">食品安全の「自走」を支える無料ツール</span></div>
+            <h1 style="animation: fadeInUp 1s ease-out both;">「やらされる点検」から、<br>「会社を強くする活動」へ。</h1>
+            <p style="animation: fadeInUp 1.2s ease-out both;">
+                JFS-Bセルフチェックの全項目をスマホ1台で完結。<br>品質管理・品質保証チームの日々の努力を成果に変え、<br>現場の自信を積み上げます。</p>
+            <div style="animation: fadeInUp 1.4s ease-out both;">
                 <button class="cta-button" onclick="openModal()">今すぐ無料で始める</button>
             </div>
         </div>
@@ -493,43 +588,55 @@
 
     <div class="app-mockup">
         <div class="mockup-grid">
-            <div class="mockup-col-left fade-in-up-delay">
+            <div class="mockup-col-left" style="animation: fadeInUp 1.6s ease-out both;">
                 <div class="phone-frame phone-vertical">
-                    <div class="frame-content"><img src="./app2.png?v=6" alt="Dashboard"></div>
+                    <div class="frame-content"><img src="./app2.png?v=7" alt="Dashboard"></div>
                 </div>
                 <div class="phone-frame phone-vertical">
-                    <div class="frame-content"><img src="./app1.png?v=6" alt="Audit"></div>
+                    <div class="frame-content"><img src="./app1.png?v=7" alt="Audit"></div>
                 </div>
             </div>
-            <div class="mockup-col-right fade-in-up-long">
+            <div class="mockup-col-right" style="animation: fadeInUp 1.8s ease-out both;">
                 <div class="pc-frame">
                     <div class="pc-screen">
-                        <div class="frame-content"><img src="./app2.png?v=6" alt="PC Dash"></div>
+                        <div class="frame-content"><img src="./app2.png?v=7" alt="PC Dash"></div>
                     </div>
                 </div>
                 <div class="pc-stand"></div>
                 <div class="pc-frame-base"></div>
                 <div class="phone-frame phone-horizontal">
-                    <div class="frame-content"><img src="./app3.png?v=6" alt="Report"></div>
+                    <div class="frame-content"><img src="./app3.png?v=7" alt="Report"></div>
                 </div>
             </div>
         </div>
     </div>
 
     <section class="features">
-        <h2 class="section-title">主な機能</h2>
+        <h2 class="section-title">食品安全水準の向上を強力に後押しする機能</h2>
         <div class="features-grid">
-            <div class="feature-card">
-                <h3>🛡️ 規格を深く理解</h3>
-                <p>JFS-B規格の全項目をデジタル化。現役コンサルタントの視点で正しく判断できます。</p>
+            <div class="feature-card"><span class="feature-icon">🛡️</span>
+                <h3>「自分たち」で規格を理解</h3>
+                <p>JFS-B規格の全項目をデジタル化。現役コンサルタントによる「確認のポイント」で、難しい要求事項も正しく理解できます。</p>
             </div>
-            <div class="feature-card">
-                <h3>📸 現場を写真で記録</h3>
-                <p>現場の気づきをその場で撮影。課題の早期発見と共有が当たり前になります。</p>
+            <div class="feature-card"><span class="feature-icon">📸</span>
+                <h3>現場の気づきを逃さない</h3>
+                <p>日々の点検で気になった点をその場で写真撮影。スマホの機動力で、課題の早期発見と共有が当たり前になります。</p>
             </div>
-            <div class="feature-card">
-                <h3>📄 レポート即作成</h3>
-                <p>点検終了と同時に報告書が完成。集計作業の手間をゼロにします。</p>
+            <div class="feature-card"><span class="feature-icon">📄</span>
+                <h3>形骸化しない報告書作成</h3>
+                <p>点検が終わればレポートが即座に完成。「報告書作成」から解放され、改善を検討する時間に集中できます。</p>
+            </div>
+            <div class="feature-card"><span class="feature-icon">📊</span>
+                <h3>Excel・PDFで出力</h3>
+                <p>点検結果はボタン一つでPDFやExcelに。美しい報告書としてそのまま社内共有や証跡管理に活用いただけます。</p>
+            </div>
+            <div class="feature-card"><span class="feature-icon">💻</span>
+                <h3>PC・スマホ両対応</h3>
+                <p>現場ではスマホで手軽に入力。オフィスではPCの大画面でじっくり分析。シーンに合わせて使い分けが可能です。</p>
+            </div>
+            <div class="feature-card"><span class="feature-icon">☁️</span>
+                <h3>組織の知見を積み上げる</h3>
+                <p>過去の結果はクラウドに保存。担当が変わっても、工場の食品安全レベルを継続的に高めていく資産になります。</p>
             </div>
         </div>
     </section>
@@ -542,8 +649,27 @@
             </div>
         </div>
         <div class="kindle-info">
-            <h2>書籍で学び、アプリで実践。</h2>
-            <p>Kindle本「食品安全で会社を強くする」シリーズと完全連動。理論と実践を両立させ、工場の食品安全レベルを強化します。</p>
+            <span class="badge"
+                style="background: rgba(243, 156, 18, 0.1); color: #e67e22; border-color: #f39c1233;">Kindle本と完全連動</span>
+            <h2>書籍で学び、アプリで実践する。</h2>
+            <p>JFS-B規格をわかりやすく解説したベストセラーKindle本「食品安全で会社を強くする」シリーズの内容を、そのままアプリに反映。本で学び、アプリで測る。このサイクルが確かな運用を支えます。</p>
+            <div class="book-links">
+                <a href="https://www.amazon.co.jp/dp/B0DS1Y43H6" class="book-link-item">
+                    <div class="book-icon" style="background: #2c3e50;">JFS</div>
+                    <div><strong>JFS-B規格徹底解説 編</strong><br><small>詳細・購入はこちら →</small></div>
+                </a>
+                <a href="https://www.amazon.co.jp/dp/B0GMWP6JP7" class="book-link-item">
+                    <div class="book-icon" style="background: #27ae60;">HACCP</div>
+                    <div><strong>HACCP 編</strong><br><small>詳細・購入はこちら →</small></div>
+                </a>
+                <a href="https://amzn.to/4qEGAjn" class="ku-card" target="_blank">
+                    <div>
+                        <h3>Kindle Unlimitedでお得に読む</h3>
+                        <p>初回30日間無料体験なら、シリーズ2冊とも￥0で読み放題。まず「学ぶ」から始めたい方に最適です。</p>
+                    </div>
+                    <div class="ku-badge">無料で読む →</div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -551,27 +677,36 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 style="color: var(--primary-color);">アプリを始める</h2>
-            <p>メールアドレスを入力してください。</p>
-            <div style="margin: 20px 0; text-align: left;">
-                <label style="display: block; font-weight: bold; margin-bottom: 8px;">メールアドレス</label>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">メールアドレスを入力して、<br>すぐにアプリをご利用いただけます。</p>
+            <div style="text-align: left; margin-bottom: 25px;">
+                <label
+                    style="display: block; font-weight: bold; margin-bottom: 10px; color: var(--primary-color);">メールアドレス</label>
                 <input type="email" id="userEmail" placeholder="example@mail.com"
-                    style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+                    style="width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; font-size: 1rem;">
             </div>
-            <div style="margin: 20px 0; text-align: left; font-size: 0.9rem;">
-                <input type="checkbox" id="userConsent" style="width: 18px; height: 18px; vertical-align: middle;">
-                <label for="userConsent" style="vertical-align: middle;">プライバシーポリシーに同意する</label>
+            <div
+                style="text-align: left; margin-bottom: 30px; font-size: 0.9rem; color: #666; display: flex; gap: 10px; align-items: center;">
+                <input type="checkbox" id="userConsent" style="width: 20px; height: 20px; cursor: pointer;">
+                <label for="userConsent" style="cursor: pointer;">プライバシーポリシーに同意する</label>
             </div>
-            <button type="button" class="submit-button" onclick="window.submitAppForm()">アプリを無料で開く</button>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">
-                ※自動で移動しない場合は<a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform?usp=pp_url&entry.193868272="
-                    onclick="return prepareDirectLink(this)" target="_blank">こちら</a>を直接クリックしてください。
-            </p>
+            <button class="submit-button" onclick="window.startAppNow()">アプリを無料で開く</button>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 食品安全パートナーズ. All Rights Reserved.</p>
+    <footer style="background: var(--gradient-blue); color: white; padding: 100px 5%; text-align: center;">
+        <h2 style="font-size: 2.22rem; margin-bottom: 20px;">あなたの食品安全を、次のレベルへ。</h2>
+        <p style="margin-bottom: 50px; opacity: 0.9;">複雑な設定は不要。メールアドレス一つで始められます。</p>
+        <button class="cta-button" style="background: white; color: var(--primary-color);"
+            onclick="openModal()">無料でアプリを開く</button>
+        <div style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 40px;">
+            <p>&copy; 2026 食品安全パートナーズ. All Rights Reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html"
+                    style="color:white;">公式サイト</a>
+                <a href="https://foodsafety-partners.github.io/foodsafety-site/service.html"
+                    style="color:white;">サービス一覧</a>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -579,7 +714,7 @@
         function closeModal() { document.getElementById('captureModal').style.display = 'none'; }
         window.onclick = function (e) { if (e.target == document.getElementById('captureModal')) closeModal(); }
 
-        window.submitAppForm = function () {
+        window.startAppNow = function () {
             var email = document.getElementById('userEmail').value;
             var consent = document.getElementById('userConsent').checked;
 
@@ -587,19 +722,11 @@
             if (!consent) { alert('プライバシーポリシーへの同意が必要です。'); return; }
 
             var baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform";
-            var finalUrl = baseUrl + "?usp=pp_url&entry.193868272=" + encodeURIComponent(email) + "&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
+            var url = baseUrl + "?usp=pp_url&entry.193868272=" + encodeURIComponent(email) + "&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
 
-            console.log("Redirecting...");
-            window.location.href = finalUrl;
+            console.log("Redirecting directly...");
+            window.location.href = url;
         };
-
-        function prepareDirectLink(link) {
-            var email = document.getElementById('userEmail').value;
-            if (email) {
-                link.href = link.href.split('&entry')[0] + "&entry.193868272=" + encodeURIComponent(email) + "&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
-            }
-            return true;
-        }
     </script>
 </body>
 

@@ -495,7 +495,7 @@
         .book-fsm {
             left: 20px;
             top: 0;
-            background-image: url('./kindle-FSMS.jpg.png');
+            background-image: url('./kindle-FSMS.png?v=2');
             background-size: cover;
             background-position: center;
             z-index: 2;
@@ -507,7 +507,7 @@
         .book-haccp {
             right: 40px;
             top: 40px;
-            background-image: url('./kindle-HACCP.jpg.png');
+            background-image: url('./kindle-HACCP.png?v=2');
             background-size: cover;
             background-position: center;
             z-index: 1;
@@ -768,7 +768,7 @@
 
     <header>
         <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html" class="logo">
-            <img src="./logo.png" alt="食品安全パートナーズ" style="height: 40px;">
+            <img src="./assets/img/logo.png" alt="食品安全パートナーズ" style="height: 40px;">
             <span>食品安全パートナーズ</span>
         </a>
         <nav>
@@ -802,7 +802,7 @@
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 style="color: var(--primary-color); margin-top: 0;">アプリを始める</h2>
             <p style="color: var(--text-muted); margin-bottom: 30px;">氏名とメールアドレスを入力して、<br>すぐにアプリをご利用いただけます。</p>
-            <form id="leadForm">
+            <form id="leadForm" onsubmit="return window.submitLeadForm(event)">
                 <div class="form-group">
                     <label for="userName">お名前（氏名）</label>
                     <input type="text" id="userName" name="name" placeholder="例：食品 太郎" required>
@@ -832,13 +832,12 @@
             <div class="mockup-col-left fade-in-up-delay">
                 <div class="phone-frame phone-vertical">
                     <div class="frame-content">
-                        <img src="./dashboard-ss.png" alt="Dashboard"
-                            onerror="this.src='./public/dashboard-ss.png.png'">
+                        <img src="./dashboard-ss.png?v=2" alt="Dashboard">
                     </div>
                 </div>
                 <div class="phone-frame phone-vertical">
                     <div class="frame-content">
-                        <img src="./audit-ss.png" alt="Audit" onerror="this.src='./public/audit-ss.png.png'">
+                        <img src="./audit-ss.png?v=2" alt="Audit">
                     </div>
                 </div>
             </div>
@@ -852,8 +851,7 @@
                         <div class="pc-screen">
                             <div class="frame-content">
                                 <!-- Placeholder PC image, reuse dashboard for now -->
-                                <img src="./dashboard-ss.png" alt="PC Dashboard"
-                                    onerror="this.src='./public/dashboard-ss.png.png'">
+                                <img src="./dashboard-ss.png?v=2" alt="PC Dashboard">
                             </div>
                         </div>
                     </div>
@@ -864,7 +862,7 @@
                 <!-- Horizontal Phone Mockup -->
                 <div class="phone-frame phone-horizontal">
                     <div class="frame-content">
-                        <img src="./report-ss.png" alt="Report Screen" onerror="this.src='./public/report-ss.png.png'">
+                        <img src="./report-ss.png?v=2" alt="Report Screen">
                     </div>
                 </div>
 
@@ -993,23 +991,8 @@
         </div>
     </div>
 
-    <script type="module">
-        // Firebase Modular SDK
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBusBGffDwPhx-Tsx3QJ47b1BRfVovtCXI",
-            authDomain: "jfsb-audit.firebaseapp.com",
-            projectId: "jfsb-audit",
-            storageBucket: "jfsb-audit.firebasestorage.app",
-            messagingSenderId: "202725556161",
-            appId: "1:202725556161:web:766f7a587a9529dab9b940"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
+    <script>
+        // UI functions in a standard script to ensure they work even if modules fail
         window.openModal = function () {
             document.getElementById('captureModal').style.display = 'flex';
         }
@@ -1034,31 +1017,62 @@
             if (event.target == policyModal) closePolicy();
         }
 
-        // Form submission handling
-        document.getElementById('leadForm').onsubmit = function (e) {
-            e.preventDefault();
-            const submitBtn = e.target.querySelector('button');
-            const originalText = submitBtn.innerText;
+        // Global form submission function
+        window.submitLeadForm = function (e) {
+            if (e) e.preventDefault();
 
-            if (!document.getElementById('consent').checked) {
+            const submitBtn = document.querySelector('#leadForm button[type="submit"]');
+            const consent = document.getElementById('consent');
+
+            if (!consent.checked) {
                 alert('プライバシーポリシーへの同意が必要です。');
-                return;
+                return false;
             }
 
             const email = document.getElementById('userEmail').value;
+            if (!email) {
+                alert('メールアドレスを入力してください。');
+                return false;
+            }
 
             // Construct Google Form URL with pre-filled email and consent
             const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform";
-            const formUrl = `${baseUrl}?usp=pp_url&entry.193868272=${encodeURIComponent(email)}&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82`;
+            const formUrl = baseUrl + "?usp=pp_url&entry.193868272=" + encodeURIComponent(email) + "&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
 
-            submitBtn.disabled = true;
-            submitBtn.innerText = '移動中...';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = '移動中...';
+            }
 
             // Redirect to Google Form
+            console.log("Redirecting to:", formUrl);
             window.location.href = formUrl;
+            return false;
         };
     </script>
 
+    <script type="module">
+        // Firebase Modular SDK (Optional tracking/database)
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBusBGffDwPhx-Tsx3QJ47b1BRfVovtCXI",
+            authDomain: "jfsb-audit.firebaseapp.com",
+            projectId: "jfsb-audit",
+            storageBucket: "jfsb-audit.firebasestorage.app",
+            messagingSenderId: "202725556161",
+            appId: "1:202725556161:web:766f7a587a9529dab9b940"
+        };
+
+        try {
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            // You can add more tracking logic here if needed
+        } catch (e) {
+            console.error("Firebase failed to load, but UI functions will still work.", e);
+        }
+    </script>
 </body>
 
 </html>

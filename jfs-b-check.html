@@ -7,199 +7,485 @@
     <title>JFS-Bセルフチェックアプリ｜食品安全パートナーズ</title>
     <style>
         :root {
-            --primary: #004a99;
-            --accent: #e67e22;
-            --bg: #f8f9fa;
-            --white: #fff;
+            --primary-color: #004a99;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-muted: #666;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #004a99 0%, #002d5e 100%);
         }
 
         body {
-            font-family: sans-serif;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-dark);
             margin: 0;
-            background: var(--bg);
+            overflow-x: hidden;
+            background-color: var(--bg-light);
         }
 
         header {
             background: var(--white);
-            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
-            color: var(--primary);
-            text-decoration: none;
             font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
 
         .hero {
-            background: var(--primary);
-            color: white;
-            padding: 80px 5%;
+            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 5% 180px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 74, 153, 0.9) 0%, rgba(0, 45, 94, 0.8) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-button {
-            background: var(--accent);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: none;
             cursor: pointer;
-            font-size: 1.1rem;
         }
 
-        .mockup-grid {
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background-color: #d35400;
+        }
+
+        /* Mockup Section */
+        .app-mockup {
+            margin-top: -100px;
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px;
+        }
+
+        .mockup-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
-            padding: 40px 5%;
+            align-items: center;
+            perspective: 2000px;
+            height: 600px;
+            position: relative;
         }
 
-        .item {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 12px;
+        .phone-frame {
+            width: 260px;
+            height: 520px;
+            background: #222;
+            border: 10px solid #222;
+            border-radius: 40px;
             overflow: hidden;
-            width: 200px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        .item.pc {
-            width: 350px;
-        }
-
-        .item img {
+        .frame-content {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            background: #fff;
+            position: relative;
         }
 
+        .frame-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .phone-frame:nth-child(1) {
+            transform: rotateY(15deg) rotateX(5deg) translateX(-300px);
+            z-index: 1;
+        }
+
+        .phone-frame:nth-child(2) {
+            transform: rotateY(10deg) rotateX(5deg) translateX(-100px) translateZ(50px);
+            z-index: 2;
+        }
+
+        .phone-frame:nth-child(3) {
+            transform: rotateY(-10deg) rotateX(5deg) translateX(100px) translateZ(50px);
+            z-index: 2;
+        }
+
+        .phone-frame:nth-child(4) {
+            transform: rotateY(-15deg) rotateX(5deg) translateX(300px);
+            z-index: 1;
+        }
+
+        .phone-frame:hover {
+            transform: translateZ(300px) scale(1.1) !important;
+            z-index: 10 !important;
+        }
+
+        /* Features */
+        .features {
+            padding: 120px 5% 80px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            transform: translateX(-50%);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 20px;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Kindle Section */
+        .kindle-section {
+            padding: 100px 5%;
+            background: #fdfdfd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .kindle-visual {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            height: 350px;
+            perspective: 2000px;
+        }
+
+        .book-container {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: rotateY(-10deg) rotateX(10deg);
+            position: relative;
+        }
+
+        .book-mockup {
+            width: 180px;
+            height: 270px;
+            position: absolute;
+            background: #fff;
+            border-radius: 2px 8px 8px 2px;
+            box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+        }
+
+        .book-fsm {
+            left: 50px;
+            top: 0;
+            background-image: url('./book1.png?v=3');
+            background-size: cover;
+            z-index: 2;
+            transform: translateZ(50px);
+        }
+
+        .book-haccp {
+            left: 150px;
+            top: 40px;
+            background-image: url('./book2.png?v=3');
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .book-mockup:hover {
+            transform: translateZ(100px) scale(1.1);
+            z-index: 10;
+        }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
             align-items: center;
             justify-content: center;
         }
 
         .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
         }
 
         .form-group {
             margin-bottom: 20px;
+            text-align: left;
         }
 
         .form-group label {
             display: block;
+            margin-bottom: 8px;
             font-weight: bold;
-            margin-bottom: 5px;
+            color: var(--primary-color);
         }
 
         .form-group input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             box-sizing: border-box;
         }
 
-        .submit-btn {
-            width: 100%;
-            background: var(--accent);
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .app-mockup {
+                margin-top: -40px;
+            }
+
+            .phone-frame {
+                width: 180px;
+                height: 360px;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <header>
         <a href="./index.html" class="logo">
-            <img src="./assets/img/logo.png" alt="Logo" style="height: 35px;">
+            <img src="./assets/img/logo.png" alt="Logo" style="height: 40px;">
             <span>食品安全パートナーズ</span>
         </a>
+        <nav>
+            <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html"
+                style="text-decoration: none; color: var(--primary-color); font-weight: bold;">公式サイト TOP</a>
+        </nav>
     </header>
 
     <section class="hero">
-        <h1>JFS-Bセルフチェックアプリ</h1>
-        <p>スマホで完結する内部監査・現場点検ツール</p>
-        <button class="cta-button" onclick="openM()">今すぐ無料で始める</button>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 style="color: white; margin-top: 0;">「会社を強くする」内部監査を。<br>JFS-Bセルフチェックアプリ</h1>
+            <p style="color: white;">全項目をスマホで完結。現場の気づきを、その場で確かな成果に変える高品質なセルフチェックを実現します。</p>
+            <button class="cta-button" onclick="openModal()">今すぐ無料で始める</button>
+        </div>
     </section>
 
-    <div class="mockup-grid">
-        <div class="item"><img src="./app1.png?v=3" alt="Audit"></div>
-        <div class="item"><img src="./app2.png?v=3" alt="Dashboard"></div>
-        <div class="item pc"><img src="./app2.png?v=3" alt="PC"></div>
-        <div class="item"><img src="./app3.png?v=3" alt="Report"></div>
-    </div>
-
-    <div style="padding: 40px 5%; text-align: center; background: #fff;">
-        <h2>書籍と連動して学習効率アップ</h2>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-            <a href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank">
-                <img src="./book1.png?v=3" alt="Book1"
-                    style="width: 150px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-            </a>
-            <a href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank">
-                <img src="./book2.png?v=3" alt="Book2"
-                    style="width: 150px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-            </a>
+    <div class="app-mockup">
+        <div class="mockup-container">
+            <div class="phone-frame">
+                <div class="frame-content"><img src="./app1.png?v=4" alt="Audit"></div>
+            </div>
+            <div class="phone-frame">
+                <div class="frame-content"><img src="./app2.png?v=4" alt="Dashboard"></div>
+            </div>
+            <div class="phone-frame">
+                <div class="frame-content"><img src="./app3.png?v=4" alt="Report"></div>
+            </div>
+            <div class="phone-frame">
+                <div class="frame-content"><img src="./app2.png?v=4" alt="PC"></div>
+            </div>
         </div>
     </div>
 
-    <div id="m" class="modal">
+    <section class="features">
+        <h2 class="section-title">主な特徴</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🛡️ 規格を深く理解</h3>
+                <p>現役コンサルタントによる「確認ポイント」で、難しい要求事項も正しく判断できます。</p>
+            </div>
+            <div class="feature-card">
+                <h3>📸 写真で証拠を記録</h3>
+                <p>現場の気づきを写真で残し、改善のスピードを劇的に高めます。</p>
+            </div>
+            <div class="feature-card">
+                <h3>📄 レポート即作成</h3>
+                <p>点検終了と同時に報告書が完成。集計作業の手間をゼロにします。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="kindle-section">
+        <div class="kindle-visual">
+            <div class="book-container">
+                <div class="book-mockup book-fsm"></div>
+                <div class="book-mockup book-haccp"></div>
+            </div>
+        </div>
+        <div class="kindle-info">
+            <h2 style="color: var(--primary-color);">書籍で学び、アプリで実践。</h2>
+            <p>JFS-B規格を解説したベストセラーKindle本シリーズと完全連動。理論と実践を両立させ、工場の食品安全レベルを確実なものにします。</p>
+            <div style="margin-top: 20px;">
+                <a href="https://www.amazon.co.jp/dp/B0DS1Y43H6"
+                    style="display: block; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;">JFS-B規格徹底解説
+                    編 →</a>
+                <a href="https://www.amazon.co.jp/dp/B0GMWP6JP7"
+                    style="display: block; color: var(--primary-color); font-weight: bold;">HACCP 編 →</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="captureModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-top: 0;">アプリを始める</h2>
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 style="color: var(--primary-color); margin-top: 0;">アプリを始める</h2>
+            <p style="color: var(--text-muted);">氏名とメールアドレスを入力して、<br>すぐにアプリをご利用いただけます。</p>
+            <div class="form-group">
+                <label>お名前（氏名）</label>
+                <input type="text" id="userName" placeholder="例：食品 太郎">
+            </div>
             <div class="form-group">
                 <label>メールアドレス</label>
-                <input type="email" id="email" placeholder="example@mail.com">
+                <input type="email" id="userEmail" placeholder="例：example@mail.com">
             </div>
-            <div style="margin-bottom: 20px; font-size: 0.8rem;">
-                <input type="checkbox" id="check">
-                プライバシーポリシーに同意する
+            <div style="margin-bottom: 25px; text-align: left; font-size: 0.85rem;">
+                <input type="checkbox" id="userConsent">
+                <label for="userConsent" style="display: inline; font-weight: normal;">プライバシーポリシーに同意する</label>
             </div>
-            <button class="submit-btn" onclick="go()">同意してアプリを開く</button>
-            <button onclick="closeM()"
-                style="margin-top: 10px; background: none; border: none; color: #888; cursor: pointer; width: 100%;">閉じる</button>
+            <button onclick="startApp()" class="cta-button" style="width: 100%;">アプリを無料で開く</button>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">※ボタンが反応しない場合は<a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform"
+                    target="_blank">こちら</a>から直接開いてください。</p>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2026 食品安全パートナーズ. All Rights Reserved.</p>
+    </footer>
+
     <script>
-        function openM() { document.getElementById('m').style.display = 'flex'; }
-        function closeM() { document.getElementById('m').style.display = 'none'; }
-        function go() {
-            var e = document.getElementById('email').value;
-            var c = document.getElementById('check').checked;
-            if (!e) { alert('メールアドレスを入力してください'); return; }
-            if (!c) { alert('同意のチェックを入れてください'); return; }
-            var url = "https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform?usp=pp_url&entry.193868272=" + encodeURIComponent(e) + "&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
-            window.location.href = url;
+        function openModal() { document.getElementById('captureModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('captureModal').style.display = 'none'; }
+        window.onclick = function (e) { if (e.target == document.getElementById('captureModal')) closeModal(); }
+
+        function startApp() {
+            var email = document.getElementById('userEmail').value;
+            var consent = document.getElementById('userConsent').checked;
+
+            if (!email) { alert('メールアドレスを入力してください。'); return; }
+            if (!consent) { alert('プライバシーポリシーへの同意が必要です。'); return; }
+
+            var baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform";
+            var finalUrl = baseUrl + "?usp=pp_url&entry.193868272=" + encodeURIComponent(email) + "&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
+
+            console.log("Redirecting to Google Form...");
+            window.location.href = finalUrl;
         }
     </script>
 </body>

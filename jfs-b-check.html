@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFS-Bセルフチェックアプリ｜食品安全パートナーズ</title>
+    <style>
+        :root {
+            --primary-color: #004a99;
+            /* Professional blue from original site */
+            --accent-color: #e67e22;
+            /* Warm accent for CTA */
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-muted: #666;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #004a99 0%, #002d5e 100%);
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            overflow-x: hidden;
+            background-color: var(--bg-light);
+        }
+
+        /* Header matching original nav style but cleaner */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        /* Hero Section - The "Cool" Part */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 5% 180px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 74, 153, 0.9) 0%, rgba(0, 45, 94, 0.8) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fade-in-down {
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .fade-in-up-delay {
+            animation: fadeInUp 1s ease-out both;
+            animation-delay: 0.2s;
+        }
+
+        .fade-in-up-long {
+            animation: fadeInUp 1.2s ease-out both;
+            animation-delay: 0.4s;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background-color: #d35400;
+        }
+
+        /* Updated Mockup Section - 3D Visuals */
+        .app-mockup {
+            margin-top: -100px;
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px;
+        }
+
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .mockup-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mockup-col-left {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mockup-col-right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .phone-frame {
+            background: #f8f9fa;
+            border: 8px solid #222;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .phone-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .phone-vertical {
+            width: 220px;
+            aspect-ratio: 9 / 19.5;
+            /* Standard smartphone ratio */
+        }
+
+        .phone-horizontal {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 16 / 9;
+            border-radius: 20px;
+        }
+
+        /* PC Frame Styles */
+        .pc-frame {
+            width: 100%;
+            max-width: 500px;
+            background: #e2e8f0;
+            /* Silver/gray casing */
+            border-radius: 12px 12px 0 0;
+            padding: 12px 12px 20px 12px;
+            /* Top, Right, Bottom (speaker area), Left */
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Camera / Webcam notch */
+        .pc-frame::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: #111;
+            border-radius: 50%;
+            box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+        }
+
+        /* The actual screen area inside the PC */
+        .pc-screen {
+            background: #111;
+            /* Black bezel */
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            padding: 2px;
+            /* Tiny inner bezel */
+            flex-grow: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* The lower stand connection */
+        .pc-stand {
+            height: 20px;
+            width: 60px;
+            background: linear-gradient(to bottom, #cbd5e1, #94a3b8);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* The base of the stand */
+        .pc-frame-base {
+            height: 8px;
+            background: linear-gradient(to bottom, #f1f5f9, #cbd5e1);
+            border-radius: 4px 4px 0 0;
+            width: 180px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Inset for keyboard / front edge */
+        .pc-frame-base::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 4px;
+            background: #94a3b8;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .pc-frame:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        /* General frame content (used by phones and inside pc-screen) */
+        .frame-content {
+            background: white;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+        }
+
+        .phone-vertical .frame-content {
+            border-radius: 16px;
+            border: 2px solid #222;
+        }
+
+        .phone-horizontal .frame-content {
+            border-radius: 12px;
+            border: 2px solid #222;
+        }
+
+        .pc-screen .frame-content {
+            border-radius: 2px;
+            border: none;
+        }
+
+        .frame-content img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* ensures whole image is visible without cropping */
+            object-position: top;
+            /* aligns image to the top of the container */
+            background: #f8f9fa;
+        }
+
+        /* Kindle Unlimited Styles */
+        .ku-card {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 16px;
+            padding: 25px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(230, 126, 34, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .ku-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(230, 126, 34, 0.3);
+        }
+
+        .ku-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .ku-content p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin: 0;
+            color: white;
+        }
+
+        .ku-badge {
+            background: white;
+            color: #e67e22;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .book-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .book-subtitle {
+            font-size: 0.6rem;
+            opacity: 0.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 10px;
+        }
+
+        .book-author {
+            font-size: 0.6rem;
+            text-align: right;
+            margin-top: auto;
+        }
+
+        .kindle-info {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+        }
+
+        .kindle-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .book-links {
+            margin-top: 30px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .book-link-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .book-link-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .book-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* Kindle Section Styles */
+        .kindle-section {
+            padding: 100px 5%;
+            background: #fdfdfd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .kindle-visual {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            perspective: 2000px;
+        }
+
+        .book-container {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform: rotateY(-10deg) rotateX(10deg);
+        }
+
+        .book-mockup {
+            width: 180px;
+            height: 270px;
+            position: absolute;
+            background: white;
+            border-radius: 2px 8px 8px 2px;
+            box-shadow: 15px 25px 50px rgba(0, 0, 0, 0.2), 5px 5px 15px rgba(0, 0, 0, 0.1);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            overflow: hidden;
+        }
+
+        /* FSM Book */
+        .book-fsm {
+            left: 20px;
+            top: 0;
+            background-image: url('./kindle-FSMS.jpg.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
+            transform: translateZ(50px);
+            border-left: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* HACCP Book */
+        .book-haccp {
+            right: 40px;
+            top: 40px;
+            background-image: url('./kindle-HACCP.jpg.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            transform: rotateY(-5deg) translateZ(0);
+            border-left: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .book-mockup:hover {
+            transform: translateZ(100px) scale(1.05) rotateY(0);
+            z-index: 10;
+        }
+
+        /* Feature Section */
+        .features {
+            padding: 100px 5%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        @media (max-width: 900px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: #fdfdfd;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Kindle Integration Section */
+        .kindle-promo {
+            background: #f0f4f8;
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .kindle-content {
+            max-width: 500px;
+        }
+
+        .kindle-img {
+            max-width: 200px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: modalScale 0.3s ease-out;
+        }
+
+        @keyframes modalScale {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .submit-button {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #d35400;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 60px 5% 100px;
+            }
+
+            .app-mockup {
+                margin-top: -40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html" class="logo">
+            <img src="./logo.png" alt="食品安全パートナーズ" style="height: 40px;">
+            <span>食品安全パートナーズ</span>
+        </a>
+        <nav>
+            <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html"
+                style="text-decoration: none; color: var(--primary-color); font-weight: bold;">公式サイト TOP</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="fade-in-down">
+                <span class="badge">食品安全の「自走」を支える無料ツール</span>
+            </div>
+            <h1 class="fade-in-up">「やらされる点検」から、<br>「会社を強くする活動」へ。</h1>
+            <p class="fade-in-up-delay">JFS-Bセルフチェックの全項目をスマホ1台で完結。<br>品質管理・品質保証チームの日々の努力を成果に変え、<br>現場の自信を積み上げます。</p>
+            <div class="fade-in-up-long">
+                <button class="cta-button" onclick="openModal()">今すぐ無料で始める</button>
+                <div style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">
+                    <span style="display: inline-block; margin: 0 10px;">✅ 登録無料</span>
+                    <span style="display: inline-block; margin: 0 10px;">✅ インストール不要</span>
+                    <span style="display: inline-block; margin: 0 10px;">✅ スマホ・PC両対応</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="captureModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 style="color: var(--primary-color); margin-top: 0;">アプリを始める</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">氏名とメールアドレスを入力して、<br>すぐにアプリをご利用いただけます。</p>
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="userName">お名前（氏名）</label>
+                    <input type="text" id="userName" name="name" placeholder="例：食品 太郎" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="userEmail">メールアドレス</label>
+                    <input type="email" id="userEmail" name="email" placeholder="例：example@mail.com" required>
+                </div>
+                <div
+                    style="margin-bottom: 25px; font-size: 0.8rem; display: flex; gap: 10px; align-items: flex-start; background: #fff8f0; padding: 10px; border-radius: 8px;">
+                    <input type="checkbox" id="consent" required
+                        style="width: 18px; height: 18px; margin-top: 2px; cursor: pointer;">
+                    <label for="consent" style="color: #666; cursor: pointer; line-height: 1.5;">
+                        <span onclick="openPolicy()"
+                            style="color: var(--primary-color); font-weight: bold; text-decoration: underline; cursor: pointer;">プライバシーポリシー</span>に同意し、食品安全パートナーズからの案内を受け取る。
+                    </label>
+                </div>
+                <button type="submit" class="submit-button">アプリを無料で開く</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="app-mockup">
+        <div class="mockup-grid">
+
+            <!-- Left: 2 Vertical Screens -->
+            <div class="mockup-col-left fade-in-up-delay">
+                <div class="phone-frame phone-vertical">
+                    <div class="frame-content">
+                        <img src="./dashboard-ss.png" alt="Dashboard"
+                            onerror="this.src='./public/dashboard-ss.png.png'">
+                    </div>
+                </div>
+                <div class="phone-frame phone-vertical">
+                    <div class="frame-content">
+                        <img src="./audit-ss.png" alt="Audit" onerror="this.src='./public/audit-ss.png.png'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: 1 PC, 1 Horizontal Phone -->
+            <div class="mockup-col-right fade-in-up-long">
+
+                <!-- PC Mockup -->
+                <div class="pc-container" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="pc-frame">
+                        <div class="pc-screen">
+                            <div class="frame-content">
+                                <!-- Placeholder PC image, reuse dashboard for now -->
+                                <img src="./dashboard-ss.png" alt="PC Dashboard"
+                                    onerror="this.src='./public/dashboard-ss.png.png'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-stand"></div>
+                    <div class="pc-frame-base"></div>
+                </div>
+
+                <!-- Horizontal Phone Mockup -->
+                <div class="phone-frame phone-horizontal">
+                    <div class="frame-content">
+                        <img src="./report-ss.png" alt="Report Screen" onerror="this.src='./public/report-ss.png.png'">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <section class="features" id="features">
+        <h2 class="section-title">食品安全水準の向上を強力に後押しする機能</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>「自分たち」で規格を理解</h3>
+                <p>JFS-B規格の全項目をデジタル化。専門的な要求事項も、現役コンサルタントによる「確認のポイント」で正しく理解できます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>現場の気づきを逃さない</h3>
+                <p>日々の点検で気になった点を、その場で写真撮影。スマホならではの機動力で、課題の早期発見と共有が当たり前になります。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>形骸化しない報告書作成</h3>
+                <p>点検が終わればレポートが即座に完成。「報告書のための作業」から解放され、現場を良くするための検討に時間を使えます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Excel・PDFで出力</h3>
+                <p>点検結果は現場で即座に集計。ボタン一つで美しいPDF報告書や、加工に便利なExcelデータとして出力し、社内共有できます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3>PC・スマホ両対応</h3>
+                <p>現場ではスマホやタブレットで手軽に入力。オフィスではPCの大画面でじっくり分析や設定。シームレスに使い分けが可能です。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>組織の知見を積み上げる</h3>
+                <p>過去の点検結果はクラウドに保存。担当が変わっても、工場の食品安全レベルを継続的に高めていくための資産になります。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="kindle-section" id="kindle">
+        <div class="kindle-visual">
+            <div class="book-container">
+                <a href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer"
+                    class="book-mockup book-fsm"></a>
+                <a href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer"
+                    class="book-mockup book-haccp"></a>
+            </div>
+        </div>
+        <div class="kindle-info">
+            <span class="badge" style="background: rgba(243, 156, 18, 0.1); color: #e67e22;">Kindle本と完全連動</span>
+            <h2>書籍で学び、<br>アプリで実践する。</h2>
+            <p>JFS-B規格をわかりやすく解説したKindle本「食品安全で会社を強くする」シリーズの内容を、そのままアプリのチェックリストに反映。本の内容に沿ってセルフチェックを行うことで、より深い理解と確かな運用が身につきます。
+            </p>
+
+            <div class="book-links">
+                <a href="https://www.amazon.co.jp/dp/B0DS1Y43H6" class="book-link-item">
+                    <div class="book-icon" style="background: #2c3e50;">JFS</div>
+                    <div>
+                        <div style="font-weight: bold; font-size: 0.95rem;">JFS-B規格徹底解説 編</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">書籍詳細・購入はこちら →</div>
+                    </div>
+                </a>
+                <a href="https://www.amazon.co.jp/dp/B0GMWP6JP7" class="book-link-item">
+                    <div class="book-icon" style="background: #27ae60;">HACCP</div>
+                    <div>
+                        <div style="font-weight: bold; font-size: 0.95rem;">HACCP 編</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">書籍詳細・購入はこちら →</div>
+                    </div>
+                </a>
+                <a href="https://amzn.to/4qEGAjn" class="ku-card" target="_blank" rel="noopener noreferrer">
+                    <div class="ku-content">
+                        <h3>Kindle Unlimitedでお得に読む</h3>
+                        <p>初回30日間無料体験なら、シリーズ2冊とも￥0で読み放題。まず「学ぶ」から始めたい方に最適です。</p>
+                    </div>
+                    <div class="ku-badge">無料で読む →</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 100px 5%; text-align: center; background: var(--gradient-blue); color: #fff;">
+        <h2>あなたの工場の食品安全を、<br>次のレベルへ。</h2>
+        <p style="margin-bottom: 40px; opacity: 0.9;">複雑な設定は一切不要です。メールアドレス一つで始められます。</p>
+        <button class="cta-button" style="background: #fff; color: var(--primary-color);"
+            onclick="openModal()">無料でアプリを開く</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 食品安全パートナーズ. All Rights Reserved.</p>
+        <div style="margin-top: 20px;">
+            <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html">公式サイト</a>
+            <a href="https://foodsafety-partners.github.io/foodsafety-site/service.html">サービス一覧</a>
+            <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html#consult">お問い合わせ</a>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="policyModal" class="modal">
+        <div class="modal-content" style="max-height: 80vh; overflow-y: auto; text-align: left;">
+            <span class="close-modal" onclick="closePolicy()">&times;</span>
+            <h2 style="color: var(--primary-color); margin-top: 0;">プライバシーポリシー</h2>
+            <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">
+                <p>食品安全パートナーズ（以下、「当事業」といいます）は、当事業が提供する「JFS-B
+                    内部監査アプリ」（以下、「本サービス」といいます）における、ユーザー（以下、「利用者」といいます）の個人情報の取扱いについて、個人情報の保護に関する法律（以下、「個人情報保護法」といいます）を遵守するとともに、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます）を定めます。
+                </p>
+                <h4 style="color: var(--primary-color); margin: 15px 0 5px;">第1条（取得する個人情報の項目）</h4>
+                <p>当事業は、本サービスの提供にあたり、以下の個人情報を適正かつ公正な手段によって取得します。<br>
+                    1. アカウント登録情報: 氏名、メールアドレス、組織名<br>
+                    2. 利用データ: 本サービス内での入力内容、アクセスログ等</p>
+                <h4 style="color: var(--primary-color); margin: 15px 0 5px;">第2条（個人情報の利用目的）</h4>
+                <p>1. 本サービスの提供・運営<br>
+                    2. 営業・マーケティング: 他のサービス、新機能、セミナー、書籍等のご案内（メール配信等）<br>
+                    3. サポート・連絡: お問い合わせ対応</p>
+                <h4 style="color: var(--primary-color); margin: 15px 0 5px;">第3条（個人情報の第三者提供）</h4>
+                <p>法令に基づく場合を除き、同意なく第三者に提供することはありません。</p>
+                <h4 style="color: var(--primary-color); margin: 15px 0 5px;">第4条（個人情報の委託）</h4>
+                <p>Firebase等のクラウドサービスを利用する場合、適切に監督します。</p>
+                <p style="margin-top: 20px; font-size: 0.75rem;">附則：2026年2月25日 制定</p>
+            </div>
+            <button onclick="closePolicy()" class="submit-button" style="margin-top: 20px;">閉じる</button>
+        </div>
+    </div>
+
+    <script type="module">
+        // Firebase Modular SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBusBGffDwPhx-Tsx3QJ47b1BRfVovtCXI",
+            authDomain: "jfsb-audit.firebaseapp.com",
+            projectId: "jfsb-audit",
+            storageBucket: "jfsb-audit.firebasestorage.app",
+            messagingSenderId: "202725556161",
+            appId: "1:202725556161:web:766f7a587a9529dab9b940"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.openModal = function () {
+            document.getElementById('captureModal').style.display = 'flex';
+        }
+
+        window.closeModal = function () {
+            document.getElementById('captureModal').style.display = 'none';
+        }
+
+        window.openPolicy = function () {
+            document.getElementById('policyModal').style.display = 'flex';
+        }
+
+        window.closePolicy = function () {
+            document.getElementById('policyModal').style.display = 'none';
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function (event) {
+            const captureModal = document.getElementById('captureModal');
+            const policyModal = document.getElementById('policyModal');
+            if (event.target == captureModal) closeModal();
+            if (event.target == policyModal) closePolicy();
+        }
+
+        // Form submission handling
+        document.getElementById('leadForm').onsubmit = function (e) {
+            e.preventDefault();
+            const submitBtn = e.target.querySelector('button');
+            const originalText = submitBtn.innerText;
+
+            if (!document.getElementById('consent').checked) {
+                alert('プライバシーポリシーへの同意が必要です。');
+                return;
+            }
+
+            const email = document.getElementById('userEmail').value;
+
+            // Construct Google Form URL with pre-filled email and consent
+            const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform";
+            const formUrl = `${baseUrl}?usp=pp_url&entry.193868272=${encodeURIComponent(email)}&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82`;
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = '移動中...';
+
+            // Redirect to Google Form
+            window.location.href = formUrl;
+        };
+    </script>
+
+</body>
+
+</html>

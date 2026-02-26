@@ -445,7 +445,7 @@
         .book-fsm {
             left: 40px;
             top: 0;
-            background-image: url('./book1.png?v=7');
+            background-image: url('./book1.png?v=8');
             z-index: 2;
             transform: translateZ(60px);
         }
@@ -453,61 +453,9 @@
         .book-haccp {
             right: 60px;
             top: 40px;
-            background-image: url('./book2.png?v=7');
+            background-image: url('./book2.png?v=8');
             z-index: 1;
             transform: rotateY(-5deg);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 50px;
-            border-radius: 24px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            text-align: center;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .close-modal {
-            position: absolute;
-            right: 25px;
-            top: 25px;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #bbb;
-        }
-
-        .submit-button {
-            width: 100%;
-            background: var(--accent-color);
-            color: white;
-            padding: 18px;
-            border: none;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 1.25rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .submit-button:hover {
-            background-color: #d35400;
-            transform: translateY(-2px);
         }
 
         footer {
@@ -581,7 +529,9 @@
             <p style="animation: fadeInUp 1.2s ease-out both;">
                 JFS-Bセルフチェックの全項目をスマホ1台で完結。<br>品質管理・品質保証チームの日々の努力を成果に変え、<br>現場の自信を積み上げます。</p>
             <div style="animation: fadeInUp 1.4s ease-out both;">
-                <button class="cta-button" onclick="openModal()">今すぐ無料で始める</button>
+                <!-- Directly links to the Google Form -->
+                <button class="cta-button"
+                    onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform'">今すぐ無料で始める</button>
             </div>
         </div>
     </section>
@@ -590,22 +540,22 @@
         <div class="mockup-grid">
             <div class="mockup-col-left" style="animation: fadeInUp 1.6s ease-out both;">
                 <div class="phone-frame phone-vertical">
-                    <div class="frame-content"><img src="./app2.png?v=7" alt="Dashboard"></div>
+                    <div class="frame-content"><img src="./app2.png?v=8" alt="Dashboard"></div>
                 </div>
                 <div class="phone-frame phone-vertical">
-                    <div class="frame-content"><img src="./app1.png?v=7" alt="Audit"></div>
+                    <div class="frame-content"><img src="./app1.png?v=8" alt="Audit"></div>
                 </div>
             </div>
             <div class="mockup-col-right" style="animation: fadeInUp 1.8s ease-out both;">
                 <div class="pc-frame">
                     <div class="pc-screen">
-                        <div class="frame-content"><img src="./app2.png?v=7" alt="PC Dash"></div>
+                        <div class="frame-content"><img src="./app2.png?v=8" alt="PC Dash"></div>
                     </div>
                 </div>
                 <div class="pc-stand"></div>
                 <div class="pc-frame-base"></div>
                 <div class="phone-frame phone-horizontal">
-                    <div class="frame-content"><img src="./app3.png?v=7" alt="Report"></div>
+                    <div class="frame-content"><img src="./app3.png?v=8" alt="Report"></div>
                 </div>
             </div>
         </div>
@@ -673,31 +623,12 @@
         </div>
     </section>
 
-    <div id="captureModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--primary-color);">アプリを始める</h2>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">メールアドレスを入力して、<br>すぐにアプリをご利用いただけます。</p>
-            <div style="text-align: left; margin-bottom: 25px;">
-                <label
-                    style="display: block; font-weight: bold; margin-bottom: 10px; color: var(--primary-color);">メールアドレス</label>
-                <input type="email" id="userEmail" placeholder="example@mail.com"
-                    style="width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; font-size: 1rem;">
-            </div>
-            <div
-                style="text-align: left; margin-bottom: 30px; font-size: 0.9rem; color: #666; display: flex; gap: 10px; align-items: center;">
-                <input type="checkbox" id="userConsent" style="width: 20px; height: 20px; cursor: pointer;">
-                <label for="userConsent" style="cursor: pointer;">プライバシーポリシーに同意する</label>
-            </div>
-            <button class="submit-button" onclick="window.startAppNow()">アプリを無料で開く</button>
-        </div>
-    </div>
-
     <footer style="background: var(--gradient-blue); color: white; padding: 100px 5%; text-align: center;">
         <h2 style="font-size: 2.22rem; margin-bottom: 20px;">あなたの食品安全を、次のレベルへ。</h2>
         <p style="margin-bottom: 50px; opacity: 0.9;">複雑な設定は不要。メールアドレス一つで始められます。</p>
+        <!-- Directly links to the Google Form -->
         <button class="cta-button" style="background: white; color: var(--primary-color);"
-            onclick="openModal()">無料でアプリを開く</button>
+            onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform'">無料でアプリを開く</button>
         <div style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 40px;">
             <p>&copy; 2026 食品安全パートナーズ. All Rights Reserved.</p>
             <div style="margin-top: 20px;">
@@ -708,26 +639,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function openModal() { document.getElementById('captureModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('captureModal').style.display = 'none'; }
-        window.onclick = function (e) { if (e.target == document.getElementById('captureModal')) closeModal(); }
-
-        window.startAppNow = function () {
-            var email = document.getElementById('userEmail').value;
-            var consent = document.getElementById('userConsent').checked;
-
-            if (!email) { alert('メールアドレスを入力してください。'); return; }
-            if (!consent) { alert('プライバシーポリシーへの同意が必要です。'); return; }
-
-            var baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform";
-            var url = baseUrl + "?usp=pp_url&entry.193868272=" + encodeURIComponent(email) + "&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
-
-            console.log("Redirecting directly...");
-            window.location.href = url;
-        };
-    </script>
 </body>
 
 </html>

@@ -563,8 +563,65 @@
 
         <!-- アプリ画面スクリーンショット -->
         <div style="max-width:420px;margin:0 auto 40px;">
-            <img src="./assets/img/haccp-result-ss.png" alt="HACCP診断アプリ レーダーチャート結果画面"
-                style="width:100%;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.12);border:1px solid #eee;">
+            <div
+                style="background:#fff;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.12);border:1px solid #eee;padding:30px 20px 20px;text-align:center;">
+                <!-- 判定レベル バッジ -->
+                <div
+                    style="display:inline-block;background:#f0f4ff;border-radius:16px;padding:12px 36px;margin-bottom:18px;">
+                    <div style="font-size:0.85rem;color:#004a99;font-weight:600;margin-bottom:2px;">判定レベル</div>
+                    <div style="font-size:3rem;font-weight:900;color:#3b7ddd;line-height:1;">S</div>
+                </div>
+                <!-- 診断結果テキスト -->
+                <h3 style="font-size:1.15rem;font-weight:700;color:#333;margin:10px 0 6px;">
+                    診断結果：レベルS<br>（基礎的な運用が定着しています）</h3>
+                <p style="font-size:0.95rem;color:#3b7ddd;font-weight:600;margin-bottom:20px;">総合スコア：30 / 30点</p>
+                <!-- レーダーチャート SVG -->
+                <svg viewBox="0 0 400 360" style="width:100%;max-width:340px;margin:0 auto;display:block;" role="img"
+                    aria-label="HACCP診断レーダーチャート">
+                    <defs>
+                        <linearGradient id="radarFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b7ddd;stop-opacity:0.25" />
+                            <stop offset="100%" style="stop-color:#004a99;stop-opacity:0.35" />
+                        </linearGradient>
+                    </defs>
+                    <!-- 背景グリッド（3段階） -->
+                    <polygon points="200,40 296,102 296,226 200,288 104,226 104,102" fill="none" stroke="#e0e0e0"
+                        stroke-width="1" />
+                    <polygon points="200,82 264,123 264,205 200,246 136,205 136,123" fill="none" stroke="#e8e8e8"
+                        stroke-width="1" />
+                    <polygon points="200,124 232,145 232,183 200,204 168,183 168,145" fill="none" stroke="#f0f0f0"
+                        stroke-width="1" />
+                    <!-- 軸線 -->
+                    <line x1="200" y1="164" x2="200" y2="40" stroke="#e0e0e0" stroke-width="1" />
+                    <line x1="200" y1="164" x2="296" y2="102" stroke="#e0e0e0" stroke-width="1" />
+                    <line x1="200" y1="164" x2="296" y2="226" stroke="#e0e0e0" stroke-width="1" />
+                    <line x1="200" y1="164" x2="200" y2="288" stroke="#e0e0e0" stroke-width="1" />
+                    <line x1="200" y1="164" x2="104" y2="226" stroke="#e0e0e0" stroke-width="1" />
+                    <line x1="200" y1="164" x2="104" y2="102" stroke="#e0e0e0" stroke-width="1" />
+                    <!-- データポリゴン（S評価：ほぼ満点） -->
+                    <polygon points="200,52 286,108 290,218 200,276 112,220 110,108" fill="url(#radarFill)"
+                        stroke="#3b7ddd" stroke-width="2.5" stroke-linejoin="round" />
+                    <!-- データポイント -->
+                    <circle cx="200" cy="52" r="4" fill="#3b7ddd" />
+                    <circle cx="286" cy="108" r="4" fill="#3b7ddd" />
+                    <circle cx="290" cy="218" r="4" fill="#3b7ddd" />
+                    <circle cx="200" cy="276" r="4" fill="#3b7ddd" />
+                    <circle cx="112" cy="220" r="4" fill="#3b7ddd" />
+                    <circle cx="110" cy="108" r="4" fill="#3b7ddd" />
+                    <!-- ラベル -->
+                    <text x="200" y="30" text-anchor="middle" font-size="13" fill="#555" font-weight="500">体制</text>
+                    <text x="310" y="98" text-anchor="start" font-size="13" fill="#555" font-weight="500">工程図</text>
+                    <text x="310" y="234" text-anchor="start" font-size="13" fill="#555" font-weight="500">整合性</text>
+                    <text x="200" y="310" text-anchor="middle" font-size="13" fill="#555" font-weight="500">危害分析</text>
+                    <text x="90" y="234" text-anchor="end" font-size="13" fill="#555" font-weight="500">管理基準</text>
+                    <text x="90" y="98" text-anchor="end" font-size="13" fill="#555" font-weight="500">根拠</text>
+                    <!-- 追加ラベル（上下左右に小さく補足） -->
+                    <text x="250" y="52" text-anchor="middle" font-size="11" fill="#888">頻度</text>
+                    <text x="150" y="52" text-anchor="middle" font-size="11" fill="#888">記録</text>
+                    <text x="260" y="270" text-anchor="middle" font-size="11" fill="#888">是正</text>
+                    <text x="140" y="270" text-anchor="middle" font-size="11" fill="#888">検証</text>
+                </svg>
+            </div>
             <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">▲ 実際の診断結果イメージ：レーダーチャートで弱点を一目で把握</p>
         </div>
 

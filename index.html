@@ -1018,7 +1018,7 @@
 
         <nav class="menu" aria-label="メニュー（主要導線）">
           <a href="./service.html">サービス</a>
-          <a href="./haccp-check.html" style="color:var(--accent)">HACCP診断</a>
+          <a href="#apps">食品安全アプリ</a>
           <a href="https://foodsafety-partners.github.io/foodsafety-site/jfs-b-check.html">JFS-Bアプリ</a>
           <a href="./chusho.html"
             onclick="gtag('event','chusho_click',{'event_category':'nav','event_label':'header_chusho'});">中小企業向け</a>
@@ -1295,82 +1295,85 @@
     </div>
   </section>
 
-  <!-- HACCP無料診断バナー -->
-  <section class="section" style="padding:0">
+  <!-- 食品安全アプリ紹介 -->
+  <section class="section" id="apps" style="padding-top:10px">
     <div class="container">
+      <h2 class="sectionTitle reveal">食品安全アプリ</h2>
+      <p class="sectionLead reveal">
+        HACCP診断とJFS-Bセルフチェック。2つの無料アプリで、食品安全の「見える化」と「実践」をサポートします。
+      </p>
+
+      <!-- HACCP無料診断アプリ -->
       <div class="reveal altWrap"
         style="background:linear-gradient(135deg,#e0872a 0%,#c0641a 100%);border:none;margin-top:0">
         <div class="altCard hoverlift" style="background:rgba(255,255,255,0.97);border:none">
-          <div style="min-width:260px;flex:1 1 560px">
-            <p class="altTitle" style="font-size:20px;color:#e0872a">🩺 HACCPの管理レベル、3分で無料診断</p>
-            <p class="altDesc">
-              監査員の視点で、あなたのHACCP運用を10問で診断。<br>
-              レーダーチャートで弱点を可視化し、改善ヒントを無料でお届けします。<br>
-              <strong style="color:#333">登録不要・費用0円・たったの3分。</strong>
-            </p>
-            <div class="altBadges">
-              <span class="altBadge">✅ 完全無料</span>
-              <span class="altBadge">📊 レーダーチャート</span>
-              <span class="altBadge">🔍 S/A/B/C判定</span>
-              <span class="altBadge">📋 改善ヒント付き</span>
+          <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;width:100%">
+            <div style="min-width:260px;flex:1 1 400px">
+              <p class="altTitle" style="font-size:20px;color:#e0872a">🩺 HACCP無料診断アプリ</p>
+              <p class="altDesc">
+                監査員の視点で、あなたのHACCP運用を10問で診断。<br>
+                レーダーチャートで弱点を可視化し、改善ヒント付き詳細レポートを無料でお届けします。<br>
+                <strong style="color:#333">登録不要・費用0円・たったの3分。</strong>
+              </p>
+              <div class="altBadges">
+                <span class="altBadge">✅ 完全無料</span>
+                <span class="altBadge">📊 レーダーチャート</span>
+                <span class="altBadge">🔍 S/A/B/C判定</span>
+                <span class="altBadge">📋 改善ヒント付き</span>
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px">
+                <a class="btn primary" href="https://haccp-shindan.web.app" target="_blank"
+                  style="padding:15px 30px;font-size:16px;background:#e0872a;border-color:rgba(255,255,255,.25)"
+                  onclick="gtag('event','haccp_click',{'event_category':'lead','event_label':'banner_haccp_shindan'});">今すぐ診断する
+                  →</a>
+                <a class="btn" href="./haccp-check.html">詳しく見る</a>
+              </div>
             </div>
-          </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-            <a class="btn primary" href="https://haccp-shindan.web.app" target="_blank"
-              style="padding:15px 30px;font-size:16px;background:#e0872a;border-color:rgba(255,255,255,.25)"
-              onclick="gtag('event','haccp_click',{'event_category':'lead','event_label':'banner_haccp_shindan'});">今すぐ診断する
-              →</a>
-            <a class="btn" href="./haccp-check.html">詳しく見る</a>
+            <div style="flex:0 1 300px;text-align:center">
+              <img src="./assets/img/haccp-result-ss.png" alt="HACCP診断 レーダーチャート結果画面"
+                style="width:100%;max-width:280px;border-radius:16px;border:1px solid rgba(27,37,51,.10);box-shadow:0 12px 30px rgba(0,0,0,.12)">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="app" style="padding-top:10px">
-    <div class="container">
-      <h2 class="sectionTitle reveal">JFS-B 規格セルフチェックアプリ</h2>
-      <p class="sectionLead reveal">
-        書籍で学んだ要求事項を、現場ですぐにセルフ監査。診断から報告書作成まで、スマホ一つで完結します。
-      </p>
-
+      <!-- JFS-B セルフチェックアプリ -->
       <div class="kindleWrap reveal"
-        style="background: linear-gradient(135deg, #004a99 0%, #002d5e 100%); border: none;">
-        <div
-          style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding: 10px;">
-          <div style="flex: 1; min-width: 300px; color: white;">
-            <h3 style="color: white; font-size: 24px; margin-bottom: 15px;">品質責任者のための「動く」セルフチェックツール</h3>
-            <ul style="line-height: 2; font-weight: 800; font-size: 15px; margin-bottom: 25px;">
-              <li>✅ 書籍「JFS-B 規格徹底解説」の内容と完全連動</li>
-              <li>✅ 監査員の視点での「確認ポイント」を全項目に搭載</li>
-              <li>✅ 写真撮影と不適合メモをその場で記録</li>
-              <li>✅ ワンタップでPDF報告書を出力・共有</li>
-            </ul>
-            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-              <a class="btn primary" href="https://foodsafety-partners.github.io/foodsafety-site/jfs-b-check.html"
-                target="_blank" style="padding: 15px 30px; font-size: 16px;">アプリを無料で試す 📱</a>
-              <a class="btn ghost" href="./index.html#books" style="padding: 15px 30px;">本の内容を見る</a>
+        style="background: linear-gradient(135deg, #004a99 0%, #002d5e 100%); border: none; margin-top:14px;">
+        <div style="padding: 10px;">
+          <div
+            style="display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px; color: white;">
+              <h3 style="color: white; font-size: 24px; margin-bottom: 15px;">📱 JFS-B セルフチェックアプリ</h3>
+              <p style="color:rgba(255,255,255,.85);font-weight:800;margin-bottom:15px;line-height:1.8">
+                書籍で学んだ要求事項を、現場ですぐにセルフ監査。<br>診断から報告書作成まで、スマホ一つで完結します。
+              </p>
+              <ul style="line-height: 2; font-weight: 800; font-size: 15px; margin-bottom: 25px; color:white;">
+                <li>✅ 書籍「JFS-B 規格徹底解説」の内容と完全連動</li>
+                <li>✅ 監査員の視点での「確認ポイント」を全項目に搭載</li>
+                <li>✅ 写真撮影と不適合メモをその場で記録</li>
+                <li>✅ ワンタップでPDF報告書を出力・共有</li>
+              </ul>
+              <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a class="btn primary" href="https://foodsafety-partners.github.io/foodsafety-site/jfs-b-check.html"
+                  target="_blank" style="padding: 15px 30px; font-size: 16px;">アプリを無料で試す 📱</a>
+                <a class="btn ghost" href="./index.html#books" style="padding: 15px 30px;">本の内容を見る</a>
+              </div>
             </div>
           </div>
-          <div style="flex: 0 1 350px; position: relative;">
-            <!-- 簡易的なスマホイメージをCSSで表現 -->
+          <!-- アプリスクリーンショット -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px;">
             <div
-              style="width: 220px; height: 440px; background: #fff; border: 10px solid #222; border-radius: 30px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; transform: rotate(5deg);">
-              <div
-                style="background: #004a99; height: 35px; color: white; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold;">
-                JFS-B 監査アプリ</div>
-              <div style="padding: 15px;">
-                <div style="font-size: 10px; font-weight: bold; margin-bottom: 10px;">ダッシュボード</div>
-                <div
-                  style="height: 100px; border-radius: 10px; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: #004a99;">
-                  75%</div>
-                <div style="margin-top: 15px; height: 8px; background: #eee; border-radius: 4px;">
-                  <div style="width: 75%; height: 100%; background: #004a99; border-radius: 4px;"></div>
-                </div>
-                <div
-                  style="margin-top: 20px; background: #10b981; color: white; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold;">
-                  適合(OK)</div>
-              </div>
+              style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 30px rgba(0,0,0,.2)">
+              <img src="./assets/img/jfsb-dashboard-ss.png" alt="JFS-B ダッシュボード画面" style="width:100%;display:block">
+            </div>
+            <div
+              style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 30px rgba(0,0,0,.2)">
+              <img src="./assets/img/jfsb-audit-ss.png" alt="JFS-B 監査チェック画面" style="width:100%;display:block">
+            </div>
+            <div
+              style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 30px rgba(0,0,0,.2)">
+              <img src="./assets/img/jfsb-report-ss.png" alt="JFS-B レポート画面" style="width:100%;display:block">
             </div>
           </div>
         </div>

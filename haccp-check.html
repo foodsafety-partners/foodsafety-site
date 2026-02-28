@@ -94,7 +94,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            background:
+                radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 70%),
+                url('./assets/img/haccp-header-banner.png') center / cover no-repeat;
+            opacity: 0.15;
         }
 
         .hero-content {
@@ -557,6 +560,14 @@
     <!-- ③ Result Preview -->
     <section class="result-section">
         <h2 class="section-title">診断でわかること</h2>
+
+        <!-- アプリ画面スクリーンショット -->
+        <div style="max-width:420px;margin:0 auto 40px;">
+            <img src="./assets/img/haccp-result-ss.png" alt="HACCP診断アプリ レーダーチャート結果画面"
+                style="width:100%;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.12);border:1px solid #eee;">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">▲ 実際の診断結果イメージ：レーダーチャートで弱点を一目で把握</p>
+        </div>
+
         <p class="result-desc">
             全10問の回答から、HACCP運用を<strong>10の観点</strong>（体制・工程図・整合性・危害分析・管理基準・根拠・頻度・是正・検証・記録）で分析。<br>
             レーダーチャートで弱点を一目で可視化し、<strong>4段階のレベル判定</strong>をお伝えします。

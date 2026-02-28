@@ -367,67 +367,72 @@
             }
         }
 
-        /* Free Benefits Section Styles */
+        /* Free Benefits Section Styles - Enhanced Visuals */
         .benefitsGrid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 24px;
             margin-top: 32px;
         }
 
         .benefitCard {
             background: #fff;
-            border-radius: 20px;
+            border-radius: 24px;
             border: 1px solid rgba(27, 37, 51, .08);
-            padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            transition: all .3s ease;
-            box-shadow: 0 10px 24px rgba(24, 32, 48, .06);
+            transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(24, 32, 48, .05);
             position: relative;
             overflow: hidden;
             text-align: left;
+            height: 100%;
         }
 
         .benefitCard:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 36px rgba(24, 32, 48, .12);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(24, 32, 48, .12);
             border-color: var(--accent);
         }
 
-        .benefitCard::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
+        .benefitImage {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .benefitImage img {
+            width: 100%;
             height: 100%;
-            background: var(--accent);
-            opacity: 0;
-            transition: .3s;
+            object-fit: cover;
+            transition: transform .6s ease;
         }
 
-        .benefitCard:hover::before {
-            opacity: 1;
+        .benefitCard:hover .benefitImage img {
+            transform: scale(1.05);
         }
 
-        .benefitIcon {
-            width: 48px;
-            height: 48px;
-            background: rgba(224, 135, 42, .1);
-            border-radius: 12px;
+        .benefitCardContent {
+            padding: 24px;
+            flex-grow: 1;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: var(--accent);
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .benefitIconInline {
+            font-size: 20px;
+            margin-right: 8px;
         }
 
         .benefitContent h3 {
             margin: 0 0 8px;
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 1000;
+            line-height: 1.4;
+            color: var(--ink);
         }
 
         .benefitContent p {
@@ -439,24 +444,29 @@
         }
 
         .benefitBadge {
-            display: inline-block;
-            padding: 4px 10px;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 14px;
             background: var(--accent);
             color: #fff;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 1000;
-            border-radius: 4px;
-            margin-bottom: 8px;
+            border-radius: 999px;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(224, 135, 42, .3);
         }
 
         .benefitLink {
             margin-top: auto;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 1000;
             color: var(--accent2);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(27, 37, 51, .05);
         }
 
         .benefitLink::after {
@@ -465,32 +475,33 @@
         }
 
         .benefitCard:hover .benefitLink::after {
-            transform: translateX(4px);
+            transform: translateX(5px);
         }
 
-        /* Kindle Specific inside Pricing */
-        .kindleMini {
+        /* Kindle Specific visual */
+        .kindleCard .benefitImage {
             background: linear-gradient(135deg, #1b2533, #2c567a);
-            color: #fff;
-            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .kindleMini .benefitContent p {
-            color: rgba(255, 255, 255, .8);
-        }
-
-        .kindleMini .benefitLink {
-            color: #fff;
-        }
-
-        .kindleMini .benefitIcon {
-            background: rgba(255, 255, 255, .1);
-            color: #fff;
+        .kindleBookThumb {
+            height: 140px;
+            width: auto;
+            border-radius: 4px;
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, .3);
+            transform: rotateY(-10deg);
         }
 
         @media(max-width:768px) {
             .benefitsGrid {
                 grid-template-columns: 1fr;
+            }
+
+            .benefitImage {
+                height: 180px;
             }
         }
     </style>
@@ -675,54 +686,74 @@
     <section class="section" id="benefits">
         <div class="container">
             <div class="panel"
-                style="background: rgba(255, 255, 255, .76); border: 1px solid rgba(255, 255, 255, .65); border-radius: 18px; padding: 32px; box-shadow: 0 12px 26px rgba(24, 32, 48, .10);">
+                style="background: rgba(255, 255, 255, .76); border: 1px solid rgba(255, 255, 255, .65); border-radius: 18px; padding: 40px 32px; box-shadow: 0 12px 26px rgba(24, 32, 48, .10);">
                 <div class="kicker"
                     style="color:var(--accent); background:rgba(224,135,42,.1); border-color:rgba(224,135,42,.2); display:inline-flex; align-items:center; gap:10px; font-weight:1000; font-size:12px; letter-spacing:.04em; border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:8px 10px">
                     SPECIAL BENEFITS</div>
-                <h2 class="sectionTitle" style="font-size:28px; margin-top:12px; text-align:left">豪華4大無料特典</h2>
-                <p class="sectionLead" style="text-align:left; margin-bottom:0">
-                    食品安全の取り組みを「形だけ」にしないために。今すぐ活用できるツールをご用意しました。</p>
+                <h2 class="sectionTitle" style="font-size:32px; margin-top:16px; text-align:left">豪華4大無料特典で「自走」を加速</h2>
+                <p class="sectionLead" style="text-align:left; margin-bottom:0; max-width:800px">
+                    コンサルティングの現場で培ったノウハウを、誰でも使える形にパッケージ化しました。
+                    <br>審査通過や業務改善の「最初の一歩」を強力にバックアップします。
+                </p>
 
                 <div class="benefitsGrid">
                     <!-- Benefit 1: Template -->
                     <a href="./download.html" class="benefitCard">
-                        <div><span class="benefitBadge">人気No.1</span></div>
-                        <div class="benefitIcon">📊</div>
-                        <div class="benefitContent">
-                            <h3>HACCP構築テンプレート</h3>
-                            <p>JFS-B適合を見据えたExcelテンプレート一式（HACCP1〜12）。現場でそのまま使える土台を提供します。</p>
+                        <span class="benefitBadge">人気No.1</span>
+                        <div class="benefitImage">
+                            <img src="./assets/img/marketing/excel-mockup.png" alt="Excel HACCP Template">
                         </div>
-                        <div class="benefitLink">無料でダウンロードする</div>
+                        <div class="benefitCardContent">
+                            <div class="benefitContent">
+                                <h3><span class="benefitIconInline">📊</span>HACCP構築の工数を50%削減<br>「実務直結テンプレート」</h3>
+                                <p>JFS-B適合を見据えたExcel一式。手順書や記録表の土台が完成しているため、ゼロから作る苦労をゼロにします。</p>
+                            </div>
+                            <div class="benefitLink">無料でダウンロードする</div>
+                        </div>
                     </a>
 
                     <!-- Benefit 2: HACCP App -->
                     <a href="./haccp-check.html" class="benefitCard">
-                        <div class="benefitIcon">📱</div>
-                        <div class="benefitContent">
-                            <h3>HACCP対応状況診断</h3>
-                            <p>わずか数分で自社の管理レベルを可視化。改善すべきポイントが明確になるオンライン診断です。</p>
+                        <div class="benefitImage">
+                            <img src="./assets/img/marketing/app-showcase.png" alt="HACCP App Interface">
                         </div>
-                        <div class="benefitLink">診断を試してみる</div>
+                        <div class="benefitCardContent">
+                            <div class="benefitContent">
+                                <h3><span class="benefitIconInline">📱</span>審査前に「弱点」を可視化<br>プロ視点のHACCP診断アプリ</h3>
+                                <p>わずか数分の操作で、保健所や審査員が見るポイントをセルフチェック。対応優先度がその場でわかります。</p>
+                            </div>
+                            <div class="benefitLink">診断を試してみる</div>
+                        </div>
                     </a>
 
                     <!-- Benefit 3: JFS-B App -->
                     <a href="./jfs-b-check.html" class="benefitCard">
-                        <div class="benefitIcon">✅</div>
-                        <div class="benefitContent">
-                            <h3>JFS-B適合セルフチェック</h3>
-                            <p>適合証明取得に必要な項目を網羅。現状の適合率を数値化し、最短での取得をサポートします。</p>
+                        <div class="benefitImage">
+                            <img src="./assets/img/jfsb-dashboard-ss.png" alt="JFS-B App Dashboard">
                         </div>
-                        <div class="benefitLink">アプリでチェックする</div>
+                        <div class="benefitCardContent">
+                            <div class="benefitContent">
+                                <h3><span class="benefitIconInline">✅</span>JFS-B最短取得のロードマップ<br>適合率判定セルフチェック</h3>
+                                <p>規格の要求事項を「現場の言葉」に翻訳。現在の適合率を数値化し、取得までの最短距離を示します。</p>
+                            </div>
+                            <div class="benefitLink">アプリでチェックする</div>
+                        </div>
                     </a>
 
                     <!-- Benefit 4: Kindle -->
-                    <a href="./index.html#books" class="benefitCard kindleMini">
-                        <div class="benefitIcon">📖</div>
-                        <div class="benefitContent">
-                            <h3>Kindle電子書籍</h3>
-                            <p>食品安全のプロが執筆した解説書。Kindle Unlimited登録者なら無料で全編お読みいただけます。</p>
+                    <a href="./index.html#books" class="benefitCard kindleCard">
+                        <div class="benefitImage">
+                            <img src="./assets/img/kindle-FSMS.jpg" class="kindleBookThumb" alt="Book 1">
+                            <img src="./assets/img/kindle-haccp.jpg" class="kindleBookThumb" alt="Book 2">
                         </div>
-                        <div class="benefitLink">書籍ラインナップを見る</div>
+                        <div class="benefitCardContent">
+                            <div class="benefitContent">
+                                <h3><span class="benefitIconInline">📖</span>Amazonベストセラー2冠<br>食品安全のバイブル（電子書籍）</h3>
+                                <p>難しい規格を「ストーリー」で解説。Kindle Unlimited登録者なら、今すぐ無料で全編お読みいただけます。</p>
+                            </div>
+                            <div class="benefitLink" style="color:#fff; border-top-color:rgba(255,255,255,.1)">
+                                書籍ラインナップを見る</div>
+                        </div>
                     </a>
                 </div>
             </div>

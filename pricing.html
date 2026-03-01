@@ -397,17 +397,31 @@
 
         .benefitImage {
             width: 100%;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fb 0%, #eef1f6 100%);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .benefitImage img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform .6s ease;
+            object-fit: contain;
+            transition: transform .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Radar Chart Focus for Benefit 2 */
+        .radarFocus img {
+            object-position: 50% 90% !important;
+            transform: scale(1.6);
+            transform-origin: center bottom;
+        }
+
+        .benefitCard:hover .radarFocus img {
+            transform: scale(1.7);
         }
 
         .benefitCard:hover .benefitImage img {
@@ -697,12 +711,11 @@
                 </p>
 
                 <div class="benefitsGrid">
-                    <!-- Benefit 1: Template (フローダイアグラムのみ) -->
+                    <!-- Benefit 1: Template (マーケティング用デザイン) -->
                     <a href="./download.html" class="benefitCard">
                         <span class="benefitBadge">人気No.1</span>
                         <div class="benefitImage">
-                            <img src="./assets/img/haccp-flow-diagram.png" alt="HACCP フローダイアグラム資料抜粋"
-                                style="object-fit:contain; background:#f8f9fb; padding:8px">
+                            <img src="./assets/img/haccp_template_mockup.png" alt="HACCPテンプレート資料">
                         </div>
                         <div class="benefitCardContent">
                             <div class="benefitContent">
@@ -713,25 +726,24 @@
                         </div>
                     </a>
 
-                    <!-- Benefit 2: HACCP App -->
+                    <!-- Benefit 2: HACCP App (マーケティング用デザイン) -->
                     <a href="./haccp-check.html" class="benefitCard">
                         <div class="benefitImage">
-                            <img src="./assets/img/haccp-result-ss.png" alt="HACCP診断 レーダーチャート"
-                                style="object-fit:contain; object-position:center bottom; background:#f8f9fb; padding:8px">
+                            <img src="./assets/img/haccp_app_mockup.png" alt="HACCP診断アプリ">
                         </div>
                         <div class="benefitCardContent">
                             <div class="benefitContent">
                                 <h3><span class="benefitIconInline">📱</span>審査前に「弱点」を可視化<br>プロ視点のHACCP診断アプリ</h3>
-                                <p>わずか数分の操作で、保健所や審査員が見るポイントをセルフチェック。対応優先度がその場でわかります。</p>
+                                <p>わずか数分の操作で、保健所や審査員が見るポイントをセルフチェック。レーダーチャートで今の実力が一目でわかります。</p>
                             </div>
                             <div class="benefitLink">診断を試してみる</div>
                         </div>
                     </a>
 
-                    <!-- Benefit 3: JFS-B App -->
+                    <!-- Benefit 3: JFS-B App (マーケティング用デザイン) -->
                     <a href="./jfs-b-check.html" class="benefitCard">
                         <div class="benefitImage">
-                            <img src="./assets/img/jfsb-dashboard-ss.png" alt="JFS-B App Dashboard">
+                            <img src="./assets/img/jfsb_app_mockup.png" alt="JFS-Bセルフチェックアプリ">
                         </div>
                         <div class="benefitCardContent">
                             <div class="benefitContent">
@@ -742,16 +754,15 @@
                         </div>
                     </a>
 
-                    <!-- Benefit 4: Kindle -->
+                    <!-- Benefit 4: Kindle (マーケティング用デザイン) -->
                     <a href="./index.html#books" class="benefitCard kindleCard">
                         <div class="benefitImage">
-                            <img src="./assets/img/kindle-FSMS.jpg" class="kindleBookThumb" alt="Book 1">
-                            <img src="./assets/img/kindle-haccp.jpg" class="kindleBookThumb" alt="Book 2">
+                            <img src="./assets/img/kindle_mockup.png" alt="食品安全実務 Kindle書籍">
                         </div>
                         <div class="benefitCardContent">
                             <div class="benefitContent">
-                                <h3><span class="benefitIconInline">📖</span>Amazonベストセラー2冠<br>食品安全のバイブル（電子書籍）</h3>
-                                <p>難しい規格を「ストーリー」で解説。Kindle Unlimited登録者なら、今すぐ無料で全編お読みいただけます。</p>
+                                <h3><span class="benefitIconInline">📖</span>現場で役立つ実践知を凝縮<br>食品安全のバイブル（電子書籍）</h3>
+                                <p>難しい規格を「ケーススタディ」で解説。Kindle Unlimited登録者なら、今すぐ無料で全編お読みいただけます。</p>
                             </div>
                             <div class="benefitLink" style="color:#fff; border-top-color:rgba(255,255,255,.1)">
                                 書籍ラインナップを見る</div>

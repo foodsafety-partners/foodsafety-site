@@ -27,7 +27,24 @@
         gtag('config', 'G-F8KX0R29GW');
     </script>
 
-    <!-- 構造化データ（OfferCatalog） -->
+    <!-- 構造化データ（Breadcrumb / OfferCatalog） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "トップ",
+        "item": "https://foodsafety-partners.github.io/foodsafety-site/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "料金詳細",
+        "item": "https://foodsafety-partners.github.io/foodsafety-site/pricing.html"
+      }]
+    }
+    </script>
     <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -622,6 +639,20 @@
             <div class="callout" style="max-width:980px;margin:16px auto 0">
                 <b>「いきなり顧問」ではなく、必要な範囲から。</b><br>
                 まずは診断で優先順位を整理し、必要な範囲だけ支援する形も可能です。
+            </div>
+
+            <div class="panel"
+                style="max-width:980px;margin:40px auto 0;padding:24px;background:#fff;border:1px solid var(--line);border-radius:18px;">
+                <h3 style="margin-top:0;font-size:18px;">コンサルティング費用の相場と当事業の考え方</h3>
+                <p style="font-size:14px;color:var(--muted);line-height:1.8;font-weight:850;">
+                    食品安全コンサルの相場は、大手企業向けでは数百万円に及ぶことも珍しくありません。これは、過剰な文書化や全社的なルール整備など、中小企業の現場には重すぎる設計が含まれている場合があるからです。<br><br>
+                    当事業では、<b>「監査員視点での最小構成」</b>を徹底しています。審査に通るための急所（ハザード分析の根拠、CCP管理、教育記録など）に絞り込み、現場の負担を最小限に抑えることで、高品質な支援をこの価格帯で提供しています。
+                </p>
+                <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+                    <span class="tag"># 現場実務重視</span>
+                    <span class="tag"># 審査合格への最短距離</span>
+                    <span class="tag"># 少数精鋭によるコスト抑制</span>
+                </div>
             </div>
         </div>
     </section>

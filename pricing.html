@@ -392,6 +392,37 @@
             margin-top: 32px;
         }
 
+        /* 5つあるので最初の一つだけ大きく見せる */
+        .benefitsGrid>a:first-child {
+            grid-column: 1 / -1;
+            flex-direction: row;
+        }
+
+        .benefitsGrid>a:first-child .benefitImage {
+            width: 45%;
+            height: auto;
+        }
+
+        .benefitsGrid>a:first-child .benefitCardContent {
+            width: 55%;
+            justify-content: center;
+        }
+
+        @media(max-width:768px) {
+            .benefitsGrid>a:first-child {
+                flex-direction: column;
+            }
+
+            .benefitsGrid>a:first-child .benefitImage {
+                width: 100%;
+                height: 220px;
+            }
+
+            .benefitsGrid>a:first-child .benefitCardContent {
+                width: 100%;
+            }
+        }
+
         .benefitCard {
             background: #fff;
             border-radius: 24px;
@@ -785,7 +816,21 @@
                         </div>
                     </a>
 
-                    <!-- Benefit 4: Kindle (マーケティング用デザイン) -->
+                    <!-- Benefit 4: Education App (マーケティング用デザイン) -->
+                    <a href="./education-app.html" class="benefitCard">
+                        <div class="benefitImage">
+                            <img src="./assets/img/app-course-list.png" alt="食品安全教育アプリ" style="object-fit: cover;">
+                        </div>
+                        <div class="benefitCardContent">
+                            <div class="benefitContent">
+                                <h3><span class="benefitIconInline">🎓</span>現場の「わかったつもり」をなくす<br>食品安全教育アプリ</h3>
+                                <p>スマホひとつで現場からすぐ受講！座学の時間が取れなくても、スキマ時間で知識定着。（4言語にも対応）</p>
+                            </div>
+                            <div class="benefitLink">アプリの詳細を見る</div>
+                        </div>
+                    </a>
+
+                    <!-- Benefit 5: Kindle (マーケティング用デザイン) -->
                     <a href="./index.html#books" class="benefitCard kindleCard">
                         <div class="benefitImage">
                             <img src="./assets/img/kindle_mockup.png" alt="食品安全実務 Kindle書籍">

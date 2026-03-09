@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食品安全教育アプリ｜スマホで簡単・多言語対応の衛生教育｜食品安全パートナーズ</title>
+    <meta name="description"
+        content="「忙しくて教育の時間が取れない」「教育が形骸化している」と悩む食品工場へ。現場のスマホからいつでも受講可能、理解度テスト付きの食品安全教育アプリです。外国人スタッフ向けの4言語（日・英・越・中）にも対応し、完全無料でご利用いただけます。">
+    <meta property="og:title" content="食品安全教育アプリ｜スマホで簡単・多言語対応の衛生教育">
+    <meta property="og:description"
+        content="現場の「わかったつもり」を解消する食品安全教育アプリ。スマホでスキマ時間に受講可能。さらに外国人スタッフにも嬉しい4言語対応！完全無料で利用できます。">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004a99;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-muted: #666;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #004a99 0%, #002d5e 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: var(--gradient-blue);
+            color: var(--white);
+            padding: 100px 5% 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 70%),
+                url('./assets/img/haccp-header-banner.png') center / cover no-repeat;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            font-weight: 900;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            font-weight: 400;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15rem;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background-color: #d35400;
+        }
+
+        .cta-sub {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 15px;
+        }
+
+        /* ── Pain Points ── */
+        .pain-section {
+            padding: 80px 5%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            transform: translateX(-50%);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .pain-card {
+            background: #fff8f0;
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .pain-card h3 {
+            color: var(--text-dark);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .pain-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ── Features Section ── */
+        .features-section {
+            padding: 80px 5%;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ── Trust / Credibility ── */
+        .trust-section {
+            padding: 80px 5%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .trust-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+        }
+
+        .trust-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .trust-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .trust-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ── CTA Final ── */
+        .cta-section {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .cta-section p {
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: var(--primary-color);
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ── FAQ ── */
+        .faq-section {
+            padding: 80px 5%;
+            background: #fff;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 25px 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #95a5a6;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* ── Animation ── */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .fade-in-d1 {
+            animation-delay: 0.2s;
+        }
+
+        .fade-in-d2 {
+            animation-delay: 0.4s;
+        }
+
+        .fade-in-d3 {
+            animation-delay: 0.6s;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 60px 5% 80px;
+            }
+
+            .hero-sub {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" class="logo">
+            <img src="./assets/img/logo.png" alt="食品安全パートナーズ" style="height: 40px;">
+            <span>食品安全パートナーズ</span>
+        </a>
+        <nav class="nav-links">
+            <a href="./index.html">公式サイト TOP</a>
+            <a href="./index.html#apps">食品安全アプリ</a>
+            <a href="./column.html">コラム</a>
+            <a href="./index.html#consult">無料相談</a>
+        </nav>
+    </header>
+
+    <!-- ① Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="fade-in"><span class="badge">✅ インストール不要・完全無料</span></div>
+            <h1 class="fade-in fade-in-d1">現場の「わかったつもり」をなくす、<br>全く新しい衛生教育アプリ。</h1>
+            <p class="hero-sub fade-in fade-in-d2">
+                スマホひとつで現場からすぐ受講！<br>
+                座学の時間が取れない現場でも、スキマ時間で確かな知識の定着を図る、<br>食品工場のための衛生教育アプリです。（さらに4言語にも標準対応）
+            </p>
+            <div class="fade-in fade-in-d3">
+                <a class="cta-button"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSePSUw_EwCxO6MgeqWKlvLJmdVSwjLrR80BXKT98-PT5r4YWQ/viewform?usp=pp_url&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+                    target="_blank">今すぐ無料で試してみる →</a>
+                <p class="cta-sub">※Webアプリのためインストール操作は不要です</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ② Pain Points -->
+    <section class="pain-section">
+        <h2 class="section-title">現場の衛生教育で、こんなお悩みありませんか？</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <h3>忙しくて集合研修の時間が取れない</h3>
+                <p>シフト制で働くパートやアルバイトを集めて研修する時間が現場にない。新人が入るたびに同じ説明を繰り返す余裕がなく、現場でのOJT任せになってしまっている。</p>
+            </div>
+            <div class="pain-card">
+                <h3>「わかったつもり」によるミスが怖い</h3>
+                <p>ルールブックを渡して「読んでおいて」で済ませているが、本当に理解しているかがわからない。テストを作るのも手間がかかるし、採点する時間もない。</p>
+            </div>
+            <div class="pain-card">
+                <h3>外国人スタッフへの細かいニュアンスの伝達</h3>
+                <p>日本語のルールを説明しても、アレルゲンや交差汚染などの専門的なリスクが正しく伝わっているか不安。言語の壁による認識のズレが事故に繋がらないか心配。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ③ App Content & Usage -->
+    <section class="app-info-section" style="padding: 80px 5%; background: var(--white);">
+        <h2 class="section-title" style="display: block; text-align: center;">アプリの内容と使い方</h2>
+        <div style="max-width: 900px; margin: 0 auto;">
+
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 60px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="./assets/img/app-course-list.png" alt="教育科目一覧"
+                        style="width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 15px;">現場で必須の5科目を網羅</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
+                        工場入場前のルールから、食中毒予防、アレルゲン対策、食品防御まで、食品工場で働くすべての従業員が知っておくべき必須知識を5つのコースにまとめて収録しています。<br>
+                        学習したい科目をタップするだけで、すぐに教育を開始できます。
+                    </p>
+                    <ul style="list-style: none; color: var(--text-dark);">
+                        <li style="margin-bottom: 8px;">✔️ 工場入場前の衛生管理</li>
+                        <li style="margin-bottom: 8px;">✔️ 食中毒予防の三原則</li>
+                        <li style="margin-bottom: 8px;">✔️ 一般衛生管理の基礎知識</li>
+                        <li style="margin-bottom: 8px;">✔️ アレルゲン・異物混入対策</li>
+                        <li style="margin-bottom: 8px;">✔️ 食品防御（フードディフェンス）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; flex-direction: row-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="./assets/img/app-admin-dashboard.png" alt="管理者ダッシュボード"
+                        style="width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 15px;">学習状況を一元管理（管理者機能）
+                    </h3>
+                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
+                        専用の「管理者ダッシュボード」をご用意。アプリ内の設定画面から事業所専用の<strong>管理者コード</strong>をご自身で発行し、従業員に共有することで、全員の受講状況（未受講/合格など）をリアルタイムで確認・一元管理できるようになります。
+                    </p>
+                    <p style="color: var(--text-muted); line-height: 1.8;">
+                        また、監査や審査のエビデンスとして提出するための受講履歴一覧を、ボタン一つでCSVデータとして出力・ダウンロードすることが可能です。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ④ Features -->
+    <section class="features-section">
+        <h2 class="section-title">食品安全教育アプリの3つの特徴</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon"></span>
+                <h3>スマホでいつでも即受講</h3>
+                <p>ブラウザで動くWebアプリなので、インストール不要。共有されたURLにアクセスするだけで、現場のスキマ時間にすぐ教育を開始できます。</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon"></span>
+                <h3>4言語に完全対応</h3>
+                <p>日本語・英語・ベトナム語・中国語にワンタッチで切り替え。母国語で学ぶことで、HACCPや衛生管理の難しい概念も正確に伝わります。</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon"></span>
+                <h3>○×テストで理解度を可視化</h3>
+                <p>学習後に確認テストを実施。ランダムに出題される問題を解くことで、勘ではなく本当の理解度を図ることができ、即時フィードバックが得られます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑤ Trust / Credibility -->
+    <section class="trust-section">
+        <h2 class="section-title">なぜ教育効果が高いのか</h2>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <span class="trust-icon"></span>
+                <h3>繰り返し教育が仕組み化される</h3>
+                <p>食品安全の教育は一度教えれば終わりではありません。アプリなら手元でいつでも反復学習とテストができるため、ルールの形がい化を防ぎます。</p>
+            </div>
+            <div class="trust-card">
+                <span class="trust-icon"></span>
+                <h3>現場目線のシンプル設計</h3>
+                <p>小難しい理論ではなく、「なぜ手を洗うべきか」「なぜ手袋を変えるか」など現場ですぐに活かせる実践的な内容に絞っています。</p>
+            </div>
+            <div class="trust-card">
+                <span class="trust-icon"></span>
+                <h3>テストを通じて定着</h3>
+                <p>単なる読み物ではなく、「学習→テスト→結果確認」のサイクルを回すことで、知識の定着度合いが飛躍的に高まります。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑥ CTA Final -->
+    <section class="cta-section">
+        <h2>まずは一度、スマホでお試しください。</h2>
+        <p>現場の衛生意識向上のための第一歩。<br>多言語対応によるスムーズな教育体験を、完全無料でご提供します。</p>
+        <a class="cta-button-white"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSePSUw_EwCxO6MgeqWKlvLJmdVSwjLrR80BXKT98-PT5r4YWQ/viewform?usp=pp_url&entry.333726573=%E5%90%8C%E6%84%8F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+            target="_blank">アプリを開く（無料） →</a>
+        <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7;">※お使いのスマートフォンやPCのブラウザですぐに動きます</p>
+    </section>
+
+    <!-- ⑦ FAQ -->
+    <section class="faq-section">
+        <h2 class="section-title" style="display: block; text-align: center;">よくある質問</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4>Q. 費用は本当にかかりませんか？</h4>
+                <p>A. はい、現在の受講モード・テストモードは完全に無料ですべての機能をご利用いただけます。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q. 対応している言語を教えてください。</h4>
+                <p>A. 現在、日本語(JA)、英語(EN)、ベトナム語(VI)、中国語(ZH)の4ヶ国語に対応しており、画面右上のメニューからいつでも切り替えることができます。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q. アプリストアからダウンロードする必要がありますか？</h4>
+                <p>A. いいえ、Webアプリケーションとして設計されているためブラウザ（SafariやChromeなど）からアクセスするだけで動作します。インストールの必要はありません。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q. 従業員の学習履歴やテストの点数を管理できますか？</h4>
+                <p>A.
+                    はい、可能です。専用の「管理者ダッシュボード」機能をご用意しており、アプリ内で事業所ごとの管理者コード（例：XGATF7）を発行することで、従業員の受講状況（未受講・合格などのステータス）をリアルタイムで一覧表示できます。また、審査提出用として記録をCSV形式でダウンロードすることも可能です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑧ Footer -->
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <a href="./index.html">トップページ</a>
+            <a href="./about.html">会社概要</a>
+            <a href="./contact.html">お問い合わせ</a>
+        </div>
+        <p>&copy; 2024 食品安全パートナーズ All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

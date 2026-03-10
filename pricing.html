@@ -540,7 +540,23 @@
             transform: translateX(5px);
         }
 
-        /* Kindle Specific visual */
+        /* Specific visuals for each card to create a premium marketing look */
+        .templateCard .benefitImage {
+            background: linear-gradient(135deg, #2b303a, #1a202c);
+        }
+
+        .haccpCard .benefitImage {
+            background: linear-gradient(135deg, #4a1c1c, #2d0e0e);
+        }
+
+        .jfsbCard .benefitImage {
+            background: linear-gradient(135deg, #1a365d, #0f2445);
+        }
+
+        .educationCard .benefitImage {
+            background: linear-gradient(135deg, #1e4b3c, #102d23);
+        }
+
         .kindleCard .benefitImage {
             background: linear-gradient(135deg, #1b2533, #2c567a);
             display: flex;
@@ -774,7 +790,7 @@
 
                 <div class="benefitsGrid">
                     <!-- Benefit 1: Template (マーケティング用デザイン) -->
-                    <a href="./download.html" class="benefitCard">
+                    <a href="./download.html" class="benefitCard templateCard">
                         <span class="benefitBadge">人気No.1</span>
                         <div class="benefitImage">
                             <img src="./assets/img/haccp_template_mockup.png" alt="HACCPテンプレート資料">
@@ -789,7 +805,7 @@
                     </a>
 
                     <!-- Benefit 2: HACCP App (マーケティング用デザイン) -->
-                    <a href="./haccp-check.html" class="benefitCard">
+                    <a href="./haccp-check.html" class="benefitCard haccpCard">
                         <div class="benefitImage">
                             <img src="./assets/img/haccp_app_mockup.png" alt="HACCP診断アプリ">
                         </div>
@@ -803,7 +819,7 @@
                     </a>
 
                     <!-- Benefit 3: JFS-B App (マーケティング用デザイン) -->
-                    <a href="./jfs-b-check.html" class="benefitCard">
+                    <a href="./jfs-b-check.html" class="benefitCard jfsbCard">
                         <div class="benefitImage">
                             <img src="./assets/img/jfsb_app_mockup.png" alt="JFS-Bセルフチェックアプリ">
                         </div>
@@ -817,11 +833,9 @@
                     </a>
 
                     <!-- Benefit 4: Education App (マーケティング用デザイン) -->
-                    <a href="./education-app.html" class="benefitCard">
-                        <div class="benefitImage"
-                            style="background: linear-gradient(135deg, #f0f4f8 0%, #e1e7f0 100%);">
-                            <img src="./assets/img/education_app_mockup.png" alt="食品安全教育アプリ"
-                                style="transform: scale(0.9);">
+                    <a href="./education-app.html" class="benefitCard educationCard">
+                        <div class="benefitImage">
+                            <img src="./assets/img/education_app_mockup.png" alt="食品安全教育アプリ">
                         </div>
                         <div class="benefitCardContent">
                             <div class="benefitContent">

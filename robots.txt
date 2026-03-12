@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foodsafety-partners.github.io/foodsafety-site/sitemap.xml

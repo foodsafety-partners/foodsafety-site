@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>食品安全にかかわる主な微生物（食中毒菌・ウイルス）の特徴と対策｜食品安全パートナーズ</title>
+<meta name="description" content="現場の衛生管理で知っておくべき主要な食中毒菌とウイルスの特徴、原因食品、適切な対策（予防法）を網羅的に解説します。一覧表も掲載。">
+<meta name="keywords" content="食中毒菌, ノロウイルス, カンピロバクター, サルモネラ, 食中毒予防, 食品安全, HACCP">
+
+<style>
+/* column-3 / column-7 と共通のレイアウト設計 */
+:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
+#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
+#toTop.show{opacity:1;transform:none}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(27,37,51,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:40px;width:auto}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
+.menu a{opacity:.82}
+.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+.btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
+
+.section{padding:44px 0 66px}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:18px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
+  background:#fff;color:#243042;font-weight:900;font-size:12px}
+
+.articleHead{
+  background:
+    radial-gradient(1200px 520px at 25% 20%, rgba(224,135,42,.18), transparent 55%),
+    radial-gradient(1000px 520px at 80% 80%, rgba(44,86,122,.16), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.92));
+  border-bottom:1px solid rgba(27,37,51,.08);
+}
+.breadcrumbs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-weight:850;font-size:12px;padding:14px 0 0}
+.breadcrumbs a{text-decoration:underline}
+.h1{margin:10px 0 0;font-size:32px;line-height:1.25;font-weight:1000}
+.metaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0 0;color:var(--muted);font-weight:850;font-size:12px}
+.metaDot{opacity:.7}
+
+.prose{line-height:1.9;color:#273244;font-weight:400}
+.prose h2{margin:36px 0 12px;font-size:22px;line-height:1.5;color:var(--ink);border-bottom:2px solid var(--line);padding-bottom:8px}
+.prose h3{margin:26px 0 10px;font-size:18px;line-height:1.6;color:var(--ink);display:flex;align-items:center;gap:10px}
+.prose h3::before {content:"";display:inline-block;width:6px;height:22px;background:var(--accent);border-radius:3px}
+.prose p{margin:12px 0}
+.prose ul{margin:12px 0 12px 20px;padding:0}
+.prose li{margin:6px 0}
+.k{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(224,135,42,.10);border:1px solid rgba(224,135,42,.22);font-weight:bold;color:var(--accent2)}
+.note{margin:14px 0;color:var(--muted);font-size:12.5px;line-height:1.85}
+
+/* テーブルスタイル */
+.mikamiTable {width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.mikamiTable th, .mikamiTable td {border:1px solid var(--line);padding:12px}
+.mikamiTable th {background:#f3f6f9;font-weight:bold;text-align:left;color:var(--ink);white-space:nowrap}
+.mikamiTable tbody tr:hover {background:#fafbfc}
+
+/* 画像とテキストの横並びレイアウト用 */
+.bioFlex {display:flex;gap:24px;margin:20px 0;align-items:flex-start}
+.bioImage {flex:0 0 200px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.bioImage img {width:100%;height:auto;display:block}
+.bioContent {flex:1;min-width:0}
+
+@media(max-width:768px){
+  .bioFlex {flex-direction:column;align-items:center}
+  .bioImage {flex:0 0 auto;width:100%;max-width:280px}
+  .mikamiTable th, .mikamiTable td {padding:8px;font-size:13px}
+}
+
+.callout{
+  border-left:6px solid var(--accent);
+  background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;padding:16px;margin:24px 0
+}
+.ctaCard{
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(27,37,51,.10);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 14px 26px rgba(24,32,48,.10);
+  margin-top:40px;
+}
+.ctaGrid{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+.pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:32px;padding-top:20px;border-top:1px solid var(--line)}
+.pager a{font-weight:bold;color:var(--accent2);text-decoration:underline}
+
+.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
+  .reveal.show{opacity:1;transform:none}
+}
+/* Fallback for when JS cannot add the .show class (e.g., local files over file://) */
+.reveal { opacity: 1 !important; transform: none !important; }
+
+@media(max-width:980px){
+  .menu{display:none}
+  .h1{font-size:26px}
+}
+</style>
+</head>
+
+<body>
+<div id="progress"></div>
+<a id="toTop" href="./column-8.html#" aria-label="ページ先頭へ">↑</a>
+
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+      </a>
+      <nav class="menu" aria-label="メニュー">
+        <a href="./index.html#services">サービス</a>
+        <a href="./download.html">無料特典</a>
+        <a href="./index.html#books">書籍</a>
+        <a href="./index.html#consult">無料相談</a>
+        <a href="./column.html">コラム一覧</a>
+      </nav>
+      <a class="btn primary" href="./download.html">無料特典</a>
+    </div>
+  </div>
+</header>
+
+<section class="articleHead">
+  <div class="container">
+    <div class="breadcrumbs reveal">
+      <a href="./index.html">トップ</a><span class="metaDot">/</span>
+      <a href="./column.html">コラム</a><span class="metaDot">/</span>
+      <span>食品安全にかかわる主な微生物の特徴と対策</span>
+    </div>
+
+    <h1 class="h1 reveal">食品安全にかかわる主な微生物<br>（食中毒菌・ウイルス）の特徴と対策</h1>
+
+    <div class="metaRow reveal" aria-label="記事メタ情報">
+      <span class="tag">基礎知識</span>
+      <span class="tag">食中毒菌</span>
+      <span class="tag">HACCP構築</span>
+      <span class="metaDot">•</span>
+      <span>読了目安：10〜12分</span>
+    </div>
+
+    <div style="height:18px"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card reveal">
+      <div class="prose">
+
+        <p>
+          食品従事者が直面する「食中毒」を防ぐためには、目に見えない微生物（細菌やウイルス）の性質を正しく理解し、適切な管理手段（温度管理、加熱、洗浄・消毒など）を講じることが不可欠です。<br>
+          本記事では、食品工場や飲食店の衛生管理において特に重要とされる10種類の微生物について、その特徴と予防策を網羅的に解説します。これらは、弊社の<a href="./education-app.html" style="color:var(--accent);font-weight:bold;text-decoration:underline;">「食品安全教育アプリ」</a>でもスマホで手軽に学習いただけます。
+        </p>
+
+        <h2>【早見表】主な微生物の特徴一覧</h2>
+        <div style="overflow-x:auto;">
+          <table class="mikamiTable">
+            <thead>
+              <tr>
+                <th>菌・ウイルス名</th>
+                <th>分類 / 特徴</th>
+                <th>主な原因食品</th>
+                <th>主な予防・対策ポイント</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong><a href="#noro">ノロウイルス</a></strong></td>
+                <td>感染型 / 非常に感染力が強い</td>
+                <td>二枚貝、感染者を介した食品全般</td>
+                <td>手洗いの徹底、十分な加熱（85℃〜90℃・90秒以上）、次亜塩素酸ナトリウム</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#campylo">カンピロバクター</a></strong></td>
+                <td>感染型 / 発生件数最多、微好気性</td>
+                <td>鶏肉（生肉・加熱不足）</td>
+                <td>中心部までの十分な加熱、二次汚染防止</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#vibrio">腸炎ビブリオ</a></strong></td>
+                <td>感染型 / 好塩性、真水に弱い、増速が著しい</td>
+                <td>魚介類（刺身、寿司）、二次汚染された調理器具</td>
+                <td>真水での十分な洗浄、低温保存（10℃以下）、調理器具の熱湯消毒</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#shigella">赤痢菌</a></strong></td>
+                <td>感染型 / 非常に強い感染力、極めて少量の菌で発症</td>
+                <td>汚染された水・手指を介した食品全般</td>
+                <td>トイレ後・調理前の確実な手洗い消毒、感染者の調理従事停止</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#o157">腸管出血性大腸菌（O157等）</a></strong></td>
+                <td>感染型 / ベロ毒素産生、少量で発症</td>
+                <td>牛肉（生食・加熱不足）、生野菜</td>
+                <td>中心部までの十分な加熱（75℃・1分以上）、二次汚染防止</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#listeria">リステリア</a></strong></td>
+                <td>感染型 / 冷蔵温度帯や塩分に耐える</td>
+                <td>非加熱喫食食品（ナチュラルチーズ、生ハム等）</td>
+                <td>期限内の消費、加熱殺菌、高リスク者の生食回避</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#yersinia">エルシニア（エンテロコリチカ）</a></strong></td>
+                <td>感染型 / 冷蔵庫内の低温環境（0〜4℃）でも増殖可能</td>
+                <td>豚肉、生水、汚染された生野菜</td>
+                <td>十分な加熱、生肉用の器具と野菜用の器具の明確な使い分け</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#salmonella">サルモネラ</a></strong></td>
+                <td>感染型 / 乾燥に強い</td>
+                <td>鶏卵、食肉類</td>
+                <td>十分な加熱、生卵の適切な温度管理</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#staph">黄色ブドウ球菌</a></strong></td>
+                <td>毒素型 / 耐熱性毒素（エンテロトキシン）</td>
+                <td>おにぎり、弁当、調理パン（手作業を経るもの）</td>
+                <td>手指の洗浄・消毒、手袋の適切な使用、化膿創のある人の調理従事制限</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#clostridium">ウェルシュ菌</a></strong></td>
+                <td>感染型（体内毒素型） / 嫌気性、芽胞形成</td>
+                <td>カレー、シチュー、煮物類（大鍋料理）</td>
+                <td>調理後速やかに冷却（小分け・急冷）、喫食前の再加熱、室温放置の禁止</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#cereus">セレウス菌</a></strong></td>
+                <td>毒素型・感染型 / 耐熱性芽胞と毒素</td>
+                <td>チャーハン、パスタ、米飯・麺類</td>
+                <td>調理後速やかに冷却（保温する場合は65℃以上）、室温放置の禁止</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#botulinum">ボツリヌス菌</a></strong></td>
+                <td>毒素型 / 嫌気性、芽胞形成、猛毒</td>
+                <td>真空パック食品、瓶詰、缶詰（低酸性）</td>
+                <td>高温高圧殺菌（120℃・4分以上）、適切な要冷蔵管理（10℃以下）</td>
+              </tr>
+              <tr>
+                <td><strong><a href="#coliform">大腸菌群（指標菌および一部病原菌）</a></strong></td>
+                <td>衛生指標 / 熱に弱い、一部は病原性を持つ（病原大腸菌等）</td>
+                <td>加熱後・加工後の食品全般、汚染された水</td>
+                <td>十分な加熱殺菌、二次汚染の確実な防止（※指標菌としての管理）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ==============================
+             グループ1
+             ============================== -->
+        <h2>1. 圧倒的発生数・感染力が強いグループ</h2>
+        <p>年間を通じて、または特定の季節に極めて多くの食中毒事故を引き起こす代表的な病原体です。</p>
+
+        <h3 id="noro">ノロウイルス</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_noro.png" alt="ノロウイルスのイメージ画像"></div>
+          <div class="bioContent">
+            <p>冬場にかけて猛威を振るい、食中毒の<span class="k">患者数において毎年トップクラス</span>となるウイルスです。<br>
+            ごくわずかなウイルス量（数十〜数百個）で感染するほど非常に感染力が強く、アルコール消毒が効きにくいという厄介な特徴を持ちます。</p>
+            <ul>
+              <li><strong>主な原因：</strong>カキなどの二枚貝の生食、または感染した調理従事者を介した二次感染（食品全般）。</li>
+              <li><strong>対策：</strong>従事者の健康管理（下痢・嘔吐症状者の就業制限）と、トイレ後の徹底した手洗いが最重要です。殺菌には次亜塩素酸ナトリウム（200ppm以上）、加熱の場合は通常の食中毒菌より厳しい「中心温度85〜90℃で90秒間以上」が必要です。<br>
+              <span class="note">※根拠：厚生労働省「ノロウイルスに関するＱ＆Ａ」で示される加熱・消毒基準に準拠。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="campylo">カンピロバクター</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_campylo.png" alt="カンピロバクターのイメージ画像"></div>
+          <div class="bioContent">
+            <p>細菌性の食中毒としては、日本で<span class="k">発生件数が最も多い</span>病原菌です。酸素が少しだけある環境（微好気性条件）を好みます。</p>
+            <ul>
+              <li><strong>主な原因：</strong>鶏肉（生肉、加熱不足）、鶏レバーなどの鳥刺し、および生肉を扱った手やまな板からの二次汚染。</li>
+              <li><strong>対策：</strong>中心部まで十分に加熱（75℃で1分以上）すること。生肉を取り扱う調理器具は、他の食材（特にそのまま食べる野菜など）と明確に区別して使用し、洗浄と熱湯消毒を徹底すること。<br>
+              <span class="note">※根拠：厚生労働省「大量調理施設衛生管理マニュアル」における加熱調理食品の中心温度基準。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==============================
+             グループ1へ追加分
+             ============================== -->
+        <h3 id="vibrio">腸炎ビブリオ</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_v3_vibrio.png" alt="腸炎ビブリオのイメージ画像"></div>
+          <div class="bioContent">
+            <p>海水中や海泥に生息し、塩分を好む（好塩性）細菌です。夏場（水温が上がる時期）の魚介類に多く付着しています。最大の特徴は<span class="k">増殖スピードが非常に速いこと</span>と、逆に<span class="k">真水（水道水）には非常に弱い</span>ことです。</p>
+            <ul>
+              <li><strong>主な原因：</strong>刺身や寿司などの生鮮魚介類、あるいは魚介類をさばいたまな板や包丁から二次汚染された他の食品。</li>
+              <li><strong>対策：</strong>調理前に魚介類を「真水（水道水）」でよく洗い流して菌を洗い落とすこと。増殖を防ぐため10℃以下（できれば4℃以下）で厳重に低温保存すること。魚介類用とその他の食材用でまな板・包丁を区別すること。<br>
+              <span class="note">※根拠：食品衛生法の「生食用鮮魚介類」の規格基準および、厚労省の食中毒予防ガイドラインに基づく真水洗浄・低温保存要件。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="shigella">赤痢菌</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_v3_shigella.png" alt="赤痢菌のイメージ画像"></div>
+          <div class="bioContent">
+            <p>ノロウイルスやO157と同様に、<span class="k">ごくわずかな菌量（10〜100個程度）で発症する</span>ほど非常に感染力が強い細菌です。主に「人から人へ」、または「人から食品へ」と糞口感染（ふんこうかんせん）ルートで広がります。</p>
+            <ul>
+              <li><strong>主な原因：</strong>感染した調理従事者の「手」を介して汚染された食品全般（特にサラダ類などの非加熱食品）、または汚染された水。</li>
+              <li><strong>対策：</strong>用便後や調理前における「流水と石けんによる徹底した手洗い」と消毒が最大の予防策です。また、下痢などの症状がある従事者は絶対に食品の取り扱いをさせないこと。<br>
+              <span class="note">※根拠：食品衛生法に基づく「営業者が講ずべき衛生措置」規定、および感染症法上の三類感染症としての厳格な就業制限。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==============================
+             グループ2
+             ============================== -->
+        <h2>2. 重篤化リスクが高い・少量の菌で発症するグループ</h2>
+        <p>感染すると重篤な症状を引き起こす危険性があり、衛生管理において特に厳格な対応が求められるグループです。</p>
+
+        <h3 id="o157">腸管出血性大腸菌（O157など）</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_o157.png" alt="O157のイメージ画像"></div>
+          <div class="bioContent">
+            <p>強力な「ベロ毒素」を産生し、出血性の下痢や、重症化すると溶血性尿毒症症候群（HUS）や脳症を引き起こし死に至ることもある恐ろしい細菌です。<span class="k">100個程度というごく少量の菌</span>でも発症します。</p>
+            <ul>
+              <li><strong>主な原因：</strong>牛などの生肉・加熱不足肉、またはそれらから二次汚染された生野菜や惣菜。</li>
+              <li><strong>対策：</strong>汚染源となる生肉等の確実な加熱（中心温度75℃で1分以上）および、非加熱食材との完全な交差汚染防止。<br>
+              <span class="note">※根拠：厚生労働省「食肉の加熱条件に関するQ&A」に示される特定加熱食肉製品の基準、およびO157食中毒予防対策。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="listeria">リステリア（リステリア・モノサイトゲネス）</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_v3_listeria_final.png" alt="リステリアのイメージ画像"></div>
+          <div class="bioContent">
+            <p>最大の特徴は、一般的な食中毒菌が増殖できない<span class="k">冷蔵庫内の温度（低温帯）や、高い塩分濃度の環境下でも増殖できる</span>ことです。健康な成人は発症しにくいですが、妊婦、高齢者、免疫不全の人は重症化（敗血症や髄膜炎）しやすいため注意が必要です。</p>
+            <ul>
+              <li><strong>主な原因：</strong>加熱殺菌せずにそのまま食べる食品群（RTE食品）。ナチュラルチーズ、生ハム、スモークサーモンなど。</li>
+              <li><strong>対策：</strong>冷蔵庫を過信せず、期限内に消費すること。高リスク者はこれらの製品の生食を避け、食べる前に十分に加熱すること。<br>
+              <span class="note">※根拠：内閣府食品安全委員会「リステリア・モノサイトゲネスに関するファクトシート」、および厚労省の非加熱食肉製品等の規格基準。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="yersinia">エルシニア（エルシニア・エンテロコリチカ）</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_v5_yersinia_final.png" alt="エルシニアのイメージ画像"></div>
+          <div class="bioContent">
+            <p>リステリア菌と同様に、<span class="k">冷蔵庫内の温度帯（0〜4℃の低温）でも増殖できる</span>冷遇性の性質を持つ細菌です。冬でも元気に活動し、低温環境を過信すると、冷蔵保管中に菌数が増えて食中毒を引き起こす危険性があります。</p>
+            <ul>
+              <li><strong>主な原因：</strong>豚肉（特に豚の腸管内に多く保菌される）。生肉から二次汚染された生野菜や、加熱不十分な肉料理。</li>
+              <li><strong>対策：</strong>豚生肉などを冷蔵庫で長期間保管しないこと。中心部までの十分な加熱。また、生肉に触れた器具・手指からの交差汚染（二次汚染）を完全に防ぐこと。<br>
+              <span class="note">※根拠：内閣府食品安全委員会「エルシニア・エンテロコリチカ食中毒」ファクトシートに基づく、低温増殖能を考慮した期限管理・加熱の指針。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="salmonella">サルモネラ（サルモネラ属菌）</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_salmonella.png" alt="サルモネラのイメージ画像"></div>
+          <div class="bioContent">
+            <p>自然界に広く存在し、特に<span class="k">乾燥に強い</span>という特徴を持っています。少量の菌でも発症することがあり、激しい腹痛や発熱を伴います。</p>
+            <ul>
+              <li><strong>主な原因：</strong>生卵（殻や中身の汚染）、鶏肉などの食肉類。</li>
+              <li><strong>対策：</strong>生卵は10℃以下で適切に保存し、割った後は速やかに消費する。食品の中心部までの十分な加熱（75℃で1分以上）。<br>
+              <span class="note">※根拠：食品衛生法に基づく「液卵」等の成分規格、および厚労省「家庭における卵の衛生的な取扱いについて」の温度管理要件。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==============================
+             グループ3
+             ============================== -->
+        <h2>3. 熱に強い（芽胞や毒素を作る）グループ</h2>
+        <p>「加熱すれば安全」という常識が通用しない細菌です。「熱に強い殻（芽胞）」を作ったり、食品中に「熱に強い毒（毒素）」を作り出す特性を持ちます。</p>
+
+        <h3 id="staph">黄色ブドウ球菌</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_staphy.png" alt="黄色ブドウ球菌のイメージ画像"></div>
+          <div class="bioContent">
+            <p>健康な人の皮膚や鼻の中などにも常在している菌です。食品中で増殖する際に「エンテロトキシン」という毒素を作ります。菌自体は熱で死にますが、<span class="k">一度作られた毒素は100℃で30分加熱しても無毒化されません</span>。</p>
+            <ul>
+              <li><strong>主な原因：</strong>調理従事者の「手」を介して汚染され、室温放置された食品（おにぎり、弁当、調理パンなど）。</li>
+              <li><strong>対策：</strong>手には傷（化膿創）がある場合、そこには大量の菌が存在するため直接食品に触れないこと（手袋の適切な使用）。食品を室温に放置せず、菌を「増殖させない（毒素を作らせない）」ことが絶対条件です。<br>
+              <span class="note">※根拠：厚労省「大量調理施設衛生管理マニュアル」における調理従事者の衛生管理（化膿創の確認）、および調理済み食品の温度管理基準（10℃以下または65℃以上）。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="clostridium">ウェルシュ菌</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_v3_clostri.png" alt="ウェルシュ菌のイメージ画像"></div>
+          <div class="bioContent">
+            <p>酸素を嫌う（嫌気性）性質と、熱に強いバリアである「芽胞（がほう）」を形成する性質を併せ持ちます。「給食病」とも呼ばれ、大量調理時に発生しやすいのが特徴です。</p>
+            <ul>
+              <li><strong>主な原因：</strong>カレー、シチュー、煮物など、大きな鍋で大量に作られ、<span class="k">そのまま室温でゆっくりと冷まされた食品</span>。（底の方は酸素がなく、菌にとって絶好の増殖環境になります）</li>
+              <li><strong>対策：</strong>加熱調理後は室温に放置せず、菌が増殖しやすい温度帯（20℃〜50℃）を素早く通過させるために「小分けにして急冷（おおむね2時間以内に20℃付近、または速やかに10℃以下）」すること。食べる前には十分にかき混ぜながら再加熱する。<br>
+              <span class="note">※根拠：厚労省「大量調理施設衛生管理マニュアル」における、加熱調理後食品の冷却工程の温度・時間基準。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="cereus">セレウス菌</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_cereus.png" alt="セレウス菌のイメージ画像"></div>
+          <div class="bioContent">
+            <p>土壌などの自然界に広く生息し、農作物（特に米や小麦）を汚染します。この菌も熱に強い「芽胞」を作ります。症状によって「嘔吐型」と「下痢型」に分かれますが、日本で多い「嘔吐型」は、食品中に<span class="k">熱に強い毒素</span>を作り出します。</p>
+            <ul>
+              <li><strong>主な原因：</strong>炊飯後の米飯、チャーハン、パスタ、麺類など。作った後に室温で放置されることで芽胞が発芽し増殖・毒素を産生します。</li>
+              <li><strong>対策：</strong>米飯や麺類を調理後、室温で放置しないこと。保存する場合は速やかに冷蔵（10℃以下）するか、保温（65℃以上）を保つこと。（加熱しても一度作られた嘔吐型毒素は壊れません）<br>
+              <span class="note">※根拠：内閣府食品安全委員会「セレウス菌食中毒」ファクトシートにおける、芽胞の発芽・増殖を防ぐための温度管理指針。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="botulinum">ボツリヌス菌</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_botuli.png" alt="ボツリヌス菌のイメージ画像"></div>
+          <div class="bioContent">
+            <p>ウェルシュ菌と同様に酸素を嫌い（嫌気性）、「芽胞」を作ります。食品中で増殖して産生するボツリヌス毒素は、自然界に存在する毒素の中で最も強力と言われ、呼吸麻痺などの重篤な症状（高い致死率）を引き起こします。</p>
+            <ul>
+              <li><strong>主な原因：</strong>酸素のない環境で作られる食品。自家製の缶詰や瓶詰、真空パック食品、（乳児に対する）ハチミツなど。</li>
+              <li><strong>対策：</strong>適切な製造（中心部を120℃で4分間以上の高温高圧殺菌など）が行われていない「要冷蔵保管」の真空パック食品等を、常温で放置しないこと。<br>
+              <span class="note">※根拠：食品衛生法の「容器包装詰加圧加熱殺菌食品（レトルト食品等）」の製造基準（120℃4分のF値規定）、および厚労省の「真空パック詰食品の衛生管理ガイドライン」。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==============================
+             グループ4
+             ============================== -->
+        <h2>4. 食品の品質・衛生管理のバロメーター</h2>
+
+        <h3 id="coliform">大腸菌群（指標菌および一部病原菌）</h3>
+        <div class="bioFlex">
+          <div class="bioImage"><img src="./assets/img/column8_coliform.png" alt="大腸菌群のイメージ画像"></div>
+          <div class="bioContent">
+            <p>「大腸菌群」は一種類の特定の菌ではなく、「環境中の乳糖を分解して酸とガスを作る」という性質を持つ細菌グループの総称です。<br>
+            この菌群が食品中で増えすぎると、酸やガスを出すことで<span class="k">味が酸っぱくなったり、異臭や容器の膨張といった「品質劣化・腐敗」を直接的に引き起こす原因</span>にもなります。<br>
+            また、衛生状態が悪かったり加熱が不十分であることを示す「単なる指標（バロメーター）」の役割を果たすだけでなく、中には<span class="k">消費者自身に発熱や下痢といった直接的な健康被害をもたらす「病原大腸菌（腸管侵入性・腸管毒素原性など）」も含まれています。</span><br>
+            共通して熱に極めて弱いため、少しの加熱（一般的な殺菌条件）で容易に死滅します。</p>
+            <ul>
+              <li><strong>重要な管理指標としての意味：</strong>本来「加熱済み」であるべき食品から大腸菌群が検出された場合、それは「加熱の温度や時間が不十分だった」あるいは「加熱後に汚れた手や機械で触ってしまった（二次汚染）」という、HACCP前提条件（一般的衛生管理）の重大な破綻を示します。単なる指標菌の汚染にとどまらず、**「同時に他の危険な食中毒菌（病原大腸菌を含む）も生き残っていたり、付着している可能性が極めて高い」**という強い警告となります。</li>
+              <li><strong>対策：</strong>大腸菌群を指標として、製造工程における加熱殺菌の妥当性や、手洗い・器具洗浄のルールが現場で正しく確実に実施されているかを定期的に検証（モニタリング）することが不可欠です。<br>
+              <span class="note">※根拠：食品衛生法に基づく多くの食品規格（アイスクリーム類、加熱食肉製品など）における「大腸菌群が陰性であること」の成分規格要件、およびコーデックス委員会（CAC）の食品衛生の一般原則による検証（Validation/Verification）プロセスに基づく。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="border-color:var(--accent2)">
+          <p style="margin:0;font-weight:bold;color:var(--accent2);font-size:16px;">「彼を知り己を知れば百戦殆からず」<br><span style="font-size:13px;font-weight:normal;">— 孫子『孫子の兵法』より</span></p>
+          <p style="margin:10px 0 0">
+            有名な孫子の兵法の言葉ですが、これは食中毒対策、ひいてはHACCP管理においても全く同じことが言えます。<br>
+            敵（微生物の性質や弱点）を知り、己（自社の製造工程や衛生管理体制）を正しく把握すれば、食中毒という事故（敗北）を未然に防ぐことができるのです。<br><br>
+            食中毒対策の基本は「つけない（洗浄・消毒）」「増やさない（温度管理）」「やっつける（加熱）」の3原則ですが、微生物の種類によって効く対策・効かない対策は異なります。<br>
+            「熱に強い菌」には加熱後の速やかな冷却が、「低温に強い菌」には期限内の厳格な消費が、「毒素を作る菌」には作らせないための徹底した温度管理が求められます。取り扱う食品のリスクプロファイルに応じた、正しい管理手段を設定することが、HACCPの最も重要な第一歩となります。
+          </p>
+        </div>
+
+        <div class="ctaCard reveal" style="border-top: 4px solid var(--accent); background: linear-gradient(135deg, #fff 0%, #f9fbff 100%); margin-bottom: 40px;">
+          <h2 style="margin-top:0; color:var(--accent2); font-size: 24px;">💡 現場で役立つ「食品安全教育アプリ」</h2>
+          <p>
+            本記事で解説した食中毒菌の知識を、従業員の皆様全員で共有しませんか？<br>
+            弊社の「食品安全教育アプリ」なら、スマホ一つでいつでもどこでも、画像やクイズ形式で楽しく食品安全を学べます。
+          </p>
+          <div class="ctaGrid">
+            <a href="./education-app.html" class="btn dark">詳しく見る（紹介ページ）</a>
+            <a href="https://education-df16f.web.app/" target="_blank" class="btn primary">アプリを試してみる（無料）</a>
+          </div>
+          <p class="note" style="margin-top:14px;">※法人導入やカスタマイズのご相談も承っております。</p>
+        </div>
+
+        <div class="pager">
+          <a href="./column-7.html">← 前の記事へ</a>
+          <a href="./column.html">一覧へ →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 食品安全パートナーズ</div>
+</footer>
+
+<script>(() => {
+  const toTop = document.getElementById("toTop");
+  const bar = document.getElementById("progress");
+  const onScroll = () => {
+    const d = document.documentElement;
+    const max = (d.scrollHeight - d.clientHeight) || 1;
+    bar.style.width = (d.scrollTop / max) * 100 + "%";
+    toTop.classList.toggle("show", d.scrollTop > 600);
+  };
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const targets = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+    targets.forEach(el => io.observe(el));
+  }
+})();</script>
+</body>
+</html>

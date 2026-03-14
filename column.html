@@ -1,331 +1,638 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>コラム｜食品安全パートナーズ</title>
-<meta name="description" content="食品安全パートナーズのコラム一覧。JFS-B、HACCP、ISO22000支援、運用定着など、現場で続く食品安全の考え方を整理します。">
-<meta name="keywords" content="JFS-B, HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援">
-<style>:root{
-  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
-  --accent:#e0872a; --accent2:#2c567a;
-  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
-  --w:1180px;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>コラム｜食品安全パートナーズ</title>
+  <meta name="description" content="食品安全パートナーズのコラム一覧。JFS-B、HACCP、ISO22000支援、運用定着など、現場で続く食品安全の考え方を整理します。">
+  <meta name="keywords" content="JFS-B, HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援">
+
+  <!-- 構造化データ（Breadcrumb） -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "トップ",
+    "item": "https://foodsafety-partners.github.io/foodsafety-site/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "コラム一覧",
+    "item": "https://foodsafety-partners.github.io/foodsafety-site/column.html"
+  }]
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--w);margin:0 auto;padding:0 18px}
-
-#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
-#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
-  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
-#toTop.show{opacity:1;transform:none}
-
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
-  border-bottom:1px solid rgba(27,37,51,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:40px;width:auto}
-.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042;margin-left:auto;margin-right:10px}
-.menu a{opacity:.82}
-.menu a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
-.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
-.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
-.btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-
-.section{padding:44px 0 66px;scroll-margin-top:90px}
-.sectionTitle{text-align:center;margin:0 0 10px;font-size:22px}
-.sectionLead{text-align:center;margin:0 auto 22px;color:var(--muted);font-weight:850;font-size:13px;max-width:900px;line-height:1.9}
-
-.panel{
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
-}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-
-.cardLink{
-  background:#fff;border:1px solid rgba(27,37,51,.10);border-radius:18px;
-  padding:14px; display:flex; flex-direction:column; gap:12px;
-}
-.cardLink:hover{border-color:rgba(44,86,122,.25)}
-.cardLink:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
-
-.cover{
-  border-radius:16px;
-  border:1px solid rgba(27,37,51,.10);
-  background:
-    radial-gradient(1000px 400px at 25% 15%, rgba(255,255,255,.65), transparent 60%),
-    linear-gradient(135deg, rgba(44,86,122,.25), rgba(224,135,42,.22)),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
-  padding:16px;
-  min-height:130px;
-  display:flex;align-items:flex-start;
-  box-shadow:0 12px 26px rgba(24,32,48,.08);
-}
-.cover h3{margin:0;font-size:18px;line-height:1.35;letter-spacing:.01em}
-
-.excerpt{margin:0;color:var(--muted);font-weight:850;font-size:13px;line-height:1.8}
-.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
-.tag{
-  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;
-  border:1px solid rgba(27,37,51,.12);background:#fff;color:#243042;
-  font-weight:900;font-size:12px;
-}
-.badgeNo{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:28px;height:28px;border-radius:999px;
-  background:rgba(44,86,122,.14);
-  border:1px solid rgba(44,86,122,.18);
-  font-weight:1000;
-}
-
-.splitHead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 10px}
-.splitHead h2{margin:0;font-size:18px}
-.splitHead .mini{color:var(--muted);font-weight:850;font-size:12px}
-
-.ctaBar{
-  display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;
-  margin-top:14px;
-}
-
-.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
-
-/* 追加：公開前カード（リンク無効） */
-.cardLink.disabled{
-  opacity:.6;
-  cursor:not-allowed;
-  pointer-events:none;
-}
-
-@media (prefers-reduced-motion:no-preference){
-  .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
-  .reveal.show{opacity:1;transform:none}
-}
-@media(max-width:980px){
-  .menu{display:none}
-  .grid3,.grid4{grid-template-columns:1fr}
-  .cover{min-height:120px}
-}</style>
-</head>
-<body>
-<div id="progress"></div>
-<a id="toTop" href="./column.html#" aria-label="ページ先頭へ">↑</a>
-
-<header class="header">
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
-        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
-      </a>
-      <nav class="menu" aria-label="メニュー">
-        <a href="./index.html#services">サービス</a>
-        <a href="./download.html">無料特典</a>
-        <a href="./index.html#books">書籍</a>
-        <a href="./index.html#consult">無料相談</a>
-      </nav>
-      <a class="btn primary" href="./download.html">無料特典</a>
-    </div>
-  </div>
-</header>
-
-<section class="section">
-  <div class="container">
-    <h1 class="sectionTitle reveal">コラム</h1>
-    <p class="sectionLead reveal">
-      JFS-B／HACCP／ISO22000支援、そして「運用が続く」設計の考え方を、現場目線で整理します。<br>
-      中小食品企業でも無理なく回る形に落とし込むことを大切にしています。
-    </p>
-
-    <!-- 人気TOP3（JSで自動生成） -->
-    <div class="panel reveal" id="popular">
-      <div class="splitHead">
-        <h2>人気コラム TOP3</h2>
-      </div>
-      <div class="grid3" id="popularGrid"></div>
-
-      <div class="ctaBar">
-        <a class="btn dark" href="./index.html#consult">30分無料相談</a>
-        <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
-        <a class="btn" href="./index.html">トップへ戻る</a>
-      </div>
-    </div>
-
-    <!-- すべてのコラム（JSで自動生成） -->
-    <div style="height:16px"></div>
-    <div class="panel reveal" id="all">
-      <div class="splitHead">
-        <h2>すべてのコラム</h2>
-      </div>
-
-      <div class="grid4" id="allGrid"></div>
-
-      <div class="ctaBar">
-        <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
-        <a class="btn dark" href="./index.html#consult">30分無料相談</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">© 食品安全パートナーズ</div>
-</footer>
-
-<script>
-(() => {
-  // ============================================================
-  // [EDIT MARKER #A] コラム一覧データ（ここだけ編集すればOK）
-  // - published: true ならリンク有効 / false なら準備中表示（リンク無効）
-  // - popularRank: 1〜3 を付けたものが人気TOP3に表示
-  // - TOP3（index.htmlと同じ並びに統一）
-  //    1位: column-7 / 2位: column-1 / 3位: column-2
-  // ============================================================
-  const columns = [
-    // ====== 人気TOP3（popularRank を 1〜3 に振る）======
-    {
-      id: 7,
-      href: "./column-7.html",
-      title: "JFS-B審査で実際に見られる5つのポイント<br>【中小食品企業向け】",
-      excerpt: "JFS-B審査で確認されやすい「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を、審査前に“何から点検するか”の順序で整理。限られた人手でもHACCP構築を前に進めたい中小食品企業向けの実務ポイントです。",
-      tags: ["JFS-B審査","HACCP構築","ハザード分析","中小食品企業"],
-      published: true,
-      popularRank: 1
-    },
-    {
-      id: 1,
-      href: "./column-1.html",
-      title: "形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方",
-      excerpt: "HACCP構築でつまずきやすい「工程把握→ハザード分析→管理手段の根拠」を、JFS-Bの審査観点に合わせて解説。審査で“説明できる”形に整える順序が分かります。",
-      tags: ["HACCP構築","JFS-B","工程把握","ハザード分析"],
-      published: true,
-      popularRank: 2
-    },
-    {
-      id: 2,
-      href: "./column-2.html",
-      title: "HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ",
-      excerpt: "人手不足・属人化でも回る「記録の最小セット」と運用ルール（頻度／責任者／是正の流れ）を整理。JFS-B審査前に慌てないための“継続できる仕組み”が分かります。",
-      tags: ["記録","運用定着","中小食品企業","HACCP"],
-      published: true,
-      popularRank: 3
-    },
-
-    // ====== ここから下：全コラム一覧（id順に並べると管理が楽）======
-    {
-      id: 3,
-      href: "./column-3.html",
-      title: "審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット",
-      excerpt: "“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を整理します。",
-      tags: ["HACCP","JFS-B","検証","是正"],
-      published: true
-    },
-
-    /* ==========================================================
-       [EDIT MARKER #B] column-4.html は未作成：準備中として表示
-       - published:false のためリンク無効（クリックできない）
-       - column-4.html を作ったら published:true に変更するだけ
-       ========================================================== */
- {
-  id: 4,
-  href: "./column-4.html",
-  title: "食品事故が起きる企業の特徴。<br>「仕組み」より先に整えるべき4つの癖",
-  excerpt: "食品事故は偶然ではなく「小さな異常の蓄積」で起きます。記録の目的化、ハザード分析の形骸化、属人化、共有不足、優先順位の曖昧さ——事故を未然に防ぐための実務ポイントを整理します。",
-  tags: ["食品事故","HACCP","運用","マネジメント"],
-  published: true
-},
-
-    {
-      id: 5,
-      href: "./column-5.html",
-      title: "経営者のための食品安全。<br>投資対効果が出る“最小の仕組み”と意思決定",
-      excerpt: "現場に丸投げしない。事故・監査・取引要件に強い体制を、コストを抑えて作る考え方を整理。",
-      tags: ["経営","リスク","体制"],
-      published: true
-    },
-    {
-      id: 6,
-      href: "./column-6.html",
-      title: "食品安全は“コスト”ではなく“信用の投資”<br>経営者が押さえる3つの意思決定",
-      excerpt: "食品安全を「信用への投資」と捉え、事故確率を下げる“要所”に集中する設計を整理。HACCP／JFS-B／ISO22000の観点で、①停止基準②回る最小セット③報告文化を実務目線で解説します。",
-      tags: ["経営","食品安全","HACCP","JFS-B","ISO22000"],
-      published: true
+</script>
+  <style>
+    :root {
+      --ink: #1b2533;
+      --muted: #5a6475;
+      --line: #d9dde6;
+      --accent: #e0872a;
+      --accent2: #2c567a;
+      --soft: #eef1f6;
+      --shadow: 0 16px 40px rgba(24, 32, 48, .18);
+      --w: 1180px;
     }
-  ];
 
-  // ---------- DOM参照 ----------
-  const popularGrid = document.getElementById("popularGrid");
-  const allGrid = document.getElementById("allGrid");
+    * {
+      box-sizing: border-box
+    }
 
-  // ---------- カード生成 ----------
-  const esc = (s) => String(s ?? "");
-  const renderTags = (tags=[]) => tags.map(t => `<span class="tag">${esc(t)}</span>`).join("");
+    html {
+      scroll-behavior: smooth
+    }
 
-  function cardHTML(c, { showRank=false } = {}) {
-    const isDisabled = !c.published;
-    const cls = `cardLink${isDisabled ? " disabled" : ""}`;
-    const hrefAttr = isDisabled ? "" : `href="${esc(c.href)}"`;
-    const aria = isDisabled
-      ? `aria-label="コラム${c.id}：準備中"`
-      : `aria-label="コラム${c.id}：記事へ"`;
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--soft);
+      color: var(--ink)
+    }
 
-    const rankBadge = showRank
-      ? `<span class="badgeNo" aria-hidden="true">${esc(c.popularRank)}</span>`
-      : "";
+    a {
+      color: inherit;
+      text-decoration: none
+    }
 
-    const titleBlock = showRank
-      ? `<div style="display:flex;gap:10px;align-items:flex-start">${rankBadge}<h3>${c.title}</h3></div>`
-      : `<h3>${c.title}</h3>`;
+    .container {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 18px
+    }
 
-    const excerpt = isDisabled ? "準備中（公開後に自動で一覧に反映されます）" : esc(c.excerpt);
+    #progress {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      z-index: 9999
+    }
 
-    return `
+    #toTop {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, .12);
+      background: rgba(255, 255, 255, .92);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+      font-weight: 1000;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .25s ease;
+      z-index: 9999
+    }
+
+    #toTop.show {
+      opacity: 1;
+      transform: none
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .86);
+      backdrop-filter: saturate(1.2) blur(10px);
+      border-bottom: 1px solid rgba(27, 37, 51, .08)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .brand img {
+      height: 40px;
+      width: auto
+    }
+
+    .menu {
+      display: flex;
+      gap: 16px;
+      font-weight: 900;
+      font-size: 14px;
+      color: #243042;
+      margin-left: auto;
+      margin-right: 10px
+    }
+
+    .menu a {
+      opacity: .82
+    }
+
+    .menu a:hover {
+      opacity: 1
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-weight: 1000;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .25);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .14)
+    }
+
+    .btn.dark {
+      background: var(--accent2);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .18)
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid rgba(224, 135, 42, .35);
+      outline-offset: 3px
+    }
+
+    .section {
+      padding: 44px 0 66px;
+      scroll-margin-top: 90px
+    }
+
+    .sectionTitle {
+      text-align: center;
+      margin: 0 0 10px;
+      font-size: 22px
+    }
+
+    .sectionLead {
+      text-align: center;
+      margin: 0 auto 22px;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+      max-width: 900px;
+      line-height: 1.9
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .grid4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px
+    }
+
+    .cardLink {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 18px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cardLink:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .cardLink:focus-visible {
+      outline: 3px solid rgba(224, 135, 42, .35);
+      outline-offset: 3px
+    }
+
+    .cover {
+      border-radius: 16px;
+      border: 1px solid rgba(27, 37, 51, .10);
+      background:
+        radial-gradient(1000px 400px at 25% 15%, rgba(255, 255, 255, .65), transparent 60%),
+        linear-gradient(135deg, rgba(44, 86, 122, .25), rgba(224, 135, 42, .22)),
+        linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .78));
+      padding: 16px;
+      min-height: 130px;
+      display: flex;
+      align-items: flex-start;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .08);
+    }
+
+    .cover h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: .01em
+    }
+
+    .excerpt {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+      line-height: 1.8
+    }
+
+    .tagRow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      color: #243042;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .badgeNo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(44, 86, 122, .14);
+      border: 1px solid rgba(44, 86, 122, .18);
+      font-weight: 1000;
+    }
+
+    .splitHead {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 10px
+    }
+
+    .splitHead h2 {
+      margin: 0;
+      font-size: 18px
+    }
+
+    .splitHead .mini {
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12px
+    }
+
+    .ctaBar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+    }
+
+    .footer {
+      padding: 18px 0 28px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fff
+    }
+
+    /* 追加：公開前カード（リンク無効） */
+    .cardLink.disabled {
+      opacity: .6;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion:no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: .7s ease
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @media(max-width:980px) {
+      .menu {
+        display: none
+      }
+
+      .grid3,
+      .grid4 {
+        grid-template-columns: 1fr
+      }
+
+      .cover {
+        min-height: 120px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="progress"></div>
+  <a id="toTop" href="./column.html#" aria-label="ページ先頭へ">↑</a>
+
+  <header class="header">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+          <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+        </a>
+        <nav class="menu" aria-label="メニュー">
+          <a href="./index.html#services">サービス</a>
+          <a href="./download.html">無料特典</a>
+          <a href="./index.html#books">書籍</a>
+          <a href="./index.html#consult">無料相談</a>
+        </nav>
+        <a class="btn primary" href="./download.html">無料特典</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="sectionTitle reveal">コラム</h1>
+      <p class="sectionLead reveal">
+        JFS-B／HACCP／ISO22000支援、そして「運用が続く」設計の考え方を、現場目線で整理します。<br>
+        中小食品企業でも無理なく回る形に落とし込むことを大切にしています。
+      </p>
+
+      <!-- 人気TOP3（JSで自動生成） -->
+      <div class="panel reveal" id="popular">
+        <div class="splitHead">
+          <h2>人気コラム TOP3</h2>
+        </div>
+        <div class="grid3" id="popularGrid"></div>
+
+        <div class="ctaBar">
+          <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+          <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
+          <a class="btn" href="./index.html">トップへ戻る</a>
+        </div>
+      </div>
+
+      <!-- すべてのコラム（JSで自動生成） -->
+      <div style="height:16px"></div>
+      <div class="panel reveal" id="all">
+        <div class="splitHead">
+          <h2>すべてのコラム</h2>
+        </div>
+
+        <div class="grid4" id="allGrid"></div>
+
+        <div class="ctaBar">
+          <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
+          <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© 食品安全パートナーズ</div>
+  </footer>
+
+  <script>
+    (() => {
+      // ============================================================
+      // [EDIT MARKER #A] コラム一覧データ（ここだけ編集すればOK）
+      // - published: true ならリンク有効 / false なら準備中表示（リンク無効）
+      // - popularRank: 1〜3 を付けたものが人気TOP3に表示
+      // - TOP3（index.htmlと同じ並びに統一）
+      //    1位: column-7 / 2位: column-1 / 3位: column-2
+      // ============================================================
+      const columns = [
+        // ====== 人気TOP3（popularRank を 1〜3 に振る）======
+        {
+          id: 7,
+          href: "./column-7.html",
+          title: "JFS-B審査で実際に見られる5つのポイント<br>【中小食品企業向け】",
+          excerpt: "JFS-B審査で確認されやすい「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を、審査前に“何から点検するか”の順序で整理。限られた人手でもHACCP構築を前に進めたい中小食品企業向けの実務ポイントです。",
+          tags: ["JFS-B審査", "HACCP構築", "ハザード分析", "中小食品企業"],
+          published: true,
+          popularRank: 2
+        },
+        {
+          id: 1,
+          href: "./column-1.html",
+          title: "形だけのHACCPを卒業する。<br>JFS-Bを見据えた「現場で回る仕組み」の作り方",
+          excerpt: "HACCP構築でつまずきやすい「工程把握→ハザード分析→管理手段の根拠」を、JFS-Bの審査観点に合わせて解説。審査で“説明できる”形に整える順序が分かります。",
+          tags: ["HACCP構築", "JFS-B", "工程把握", "ハザード分析"],
+          published: true,
+          popularRank: 3
+        },
+        {
+          id: 2,
+          href: "./column-2.html",
+          title: "HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ",
+          excerpt: "人手不足・属人化でも回る「記録の最小セット」と運用ルール（頻度／責任者／是正の流れ）を整理。JFS-B審査前に慌てないための“継続できる仕組み”が分かります。",
+          tags: ["記録", "運用定着", "中小食品企業", "HACCP"],
+          published: true
+        },
+
+        // ====== ここから下：全コラム一覧（id順に並べると管理が楽）======
+        {
+          id: 3,
+          href: "./column-3.html",
+          title: "審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット",
+          excerpt: "“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を整理します。",
+          tags: ["HACCP", "JFS-B", "検証", "是正"],
+          published: true
+        },
+
+        /* ==========================================================
+           [EDIT MARKER #B] column-4.html は未作成：準備中として表示
+           - published:false のためリンク無効（クリックできない）
+           - column-4.html を作ったら published:true に変更するだけ
+           ========================================================== */
+        {
+          id: 4,
+          href: "./column-4.html",
+          title: "食品事故が起きる企業の特徴。<br>「仕組み」より先に整えるべき4つの癖",
+          excerpt: "食品事故は偶然ではなく「小さな異常の蓄積」で起きます。記録の目的化、ハザード分析の形骸化、属人化、共有不足、優先順位の曖昧さ——事故を未然に防ぐための実務ポイントを整理します。",
+          tags: ["食品事故", "HACCP", "運用", "マネジメント"],
+          published: true
+        },
+
+        {
+          id: 5,
+          href: "./column-5.html",
+          title: "経営者のための食品安全。<br>投資対効果が出る“最小の仕組み”と意思決定",
+          excerpt: "現場に丸投げしない。事故・監査・取引要件に強い体制を、コストを抑えて作る考え方を整理。",
+          tags: ["経営", "リスク", "体制"],
+          published: true
+        },
+        {
+          id: 6,
+          href: "./column-6.html",
+          title: "食品安全は“コスト”ではなく“信用の投資”<br>経営者が押さえる3つの意思決定",
+          excerpt: "食品安全を「信用への投資」と捉え、事故確率を下げる“要所”に集中する設計を整理。HACCP／JFS-B／ISO22000の観点で、①停止基準②回る最小セット③報告文化を実務目線で解説します。",
+          tags: ["経営", "食品安全", "HACCP", "JFS-B", "ISO22000"],
+          published: true
+        },
+        {
+          id: 8,
+          href: "./column-8.html",
+          title: "食品安全にかかわる主な微生物（食中毒菌・ウイルス）の特徴と対策",
+          excerpt: "現場の衛生管理で知っておくべき主要な食中毒菌とウイルスの特徴、原因食品、適切な対策（予防法）を網羅的に解説します。一覧表あり。",
+          tags: ["基礎知識", "食中毒菌", "HACCP構築"],
+          published: true,
+          popularRank: 1
+        },
+        {
+          id: 9,
+          href: "./column-9.html",
+          title: "監査で何度も突き返される…！「不適合（指摘事項）」に対する是正処置の書き方と根本原因分析",
+          excerpt: "「清掃を徹底します」という回答がなぜ突き返されるのか？監査員が求める「修正」と「是正処置」の決定的な違いから、なぜなぜ分析、水平展開の手法までプロが解説します。",
+          tags: ["JFS-B審査", "HACCP構築", "是正処置", "内部監査"],
+          published: true
+        },
+        {
+          id: 10,
+          href: "./column-10.html",
+          title: "もうクレームを出さない！食品工場における「異物（毛髪・虫）混入」の発生原因と、現場でできる防ぎ方",
+          excerpt: "食品工場の最大のリスクである「異物混入」。なぜ混入は起きるのか？ハード面・ソフト面からの総合的なアプローチと実践的な防ぎ方をプロが解説します。",
+          tags: ["異物混入", "PRP（前提条件プログラム）", "品質管理"],
+          published: true
+        },
+        {
+          id: 11,
+          href: "./column-11.html",
+          title: "食品工場の「5S活動」が定着しない3つの理由。現場が自発的に動く『仕組み化』のコツ",
+          excerpt: "食品工場で「5S」が定着しない原因は「目的の不明確さ」等にあります。HACCPの土台となる5Sを、仕組みとして現場に根付かせるコツを解説します。",
+          tags: ["5S活動", "社内教育", "一般的衛生管理"],
+          published: true
+        },
+        {
+          id: 12,
+          href: "./column-12.html",
+          title: "外国人・パートスタッフにも確実に伝わる！手戻りをなくす「食品衛生の教育ルール」とマニュアル作成術",
+          excerpt: "食品工場での従業員教育（新人、パート、外国人労働者）の悩みを解決する教育体制の作り方。言葉の壁を越えるビジュアルマニュアルや教育アプリの活用法。",
+          tags: ["社内教育", "外国人スタッフ", "HACCP"],
+          published: true
+        },
+        {
+          id: 13,
+          href: "./column-13.html",
+          title: "「万が一」に備える！法改正に対応した食品回収（リコール）の初動対応と、被害を最小限に抑える体制づくり",
+          excerpt: "義務化された「自主回収（リコール）の行政報告」。厚労省システムを利用した具体的な報告手順と、回収被害を抑えるHACCP・トレーサビリティ体制を解説。",
+          tags: ["法改正対応", "リコール（食品回収）", "HACCP"],
+          published: true
+        },
+        {
+          id: 14,
+          href: "./column-14.html",
+          title: "JFS-B審査で问われる「サプライヤー（購買先）管理」。危険な原料を工場に入れないための防波堤づくり",
+          excerpt: "食品安全は自社の工場内だけでは完結しません。JFS-B規格で必ず求められる「サプライヤーの評価・管理手順」について、未承認原料の流入を防ぐ仕組みを解説します。",
+          tags: ["JFS-B審査", "サプライヤー管理", "購買ルール"],
+          published: true
+        }
+      ];
+
+      // ---------- DOM参照 ----------
+      const popularGrid = document.getElementById("popularGrid");
+      const allGrid = document.getElementById("allGrid");
+
+      // ---------- カード生成 ----------
+      const esc = (s) => String(s ?? "");
+      const renderTags = (tags = []) => tags.map(t => `<span class="tag">${esc(t)}</span>`).join("");
+
+      function cardHTML(c, { showRank = false } = {}) {
+        const isDisabled = !c.published;
+        const cls = `cardLink${isDisabled ? " disabled" : ""}`;
+        const hrefAttr = isDisabled ? "" : `href="${esc(c.href)}"`;
+        const aria = isDisabled
+          ? `aria-label="コラム${c.id}：準備中"`
+          : `aria-label="コラム${c.id}：記事へ"`;
+
+        const rankBadge = showRank
+          ? `<span class="badgeNo" aria-hidden="true">${esc(c.popularRank)}</span>`
+          : "";
+
+        const titleBlock = showRank
+          ? `<div style="display:flex;gap:10px;align-items:flex-start">${rankBadge}<h3>${c.title}</h3></div>`
+          : `<h3>${c.title}</h3>`;
+
+        const excerpt = isDisabled ? "準備中（公開後に自動で一覧に反映されます）" : esc(c.excerpt);
+
+        return `
       <a class="${cls}" ${hrefAttr} ${aria}>
         <div class="cover">${titleBlock}</div>
         <p class="excerpt">${excerpt}</p>
         <div class="tagRow">${renderTags(c.tags)}</div>
       </a>
     `;
-  }
+      }
 
-  // ---------- 人気TOP3 ----------
-  const popular = columns
-    .filter(c => Number(c.popularRank) >= 1 && Number(c.popularRank) <= 3)
-    .sort((a,b) => a.popularRank - b.popularRank);
+      // ---------- 人気TOP3 ----------
+      const popular = columns
+        .filter(c => Number(c.popularRank) >= 1 && Number(c.popularRank) <= 3)
+        .sort((a, b) => a.popularRank - b.popularRank);
 
-  popularGrid.innerHTML = popular.map(c => cardHTML(c, { showRank:true })).join("");
+      popularGrid.innerHTML = popular.map(c => cardHTML(c, { showRank: true })).join("");
 
-  // ---------- すべてのコラム ----------
-  const all = [...columns].sort((a,b) => a.id - b.id);
-  allGrid.innerHTML = all.map(c => cardHTML(c)).join("");
+      // ---------- すべてのコラム ----------
+      const all = [...columns].sort((a, b) => a.id - b.id);
+      allGrid.innerHTML = all.map(c => cardHTML(c)).join("");
 
-  // ---------- スクロールUI ----------
-  const toTop = document.getElementById("toTop");
-  const bar = document.getElementById("progress");
-  const onScroll = () => {
-    const d = document.documentElement;
-    const max = (d.scrollHeight - d.clientHeight) || 1;
-    bar.style.width = (d.scrollTop / max) * 100 + "%";
-    toTop.classList.toggle("show", d.scrollTop > 600);
-  };
-  window.addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
+      // ---------- スクロールUI ----------
+      const toTop = document.getElementById("toTop");
+      const bar = document.getElementById("progress");
+      const onScroll = () => {
+        const d = document.documentElement;
+        const max = (d.scrollHeight - d.clientHeight) || 1;
+        bar.style.width = (d.scrollTop / max) * 100 + "%";
+        toTop.classList.toggle("show", d.scrollTop > 600);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
 
-  // ---------- reveal ----------
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const targets = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.12 });
-    targets.forEach(el => io.observe(el));
-  }
-})();
-</script>
+      // ---------- reveal ----------
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const targets = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+        }, { threshold: 0.12 });
+        targets.forEach(el => io.observe(el));
+      }
+    })();
+  </script>
 </body>
+
 </html>

@@ -3,26 +3,59 @@
 
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/</loc>
-  </url>
-
-  <url>
-    <loc>https://foodsafety-partners.github.io/foodsafety-site/index.html</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
 
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/service.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/pricing.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://foodsafety-partners.github.io/foodsafety-site/chusho.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/column.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
 
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/download.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
+
+  <!-- Columns -->
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-1.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-2.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-3.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-4.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-5.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-6.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-7.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-8.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-9.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-10.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-11.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-12.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-13.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/column-14.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Apps and Checks -->
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/education-app.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/haccp-check.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://foodsafety-partners.github.io/foodsafety-site/jfs-b-check.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
 </urlset>

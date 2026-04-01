@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>監査で何度も突き返される…！「不適合（指摘事項）」に対する是正処置の書き方と根本原因分析｜食品安全パートナーズ</title>
+  <meta name='robots' content='index,follow'>
+  <link rel='canonical' href='https://foodsafety-partners.github.io/foodsafety-site/column-9.html'>
+<meta name="description" content="HACCPやJFS-B審査で「不適合（指摘事項）」を何度も突き返されていませんか？監査員が求める「修正」と「是正処置」の決定的な違いから、なぜなぜ分析の具体的手法までプロが徹底解説。【審査通過率を上げる無料HACCP診断実施中】">
+<meta name="keywords" content="JFS-B, HACCP, 監査, 指摘事項, 不適合, 是正処置, なぜなぜ分析, 水平展開">
+
+<style>
+/* ============================================================
+   1カラム記事デザイン（インライン版）
+   ============================================================ */
+:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
+#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
+#toTop.show{opacity:1;transform:none}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid rgba(27,37,51,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:40px;width:auto}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
+.menu a{opacity:.82}
+.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+.btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
+
+.section{padding:44px 0 66px}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:18px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
+  background:#fff;color:#243042;font-weight:900;font-size:12px}
+
+.articleHead{
+  text-align:center;max-width:800px;margin:0 auto 32px;
+}
+.articleHead h1{font-size:26px;font-weight:1000;line-height:1.45;letter-spacing:-0.03em;margin:16px 0 12px;
+  background:linear-gradient(90deg,var(--accent2),#1b2533);-webkit-background-clip:text;color:transparent}
+.articleHead .meta{font-size:14px;color:var(--muted);font-weight:700}
+
+/* 画像プレースホルダー（画像生成エラー時の仮手当て） */
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #1b2533 0%, var(--accent2) 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 24px rgba(27,37,51,.2);
+  text-align: center;
+  padding: 20px;
+}
+.image-placeholder .icon {
+  font-size: 64px;
+  margin-bottom: 12px;
+}
+.image-placeholder .title {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.prose{max-width:720px;margin:0 auto;font-size:16px;line-height:1.8;color:var(--ink)}
+.prose p{margin:0 0 24px}
+.prose h2{font-size:22px;font-weight:1000;color:var(--accent2);border-bottom:3px solid var(--accent);padding-bottom:8px;margin:50px 0 20px;line-height:1.4}
+.prose h3{font-size:19px;font-weight:900;color:#1b2533;margin:36px 0 16px;display:flex;align-items:center;gap:8px}
+.prose h3::before{content:"";display:block;width:6px;height:24px;background:var(--accent);border-radius:4px}
+.prose ul, .prose ol{margin:0 0 24px;padding-left:24px;color:#243042}
+.prose li{margin-bottom:8px}
+
+.bad-example {
+  background: #fff5f5;
+  border-left: 4px solid #e53e3e;
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+.bad-example p { margin: 0; color: #9b2c2c; font-weight: 700; }
+.bad-example .label { display: inline-block; background: #e53e3e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-bottom: 8px; }
+
+.good-example {
+  background: #f0fff4;
+  border-left: 4px solid #38a169;
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+.good-example p { margin: 0; color: #22543d; font-weight: 700; }
+.good-example .label { display: inline-block; background: #38a169; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-bottom: 8px; }
+
+.callout{background:rgba(224,135,42,.06);border:1px solid rgba(224,135,42,.2);border-left:4px solid var(--accent);padding:18px 20px;border-radius:8px;margin:32px 0}
+.k{background:linear-gradient(transparent 60%,rgba(224,135,42,.3) 60%);font-weight:bold;color:#111822}
+
+.ctaCard{background:#f8fafc;border:2px solid var(--line);border-radius:16px;padding:24px;text-align:center;margin:40px 0}
+.ctaGrid{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
+@media(min-width:600px){ .ctaGrid{grid-template-columns:1fr 1fr} }
+.note{font-size:13px;color:var(--muted)}
+
+.pager{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:24px;margin-top:48px;font-weight:900;color:var(--accent2)}
+.pager a:hover{text-decoration:underline;text-underline-offset:4px}
+
+.footer{background:#111;color:#fff;text-align:center;padding:20px;font-weight:800;font-size:14px;letter-spacing:.05em}
+
+@media(max-width:768px){
+  .articleHead h1{font-size:22px}
+  .prose h2{font-size:20px}
+  .prose h3{font-size:18px}
+  .image-placeholder .icon {font-size: 48px;}
+  .image-placeholder .title {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<button id="toTop" onclick="window.scrollTo(0,0)">↑ TOP</button>
+
+<header class="header">
+  <div class="container nav">
+    <a href="./index.html" class="brand">
+      <img src="./assets/img/logo.png" alt="食品安全パートナーズ">
+    </a>
+    <div class="menu" style="display:none">
+      <a href="./profile.html">専門家紹介</a>
+      <a href="./pricing.html">サービスと料金</a>
+      <a href="./column.html">コラム</a>
+    </div>
+    <a href="./index.html#consult" class="btn primary" style="font-size:13px;padding:8px 12px">無料相談</a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container reveal">
+
+    <div class="card" style="border:none;box-shadow:none;background:transparent;padding:0">
+      <div class="articleHead">
+        <span class="tag">#HACCP / JFS-B</span>
+        <span class="tag">#監査・審査</span>
+        <span class="tag">#品質管理</span>
+        <h1>監査で何度も突き返される…！「不適合（指摘事項）」に対する是正処置の書き方と根本原因分析</h1>
+        <div class="meta">公開日：2026/03/10 ｜ 執筆者：食品安全コンサルタント</div>
+      </div>
+
+      <!-- 画像生成エラーのための一時的なプレースホルダー -->
+      <div class="image-placeholder">
+        <div class="icon">📋✔️</div>
+        <div class="title">監査の「指摘事項」一発クリア術</div>
+      </div>
+
+      <div class="prose">
+        <p>JFS-BやHACCPなどの第三者監査・審査を受けた後、最も担当者を悩ませるのが<strong>「不適合（指摘事項）に対する是正処置報告書の提出」</strong>です。</p>
+        <p>「担当者をきつく指導しました」「手順書を壁に貼り出しました」「清掃を徹底します」と書いて提出したのに、監査員から<strong>「それは是正処置になっていません」「根本原因は別にあるはずです」</strong>と突き返されてしまった経験はありませんか？期限が迫る中、これ以上どう書けばいいのか分からず、頭を抱える品質管理担当者は非常に多いです。</p>
+        <p>本コラムでは、監査員が本当に求めている「是正処置」の考え方から、審査を一発でクリアするための「原因分析」と「水平展開」の技術を、具体的な例文を交えて分かりやすく解説します。</p>
+
+        <h2>1. 「修正」と「是正処置」の決定的な違い</h2>
+        <p>是正処置報告書が突き返される最大の理由は、<strong>「修正」と「是正処置」を混同していること</strong>にあります。この二つは、食品安全マネジメントシステム（ISOやHACCP、JFS規格など）において明確に区別されています。</p>
+        
+        <h3>① 修正（Correction）とは？</h3>
+        <p>「修正」とは、<strong>今起きている問題（不適合）をとりあえず取り除く、その場しのぎの応急処置</strong>のことです。</p>
+        <ul>
+          <li><strong>事例：</strong>床にゴミが落ちていた（指摘）</li>
+          <li><strong>修正：</strong>そのゴミをすぐに拾って捨てた、清掃した。</li>
+        </ul>
+        <p>監査員から見れば「ゴミを拾うのは当たり前」です。「よし、直したから合格」とはなりません。なぜなら、明日また同じようにゴミが落ちる可能性が高いからです。</p>
+
+        <h3>② 是正処置（Corrective Action）とは？</h3>
+        <p>「是正処置」とは、<strong>その不適合が起きた「根本的な原因（ルート・コーズ）」を突き止め、二度と同じことが起きないような仕組み（再発防止策）を作ること</strong>です。</p>
+        <p>なぜ床にゴミが落ちていたのか？「担当者の意識が低かった」ではなく、「ゴミ箱の配置が悪くて捨てにくい」「作業スピードに対して清掃の時間が割り当てられていない」「そもそもゴミが発生しやすい包材を使っている」といった<strong>「仕組み（システム）の欠陥」</strong>を見つけ出し、そこを改善することが求められているのです。</p>
+
+        <h2>2. 【例文あり】「なぜなぜ分析」で根本原因を見つける</h2>
+        <p>是正処置を書く上で欠かせないのが、トヨタ生産方式などでも知られる<strong>「なぜなぜ分析」</strong>です。「なぜ？」を繰り返すことで、個人のミスという表面的な理由から、組織や仕組みの欠陥という根本原因へと深掘りしていきます。</p>
+        <p>例えば、<strong>「重要管理点（CCP）である加熱工程で、温度記録の記入漏れがあった」</strong>という監査の指摘事項への回答を比較してみましょう。</p>
+
+        <div class="bad-example">
+          <span class="label">❌ 突き返されるダメな報告書（修正レベル）</span>
+          <p>【原因】担当者のAさんが忙しくて、うっかり記録に記入し忘れてしまったため。<br>
+          【対策】Aさんをはじめ、製造スタッフ全員に「必ず記録を書くように」と厳しく指導・再教育を行った。現場にも注意喚起のポスターを貼った。</p>
+        </div>
+        <p>これは典型的な「個人の不注意」に責任を押し付けただけの回答です。人間の注意力には限界があるため、監査員は「厳しく指導したところで、また忘れるよね？」と判断して絶対に不合格（再提出）とします。</p>
+
+        <div class="good-example">
+          <span class="label">⭕ 監査員が納得する報告書（原因分析と是正）</span>
+          <p><strong>【なぜなぜ分析】</strong><br>
+          なぜ記録漏れが起きた？ → 担当者が加熱作業の直後に記録用紙の場所まで移動できなかったから。<br>
+          なぜ移動できなかった？ → 加熱終了後、すぐに次の鍋の準備に取り掛からなければならない作業ダイヤになっていたから。<br>
+          なぜそのようなダイヤになっている？ → <strong>【根本原因】</strong>人員配置と作業設計上、記録に割くための標準時間（1分間）が組み込まれていなかったため。<br><br>
+          <strong>【是正処置（再発防止策）】</strong><br>
+          作業工程表（ダイヤ）を見直し、加熱作業間に「記録・確認」のためのインターバル（2分間）を必ず設けるようルールを変更した。また、記録バインダーの配置を加熱釜のすぐ横にフックで吊るす形に変更し、歩行移動せずにその場で即座に記録できるよう<span class="k">動線（ハード面）の改善</span>を行った。</p>
+        </div>
+        <p>このように、「精神論（気をつける）」ではなく「仕組みと環境（ルールや設備）」を変えるアプローチこそが正しい是正処置です。</p>
+
+        <h2>3. 仕上げに必要な「水平展開（横展開）」</h2>
+        <p>完璧な是正処置を提出しても、もう一つ監査員から確認されるポイントがあります。それが<strong>「水平展開（横展開）」の有無</strong>です。</p>
+        <p>加熱工程で起きた記録漏れのエラーは、冷却工程や金属探知機の工程でも同じように起こる「仕組みの欠陥」を含んでいないでしょうか？</p>
+        <p>「今回の原因は他の工程でも起きるリスクがないか検証し、全工程の記録確認のタイミングとバインダー位置を同時チェックし、同様の改善を実施しました」と一言添えるだけで、監査員のあなたに対する信頼度は劇的に跳ね上がり、システムの継続的改善能力が高く評価されます。</p>
+
+        <div class="callout" style="border-color:var(--accent2)">
+          <p style="margin:0;font-weight:bold;color:var(--accent2);font-size:16px;">まとめ：監査員は「ミスを責めたい」わけではない</p>
+          <p style="margin:10px 0 0">
+            監査員が指摘事項を出すのは、会社を落としたいからではありません。その会社が抱える「潜在的なリスクの火種」を自ら気づき、自浄作用（自らシステムを改善する力）を発揮することを期待しているからです。<br>
+            不適合は「会社を良くするためのチャンス」です。表面的な修正で終わらせず、根本原因にメスを入れることで、より強く安全な製造体制を築き上げましょう。
+          </p>
+        </div>
+
+        <div class="ctaCard">
+          <p style="margin:0 0 6px;font-weight:1000">是正処置でお困りですか？</p>
+          <p style="margin:0">「監査員からの指摘の意図が読み取れない」「根本原因が分からない」という方へ。<br>スポットでの報告書作成のサポートや、根本的な仕組みづくりのご相談を承っております。</p>
+          <div class="ctaGrid">
+            <a class="btn primary" href="./index.html#consult">まずはオンライン無料相談へ</a>
+            <a class="btn dark" href="./pricing.html">サービスと料金を見る</a>
+          </div>
+        </div>
+
+        
+<!-- ▼ アプリ＆書籍 導線 -->
+<div class="ctaCard" style="border-top: 4px solid var(--accent); margin-top: 40px; margin-bottom: 30px;">
+  <h3 style="margin-top:0; font-size:20px;">無料で実践＆体系的に学ぶ</h3>
+  
+  <div style="margin-bottom: 20px;">
+    <h4 style="margin:0 0 8px; color:var(--accent2);">📱 食品安全・無料診断アプリ</h4>
+    <p style="margin:0 0 10px; font-size:14px;">現場の課題を可視化。現役監査員が設計したプロ仕様の診断ツールです。</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <a class="btn primary" href="./haccp-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">HACCP無料診断</a>
+      <a class="btn primary" href="./jfs-b-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">JFS-Bセルフチェック</a>
+      <a class="btn primary" href="./pricing.html#apps" target="_blank" style="font-size:14px; padding:8px 16px;">食品安全教育アプリ</a>
+    </div>
+  </div>
+
+  <div style="border-top: 1px dashed var(--line); padding-top: 16px;">
+    <h4 style="margin:0 0 8px; color:var(--accent2);">📘 現場で使える専門書籍</h4>
+    <p style="margin:0 0 10px; font-size:14px;">「HACCP構築」「JFS-B審査」を分かりやすく解説。Kindle Unlimitedなら無料で読めます。</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <a class="btn" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：HACCP実践編</a>
+      <a class="btn" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：JFS-B審査編</a>
+    </div>
+  </div>
+  <p style="margin-top:16px; font-size:12px; color:var(--muted); line-height:1.6;">
+    ※当サイトはAmazonアソシエイト・プログラムの参加者です。
+  </p>
+</div>
+<!-- ▲ アプリ＆書籍 導線 -->
+<div class="pager">
+          <a href="./column-8.html">← 前の記事へ</a>
+          <a href="./column.html">一覧へ →</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 食品安全パートナーズ</div>
+</footer>
+
+<script>(() => {
+  const toTop = document.getElementById("toTop");
+  const bar = document.getElementById("progress");
+  const onScroll = () => {
+    const d = document.documentElement;
+    const max = (d.scrollHeight - d.clientHeight) || 1;
+    bar.style.width = (d.scrollTop / max) * 100 + "%";
+    toTop.classList.toggle("show", d.scrollTop > 600);
+  };
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const targets = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+    targets.forEach(el => io.observe(el));
+  }
+})();</script>
+</body>
+</html>

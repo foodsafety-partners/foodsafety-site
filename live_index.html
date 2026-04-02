@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
 
 <head>
@@ -1001,6 +1001,89 @@
       }
     }
   </style>
+
+<!-- ▼ フローティングCTA用CSS -->
+<style id="floating-cta-style">
+.fl-cta-wrap {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.fl-cta-kicker {
+  background: #1b2533;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+  letter-spacing: 0.05em;
+}
+.fl-cta-kicker::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 20px;
+  border-width: 4px 4px 0;
+  border-style: solid;
+  border-color: #1b2533 transparent transparent;
+}
+.fl-cta-btn {
+  background: #e0872a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(224, 135, 42, 0.4);
+  border: 2px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.fl-cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(224, 135, 42, 0.5);
+  color: #fff;
+}
+.fl-cta-icon {
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .fl-cta-wrap {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    align-items: center;
+  }
+  .fl-cta-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  .fl-cta-kicker::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+</style>
+<!-- ▲ フローティングCTA用CSS -->
+
 </head>
 
 <body>
@@ -1362,13 +1445,13 @@
             <div style="flex: 1; min-width: 300px; max-height: 500px; overflow-y: auto; padding-right: 10px; border-radius: 14px; background: #f9f9f9; border: 1px solid rgba(0,0,0,0.05);">
               <div style="display: flex; flex-direction: column; gap: 20px; padding: 10px;">
                 <div style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-                  <img src="./assets/img/ext_ec86e5b18e.png" alt="JFS-B ダッシュボード画面" style="width:100%;display:block">
+                  <img src="./assets/img/jfsb-dashboard-ss.png" alt="JFS-B ダッシュボード画面" style="width:100%;display:block">
                 </div>
                 <div style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-                  <img src="./assets/img/ext_490c0cd83f.png" alt="JFS-B 監査チェック画面" style="width:100%;display:block">
+                  <img src="./assets/img/jfsb-audit-ss.png" alt="JFS-B 監査チェック画面" style="width:100%;display:block">
                 </div>
                 <div style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-                  <img src="./assets/img/ext_8c64bde23d.png" alt="JFS-B レポート画面" style="width:100%;display:block">
+                  <img src="./assets/img/jfsb-report-ss.png" alt="JFS-B レポート画面" style="width:100%;display:block">
                 </div>
               </div>
             </div>
@@ -1538,6 +1621,18 @@
         targets.forEach(el => io.observe(el));
       }
     })();</script>
+
+
+<!-- ▼ フローティングCTA -->
+<div class="fl-cta-wrap">
+  <div class="fl-cta-kicker">＼実務の時間を大幅短縮！／</div>
+  <a href="./download.html" class="fl-cta-btn" aria-label="HACCP構築テンプレートを無料でダウンロード">
+    <span class="fl-cta-icon">🎁</span>
+    <span>HACCP構築Excelシート（無料）</span>
+  </a>
+</div>
+<!-- ▲ フローティングCTA -->
+
 </body>
 
 </html>      <!-- JFS-B 繧ｻ繝ｫ繝輔メ繧ｧ繝・け繧｢繝励Μ -->

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>無料特典｜JFS-B・HACCP構築テンプレート（Excel）配布中｜食品安全パートナーズ</title>
-<meta name="description" content="JFS-B適合を見据えたHACCP構築テンプレート（Excel）を無料配布。中小食品企業向けに、形だけにならない運用設計の土台を提供します。">
+<meta name="description" content="JFS-B適合を見据えたHACCP構築テンプレート（Excel）を無料配布。中小食品企業向けに、形だけにならない運用設計の土台を提供します。※予告なく無料配布を終了する場合があります。">
 <meta name="keywords" content="JFS-B, HACCP構築支援, 食品安全コンサル, 中小食品企業, ISO22000支援">
 <style>:root{
   --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
-  --accent:#e0872a; --accent2:#2c567a;
-  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --accent:#e0872a; --accent-hover:#c77521; --accent2:#2c567a;
+  --soft:#eef1f6; --warning:#d9534f; --shadow:0 16px 40px rgba(24,32,48,.18);
   --w:1080px;
 }
 *{box-sizing:border-box}
@@ -29,94 +29,120 @@ a{color:inherit;text-decoration:none}
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{height:40px;width:auto}
 .menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042;margin-left:auto;margin-right:10px}
-.menu a{opacity:.82}
-.menu a:hover{opacity:1}
+.menu a{opacity:.82; transition:.2s;}
+.menu a:hover{opacity:1; color:var(--accent2);}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
-.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff; transition:.2s ease; text-align:center; font-size:16px}
+.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(224,135,42,.3)}
+.btn.primary:hover{background:var(--accent-hover); transform:translateY(-2px); box-shadow:0 12px 30px rgba(224,135,42,.35)}
 .btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
+.btn.dark:hover{background:#1f3f5a; transform:translateY(-2px);}
 .btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
 
 .hero{
   position:relative;
   background:
     radial-gradient(1200px 520px at 26% 18%, rgba(255,255,255,.18), transparent 62%),
-    linear-gradient(180deg, rgba(10,18,32,.70), rgba(10,18,32,.30)),
+    linear-gradient(180deg, rgba(10,18,32,.75), rgba(10,18,32,.50)),
     url("./assets/img/hero.webp");
   background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,.18)
 }
-.heroInner{padding:86px 0 44px}
-.kicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:12px;letter-spacing:.04em;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 10px}
-.h1{color:#fff;font-weight:1000;font-size:40px;line-height:1.18;margin:12px 0 10px;text-shadow:0 3px 18px rgba(0,0,0,.35)}
-.sub{color:rgba(255,255,255,.92);font-weight:850;margin:0;line-height:1.95;max-width:940px}
+.heroInner{padding:100px 0 70px; text-align:center;}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:1000;font-size:14px;letter-spacing:.04em;
+  background:rgba(224,135,42,.9);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 16px; margin-bottom:16px;}
+.h1{color:#fff;font-weight:1000;font-size:42px;line-height:1.2;margin:0 0 16px;text-shadow:0 3px 18px rgba(0,0,0,.45)}
+.sub{color:rgba(255,255,255,.95);font-size:18px;font-weight:700;margin:0 auto 24px;line-height:1.8;max-width:800px; text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.sub strong.highlight{color:#ffd060;}
 
-.section{padding:40px 0 66px;scroll-margin-top:90px}
+.alert-red{color:#ffcccc; font-weight:800; font-size:14px; background:rgba(200,0,0,.3); padding:8px 16px; border-radius:8px; display:inline-block; border:1px solid rgba(255,0,0,.3); margin-bottom:24px;}
+
+.section{padding:50px 0 70px;scroll-margin-top:90px}
 .panel{
-  background:rgba(255,255,255,.76);
+  background:rgba(255,255,255,.85);
   border:1px solid rgba(255,255,255,.65);
   border-radius:18px;
-  padding:14px;
-  box-shadow:0 12px 26px rgba(24,32,48,.10);
+  padding:18px;
+  box-shadow:0 12px 30px rgba(24,32,48,.08);
+  margin-bottom:20px;
 }
 .card{
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(27,37,51,.10);
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 10px 20px rgba(24,32,48,.08);
+  background:#fff;
+  border:1px solid rgba(27,37,51,.08);
+  border-radius:14px;
+  padding:24px;
+  box-shadow:0 6px 16px rgba(24,32,48,.05);
+  height:100%;
 }
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.h2{margin:0 0 10px;font-size:20px}
-.p{margin:10px 0;color:#2a3647;font-weight:850;line-height:1.95}
-.ul{margin:10px 0 10px 18px;color:#2a3647;font-weight:850;line-height:1.95}
-.li{margin:6px 0}
+.card-mission{
+  background:linear-gradient(135deg, #f0f7ff, #ffffff);
+  border:1px solid rgba(44,86,122,.15);
+  border-left:6px solid var(--accent2);
+}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.h2{margin:0 0 16px;font-size:22px; font-weight:900; color:var(--accent2); display:flex; align-items:center; gap:8px;}
+.h2::before{content:""; display:block; width:6px; height:24px; background:var(--accent); border-radius:4px;}
+.p{margin:12px 0;color:#334155;font-weight:600;line-height:1.8}
+
+.checklist{list-style:none; padding:0; margin:16px 0;}
+.checklist .li{position:relative; padding-left:32px; margin-bottom:14px; font-weight:700; color:#1e293b; line-height:1.6}
+.checklist .li::before{content:"✓"; position:absolute; left:0; top:0; background:var(--accent); color:#fff; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px;}
+
+.crosslist{list-style:none; padding:0; margin:16px 0; background:#fff5f5; padding:16px; border-radius:12px; border:1px solid #fed7d7;}
+.crosslist .li{position:relative; padding-left:28px; margin-bottom:12px; font-weight:700; color:#9b2c2c; line-height:1.6}
+.crosslist .li::before{content:"!"; position:absolute; left:0; top:2px; font-weight:900; color:#e53e3e; font-size:18px;}
+
 .muted{color:var(--muted)}
-.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.tag{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
-  background:#fff;color:#243042;font-weight:900;font-size:12px}
+.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px; border:1px solid rgba(27,37,51,.1);
+  background:var(--soft);color:#475569;font-weight:800;font-size:12px}
 
 .callout{
   border-left:6px solid var(--accent);
-  background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;
-  padding:14px;margin:14px 0
+  background:#fdf8f4; border:1px solid rgba(224,135,42,.2); border-left-width:6px; border-radius:12px;
+  padding:16px; margin:20px 0; color:#5c3a1a;
 }
 
+.mission-text{font-size:18px; line-height:1.9; font-weight:700; color:#1e293b; margin-bottom:20px;}
+.mission-story{font-size:15px; line-height:1.8; color:#475569; font-weight:500;}
+
 .formWrap{
-  border-radius:18px;
-  border:1px solid rgba(27,37,51,.10);
+  border-radius:20px;
+  border:1px solid rgba(27,37,51,.12);
   background:#fff;
-  box-shadow:0 14px 26px rgba(24,32,48,.10);
+  box-shadow:0 20px 40px rgba(24,32,48,.12);
   overflow:hidden;
+  margin-top:30px;
 }
 .formHead{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-  padding:14px;border-bottom:1px solid rgba(27,37,51,.10);
-  background:linear-gradient(180deg, rgba(44,86,122,.06), rgba(255,255,255,.96));
+  text-align:center;
+  padding:30px 20px 20px; border-bottom:1px solid rgba(27,37,51,.08);
+  background:linear-gradient(180deg, #fdf8f4, #fff);
 }
-.formHead b{font-weight:1000}
-.formHead .mini{color:var(--muted);font-weight:850;font-size:12px}
+.formHead b{font-weight:900; font-size:24px; color:var(--ink); display:block; margin-bottom:8px;}
+.formHead .mini{color:var(--muted);font-weight:700;font-size:13px;}
 
 .iframe{
   width:100%;
-  height:1100px; /* Googleフォームの長さに応じて調整 */
+  height:1200px;
   border:0;
 }
 
-.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+.footer{padding:24px 0 32px;color:var(--muted);border-top:1px solid var(--line);background:#fff; text-align:center; font-weight:600;}
 
 @media(max-width:980px){
   .menu{display:none}
   .grid2{grid-template-columns:1fr}
-  .h1{font-size:34px}
-  .iframe{height:1200px}
+  .h1{font-size:28px;}
+  .sub{font-size:15px;}
+  .iframe{height:1400px}
+  .heroInner{padding:60px 0 40px;}
 }</style>
 </head>
 <body>
 <div id="progress"></div>
-<a id="toTop" href="./download.html#" aria-label="ページ先頭へ">↑</a>
+<a id="toTop" href="#top" aria-label="ページ先頭へ">↑</a>
 
-<header class="header">
+<header class="header" id="top">
   <div class="container">
     <div class="nav">
       <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
@@ -128,7 +154,7 @@ a{color:inherit;text-decoration:none}
         <a href="./index.html#books">書籍</a>
         <a href="./index.html#consult">無料相談</a>
       </nav>
-      <a class="btn dark" href="./column.html">コラム</a>
+      <a class="btn dark" style="padding:10px 16px; font-size:13px;" href="./column.html">コラム</a>
     </div>
   </div>
 </header>
@@ -136,15 +162,18 @@ a{color:inherit;text-decoration:none}
 <section class="hero">
   <div class="container">
     <div class="heroInner">
-      <div class="kicker">無料特典（Excelテンプレート）</div>
-      <h1 class="h1">食品安全パートナーズ｜JFS-B・HACCP構築テンプレート（無料配布）</h1>
+      <div class="kicker">JFS-BやHACCP構築で、もう何十時間も迷わない。</div>
+      <h1 class="h1">審査官が納得するストーリーが完成する<br>「HACCP構築テンプレート」無料配布</h1>
       <p class="sub">
-        <strong>無料</strong>でお受け取りいただけます。<br>
-        「食品安全を、すべての企業へ。」——中小食品企業でも無理なく回る形で、構築の全体像を整理できるテンプレートです。
+        ただの参考資料ではありません。<br>空白を埋めるだけで、あなたの会社のHACCPプランという<strong class="highlight">「実務の土台」</strong>が出来上がります。<br>中小食品企業でも「形だけ」にならず、無理なく回る運用設計のショートカットです。
       </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-        <a class="btn primary" href="#form">無料でテンプレートを受け取る</a>
-        <a class="btn" href="./index.html#consult">30分無料相談</a>
+      <div class="alert-red">
+        ※本テンプレートは予告なく無料配布を終了する場合がございます。予めご了承ください。
+      </div>
+      <div>
+        <a class="btn primary" href="#form">
+          <span>（無料）Excelテンプレートを今すぐ手に入れる<br><span style="font-size:12px; font-weight:normal; opacity:0.9;">※1分で入力完了・すぐにメールで届きます</span></span>
+        </a>
       </div>
     </div>
   </div>
@@ -155,33 +184,38 @@ a{color:inherit;text-decoration:none}
 
     <div class="panel">
       <div class="grid2">
-
         <div class="card">
-          <h2 class="h2">よくあるお悩み</h2>
+          <h2 class="h2">ネットの情報を繋ぎ合わせるのに、<br>限界を感じていませんか？</h2>
           <p class="p muted">
-            HACCPが「形だけ」になってしまう背景には、根拠と運用がつながらないことが多くあります。
+            「HACCPをやらなければいけないのは分かっている。でも…」
           </p>
-          <ul class="ul">
-            <li class="li">JFS-B取得を検討しているが、何から始めればよいかわからない</li>
-            <li class="li">HACCPを整えたいけど、人員が足りない</li>
-            <li class="li">文書はあるが、現場で続く運用になっていない</li>
+          <ul class="crosslist">
+            <li class="li">JFS-B取得を検討しているが、正直何から始めればよいかわからない</li>
+            <li class="li">人員も時間も足りない中で、一から書類体系を作るのは重労働だ</li>
+            <li class="li">我流で作って、監査で不適合（やり直し）になるリスクは避けたい</li>
+            <li class="li">分厚いマニュアルを作っても、現場で形骸化しそうで不安だ</li>
           </ul>
-          <div class="callout">
-            <b>このページの目的</b><br>
-            売り込みではなく、まず「構築の土台」を整えるための材料として、テンプレートをお渡しします。
-          </div>
+          <p class="p">
+            このような悩みは、多くの企業が抱える「共通の壁」です。我流のまま膨大な時間と労力を浪費してしまいます。
+          </p>
         </div>
 
         <div class="card">
-          <h2 class="h2">無料特典の内容（HACCPテンプレート）</h2>
-          <p class="p">Excelに以下の構成をまとめています（自社用に編集して使えます）。</p>
-          <ul class="ul">
+          <h2 class="h2">これ一つで「全体像」が見える<br>実践的テンプレート</h2>
+          <p class="p">
+            私たちはこの壁を突破するための「ショートカット」をご用意しました。自社用にすぐ編集して使えるExcelファイルです。
+          </p>
+          <ul class="checklist">
             <li class="li"><strong>HACCP1</strong>：食品安全チームメンバー表</li>
             <li class="li"><strong>HACCP2,3</strong>：製品説明書</li>
             <li class="li"><strong>HACCP4,5</strong>：フローダイアグラム</li>
             <li class="li"><strong>HACCP6</strong>：ハザード分析シート</li>
             <li class="li"><strong>HACCP7～12</strong>：HACCPプラン</li>
           </ul>
+          <div class="callout">
+            <b>時間とリスクを大幅カット</b><br>
+            「どこをどう埋めれば全体の整合性が取れるのか」が分かる構造になっているため、迷う時間が圧倒的に削減されます。
+          </div>
           <div class="tagRow">
             <span class="tag">JFS-B</span>
             <span class="tag">HACCP構築支援</span>
@@ -189,65 +223,54 @@ a{color:inherit;text-decoration:none}
             <span class="tag">ISO22000支援</span>
           </div>
         </div>
-
       </div>
     </div>
 
-    <div style="height:14px"></div>
-
     <div class="panel">
-      <div class="grid2">
-        <div class="card">
-          <h2 class="h2">この資料で得られること</h2>
-          <ul class="ul">
-            <li class="li">構築の<strong>全体像</strong>が分かる</li>
-            <li class="li">自社の<strong>不足点</strong>が明確になる</li>
-            <li class="li">審査を見据えた<strong>準備</strong>ができる</li>
-          </ul>
-          <div class="callout">
-            <b>補足</b><br>
-            HACCPの「正解」は業種・製品・工程で変わります。テンプレートを食品安全の“土台”としてご活用ください。
-          </div>
+      <div class="card card-mission">
+        <h2 class="h2">なぜ、こんなに実用的なものを「無料」で配るのか？</h2>
+        <div class="mission-text">
+          私たちのミッションは、<br>「すべての食品関連企業に、持続可能で実践的な食品安全の仕組みを届ける。」ことです。
         </div>
-
-        <div class="card">
-          <h2 class="h2">お受け取り方法</h2>
-          <ul class="ul">
-            <li class="li">フォームでメールアドレスをご登録</li>
-            <li class="li">自動返信メールで受け取りURLをご案内</li>
-            <li class="li"><strong>テンプレートの受け取り案内と、関連情報をメールでお送りします（配信停止はいつでも可能です）。</strong></li>
-          </ul>
-          <p class="p muted">※迷惑メール設定により届かない場合があります。その際は受信設定をご確認ください。</p>
+        <div class="mission-story">
+          すべての食品関連企業で高いレベルの食品安全が当たり前に機能すれば、痛ましい食品事故は確実に減らすことができます。<br><br>
+          「大好きな食事を心から安心して楽しみ、悲しい事故で涙を流す人が一人もいない社会を創りたい。」<br><br>
+          これが私たちの揺るぎない原動力です。だからこそ、食品企業様がHACCPの「書類作りの煩雑さ」という最初の足枷でつまずくべきではありません。形だけのルールではなく、本質的な運用に時間を使ってほしい。その土台作りのショートカットとなるこのテンプレートを無料で提供しています。
         </div>
       </div>
     </div>
 
-    <div style="height:14px"></div>
-
-    <div class="panel">
+    <div class="grid2" style="margin-top:20px;">
       <div class="card">
-        <h2 class="h2">資料を使って不安が残る場合は（任意）</h2>
-        <p class="p">
-          テンプレートで整理してみて「この判断で良いか」「監査でどう見られるか」など不安が出た場合は、
-          <strong>30分の無料相談</strong>で現状整理のお手伝いが可能です。現状整理のみでも問題ございません。
+        <h2 class="h2">お受け取りは簡単2ステップ</h2>
+        <ul class="checklist">
+          <li class="li">下の専用フォームでメールアドレス等をご入力ください。</li>
+          <li class="li">直後に届く自動返信メールにて、ダウンロード用URLをご案内します。</li>
+        </ul>
+        <p class="p muted" style="font-size:13px; margin-top:16px;">
+          ※無料特典をお受け取りいただいた方には、HACCP構築やJFS-Bに関するお役立ち情報をメールでお届けします（配信停止はワンクリックでいつでも可能ですのでご安心ください）。
         </p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn dark" href="./index.html#consult">30分無料相談</a>
-          <a class="btn" href="./column.html">コラムを読む</a>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">もし運用に不安が残る場合は</h2>
+        <p class="p">
+          テンプレートを使ってみて、「自社の工程だとどう判断すべきか？」「監査員にはどう見られるか？」といった疑問が出た場合は、<strong>30分のオンライン無料相談</strong>をご活用ください。現状整理のお手伝いをさせていただきます。
+        </p>
+        <div style="margin-top:20px;">
+          <a class="btn dark" style="width:100%;" href="./index.html#consult">30分無料相談の詳細はこちら</a>
         </div>
       </div>
     </div>
-
-    <div style="height:14px"></div>
 
     <!-- Googleフォーム -->
     <div class="formWrap" id="form" aria-label="無料特典フォーム">
       <div class="formHead">
-        <b>無料でテンプレートを受け取る（フォーム）</b>
-        <span class="mini">※外部サービス（Googleフォーム）を埋め込み表示しています</span>
+        <b>今すぐ無料テンプレートを受け取る</b>
+        <span class="mini">※以下に必要事項を入力して送信ボタンを押してください。1分で完了します。</span>
       </div>
 
-      <!-- ▼ Googleフォーム埋め込み（viewform → formResponse は不要） -->
+      <!-- ▼ Googleフォーム埋め込み -->
       <iframe class="iframe"
         src="https://docs.google.com/forms/d/e/1FAIpQLSfYBBSft2vTDkPJCtlWfXVTtDEARFZUi04H6mtis2j3q7cSaw/viewform?embedded=true"
         loading="lazy"

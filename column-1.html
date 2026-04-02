@@ -44,6 +44,89 @@ a{color:inherit;text-decoration:none}
 .h1{font-size:26px}
 }
 </style>
+
+<!-- ▼ フローティングCTA用CSS -->
+<style id="floating-cta-style">
+.fl-cta-wrap {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.fl-cta-kicker {
+  background: #1b2533;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+  letter-spacing: 0.05em;
+}
+.fl-cta-kicker::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 20px;
+  border-width: 4px 4px 0;
+  border-style: solid;
+  border-color: #1b2533 transparent transparent;
+}
+.fl-cta-btn {
+  background: #e0872a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(224, 135, 42, 0.4);
+  border: 2px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.fl-cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(224, 135, 42, 0.5);
+  color: #fff;
+}
+.fl-cta-icon {
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .fl-cta-wrap {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    align-items: center;
+  }
+  .fl-cta-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  .fl-cta-kicker::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+</style>
+<!-- ▲ フローティングCTA用CSS -->
+
 </head>
 <body>
 
@@ -55,7 +138,7 @@ a{color:inherit;text-decoration:none}
 <a href="./index.html"><strong>食品安全パートナーズ</strong></a>
 <nav class="menu">
 <a href="./column.html">コラム一覧</a>
-<a href="./index.html#download">無料特典</a>
+<a href="./download.html">無料特典</a>
 <a href="./index.html#consult">無料相談</a>
 </nav>
 <a class="btn primary" href="./index.html#consult">無料相談</a>
@@ -129,13 +212,21 @@ JFS-Bは単なる規格ではありません。
 </div>
 
 <!-- 通常CTA -->
-<div class="ctaCard">
-<p style="font-weight:1000;margin-bottom:6px">資料・相談の活用について</p>
-<p>
-まずは無料テンプレートで全体像を整理できます。<br>
-現状整理のみの30分相談も可能です。
-</p>
-<a class="btn primary" href="./download.html">無料テンプレートを見る</a>
+<div class="ctaCard" style="border:2px solid var(--accent); padding:24px; position:relative; overflow:hidden;">
+  <div style="position:absolute; top:-20px; right:-20px; opacity:0.03; font-size:120px; transform:rotate(-15deg); pointer-events:none;">📄</div>
+  <h3 style="margin:0 0 12px; font-size:20px; color:var(--ink);">HACCPの書類作りで、時間を無駄にしていませんか？</h3>
+  <p style="margin:0 0 16px; line-height:1.8; color:var(--muted); font-size:14px; font-weight:700;">
+    「何から始めればいいか分からない」「我流で作ってやり直しになるのは避けたい」<br>
+    そんなお悩みを持つ企業様へ。審査官が納得する『実務の土台』を、空白を埋めるだけで構成できるプロ仕様のExcelテンプレートを無料で配布しています。
+  </p>
+  <a class="btn primary" href="./download.html" style="width:100%; font-size:16px; padding:14px;">🎁 今すぐHACCPテンプレートを無料で受け取る</a>
+</div>
+  <h3 style="margin:0 0 12px; font-size:20px; color:var(--ink);">HACCPの書類作りで、時間を無駄にしていませんか？</h3>
+  <p style="margin:0 0 16px; line-height:1.8; color:var(--muted); font-size:14px; font-weight:700;">
+    「何から始めればいいか分からない」「我流で作ってやり直しになるのは避けたい」<br>
+    そんなお悩みを持つ企業様へ。審査官が納得する『実務の土台』を、空白を埋めるだけで構成できるプロ仕様のExcelテンプレートを無料で配布しています。
+  </p>
+  <a class="btn primary" href="./download.html" style="width:100%; font-size:16px; padding:14px;">🎁 今すぐHACCPテンプレートを無料で受け取る</a>
 </div>
 
 
@@ -188,6 +279,18 @@ bar.style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100+"%";
 toTop.classList.toggle("show",d.scrollTop>400);
 });
 </script>
+
+
+
+<!-- ▼ フローティングCTA -->
+<div class="fl-cta-wrap">
+  <div class="fl-cta-kicker">＼実務の時間を大幅短縮！／</div>
+  <a href="./download.html" class="fl-cta-btn" aria-label="HACCP構築テンプレートを無料でダウンロード">
+    <span class="fl-cta-icon">🎁</span>
+    <span>HACCP構築Excelシート（無料）</span>
+  </a>
+</div>
+<!-- ▲ フローティングCTA -->
 
 </body>
 </html>

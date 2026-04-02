@@ -504,7 +504,206 @@
                 display: none;
             }
         }
+
+        /* Kindle Section Styles */
+        .kindleWrap {
+            background: rgba(255, 255, 255, .76);
+            border: 1px solid rgba(255, 255, 255, .65);
+            border-radius: 18px;
+            padding: 14px;
+            box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        .kindleGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px
+        }
+
+        .book {
+            background: #fff;
+            border: 1px solid rgba(27, 37, 51, .10);
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: transform 0.25s ease;
+        }
+
+        .book:hover {
+            border-color: rgba(44, 86, 122, .25);
+            transform: translateY(-4px);
+        }
+
+        .bookCover {
+            width: 92px;
+            aspect-ratio: 2/3;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(27, 37, 51, .12);
+            box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+            background: #fff;
+            flex: 0 0 auto;
+        }
+
+        .bookCover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .bookMeta {
+            min-width: 0;
+            text-align: left;
+        }
+
+        .bookTitle {
+            font-weight: 700;
+            margin: 0 0 6px;
+            line-height: 1.55;
+            font-size: 1rem;
+        }
+
+        .bookDesc {
+            margin: 0;
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Kindle Unlimited Styles */
+        .kuGrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            align-items: stretch;
+            margin-top: 14px;
+        }
+
+        .kuCard {
+            background: #fff;
+            border: 1px solid rgba(27, 37, 51, .10);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .kuTitle {
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.55;
+            font-size: 1rem;
+        }
+
+        .kuList {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .kindleGrid,
+            .kuGrid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+
+<!-- ▼ フローティングCTA用CSS -->
+<style id="floating-cta-style">
+.fl-cta-wrap {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.fl-cta-kicker {
+  background: #1b2533;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+  letter-spacing: 0.05em;
+}
+.fl-cta-kicker::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 20px;
+  border-width: 4px 4px 0;
+  border-style: solid;
+  border-color: #1b2533 transparent transparent;
+}
+.fl-cta-btn {
+  background: #e0872a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(224, 135, 42, 0.4);
+  border: 2px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.fl-cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(224, 135, 42, 0.5);
+  color: #fff;
+}
+.fl-cta-icon {
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .fl-cta-wrap {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    align-items: center;
+  }
+  .fl-cta-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  .fl-cta-kicker::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+</style>
+<!-- ▲ フローティングCTA用CSS -->
+
 </head>
 
 <body>
@@ -516,7 +715,7 @@
         </a>
         <nav class="nav-links">
             <a href="./index.html">公式サイト TOP</a>
-            <a href="./jfs-b-check.html">JFS-Bアプリ</a>
+            <a href="./index.html#apps">食品安全アプリ</a>
             <a href="./column.html">コラム</a>
             <a href="./index.html#consult">無料相談</a>
         </nav>
@@ -557,103 +756,53 @@
         </div>
     </section>
 
-    <!-- ③ Result Preview -->
-    <section class="result-section">
-        <h2 class="section-title">診断でわかること</h2>
-
-        <!-- アプリ画面スクリーンショット -->
-        <div style="max-width:420px;margin:0 auto 40px;">
-            <div
-                style="background:#fff;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.12);border:1px solid #eee;padding:30px 20px 20px;text-align:center;">
-                <!-- 判定レベル バッジ -->
-                <div
-                    style="display:inline-block;background:#f0f4ff;border-radius:16px;padding:12px 36px;margin-bottom:18px;">
-                    <div style="font-size:0.85rem;color:#004a99;font-weight:600;margin-bottom:2px;">判定レベル</div>
-                    <div style="font-size:3rem;font-weight:900;color:#3b7ddd;line-height:1;">S</div>
+    <!-- ③ Kindle / Books -->
+    <section class="result-section" id="books">
+        <h2 class="section-title">Kindleで学ぶ（書籍紹介）</h2>
+        <div class="result-content">
+            <div class="kindleWrap">
+                <div class="kindleGrid">
+                    <a class="book" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank"
+                        rel="noopener noreferrer">
+                        <div class="bookCover"><img src="./assets/img/kindle-FSMS.jpg" alt="JFS-B徹底解説書"></div>
+                        <div class="bookMeta">
+                            <p class="bookTitle">食品安全で会社を強くする: JFS-B規格徹底解説</p>
+                            <p class="bookDesc">「監査で見られる観点」を現場の言葉で整理。そのまま使える一冊。</p>
+                        </div>
+                    </a>
+                    <a class="book" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank"
+                        rel="noopener noreferrer">
+                        <div class="bookCover"><img src="./assets/img/kindle-HACCP.jpg" alt="HACCP編"></div>
+                        <div class="bookMeta">
+                            <p class="bookTitle">食品安全で会社を強くする: HACCP編</p>
+                            <p class="bookDesc">監査員の視点で「落ちやすいポイント」を網羅。実践的な監査対策に。</p>
+                        </div>
+                    </a>
                 </div>
-                <!-- 診断結果テキスト -->
-                <h3 style="font-size:1.15rem;font-weight:700;color:#333;margin:10px 0 6px;">
-                    診断結果：レベルS<br>（基礎的な運用が定着しています）</h3>
-                <p style="font-size:0.95rem;color:#3b7ddd;font-weight:600;margin-bottom:20px;">総合スコア：30 / 30点</p>
-                <!-- レーダーチャート SVG -->
-                <svg viewBox="0 0 400 360" style="width:100%;max-width:340px;margin:0 auto;display:block;" role="img"
-                    aria-label="HACCP診断レーダーチャート">
-                    <defs>
-                        <linearGradient id="radarFill" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#3b7ddd;stop-opacity:0.25" />
-                            <stop offset="100%" style="stop-color:#004a99;stop-opacity:0.35" />
-                        </linearGradient>
-                    </defs>
-                    <!-- 背景グリッド（3段階） -->
-                    <polygon points="200,40 296,102 296,226 200,288 104,226 104,102" fill="none" stroke="#e0e0e0"
-                        stroke-width="1" />
-                    <polygon points="200,82 264,123 264,205 200,246 136,205 136,123" fill="none" stroke="#e8e8e8"
-                        stroke-width="1" />
-                    <polygon points="200,124 232,145 232,183 200,204 168,183 168,145" fill="none" stroke="#f0f0f0"
-                        stroke-width="1" />
-                    <!-- 軸線 -->
-                    <line x1="200" y1="164" x2="200" y2="40" stroke="#e0e0e0" stroke-width="1" />
-                    <line x1="200" y1="164" x2="296" y2="102" stroke="#e0e0e0" stroke-width="1" />
-                    <line x1="200" y1="164" x2="296" y2="226" stroke="#e0e0e0" stroke-width="1" />
-                    <line x1="200" y1="164" x2="200" y2="288" stroke="#e0e0e0" stroke-width="1" />
-                    <line x1="200" y1="164" x2="104" y2="226" stroke="#e0e0e0" stroke-width="1" />
-                    <line x1="200" y1="164" x2="104" y2="102" stroke="#e0e0e0" stroke-width="1" />
-                    <!-- データポリゴン（S評価：ほぼ満点） -->
-                    <polygon points="200,52 286,108 290,218 200,276 112,220 110,108" fill="url(#radarFill)"
-                        stroke="#3b7ddd" stroke-width="2.5" stroke-linejoin="round" />
-                    <!-- データポイント -->
-                    <circle cx="200" cy="52" r="4" fill="#3b7ddd" />
-                    <circle cx="286" cy="108" r="4" fill="#3b7ddd" />
-                    <circle cx="290" cy="218" r="4" fill="#3b7ddd" />
-                    <circle cx="200" cy="276" r="4" fill="#3b7ddd" />
-                    <circle cx="112" cy="220" r="4" fill="#3b7ddd" />
-                    <circle cx="110" cy="108" r="4" fill="#3b7ddd" />
-                    <!-- ラベル -->
-                    <text x="200" y="30" text-anchor="middle" font-size="13" fill="#555" font-weight="500">体制</text>
-                    <text x="310" y="98" text-anchor="start" font-size="13" fill="#555" font-weight="500">工程図</text>
-                    <text x="310" y="234" text-anchor="start" font-size="13" fill="#555" font-weight="500">整合性</text>
-                    <text x="200" y="310" text-anchor="middle" font-size="13" fill="#555" font-weight="500">危害分析</text>
-                    <text x="90" y="234" text-anchor="end" font-size="13" fill="#555" font-weight="500">管理基準</text>
-                    <text x="90" y="98" text-anchor="end" font-size="13" fill="#555" font-weight="500">根拠</text>
-                    <!-- 追加ラベル（上下左右に小さく補足） -->
-                    <text x="250" y="52" text-anchor="middle" font-size="11" fill="#888">頻度</text>
-                    <text x="150" y="52" text-anchor="middle" font-size="11" fill="#888">記録</text>
-                    <text x="260" y="270" text-anchor="middle" font-size="11" fill="#888">是正</text>
-                    <text x="140" y="270" text-anchor="middle" font-size="11" fill="#888">検証</text>
-                </svg>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">▲ 実際の診断結果イメージ：レーダーチャートで弱点を一目で把握</p>
-        </div>
 
-        <p class="result-desc">
-            全10問の回答から、HACCP運用を<strong>10の観点</strong>（体制・工程図・整合性・危害分析・管理基準・根拠・頻度・是正・検証・記録）で分析。<br>
-            レーダーチャートで弱点を一目で可視化し、<strong>4段階のレベル判定</strong>をお伝えします。
-        </p>
-        <div class="result-grid">
-            <div class="level-card">
-                <span class="level-badge">S</span>
-                <h4>基礎の定着</h4>
-                <p>HACCPの基本項目が盤石な状態。さらなるレベルアップへ。</p>
-            </div>
-            <div class="level-card">
-                <span class="level-badge">A</span>
-                <h4>管理のバラツキに注意</h4>
-                <p>基礎はできているが、一部に属人化やバラツキが見られます。</p>
-            </div>
-            <div class="level-card">
-                <span class="level-badge">B</span>
-                <h4>体制の補強が必要</h4>
-                <p>不備が散見されます。手順と体制を早急に強化してください。</p>
-            </div>
-            <div class="level-card">
-                <span class="level-badge">C</span>
-                <h4>仕組みの構築が急務</h4>
-                <p>安全性確保の仕組みが著しく不足。最優先で取り組みが必要です。</p>
+            <h2 class="section-title" style="margin-top: 60px;">Kindle Unlimitedなら、無料で読むこともできます</h2>
+            <div class="kindleWrap">
+                <div class="kuGrid">
+                    <div class="kuCard">
+                        <p class="kuTitle">無料体験のポイント</p>
+                        <ul class="kuList">
+                            <li>初回30日間無料</li>
+                            <li>期間内の解約で費用0円</li>
+                            <li>まず「学ぶ」から始められます</li>
+                        </ul>
+                    </div>
+                    <div class="kuCard">
+                        <p class="kuTitle">まずは無料で読む</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                            現役コンサルタントによる実践書。Amazon Kindle Unlimited 会員なら読み放題対象です。</p>
+                        <a href="https://www.amazon.co.jp/kindle-dbs/hz/signup" target="_blank" class="cta-mini"
+                            style="background: var(--accent-color); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; text-align: center; font-size: 0.9rem;">Kindle
+                            Unlimited を詳しく見る</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <p class="result-desc">
-            さらに、詳細レポートでは<strong>設問ごとの「監査員の視点：潜在リスクと改善ヒント」</strong>をお伝えします。
-        </p>
     </section>
 
     <!-- ④ 3 Steps -->
@@ -747,6 +896,18 @@
             <a href="./privacy-policy.html">プライバシーポリシー</a>
         </div>
     </footer>
+
+
+
+<!-- ▼ フローティングCTA -->
+<div class="fl-cta-wrap">
+  <div class="fl-cta-kicker">＼実務の時間を大幅短縮！／</div>
+  <a href="./download.html" class="fl-cta-btn" aria-label="HACCP構築テンプレートを無料でダウンロード">
+    <span class="fl-cta-icon">🎁</span>
+    <span>HACCP構築Excelシート（無料）</span>
+  </a>
+</div>
+<!-- ▲ フローティングCTA -->
 
 </body>
 

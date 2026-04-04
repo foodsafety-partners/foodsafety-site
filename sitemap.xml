@@ -5,7 +5,7 @@
   <!-- ===== Core Pages (Top Priority) ===== -->
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -87,7 +87,7 @@
   <!-- ===== Content Hub (Column Index) ===== -->
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/column.html</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -185,7 +185,13 @@
   </url>
   <url>
     <loc>https://foodsafety-partners.github.io/foodsafety-site/column-16.html</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://foodsafety-partners.github.io/foodsafety-site/column-17.html</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

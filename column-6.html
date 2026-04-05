@@ -1,125 +1,228 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>食品安全は“コスト”ではなく“信用の投資”｜経営者が押さえる3つの意思決定｜食品安全パートナーズ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>食品安全は“コスト”ではなく“信用の投資”｜経営者が押さえる3つの意思決定｜食品安全パートナーズ</title>
+  <meta name="description"
+    content="食品安全を「コスト（費用）」と捉えていませんか？経営者が押さえるべき「3つの意思決定」をHACCP・JFS-B・ISO22000の観点から解説。企業価値を高める「信用への投資」としての安全管理とは。">
+  <meta name="keywords" content="食品安全, 経営方針, HACCP, JFS-B, 投資, 食品安全コンサル, 中小食品企業">
   <meta name='robots' content='index,follow'>
   <link rel='canonical' href='https://foodsafety-partners.github.io/foodsafety-site/column-6.html'>
-<meta name="description" content="食品安全をコストと捉えていませんか？経営者が押さえるべき「3つの意思決定」をHACCP・JFS-B・ISO22000の観点から解説。費用対効果を高める「信用への投資」としての安全管理とは。【費用相場公開中・無料相談受付中】">
-<meta name="keywords" content="食品安全, 経営, HACCP, JFS-B, ISO22000, 食品安全コンサル, 中小食品企業">
 
-<style>:root{
-  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
-  --accent:#e0872a; --accent2:#2c567a;
-  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
-  --w:980px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+  <style>
+    /* 共通スタイル（コラム16ベース） */
+    :root {
+      --ink: #1b2533;
+      --muted: #5a6475;
+      --line: #d9dde6;
+      --accent: #e0872a;
+      --accent2: #2c567a;
+      --soft: #eef1f6;
+      --shadow: 0 16px 40px rgba(24, 32, 48, .18);
+      --w: 880px;
+    }
 
-#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
-#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.92);
-  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
-#toTop.show{opacity:1;transform:none}
+    * {
+      box-sizing: border-box;
+    }
 
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.2) blur(10px);
-  border-bottom:1px solid rgba(27,37,51,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:40px;width:auto}
-.menu{display:flex;gap:16px;font-weight:900;font-size:14px;color:#243042}
-.menu a{opacity:.82}
-.menu a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid rgba(27,37,51,.12);background:#fff}
-.btn.primary{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 10px 26px rgba(0,0,0,.14)}
-.btn.dark{background:var(--accent2);color:#fff;border-color:rgba(255,255,255,.18)}
-.btn:focus-visible{outline:3px solid rgba(224,135,42,.35);outline-offset:3px}
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, sans-serif;
+      background: #fff;
+      color: var(--ink);
+      line-height: 1.8;
+      font-size: 16px;
+    }
 
-.section{padding:44px 0 66px}
-.card{background:rgba(255,255,255,.94);border:1px solid rgba(27,37,51,.10);border-radius:16px;padding:18px;box-shadow:0 10px 20px rgba(24,32,48,.08)}
-.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(27,37,51,.12);
-  background:#fff;color:#243042;font-weight:900;font-size:12px}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.articleHead{
-  background:
-    radial-gradient(1200px 520px at 25% 20%, rgba(224,135,42,.18), transparent 55%),
-    radial-gradient(1000px 520px at 80% 80%, rgba(44,86,122,.16), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.92));
-  border-bottom:1px solid rgba(27,37,51,.08);
-}
-.breadcrumbs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-weight:850;font-size:12px;padding:14px 0 0}
-.breadcrumbs a{text-decoration:underline}
-.h1{margin:10px 0 0;font-size:32px;line-height:1.25;font-weight:1000}
-.metaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0 0;color:var(--muted);font-weight:850;font-size:12px}
-.metaDot{opacity:.7}
+    .container {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
 
-.prose{line-height:2.0;color:#273244;font-weight:850}
-.prose h2{margin:32px 0 8px;font-size:20px;line-height:1.5;color:var(--ink)}
-.prose h3{margin:22px 0 6px;font-size:16px;line-height:1.6;color:var(--ink)}
-.prose p{margin:12px 0}
-.prose ul{margin:10px 0 10px 18px;padding:0}
-.prose li{margin:7px 0}
-.k{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(224,135,42,.10);border:1px solid rgba(224,135,42,.22);font-weight:1000}
-.note{margin:14px 0;color:var(--muted);font-size:12.5px;line-height:1.85}
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .95);
+      border-bottom: 1px solid rgba(27, 37, 51, .08);
+      padding: 12px 0;
+    }
 
-.figure{
-  border:1px solid rgba(27,37,51,.10);
-  border-radius:16px;
-  background:#fff;
-  padding:14px;
-  margin:16px 0;
-  box-shadow:0 10px 20px rgba(24,32,48,.06);
-}
-.figureTitle{font-weight:1000;margin:0 0 10px}
-.diagram{
-  border-radius:14px;
-  border:1px solid rgba(27,37,51,.10);
-  background:
-    radial-gradient(600px 220px at 18% 15%, rgba(224,135,42,.18), transparent 55%),
-    radial-gradient(520px 220px at 80% 75%, rgba(44,86,122,.16), transparent 60%),
-    linear-gradient(180deg, rgba(238,241,246,.9), rgba(255,255,255,1));
-  padding:14px;
-}
-.flow{display:grid;gap:10px}
-.box{
-  border:1px solid rgba(27,37,51,.12);
-  border-radius:14px;
-  background:#fff;
-  padding:12px;
-}
-.box b{display:block;font-weight:1000;margin-bottom:4px}
-.arrow{display:flex;justify-content:center;color:var(--muted);font-weight:1000}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
 
-.callout{
-  border-left:6px solid var(--accent);
-  background:#fff;border:1px solid rgba(27,37,51,.10);border-left-width:6px;border-radius:16px;padding:14px;margin:16px 0
-}
-.ctaCard{
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(27,37,51,.10);
-  border-radius:18px;
-  padding:16px;
-  box-shadow:0 14px 26px rgba(24,32,48,.10);
-}
-.ctaGrid{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .brand img {
+      height: 40px;
+    }
 
-.pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px}
-.pager a{font-weight:1000;color:var(--accent2);text-decoration:underline}
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      background: var(--accent);
+      color: white;
+      text-align: center;
+    }
 
-.footer{padding:18px 0 28px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
+    .article-header {
+      padding: 60px 0 30px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 40px;
+    }
 
-@media (prefers-reduced-motion:no-preference){
-  .reveal{opacity:0;transform:translateY(14px);transition:.7s ease}
-  .reveal.show{opacity:1;transform:none}
-}
-@media(max-width:980px){
-  .menu{display:none}
-  .h1{font-size:28px}
-}</style>
+    .article-title {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.4;
+      margin: 0 0 16px;
+      color: var(--accent2);
+    }
+
+    .article-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .article-content h2 {
+      font-size: 24px;
+      font-weight: 800;
+      padding: 12px 16px;
+      background: #f4f7fb;
+      border-left: 5px solid var(--accent);
+      margin: 50px 0 20px;
+    }
+
+    .article-content h3 {
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 2px dashed var(--line);
+      padding-bottom: 8px;
+      margin: 40px 0 16px;
+    }
+
+    .article-content p {
+      margin: 0 0 20px;
+    }
+
+    .article-content ul {
+      margin: 0 0 24px;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 8px;
+    }
+
+    .article-content strong {
+      color: #d32f2f;
+      background: linear-gradient(transparent 60%, rgba(224, 135, 42, 0.3) 60%);
+    }
+
+    .article-img {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .callout {
+      background: #fff8f0;
+      border: 1px solid #ffd8a8;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .callout-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .step-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin: 20px 0;
+      padding: 20px;
+      background: #fafbfd;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .step-body h4 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      color: var(--accent2);
+    }
+
+    .step-body p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      margin-top: 60px;
+    }
+
+    .related-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent2);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    @media(max-width: 768px) {
+      .article-title {
+        font-size: 22px;
+      }
+      .article-content h2 {
+        font-size: 20px;
+      }
+      .step-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
 
 <!-- ▼ フローティングCTA用CSS -->
 <style id="floating-cta-style">
@@ -206,243 +309,112 @@ a{color:inherit;text-decoration:none}
 </head>
 
 <body>
-<div id="progress"></div>
-<a id="toTop" href="./column-6.html#" aria-label="ページ先頭へ">↑</a>
-
-<header class="header">
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
-        <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
-      </a>
-      <nav class="menu" aria-label="メニュー">
-        <a href="./index.html#services">サービス</a>
-        <a href="./download.html">無料特典</a>
-        <a href="./index.html#books">書籍</a>
-        <a href="./index.html#consult">無料相談</a>
-        <a href="./column.html">コラム一覧</a>
-      </nav>
-      <a class="btn primary" href="./download.html">無料特典</a>
-    </div>
-  </div>
-</header>
-
-<section class="articleHead">
-  <div class="container">
-    <div class="breadcrumbs reveal">
-      <a href="./index.html">トップ</a><span class="metaDot">/</span>
-      <a href="./column.html">コラム</a><span class="metaDot">/</span>
-      <span>食品安全は“コスト”ではなく“信用の投資”</span>
-    </div>
-
-    <h1 class="h1 reveal">食品安全は“コスト”ではなく“信用の投資”<br>経営者が押さえる3つの意思決定</h1>
-
-    <div class="metaRow reveal" aria-label="記事メタ情報">
-      <span class="tag">経営</span>
-      <span class="tag">HACCP</span>
-      <span class="tag">JFS-B</span>
-      <span class="tag">ISO22000</span>
-      <span class="metaDot">•</span>
-      <span>読了目安：7〜9分</span>
-    </div>
-
-    <div style="height:18px"></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-
-    <!-- ============================================================
-         [EDIT MARKER #BODY] ここが本文（1カラムで中央表示）
-         ※「grid」や「toc」関連のHTML/CSSは入れない（右寄りの原因）
-         ============================================================ -->
-    <div class="card reveal">
-      <div class="prose">
-        <p>
-          食品安全は、現場任せに見えるテーマかもしれません。ですが本質は<strong>経営の意思決定</strong>です。
-          事故が起きたときに失うのは「売上」だけではなく、取引先・顧客・地域からの<strong>信用</strong>です。
-        </p>
-        <p>
-          一方で、食品安全に取り組むための投資は、無尽蔵にはできません。特に中小食品企業では、
-          人員・時間・教育・設備などの制約が現実としてあります。
-        </p>
-        <p>
-          だからこそ、経営者が押さえるべきは「完璧」ではなく、<span class="k">事故確率を下げる“要所”に集中する設計</span>です。
-          ここでは、HACCP／JFS-B／ISO22000の観点を踏まえた、3つの意思決定を整理します。
-        </p>
-
-        <div class="figure">
-          <p class="figureTitle">図解：食品安全を「投資」として捉えると見える構造</p>
-          <div class="diagram" role="img" aria-label="食品安全投資が信用と取引に影響する図解">
-            <div class="flow">
-              <div class="box"><b>投資</b>仕組み／教育／記録設計／検証</div>
-              <div class="arrow">↓</div>
-              <div class="box"><b>安定</b>逸脱の早期発見・是正／標準化</div>
-              <div class="arrow">↓</div>
-              <div class="box"><b>信用</b>取引継続／監査通過／クレーム減</div>
-              <div class="arrow">↓</div>
-              <div class="box"><b>利益</b>回収コスト減／機会損失の回避</div>
-            </div>
-          </div>
-          <p class="note">※食品安全は「守り」だけでなく、取引と継続の基盤になります。</p>
-        </div>
-
-        <h2>意思決定①「守るべきリスク」を明確にする</h2>
-        <p>
-          経営者が最初に決めるべきは、現場の細部ではなく<strong>守るべきリスクの定義</strong>です。
-        </p>
-        <ul>
-          <li>何が起きたら即停止するのか（停止基準）</li>
-          <li>誰が停止を判断できるのか（権限）</li>
-          <li>停止に伴う損失をどこまで許容するのか（意思）</li>
-        </ul>
-        <p>
-          ここが曖昧だと、現場は迷います。「止めたら怒られるかも」という空気は、事故を呼びます。
-        </p>
-
-        <div class="callout">
-          <b>経営メッセージの例（現場が迷わない）</b><br>
-          「安全に関わる疑いがあるときは、まず止める。判断は後から整える」
-        </div>
-
-        <h2>意思決定②「回る仕組み」の最小セットを決める</h2>
-        <p>
-          HACCPやISO22000の仕組みは、盛ろうと思えばいくらでも盛れます。
-          しかし、運用が破綻すれば意味がありません。
-        </p>
-        <p>
-          重要なのは、<span class="k">少人数でも回る“最小セット”</span>を先に定義することです。
-        </p>
-
-        <h3>最小セット（例）</h3>
-        <ul>
-          <li><strong>重要工程</strong>だけは毎日確実に見る（全部は見ない）</li>
-          <li><strong>逸脱時対応</strong>をテンプレ化する（誰でも動ける）</li>
-          <li><strong>検証</strong>は「月1回の定例」で回す（属人化させない）</li>
-        </ul>
-
-        <p>
-          経営の仕事は、現場に「余白」を作ることです。余白がないと、記録も教育も形になります。
-        </p>
-
-        <h2>意思決定③「文化」を作る：報告が上がる会社にする</h2>
-        <p>
-          事故が起きる会社では、ヒヤリ・ハットが上がりません。上がっても「面倒」「忙しい」で潰れます。
-        </p>
-        <p>
-          一方、事故を防ぐ会社は、<strong>小さな異常が“資産”として集まる</strong>ようにしています。
-          原因はシンプルで、経営が「報告した人を守る」からです。
-        </p>
-
-        <div class="figure">
-          <p class="figureTitle">図解：報告が上がる会社／上がらない会社</p>
-          <div class="diagram" role="img" aria-label="報告文化の違いを示す図解">
-            <div class="flow">
-              <div class="box"><b>上がらない会社</b>報告＝叱責／評価ダウン → 隠す文化</div>
-              <div class="box"><b>上がる会社</b>報告＝改善の起点 → 早期是正・再発防止</div>
-            </div>
-          </div>
-          <p class="note">※経営の一言で、報告量は大きく変わります。</p>
-        </div>
-
-        <h2>経営者が“現場に任せない方がいい”ポイント</h2>
-        <p>最後に、現場任せにしない方がよいポイントを整理します。</p>
-        <ul>
-          <li><strong>停止基準</strong>（止める判断の後押し）</li>
-          <li><strong>人と時間の配分</strong>（食品安全の優先順位）</li>
-          <li><strong>教育の継続</strong>（新人・派遣・応援の仕組み）</li>
-          <li><strong>是正の締切</strong>（先延ばしを許さない）</li>
-        </ul>
-
-        <h2>まとめ</h2>
-        <p>
-          食品安全は、現場の努力だけでは守りきれません。
-          経営が「何を守るか」「どこに集中するか」「報告をどう扱うか」を決めることで、事故確率は下がります。
-        </p>
-        <p>
-          HACCPやJFS-B、ISO22000支援を考えるときも、最初にやるべきは文書ではなく、
-          <span class="k">回る設計（最小セット）</span>です。
-        </p>
-
-        <div class="ctaCard">
-          <p style="margin:0 0 6px;font-weight:1000">資料・相談の活用について</p>
-          <p style="margin:0">
-            まずは全体像を掴みたい場合は、無料テンプレートをご活用ください。<br>
-            経営判断の整理（現状整理のみ）からでも、30分オンラインで対応しています。
-          </p>
-          <div class="ctaGrid">
-            <a class="btn primary" href="./download.html">無料テンプレートを見る</a>
-            <a class="btn" href="./index.html#consult">30分無料相談</a>
-          </div>
-          <p class="note" style="margin-bottom:0">
-            ※必要な方にだけ、関連サービスのご案内を差し上げます（状況に合わない提案は行いません）。
-          </p>
-        </div>
-
-        
-<!-- ▼ アプリ＆書籍 導線 -->
-<div class="ctaCard" style="border-top: 4px solid var(--accent); margin-top: 40px; margin-bottom: 30px;">
-  <h3 style="margin-top:0; font-size:20px;">無料で実践＆体系的に学ぶ</h3>
-  
-  <div style="margin-bottom: 20px;">
-    <h4 style="margin:0 0 8px; color:var(--accent2);">📱 食品安全・無料診断アプリ</h4>
-    <p style="margin:0 0 10px; font-size:14px;">現場の課題を可視化。現役監査員が設計したプロ仕様の診断ツールです。</p>
-    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
-      <a class="btn primary" href="./haccp-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">HACCP無料診断</a>
-      <a class="btn primary" href="./jfs-b-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">JFS-Bセルフチェック</a>
-      <a class="btn primary" href="./pricing.html#apps" target="_blank" style="font-size:14px; padding:8px 16px;">食品安全教育アプリ</a>
-    </div>
-  </div>
-
-  <div style="border-top: 1px dashed var(--line); padding-top: 16px;">
-    <h4 style="margin:0 0 8px; color:var(--accent2);">📘 現場で使える専門書籍</h4>
-    <p style="margin:0 0 10px; font-size:14px;">「HACCP構築」「JFS-B審査」を分かりやすく解説。Kindle Unlimitedなら無料で読めます。</p>
-    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
-      <a class="btn" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：HACCP実践編</a>
-      <a class="btn" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：JFS-B審査編</a>
-    </div>
-  </div>
-  <p style="margin-top:16px; font-size:12px; color:var(--muted); line-height:1.6;">
-    ※当サイトはAmazonアソシエイト・プログラムの参加者です。
-  </p>
-</div>
-<!-- ▲ アプリ＆書籍 導線 -->
-<div class="pager">
-          <a href="./column-5.html">← 前の記事へ</a>
-          <a href="./column-7.html">次の記事へ →</a>
-        </div>
-
+  <header class="header">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="./index.html"><img src="./assets/img/logo.png" alt="食品安全パートナーズ"></a>
+        <a class="btn" href="./index.html#consult">無料相談</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<footer class="footer">
-  <div class="container">© 食品安全パートナーズ</div>
-</footer>
+  <main class="container">
+    <article class="article-content">
+      <div class="article-header">
+        <h1 class="article-title">食品安全は“コスト”ではなく“信用の投資”｜経営者が押さえる3つの意思決定</h1>
+        <div class="article-meta">カテゴリ：経営・マネジメント ｜ 読了目安：約7分</div>
+      </div>
 
-<script>(() => {
-  const toTop = document.getElementById("toTop");
-  const bar = document.getElementById("progress");
-  const onScroll = () => {
-    const d = document.documentElement;
-    const max = (d.scrollHeight - d.clientHeight) || 1;
-    bar.style.width = (d.scrollTop / max) * 100 + "%";
-    toTop.classList.toggle("show", d.scrollTop > 600);
-  };
-  window.addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
+      <img src="./assets/img/column6_hero.png" alt="食品安全を経営課題として意思決定する様子" class="article-img">
 
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const targets = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.12 });
-    targets.forEach(el => io.observe(el));
-  }
-})();</script>
+      <p>「HACCPやJFS-Bは導入したいが、利益を生まない安全管理への出費はできれば抑えたい」</p>
+      
+      <p>このようにお考えではないでしょうか。たしかに、食品安全の仕組み構築や教育は直接的な「売上」を生みません。しかし、ひとたび事故（異物混入や食中毒の発生、それに伴う自主回収）が起きれば、失うものは「その日の売上や製品代金」だけでは済みません。取引先からの契約解除、消費者からの信用低下、地域でのブランド力失墜など、<strong>企業存続を揺るがす甚大なダメージ</strong>に直結します。</p>
 
+      <p>つまり、食品安全は単なる「守りのコスト」ではなく、将来の取引継続・拡大を担保するための<strong>積極的な「信用への投資」</strong>なのです。HACCPやJFS-Bなどの仕組みを機能させるためには、現場任せにせず、経営トップが「3つの意思決定」を行う必要があります。</p>
+
+
+      <!-- セクション1 -->
+      <h2>意思決定① 「守るべきリスク」を明確にする（停止基準）</h2>
+
+      <p>経営者が最初に決めるべきは、現場の細かい作業手順ではありません。<strong>「何が起きたら即座にラインを停止するのか」</strong>という経営としての譲れないラインの定義です。</p>
+
+      <ul>
+        <li>金属検出機が連続でNGを出した場合、どの範囲の製品を止めるのか。</li>
+        <li>原料の異常を発見した際、どの役職の人間がライン停止の判断を下せるのか（権限委譲）。</li>
+        <li>ライン停止に伴う「製品の歩留まり低下・納期遅れ（短期的な損失）」を、経営として許容する断固たる意思があるか。</li>
+      </ul>
+
+      <p>この基準が曖昧だと、現場に「ラインを止めたら怒られるかも」「納期に間に合わないから流そう」という心理的な圧力がかかり、結果として致命的な事故（不良品の流出）を招きます。</p>
+
+
+      <!-- セクション2 -->
+      <h2>意思決定② 「回る仕組み」の最小セットを決める（資源投資）</h2>
+
+      <p>HACCPやISO22000の要求事項をすべて完璧に満たそうとすると、中小企業の現場は書類仕事でパンクします。「人件費（残業代）」という見えないコストが高騰し、肝心の製品作りがおろそかになります。</p>
+
+      <p>だからこそ、経営者が介入して<strong>「少人数でも回る“最小セット”」にまで業務をリストラ（整理）</strong>する必要があります。例えば、「手洗いや服装チェックは毎時間ではなく、入室時のみ徹底する」「細かい温度は機械データで取り、人が紙に書くのは重要工程（CCP）のみにする」といった具合に、「ここは捨てる（簡略化する）、ここは絶対守る」というメリハリをつけるのも経営の役割です。</p>
+
+
+      <!-- セクション3 -->
+      <h2>意思決定③ 「報告が上がる文化」を育てる（心理的安全性）</h2>
+
+      <p>隠蔽体質のある会社では、ヒヤリ・ハットや小さなクレームが経営陣に上がってきません。報告すると「なぜそんなミスをしたんだ」と叱責されたり、評価が下がったりするからです。</p>
+
+      <p>事故を未然に防ぐ会社は、<strong>「小さな異常報告を資産として歓迎する」文化</strong>を持っています。経営者自らが、異常に備えて報告を上げてきた従業員を「よく止めてくれた、被害が最小限で済んだ」と評価・保護することが重要です。「報告＝改善の起点」とする意思決定は、お金をかけずにできる最大の信用投資です。</p>
+
+      <div class="callout" style="border-color:var(--accent2); background:#f4f7fb;">
+        <div class="callout-title" style="color:var(--accent2)">📌 まとめ：経営の「覚悟」が現場を動かす</div>
+        <p>食品安全・衛生管理に関するコンサルティングで最も効果が出るのは、経営者が「安全を最優先とする」という姿勢を言葉とルール（お金の使い道）で現場に示した時です。現場任せの安全管理から脱却し、「投資としてのHACCP」を戦略的に設計していきましょう。</p>
+      </div>
+
+
+      <!-- CTAエリア -->
+      <div style="border: 2px solid var(--accent); border-radius: 12px; padding: 30px; margin-top: 50px; background: #fff;">
+        <h3 style="margin-top:0; border:none; padding:0; text-align:center; font-size:22px; color:var(--ink);">経営判断を助ける「仕組みの土台」を手に入れる</h3>
+        <p style="text-align:center; margin-bottom: 24px; font-weight:600; color:var(--muted);">
+          「何から投資すべきか分からない」「現場の負担を増やさずに管理の質を上げたい」とお悩みの経営者様へ。<br>
+          監査員目線で「これだけあれば十分」というエッセンスを凝縮した、プロ仕様のHACCP構築・記録Excelテンプレートを無料で配布しています。まずはここから自社のルールを見直してみてください。
+        </p>
+        <div style="text-align: center;">
+          <a href="./download.html" class="btn" style="font-size: 18px; padding: 15px 30px; width: 100%; max-width: 400px; box-shadow: 0 8px 24px rgba(224, 135, 42, 0.4);">🎁 プロ仕様のテンプレートを無料ダウンロード</a>
+        </div>
+      </div>
+
+      <!-- ▼ アプリ＆書籍 導線 -->
+      <div class="ctaCard" style="border-top: 4px solid var(--accent); margin-top: 40px; margin-bottom: 30px; padding: 24px; background: #fafbfd; border-radius: 12px;">
+        <h3 style="margin-top:0; font-size:20px;">無料で実践＆体系的に学ぶ</h3>
+        
+        <div style="margin-bottom: 20px;">
+          <h4 style="margin:0 0 8px; color:var(--accent2);">📱 食品安全・無料診断アプリ</h4>
+          <p style="margin:0 0 10px; font-size:14px;">現場の課題を可視化。現役監査員が設計したプロ仕様の診断ツールです。</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="./haccp-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">HACCP無料診断</a>
+            <a class="btn primary" href="./jfs-b-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">JFS-Bセルフチェック</a>
+          </div>
+        </div>
+
+        <div style="border-top: 1px dashed var(--line); padding-top: 16px;">
+          <h4 style="margin:0 0 8px; color:var(--accent2);">📘 現場で使える専門書籍</h4>
+          <p style="margin:0 0 10px; font-size:14px;">「HACCP構築」「JFS-B審査」を分かりやすく解説。Kindle Unlimitedなら無料で読めます。</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：HACCP実践編</a>
+            <a class="btn" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：JFS-B審査編</a>
+          </div>
+        </div>
+      </div>
+      <!-- ▲ アプリ＆書籍 導線 -->
+
+      <p style="margin-top: 40px; text-align: center;">
+        <a href="./column.html" class="related-link">← コラム一覧へ戻る</a>
+      </p>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 食品安全パートナーズ</div>
+  </footer>
 
 <!-- ▼ フローティングCTA -->
 <div class="fl-cta-wrap">

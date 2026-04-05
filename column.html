@@ -485,25 +485,24 @@
         </div>
         <div class="grid3" id="popularGrid"></div>
 
-        <div class="ctaBar">
+        <div class="ctaBar" style="margin-top: 30px; margin-bottom: 20px;">
           <a class="btn dark" href="./index.html#consult">30分無料相談</a>
-          <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
+          <a class="btn primary" href="./download.html">無料特典（HACCPテンプレート）</a>
           <a class="btn" href="./index.html">トップへ戻る</a>
         </div>
       </div>
 
-      <!-- すべてのコラム（JSで自動生成） -->
-      <div style="height:16px"></div>
-      <div class="panel reveal" id="all">
+      <!-- カテゴリ別コラム（JSで自動生成） -->
+      <div style="height:24px"></div>
+      <div class="panel reveal" id="categories">
         <div class="splitHead">
-          <h2>すべてのコラム</h2>
+          <h2>カテゴリから探す</h2>
         </div>
 
-        <div class="grid4" id="allGrid"></div>
+        <div id="categoryContainer"></div>
 
-        <div class="ctaBar">
-          <a class="btn primary" href="./download.html">無料特典（テンプレート）</a>
-          <a class="btn dark" href="./index.html#consult">30分無料相談</a>
+        <div class="ctaBar" style="margin-top: 40px; margin-bottom: 10px;">
+          <a class="btn dark" href="./index.html#consult">自社の課題を30分無料相談してみる</a>
         </div>
       </div>
     </div>
@@ -516,21 +515,19 @@
   <script>
     (() => {
       // ============================================================
-      // [EDIT MARKER #A] コラム一覧データ（ここだけ編集すればOK）
+      // [EDIT MARKER #A] コラム一覧データ
       // - published: true ならリンク有効 / false なら準備中表示（リンク無効）
-      // - popularRank: 1〜3 を付けたものが人気TOP3に表示
-      // - TOP3（index.htmlと同じ並びに統一）
-      //    1位: column-7 / 2位: column-1 / 3位: column-2
+      // - category: "haccp" | "jfsb" | "management" 
       // ============================================================
       const columns = [
-        // ====== 人気TOP3（popularRank を 1〜3 に振る）======
         {
           id: 7,
           href: "./column-7.html",
           title: "JFS-B審査レベルアップ！中小食品企業が準備すべき5つのポイント",
           excerpt: "JFS-B審査で実際に見られる「ハザード分析／フローダイアグラム／CCP根拠／記録／教育」を、審査前に“何から点検するか”の順序で整理。限られた人手でもHACCP構築を前に進めたい中小食品企業向けの実務ポイントです。",
-          tags: ["JFS-B審査", "HACCP構築", "ハザード分析", "中小食品企業"],
-          published: true
+          tags: ["JFS-B審査", "HACCP構築", "ハザード分析"],
+          published: true,
+          category: "jfsb"
         },
         {
           id: 1,
@@ -538,89 +535,90 @@
           title: "HACCP構築のコツ：JFS-Bを見据えた「現場で回る仕組み」の作り方",
           excerpt: "HACCP構築でつまずきやすい「工程把握→ハザード分析→管理手段の根拠」を、JFS-Bの審査観点に合わせて解説。審査で“説明できる”形に整える順序が分かります。",
           tags: ["HACCP構築", "JFS-B", "工程把握", "ハザード分析"],
-          published: true
+          published: true,
+          category: "haccp"
         },
         {
           id: 2,
           href: "./column-2.html",
           title: "HACCPの“記録が続かない”を解決する。<br>中小食品企業のための運用設計と定着のコツ",
           excerpt: "人手不足・属人化でも回る「記録の最小セット」と運用ルール（頻度／責任者／是正の流れ）を整理。JFS-B審査前に慌てないための“継続できる仕組み”が分かります。",
-          tags: ["記録", "運用定着", "中小食品企業", "HACCP"],
-          published: true
+          tags: ["記録", "運用定着", "中小食品企業"],
+          published: true,
+          category: "haccp"
         },
-
-        // ====== ここから下：全コラム一覧（id順に並べると管理が楽）======
         {
           id: 3,
           href: "./column-3.html",
           title: "審査で効く「説明できるHACCP」。<br>CCP/OPRP/PRPの整理と、検証・是正の最小セット",
           excerpt: "“やっているのに伝わらない”を解消。監査員目線で、整合と根拠の作り方を整理します。",
           tags: ["HACCP", "JFS-B", "検証", "是正"],
-          published: true
+          published: true,
+          category: "haccp"
         },
-
-        /* ==========================================================
-           [EDIT MARKER #B] column-4.html は未作成：準備中として表示
-           - published:false のためリンク無効（クリックできない）
-           - column-4.html を作ったら published:true に変更するだけ
-           ========================================================== */
         {
           id: 4,
           href: "./column-4.html",
           title: "食品事故が起きる企業の特徴。<br>「仕組み」より先に整えるべき4つの癖",
           excerpt: "食品事故は偶然ではなく「小さな異常の蓄積」で起きます。記録の目的化、ハザード分析の形骸化、属人化、共有不足、優先順位の曖昧さ——事故を未然に防ぐための実務ポイントを整理します。",
           tags: ["食品事故", "HACCP", "運用", "マネジメント"],
-          published: true
+          published: true,
+          category: "management"
         },
-
         {
           id: 5,
           href: "./column-5.html",
           title: "経営者のための食品安全。<br>投資対効果が出る“最小の仕組み”と意思決定",
           excerpt: "現場に丸投げしない。事故・監査・取引要件に強い体制を、コストを抑えて作る考え方を整理。",
           tags: ["経営", "リスク", "体制"],
-          published: true
+          published: true,
+          category: "management"
         },
         {
           id: 6,
           href: "./column-6.html",
           title: "食品安全は“コスト”ではなく“信用の投資”<br>経営者が押さえる3つの意思決定",
-          excerpt: "食品安全を「信用への投資」と捉え、事故確率を下げる“要所”に集中する設計を整理。HACCP／JFS-B／ISO22000の観点で、①停止基準②回る最小セット③報告文化を実務目線で解説します。",
-          tags: ["経営", "食品安全", "HACCP", "JFS-B", "ISO22000"],
-          published: true
+          excerpt: "食品安全を「信用への投資」と捉え、事故確率を下げる“要所”に集中する設計を整理。HACCP／JFS-B／ISO22000の観点で、経営者が押さえておくべきポイントを実務目線で解説します。",
+          tags: ["経営", "食品安全", "投資"],
+          published: true,
+          category: "management"
         },
         {
           id: 8,
           href: "./column-8.html",
           title: "【食中毒対策】主要な菌・ウイルスの特徴と対策一覧（無料教育アプリ付）",
           excerpt: "食品工場や飲食店で必須の微生物知識。ノロウイルスやO157などの対策をまとめた「食中毒菌図鑑」に加え、無料で学べる「食品安全教育アプリ」の活用法も紹介します。",
-          tags: ["基礎知識", "食中毒菌", "HACCP構築"],
+          tags: ["基礎知識", "食中毒菌", "教育"],
           published: true,
-          popularRank: 1
+          popularRank: 1,
+          category: "haccp"
         },
         {
           id: 9,
           href: "./column-9.html",
           title: "監査で何度も突き返される…！「不適合（指摘事項）」に対する是正処置の書き方と根本原因分析",
           excerpt: "「清掃を徹底します」という回答がなぜ突き返されるのか？監査員が求める「修正」と「是正処置」の決定的な違いから、なぜなぜ分析、水平展開の手法までプロが解説します。",
-          tags: ["JFS-B審査", "HACCP構築", "是正処置", "内部監査"],
-          published: true
+          tags: ["JFS-B審査", "是正処置", "内部監査"],
+          published: true,
+          category: "jfsb"
         },
         {
           id: 10,
           href: "./column-10.html",
           title: "もうクレームを出さない！食品工場における「異物（毛髪・虫）混入」の発生原因と、現場でできる防ぎ方",
           excerpt: "食品工場の最大のリスクである「異物混入」。なぜ混入は起きるのか？ハード面・ソフト面からの総合的なアプローチと実践的な防ぎ方をプロが解説します。",
-          tags: ["異物混入", "PRP（前提条件プログラム）", "品質管理"],
-          published: true
+          tags: ["異物混入", "一般衛生管理", "品質管理"],
+          published: true,
+          category: "haccp"
         },
         {
           id: 11,
           href: "./column-11.html",
           title: "食品工場の「5S活動」が定着しない3つの理由。現場が自発的に動く『仕組み化』のコツ",
           excerpt: "食品工場で「5S」が定着しない原因は「目的の不明確さ」等にあります。HACCPの土台となる5Sを、仕組みとして現場に根付かせるコツを解説します。",
-          tags: ["5S活動", "社内教育", "一般的衛生管理"],
-          published: true
+          tags: ["5S活動", "社内教育", "一般衛生管理"],
+          published: true,
+          category: "management"
         },
         {
           id: 12,
@@ -628,15 +626,17 @@
           title: "外国人・パートスタッフにも確実に伝わる！手戻りをなくす「食品衛生の教育ルール」とマニュアル作成術",
           excerpt: "食品工場での従業員教育（新人、パート、外国人労働者）の悩みを解決する教育体制の作り方。言葉の壁を越えるビジュアルマニュアルや教育アプリの活用法。",
           tags: ["社内教育", "外国人スタッフ", "HACCP"],
-          published: true
+          published: true,
+          category: "management"
         },
         {
           id: 13,
           href: "./column-13.html",
           title: "「万が一」に備える！法改正に対応した食品回収（リコール）の初動対応と、被害を最小限に抑える体制づくり",
           excerpt: "義務化された「自主回収（リコール）の行政報告」。厚労省システムを利用した具体的な報告手順と、回収被害を抑えるHACCP・トレーサビリティ体制を解説。",
-          tags: ["法改正対応", "リコール（食品回収）", "HACCP"],
-          published: true
+          tags: ["法規対応", "リコール（食品回収）"],
+          published: true,
+          category: "management"
         },
         {
           id: 14,
@@ -644,7 +644,8 @@
           title: "JFS-B審査で問われる「サプライヤー（購買先）管理」。危険な原料を工場に入れないための防波堤づくり",
           excerpt: "食品安全は自社の工場内だけでは完結しません。JFS-B規格で必ず求められる「サプライヤーの評価・管理手順」について、未承認原料の流入を防ぐ仕組みを解説します。",
           tags: ["JFS-B審査", "サプライヤー管理", "購買ルール"],
-          published: true
+          published: true,
+          category: "jfsb"
         },
         {
           id: 15,
@@ -652,31 +653,34 @@
           title: "HACCP義務化、中小企業は何からすればいい？現役コンサルが解説",
           excerpt: "HACCP義務化に対して「最低限の基準をやればいい」と考えていませんか？その認識では取引先の厳しい二者監査は通過できません。法律クリアだけでなく、実際の商取引で選ばれるための実践的ステップを解説します。",
           tags: ["HACCP義務化", "二者監査", "JFS-B"],
-          published: true
+          published: true,
+          category: "haccp"
         },
         {
           id: 16,
           href: "./column-16.html",
           title: "JFS-B取得費用の相場は？審査・コンサル料金の比較と補助金活用術",
-          excerpt: "JFS-B規格の取得費用はいくら？監査費用25〜40万円、コンサル料金15〜100万円超の内訳を解説。人材開発支援助成金やIT導入補助金など過去3年の活用事例と、相見積もりで適正価格を見極めるコツを紹介。",
+          excerpt: "JFS-B規格の取得費用はいくら？監査費用25〜40万円、コンサル料金15〜100万円超の内訳を解説。人材開発支援助成金やIT導入補助金など過去3年の活用事例と、適正価格を見極めるコツを紹介。",
           tags: ["JFS-B", "取得費用", "補助金", "助成金"],
           published: true,
-          popularRank: 3
+          popularRank: 3,
+          category: "jfsb"
         },
         {
           id: 17,
           href: "./column-17.html",
           title: "【審査員はここを見る】食品工場の衛生管理チェックリスト・3つの危険な盲点",
           excerpt: "「毎日清掃しているのにトラブルが絶えない…」とお悩みの工場へ。現役審査員が、ネットの汎用チェック表では防げない「3つの致命的な落とし穴（上部空間・分解洗浄・交差汚染）」を徹底解説します。",
-          tags: ["衛生管理", "チェックリスト", "監査対応", "異物混入"],
+          tags: ["衛生管理", "監査対応", "異物混入"],
           published: true,
-          popularRank: 2
+          popularRank: 2,
+          category: "jfsb"
         }
       ];
 
       // ---------- DOM参照 ----------
       const popularGrid = document.getElementById("popularGrid");
-      const allGrid = document.getElementById("allGrid");
+      const categoryContainer = document.getElementById("categoryContainer");
 
       // ---------- カード生成 ----------
       const esc = (s) => String(s ?? "");
@@ -716,9 +720,28 @@
 
       popularGrid.innerHTML = popular.map(c => cardHTML(c, { showRank: true })).join("");
 
-      // ---------- すべてのコラム ----------
-      const all = [...columns].sort((a, b) => a.id - b.id);
-      allGrid.innerHTML = all.map(c => cardHTML(c)).join("");
+      // ---------- カテゴリ別レンダリング ----------
+      const catMap = {
+        "haccp": "HACCP構築・一般衛生管理",
+        "jfsb": "JFS-B審査・監査対応対策",
+        "management": "経営・マネジメント・人材教育"
+      };
+
+      let catHTML = "";
+      for (const [key, label] of Object.entries(catMap)) {
+        const items = columns.filter(c => c.category === key).sort((a, b) => a.id - b.id);
+        if (items.length === 0) continue;
+        
+        catHTML += `
+          <h3 style="font-size:20px; border-bottom:2px dashed var(--line); padding-bottom:10px; margin: 40px 0 20px; color: var(--accent2);">
+            ${label}
+          </h3>
+          <div class="grid4">
+            ${items.map(c => cardHTML(c)).join("")}
+          </div>
+        `;
+      }
+      categoryContainer.innerHTML = catHTML;
 
       // ---------- スクロールUI ----------
       const toTop = document.getElementById("toTop");
@@ -742,7 +765,6 @@
       }
     })();
   </script>
-
 
 <!-- ▼ フローティングCTA -->
 <div class="fl-cta-wrap">

@@ -1,49 +1,240 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HACCP構築のコツ：JFS-Bを見据えた「現場で回る仕組み」の作り方｜食品安全パートナーズ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HACCP構築のコツ：JFS-Bを見据えた「現場で回る仕組み」の作り方｜食品安全パートナーズ</title>
+  <meta name="description"
+    content="HACCP義務化への対応にお悩みの中小食品企業へ。ひな形を埋めただけの「形だけのHACCP」から脱却し、JFS-B審査や実際の現場で確実に回る仕組み作りのコツをプロが徹底解説。無料のHACCP構築テンプレートも配布中です。">
+  <meta name="keywords" content="HACCP, JFS-B, 食品安全, ハザード分析, 運用構築, 中小食品企業, チェックリスト">
   <meta name='robots' content='index,follow'>
   <link rel='canonical' href='https://foodsafety-partners.github.io/foodsafety-site/column-1.html'>
-<meta name="description" content="HACCP義務化への対応にお悩みの中小食品企業へ。形だけのHACCPから脱却し、JFS-Bを見据えた「現場で回る仕組み」の作り方をプロが図解で解説。【無料HACCP診断・テンプレート公開中】自社に最適な改善策が3分で見つかります。">
-<meta name="keywords" content="HACCP, JFS-B, 食品安全, ハザード分析, 食品安全コンサル, 中小食品企業">
-<style>:root{
-  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
-  --accent:#e0872a; --accent2:#2c567a;
-  --soft:#eef1f6; --shadow:0 16px 40px rgba(24,32,48,.18);
-  --w:980px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--w);margin:0 auto;padding:0 18px}
 
-#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
-#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;
-  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
-#toTop.show{opacity:1;transform:none}
+  <style>
+    /* 共通スタイル（コラム16ベース） */
+    :root {
+      --ink: #1b2533;
+      --muted: #5a6475;
+      --line: #d9dde6;
+      --accent: #e0872a;
+      --accent2: #2c567a;
+      --soft: #eef1f6;
+      --shadow: 0 16px 40px rgba(24, 32, 48, .18);
+      --w: 880px;
+    }
 
-.header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.menu{display:flex;gap:16px;font-weight:900;font-size:14px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:12px;font-weight:1000;border:1px solid var(--line);background:#fff}
-.btn.primary{background:var(--accent);color:#fff;border:none}
-.section{padding:50px 0}
-.h1{font-size:30px;font-weight:1000;line-height:1.3}
-.meta{color:var(--muted);font-size:12px;font-weight:850;margin-top:6px}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-.prose{line-height:2;font-weight:850}
-.prose h2{margin-top:30px;font-size:20px}
-.callout{border-left:6px solid var(--accent);background:#fff;border:1px solid var(--line);border-left-width:6px;border-radius:16px;padding:14px;margin:20px 0}
-.ctaCard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:30px}
-.footer{padding:20px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
-@media(max-width:980px){
-.menu{display:none}
-.h1{font-size:26px}
-}
-</style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, sans-serif;
+      background: #fff;
+      color: var(--ink);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .95);
+      border-bottom: 1px solid rgba(27, 37, 51, .08);
+      padding: 12px 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand img {
+      height: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      background: var(--accent);
+      color: white;
+      text-align: center;
+    }
+
+    .article-header {
+      padding: 60px 0 30px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 40px;
+    }
+
+    .article-title {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.4;
+      margin: 0 0 16px;
+      color: var(--accent2);
+    }
+
+    .article-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .article-content h2 {
+      font-size: 24px;
+      font-weight: 800;
+      padding: 12px 16px;
+      background: #f4f7fb;
+      border-left: 5px solid var(--accent);
+      margin: 50px 0 20px;
+    }
+
+    .article-content h3 {
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 2px dashed var(--line);
+      padding-bottom: 8px;
+      margin: 40px 0 16px;
+    }
+
+    .article-content p {
+      margin: 0 0 20px;
+    }
+
+    .article-content ul {
+      margin: 0 0 24px;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 8px;
+    }
+
+    .article-content strong {
+      color: #d32f2f;
+      background: linear-gradient(transparent 60%, rgba(224, 135, 42, 0.3) 60%);
+    }
+
+    /* 画像プレースホルダー */
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #1b2533 0%, var(--accent2) 100%);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 24px rgba(27,37,51,.2);
+      text-align: center;
+      padding: 20px;
+    }
+    .image-placeholder .icon { font-size: 64px; margin-bottom: 12px; }
+    .image-placeholder .title { font-size: 24px; font-weight: 900; letter-spacing: 0.05em; }
+
+    .callout {
+      background: #fff8f0;
+      border: 1px solid #ffd8a8;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .callout-title {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .step-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin: 20px 0;
+      padding: 20px;
+      background: #fafbfd;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .step-body h4 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      color: var(--accent2);
+    }
+
+    .step-body p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      margin-top: 60px;
+    }
+
+    .related-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent2);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    @media(max-width: 768px) {
+      .article-title {
+        font-size: 22px;
+      }
+      .article-content h2 {
+        font-size: 20px;
+      }
+      .step-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .image-placeholder .icon {font-size: 48px;}
+      .image-placeholder .title {font-size: 18px;}
+    }
+  </style>
 
 <!-- ▼ フローティングCTA用CSS -->
 <style id="floating-cta-style">
@@ -128,159 +319,128 @@ a{color:inherit;text-decoration:none}
 <!-- ▲ フローティングCTA用CSS -->
 
 </head>
+
 <body>
-
-<div id="progress"></div>
-<a id="toTop" href="#">↑</a>
-
-<header class="header">
-<div class="container nav">
-<a href="./index.html"><strong>食品安全パートナーズ</strong></a>
-<nav class="menu">
-<a href="./column.html">コラム一覧</a>
-<a href="./download.html">無料特典</a>
-<a href="./index.html#consult">無料相談</a>
-</nav>
-<a class="btn primary" href="./index.html#consult">無料相談</a>
-</div>
-</header>
-
-<section class="section">
-<div class="container">
-
-<h1 class="h1">HACCP構築のコツ：<br>JFS-Bを見据えた「現場で回る仕組み」の作り方</h1>
-<div class="meta">HACCP / JFS-B / ハザード分析 | 読了目安：約7分</div>
-
-<div class="card" style="margin-top:20px">
-<div class="prose">
-
-<p>
-HACCPを導入したのに、現場が変わらない。
-記録はあるのに、安心感がない。
-</p>
-
-<p>
-それは「文書を作った」だけで、「仕組みを設計していない」状態かもしれません。
-</p>
-
-<h2>形だけのHACCPとは</h2>
-
-<p>
-・ハザード分析がテンプレートのまま  
-・CCPが多すぎる  
-・是正措置が曖昧  
-・検証が形骸化  
-</p>
-
-<p>
-これらはすべて、“設計不足”から起こります。
-</p>
-
-<h2>回る仕組みの条件</h2>
-
-<ul>
-<li>重要工程に集中している</li>
-<li>判断基準が明確</li>
-<li>異常時の動きが決まっている</li>
-<li>担当者が変わっても継続できる</li>
-</ul>
-
-<div class="callout">
-<strong>ポイント</strong><br>
-HACCPは「文書」ではなく「設計」で決まります。
-</div>
-
-<h2>JFS-Bを見据える理由</h2>
-
-<p>
-JFS-Bは単なる規格ではありません。
-“運用できる仕組み”を求めています。
-</p>
-
-<p>
-審査前に慌てないためにも、日常運用の設計が重要です。
-</p>
-
-<h2>まとめ</h2>
-
-<p>
-食品安全は、取得して終わりではありません。
-回る仕組みを作ることが、本当のスタートです。
-</p>
-
-</div>
-</div>
-
-<!-- 通常CTA -->
-<div class="ctaCard" style="border:2px solid var(--accent); padding:24px; position:relative; overflow:hidden;">
-  <div style="position:absolute; top:-20px; right:-20px; opacity:0.03; font-size:120px; transform:rotate(-15deg); pointer-events:none;">📄</div>
-  <h3 style="margin:0 0 12px; font-size:20px; color:var(--ink);">HACCPの書類作りで、時間を無駄にしていませんか？</h3>
-  <p style="margin:0 0 16px; line-height:1.8; color:var(--muted); font-size:14px; font-weight:700;">
-    「何から始めればいいか分からない」「我流で作ってやり直しになるのは避けたい」<br>
-    そんなお悩みを持つ企業様へ。審査官が納得する『実務の土台』を、空白を埋めるだけで構成できるプロ仕様のExcelテンプレートを無料で配布しています。
-  </p>
-  <a class="btn primary" href="./download.html" style="width:100%; font-size:16px; padding:14px;">🎁 今すぐHACCPテンプレートを無料で受け取る</a>
-</div>
-  <h3 style="margin:0 0 12px; font-size:20px; color:var(--ink);">HACCPの書類作りで、時間を無駄にしていませんか？</h3>
-  <p style="margin:0 0 16px; line-height:1.8; color:var(--muted); font-size:14px; font-weight:700;">
-    「何から始めればいいか分からない」「我流で作ってやり直しになるのは避けたい」<br>
-    そんなお悩みを持つ企業様へ。審査官が納得する『実務の土台』を、空白を埋めるだけで構成できるプロ仕様のExcelテンプレートを無料で配布しています。
-  </p>
-  <a class="btn primary" href="./download.html" style="width:100%; font-size:16px; padding:14px;">🎁 今すぐHACCPテンプレートを無料で受け取る</a>
-</div>
-
-
-
-
-<!-- ▼ アプリ＆書籍 導線 -->
-<div class="ctaCard" style="border-top: 4px solid var(--accent); margin-top: 40px; margin-bottom: 30px;">
-  <h3 style="margin-top:0; font-size:20px;">無料で実践＆体系的に学ぶ</h3>
-  
-  <div style="margin-bottom: 20px;">
-    <h4 style="margin:0 0 8px; color:var(--accent2);">📱 食品安全・無料診断アプリ</h4>
-    <p style="margin:0 0 10px; font-size:14px;">現場の課題を可視化。現役監査員が設計したプロ仕様の診断ツールです。</p>
-    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
-      <a class="btn primary" href="./haccp-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">HACCP無料診断</a>
-      <a class="btn primary" href="./jfs-b-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">JFS-Bセルフチェック</a>
-      <a class="btn primary" href="./pricing.html#apps" target="_blank" style="font-size:14px; padding:8px 16px;">食品安全教育アプリ</a>
+  <header class="header">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="./index.html"><img src="./assets/img/logo.png" alt="食品安全パートナーズ"></a>
+        <a class="btn" href="./index.html#consult">無料相談</a>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <div style="border-top: 1px dashed var(--line); padding-top: 16px;">
-    <h4 style="margin:0 0 8px; color:var(--accent2);">📘 現場で使える専門書籍</h4>
-    <p style="margin:0 0 10px; font-size:14px;">「HACCP構築」「JFS-B審査」を分かりやすく解説。Kindle Unlimitedなら無料で読めます。</p>
-    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
-      <a class="btn" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：HACCP実践編</a>
-      <a class="btn" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：JFS-B審査編</a>
-    </div>
-  </div>
-  <p style="margin-top:16px; font-size:12px; color:var(--muted); line-height:1.6;">
-    ※当サイトはAmazonアソシエイト・プログラムの参加者です。
-  </p>
-</div>
-<!-- ▲ アプリ＆書籍 導線 -->
-<div style="margin-top:30px">
-<a href="./column.html" style="font-weight:1000;color:var(--accent2);text-decoration:underline">← コラム一覧へ戻る</a>
-</div>
+  <main class="container">
+    <article class="article-content">
+      <div class="article-header">
+        <h1 class="article-title">HACCP構築のコツ：JFS-Bを見据えた「現場で回る仕組み」の作り方</h1>
+        <div class="article-meta">カテゴリ：HACCP構築・JFS-B ｜ 読了目安：約5分</div>
+      </div>
 
-</div>
-</section>
+      <img src="./assets/img/column1_hero.png" alt="HACCPの現場改善と巡回チェック" class="article-img">
 
-<footer class="footer">
-© 食品安全パートナーズ
-</footer>
+      <p>「HACCPを導入したのに、現場の衛生管理レベルが全く変わっていない気がする」<br>
+      「分厚いマニュアルと日々の記録用紙はあるが、本当に事故を防げるという安心感がない」</p>
 
-<script>
-const bar=document.getElementById("progress");
-const toTop=document.getElementById("toTop");
-window.addEventListener("scroll",()=>{
-const d=document.documentElement;
-bar.style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100+"%";
-toTop.classList.toggle("show",d.scrollTop>400);
-});
-</script>
+      <p>HACCP義務化に伴い、多くの食品企業が衛生管理計画を作成しましたが、このような「モヤモヤ」を抱えている経営者や品質管理担当者は非常に多いです。実はその原因の多くは<strong>「ひな形（テンプレート）の空白を埋めただけの文書作成」に終始しており、「自社の現場で回る仕組みの設計」が行われていない</strong>ことにあります。</p>
+
+      <p>本コラムでは、「形だけのHACCP」がなぜ危険なのかを明らかにし、将来的な取引拡大（JFS-Bをはじめとする二者監査の通過）を見据えた<strong>「現場で確実に機能するシステム構築のコツ」</strong>を現役監査員の視点から解説します。</p>
 
 
+      <!-- セクション1 -->
+      <h2>1. 現場を苦しめる「形だけのHACCP」3つの悲劇</h2>
+
+      <p>外部から見栄えの良いマニュアルを買ってきたり、他社のものをコピーして作っただけのシステムは、現場で機能しないどころか、かえって従業員のモチベーションを低下させます。具体的には次のような「悲劇」が起こります。</p>
+
+      <ul>
+        <li><strong>現場のハザードと一致していない：</strong> 自社の機械の構造や独特の動線を無視し、一般的な危害要因（ハザード）しか分析されていないため、本当に危ない「死角」から異物混入等の事故が起きる。</li>
+        <li><strong>CCP（重要管理点）が多すぎる：</strong> あれもこれも「重要」と設定してしまい、現場の担当者が記録や確認作業に忙殺される。結果として「ただ数値を埋めるだけの作業」と化してしまう。</li>
+        <li><strong>是正措置が曖昧：</strong> 基準を逸脱した時（例：加熱温度が足りなかった時）のルールが「責任者に報告する」程度しかなく、その場で即座に製品を止める・廃棄するなどの「具体的なアクション」が設定されていない。</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">⚠️ 監査の現場でよくある指摘</div>
+        <p>監査員が現場に入ってまず見抜くのは、「記録用紙の隅にある嘘（適当なチェック）」です。仕組みが現実の作業スピードや人員配置と乖離していると、従業員はルールを守りきれず、結果として<strong>“やっていないのに、記録ではやったことになっている”状態</strong>が生まれます。これは食品安全において最も危険な状態（隠蔽体質）です。</p>
+      </div>
+
+
+      <!-- セクション2 -->
+      <h2>2. JFS-B審査員はここを見る！「回る仕組み」の4条件</h2>
+
+      <p>本当の意味で「回る仕組み」を設計するには、以下の4つの条件を満たす必要があります。これはJFS-B審査において監査員が重点的に確認する項目でもあります。</p>
+
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>重要工程に「資源」を集中しているか</h4>
+          <p>すべての工程を100点で管理することは不可能です。だからこそ、ハザード分析を通じて「絶対に失敗が許されない工程（CCP等）」を絞り込み、そこに人員や手間（監視・記録）を集中させるメリハリのある設計が必要です。</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>迷わない「明確な判断基準（許容限界）」</h4>
+          <p>「適切な温度で」「きれいになるまで」といった曖昧な表現はルールではありません。「中心温度75℃以上・1分間」「目視で残渣ゼロ」など、誰が見ても○か×か（合格か不合格か）が一瞬で分かる基準（CL：許容限界）を設定します。</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>異常発生時の「是正（リカバリー）手順」が定まっている</h4>
+          <p>異常（ルール違反や逸脱）は必ず起こる前提で設計します。異常が起きた際に「誰が」「製品をどう止血し」「機械をどう再稼働させるか」が明確に決まっており、現場がパニックにならずに動けることが重要です。</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>属人化からの脱却（誰がやっても同じ結果になる）</h4>
+          <p>「ベテランのAさんしか検査のやり方が分からない」という状態は、HACCPシステムとして未完成です。言語の壁や人員の入れ替わりを考慮し、写真や図を活用したマニュアルで「再現性」を担保します。</p>
+        </div>
+      </div>
+
+
+      <!-- セクション3 -->
+      <h2>3. なぜ「HACCP構築」の段階でJFS-Bを見据えるべきなのか？</h2>
+
+      <p>現在、HACCPの制度化に対応している中小食品企業が多くありますが、なぜその段階で「JFS-B規格」を見据えた構築をしておくべきなのでしょうか。</p>
+
+      <p>それは、後になってから<strong>「二度手間（多大なコスト）」を防ぐため</strong>です。</p>
+
+      <p>大手スーパーマケットやコンビニ、食品メーカーとの取引では、単なる「HACCP対応」だけでは不十分とされ、「JFS-B」やそれ以上の第三者認証（適合証明）の取得を要件とされたり、厳しい二者監査が実施されることが増えています。</p>
+
+      <p>我流で中途半端なシステムを作ってしまうと、いざ取引先から認証を求められた際に、「ハザード分析のやり直し」「帳票の全改訂」「現場ルールの再教育」という膨大な修正作業が発生します。最初からJFS-Bの要求事項に沿った「骨太な仕組み」で設計しておけば、いざという時の審査もスムーズに通過でき、余計なコンサル費用の出費も抑えることができます。</p>
+
+      <div class="callout" style="border-color:var(--accent2); background:#f4f7fb;">
+        <div class="callout-title" style="color:var(--accent2)">📌 まとめ：HACCPは書類ではなく「動的システム」</div>
+        <p>HACCPはマニュアルを作って終わり（静的）ではありません。PDCAサイクルを回しながら、より現場に合った形へアップデートしていく「動的システム」です。最初の設計（Pの段階）で現場の「痛み」に寄り添い、無理のない現実的なラインを引けるかどうかが、その後の運用定着率を100%左右します。</p>
+      </div>
+
+
+      <!-- CTAエリア -->
+      <div style="border: 2px solid var(--accent); border-radius: 12px; padding: 30px; margin-top: 50px; background: #fff;">
+        <h3 style="margin-top:0; border:none; padding:0; text-align:center; font-size:22px; color:var(--ink);">審査員が納得する『実務の土台』を手に入れませんか？</h3>
+        <p style="text-align:center; margin-bottom: 24px; font-weight:600; color:var(--muted);">
+          「何から始めればいいか分からない」「我流で作ってやり直しになるのは避けたい」とお悩みの企業様へ。<br>
+          プロの現場目線で設計した「エラーを防ぐHACCP構築Excelテンプレート」を無料で配布しています。
+        </p>
+        <div style="text-align: center;">
+          <a href="./download.html" class="btn" style="font-size: 18px; padding: 15px 30px; width: 100%; max-width: 400px; box-shadow: 0 8px 24px rgba(224, 135, 42, 0.4);">🎁 プロ仕様のテンプレートを無料ダウンロード</a>
+        </div>
+      </div>
+
+      <p style="margin-top: 40px; text-align: center;">
+        <a href="./column.html" class="related-link">← コラム一覧へ戻る</a>
+      </p>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 食品安全パートナーズ</div>
+  </footer>
 
 <!-- ▼ フローティングCTA -->
 <div class="fl-cta-wrap">

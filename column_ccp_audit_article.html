@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【JFS-B監査員の目線①】「あ、書き忘れました」で終わらせない。CCP記録漏れから真因を特定する6つのステップ</title>
+    <meta name="description" content="現役JFS-B監査員の視点から、CCP記録漏れを発見した際のプロの深掘り術を全6ステップで解説します。日々の現場確認や日報確認で役立つ、論理的な原因追及の方法とは。">
+    <!-- 既存のCSSと競合しないよう、インラインで簡易スタイルを当てていますが、実装時はサイトの共通CSSに合わせてください -->
+    <style>
+        .column-content { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; line-height: 1.8; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .column-content h1 { font-size: 1.8em; color: #1a365d; border-bottom: 2px solid #2b6cb0; padding-bottom: 10px; margin-bottom: 30px; }
+        .column-content h2 { font-size: 1.4em; color: #2b6cb0; margin-top: 40px; border-left: 5px solid #3182ce; padding-left: 10px; }
+        .column-content h3 { font-size: 1.2em; color: #4a5568; margin-top: 30px; }
+        .column-content p { margin-bottom: 20px; }
+        .column-content .hero-image { width: 100%; height: auto; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .column-content .highlight { background-color: #ebf8ff; padding: 15px; border-radius: 5px; border-left: 4px solid #3182ce; margin: 20px 0; font-weight: bold; }
+        .column-content .cta-box { background-color: #f7fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 30px; text-align: center; margin-top: 50px; }
+        .column-content .cta-button { display: inline-block; background-color: #3182ce; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; transition: background-color 0.3s; }
+        .column-content .cta-button:hover { background-color: #2b6cb0; }
+        .column-content .step-box { background-color: #fff; border: 1px solid #e2e8f0; border-radius: 5px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .column-content .step-title { color: #2b6cb0; font-weight: bold; font-size: 1.1em; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<article class="column-content">
+    <img src="/images/CCP記録漏れコラム_文字あり版_20260507.png" alt="CCP記録漏れからの深掘り術" class="hero-image">
+
+    <h1>【JFS-B監査員の目線①】「あ、書き忘れました」で終わらせない。CCP記録漏れから真因を特定する6つのステップ</h1>
+
+    <p>たった1箇所の記録の空白が、数千万円の製品回収（リコール）と、長年築き上げた取引先からの信頼を瞬時に奪い去る。<br>現場の作業者は、その「空白の恐ろしさ」を本当に理解しているでしょうか？</p>
+
+    <p>こんにちは。食品安全パートナーズです。<br>
+    現役のJFS-B監査員として、年間数十に及ぶ食品工場の現場を見てきました。その中で、最も頻繁に遭遇し、かつ最も「危険な兆候」を示すのが<strong>【CCP（重要管理点）の記録漏れ】</strong>です。</p>
+
+    <p>現場で記録漏れを指摘した際、「あ、忙しくてつい書き忘れました。次から気をつけます」という言葉で終わらせていませんか？<br>
+    もしあなたの日々の現場確認や日報確認で、この対応を許容しているとしたら、それは<strong>「時限爆弾」のスイッチを入れたまま放置している</strong>のと同じです。</p>
+
+    <p>私たちプロの監査員は、単に「空欄があること」を粗探しして不適合にしたいわけではありません。限られた審査時間（約1〜2時間）の中で、その「空欄」が<strong>単なるヒューマンエラーなのか、それとも工場全体の食品安全システムが崩壊しているサインなのか</strong>を見極めているのです。</p>
+    
+    <p>ある中堅食品メーカーでは、監査で発覚した「たった1日のCCP記録の空白」が原因で、そのロットの安全性が証明できず出荷停止となり、数日間のライン停止と数百万円の損害が発生した事例もあります。</p>
+
+    <p>では、プロの監査員は記録漏れを発見したとき、どのように深掘りをしていくのでしょうか？<br>
+    今回は、JFS-B監査員の目線から「CCP記録漏れがあった場合の具体的なヒアリング手法」を公開します。</p>
+
+    <h2>プロの監査員が行う深掘りステップ（前半）</h2>
+
+    <p>記録漏れなどの不具合を発見した際、現場確認や日報確認において、以下の流れで事象を論理的に追っていくことが重要です。</p>
+
+    <div class="step-box">
+        <div class="step-title">① 記録漏れの事実確認（起点の特定）</div>
+        <p>まずは「いつ、どの製品で、どのCCPの記録が漏れているのか」を正確に把握します。事実関係が曖昧なままでは、推測の域を出ず次のステップに進めません。</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">② 作業者名の特定（属人的か、システム的か）</div>
+        <p>「誰が」その記録を漏らしたのかを確認します。特定のAさんだけが頻繁に漏らしているのか、それともBさんやCさんも漏らしているのか。これによって、個人の資質の問題か、現場の仕組み（忙しすぎる、記録用紙の配置が悪い等）の問題かが明確に分かれます。</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">③ その作業者の教育記録の確認（客観的証拠の照合）</div>
+        <p>該当作業者が「正しい記録のつけ方」や「なぜCCPが重要なのか」について、いつ、誰から教育を受けたのか、その<strong>教育記録（証拠）</strong>を確認します。<br>
+        「ちゃんと教えました」という口頭の主張は通用しません。「〇月〇日に教育を実施した」という記録があれば納得する材料となります。客観的事実だけを探ります。</p>
+    </div>
+
+    <div class="highlight">
+        【重要】ここから先が、本番の監査で「重大な不適合」になるかどうかの分かれ道です
+    </div>
+
+    <p>多くの場合、日々の現場確認や日報確認は、上記の「③教育記録の確認」で満足し、「再教育を実施した」として是正完了にしてしまいます。<br>
+    しかし、そこから先の深掘りこそが重要です。</p>
+    <p><strong>「なぜ、教育したはずなのに記録漏れが起きたのか？」</strong></p>
+    <p>ここから先の【④〜⑥のステップ】にこそ、本番の監査で重大な不適合になるかどうかの決定的な分かれ道があります。監査員は、限られた時間の中で「要求事項に合致しているか」を論理的に判断する証拠を探しています。</p>
+
+    <h2>プロの監査員が行う深掘りステップ（後半）</h2>
+
+    <div class="step-box">
+        <div class="step-title">④ 教育方法の確認（実効性の検証）</div>
+        <p>教育記録が存在したとしても、その「教え方」は本当に適切だったでしょうか？<br>
+        ・文字ばかりのマニュアルをただ読ませただけではないか？<br>
+        ・現場で実際にやって見せ（OJT）、本人が正しく記録できるか理解度を確認したか？知識だけはあっても実作業が伴わない「ペーパードライバー」状態になっていないか？<br>
+        ・外国人労働者に対して、言語の壁を越えた教育（写真や動画の活用など）がなされていたか？<br>
+        教育方法が現場の実態に合わず形骸化していれば、記録漏れは「起こるべくして起きた」システムエラーとみなされます。</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">⑤ 年間教育計画と他リスク工程への波及確認</div>
+        <p>もし④で「教育方法そのものに問題がある」と判明した場合、事態はさらに深刻になります。<br>
+        なぜなら、その不適切な教育方法はCCPだけでなく、アレルゲン管理や洗浄殺菌など、他の高リスク工程の教育にも適用されている可能性が高いからです。<br>
+        年間教育計画を確認し、「この教育体制で、工場全体の食品安全は本当に担保できているのか？」という根本的なシステム評価へと切り替えます。たった1つの記録漏れが、工場全体の教育システムの不適合へと繋がります。</p>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">⑥ 他作業者の記録内容の横展開確認</div>
+        <p>最後に、同じ工程を担当する他の作業者の記録も確認します。もし他の作業者も記録を漏らしている、あるいは「まとめて後から書いている」ような改ざんの疑いがある場合、それは個人のミスではなく「組織的な問題」として認識されます。<br>
+        コンプライアンスに問題がある組織として認識され、食品防御にも懸念が出てきます。JFS-Bの要求事項にはありませんが、食品偽装にも関連してくる話です。法令順守にも懸念が出てくる可能性があります。</p>
+    </div>
+
+    <h2>監査員が本当に探しているものは「不適合」ではない</h2>
+
+    <p>ここまで厳しい深掘りをお伝えしてきましたが、誤解しないでいただきたいことがあります。<br>
+    私たち監査員は、決して「不適合（バツ）」をつけるために工場を回っているわけではありません。逆に、限られた時間の中で<strong>「不適合にならないための証拠（マルをつけるための理由）」</strong>を必死に探しているのです。</p>
+
+    <p>「今回は偶発的なミスであり、教育システム自体は正常に機能している」「是正処置が適切に取られ、再発防止の仕組みが構築されている」<br>
+    こうした要求事項に合致する証拠を論理的に集め、誰が見ても納得する審査報告書を作成する。これが監査員の仕事です。</p>
+
+    <p>「外部から与えられたマニュアル」をただこなすだけでは、現場は動かず、記録漏れはなくなりません。現場の作業者自身が「なぜこの記録が必要なのか」を理解し、自ら運用ルールを改善していく仕組みを作ることこそが、最強の食品安全対策です。</p>
+
+    <h2>あなたの工場の日々の現場確認は、ここまで見えていますか？</h2>
+
+    <p>「記録漏れがありました」→「次から気をつけます」のループから抜け出せない工場は、必ずいつか重大な事故を起こします。問題の根源を特定できなければ、リスクを放置し続けることになるからです。</p>
+
+    <p>食品安全パートナーズでは、現役JFS-B監査員の視点から、その場しのぎではない「自走できる真の食品安全システム」の構築をサポートするための実践的なツールを提供しています。<br>
+    「記録漏れをなくしたい」「現場の教育を効率化したい」「自社のシステムをセルフチェックしたい」という方は、ぜひ以下のアプリや書籍をご活用ください。<br>
+    ほんの小さなほころびを早期に発見し、自分たちの手で改善する仕組みを作ることこそが、数千万円の損失を防ぐ唯一の手段です。</p>
+
+    <div class="cta-box" style="text-align: left;">
+        <h3 style="text-align: center; margin-bottom: 20px;">現場の課題に合わせて選べる4つのソリューション</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+            <a href="#" class="cta-button" style="margin-top: 0; display: flex; flex-direction: column; text-align: left; padding: 15px;">
+                <span style="font-size: 1.1em; margin-bottom: 5px;">📱 食品安全教育アプリ</span>
+                <span style="font-size: 0.85em; font-weight: normal; opacity: 0.9;">現場の作業者向け。クイズ形式で楽しく基礎知識を定着させ、教育の形骸化を防ぎます。</span>
+            </a>
+            <a href="#" class="cta-button" style="margin-top: 0; display: flex; flex-direction: column; text-align: left; padding: 15px; background-color: #2c5282;">
+                <span style="font-size: 1.1em; margin-bottom: 5px;">📋 HACCP管理アプリ</span>
+                <span style="font-size: 0.85em; font-weight: normal; opacity: 0.9;">面倒な紙の記録をデジタル化。記録漏れを防止し、日々の現場確認を劇的に効率化します。</span>
+            </a>
+            <a href="#" class="cta-button" style="margin-top: 0; display: flex; flex-direction: column; text-align: left; padding: 15px; background-color: #2a4365;">
+                <span style="font-size: 1.1em; margin-bottom: 5px;">✅ JFS-Bセルフチェックアプリ</span>
+                <span style="font-size: 0.85em; font-weight: normal; opacity: 0.9;">監査前の最終確認に最適。自社システムの適合状況を客観的に診断・把握できます。</span>
+            </a>
+            <a href="#" class="cta-button" style="margin-top: 0; display: flex; flex-direction: column; text-align: left; padding: 15px; background-color: #4a5568;">
+                <span style="font-size: 1.1em; margin-bottom: 5px;">📖 監査員の目線（Kindle本）</span>
+                <span style="font-size: 0.85em; font-weight: normal; opacity: 0.9;">監査員の視点や食品安全の仕組みづくりについて、体系的に深く学びたい方へ。</span>
+            </a>
+        </div>
+    </div>
+</article>
+
+</body>
+</html>

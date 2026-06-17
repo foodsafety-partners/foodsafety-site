@@ -1,187 +1,57 @@
 <!doctype html>
 <html lang="ja">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>【一発合格】専門家ゼロの50人工場が「JFS-B」を最短取得する“引き算”の戦略｜食品安全パートナーズ</title>
-  <meta name="description"
-    content="50人規模の食品工場向けに、専門家ゼロでもJFS-B適合証明を最短・一発合格で取得する戦略を解説。「引き算の戦略」で過剰なマニュアルや設備改修を防ぎ、外部コンサルタントを活用して確実かつ低コストで目的を達成する方法をお伝えします。">
-  <meta name="keywords" content="JFS-B, 取得, 50人, 中小企業, 一発合格, コンサル, 審査, 食品安全パートナーズ">
-  <meta name='robots' content='index,follow'>
-  <link rel='canonical' href='https://foodsafety-partners.github.io/foodsafety-site/column-22.html'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>「うちは大丈夫」が一番危ない。ある食品テロが証明した「監視カメラ」より恐ろしい経営の死角｜食品安全パートナーズ</title>
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/column-22.html">
+<meta name="description" content="HACCPや最新の監視カメラを導入しても防げない「意図的な食品テロ」。組織文化（トライブ）の4層構造と、防犯カメラより確実な「言葉使い」からの対策を解説します。">
+<meta name="keywords" content="食品テロ, 組織文化, マネジメント, HACCP, トライブ">
+<style>:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --warning:#d9534f; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
 
-  <style>
-    /* 共通スタイル（他のコラムと同様） */
-    :root {
-      --ink: #1b2533;
-      --muted: #5a6475;
-      --line: #d9dde6;
-      --accent: #e0872a;
-      --accent2: #2c567a;
-      --soft: #eef1f6;
-      --shadow: 0 16px 40px rgba(24, 32, 48, .18);
-      --w: 880px;
-    }
+#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
+#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;
+  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
+#toTop.show{opacity:1;transform:none}
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Noto Sans JP", system-ui, sans-serif;
-      background: #fff;
-      color: var(--ink);
-      line-height: 1.8;
-      font-size: 16px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      max-width: var(--w);
-      margin: 0 auto;
-      padding: 0 18px;
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, .95);
-      border-bottom: 1px solid rgba(27, 37, 51, .08);
-      padding: 12px 0;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand img {
-      height: 40px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      background: var(--accent);
-      color: white;
-      text-align: center;
-    }
-
-    .article-header {
-      padding: 60px 0 30px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 40px;
-    }
-
-    .article-title {
-      font-size: 28px;
-      font-weight: 900;
-      line-height: 1.4;
-      margin: 0 0 16px;
-      color: var(--accent2);
-    }
-
-    .article-meta {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .article-content h2 {
-      font-size: 24px;
-      font-weight: 800;
-      padding: 12px 16px;
-      background: #f4f7fb;
-      border-left: 5px solid var(--accent);
-      margin: 50px 0 20px;
-    }
-
-    .article-content h3 {
-      font-size: 20px;
-      font-weight: 700;
-      border-bottom: 2px dashed var(--line);
-      padding-bottom: 8px;
-      margin: 40px 0 16px;
-    }
-
-    .article-content p {
-      margin: 0 0 20px;
-    }
-
-    .article-content ul, .article-content ol {
-      margin: 0 0 24px;
-      padding-left: 24px;
-    }
-
-    .article-content li {
-      margin-bottom: 8px;
-    }
-
-    .article-content strong {
-      color: #d32f2f;
-      background: linear-gradient(transparent 60%, rgba(224, 135, 42, 0.3) 60%);
-    }
-
-    .article-img {
-      width: 100%;
-      max-width: 600px;
-      margin: 30px auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    .callout {
-      background: #fff8f0;
-      border: 1px solid #ffd8a8;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 30px 0;
-    }
-
-    .callout-title {
-      font-weight: bold;
-      color: var(--accent);
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    .footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--line);
-      text-align: center;
-      color: var(--muted);
-      margin-top: 60px;
-    }
-
-    .related-link {
-      display: inline-block;
-      margin-top: 8px;
-      color: var(--accent2);
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    @media(max-width: 768px) {
-      .article-title {
-        font-size: 22px;
-      }
-
-      .article-content h2 {
-        font-size: 20px;
-      }
-    }
-  </style>
+.header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:12px;font-weight:1000;border:1px solid var(--line);background:#fff; transition:.2s ease;}
+.btn.primary{background:var(--accent);color:#fff;border:none; box-shadow:0 8px 20px rgba(224,135,42,.2)}
+.btn.primary:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(224,135,42,.3)}
+.section{padding:50px 0}
+.h1{font-size:32px;font-weight:1000;line-height:1.4; margin-bottom:12px;}
+.meta{color:var(--muted);font-size:13px;font-weight:800;margin-top:6px; display:flex; gap:12px;}
+.meta .tag{background:var(--soft); padding:4px 8px; border-radius:6px; color:var(--accent2);}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 24px;box-shadow:var(--shadow)}
+.prose{line-height:2.1;font-weight:600; color:#334155; font-size:16px;}
+.prose h2{margin-top:48px;font-size:24px; color:var(--accent2); border-bottom:2px solid var(--soft); padding-bottom:10px;}
+.prose h3{margin-top:36px;font-size:20px; color:#1e293b; border-left:5px solid var(--accent); padding-left:12px;}
+.prose p{margin-bottom:20px;}
+.prose ul, .prose ol{margin:12px 0 20px 20px; padding:0;}
+.prose li{margin:8px 0; line-height:1.9;}
+.prose strong{color:var(--ink);}
+.callout{border-left:6px solid var(--warning);background:#fff5f5;border:1px solid #fed7d7;border-left-width:6px;border-radius:12px;padding:18px;margin:28px 0; color:#9b2c2c;}
+.callout-success{border-left:6px solid var(--accent);background:#fcf7f3;border:1px solid #f6e6d9;border-left-width:6px;border-radius:12px;padding:18px;margin:28px 0; color:#7a4f22;}
+.callout-info{border-left:6px solid var(--accent2);background:#f0f4f8;border:1px solid #d0d8e4;border-left-width:6px;border-radius:12px;padding:18px;margin:28px 0; color:#2c567a;}
+.footer{padding:24px;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--line);background:#fff; font-weight:700;}
+@media(max-width:980px){
+.menu{display:none}
+.h1{font-size:24px}
+}
+</style>
 
 <!-- ▼ フローティングCTA用CSS -->
 <style id="floating-cta-style">
@@ -251,20 +121,8 @@
     left: 16px;
     align-items: center;
   }
-  .fl-cta-btn {
-    width: 100%;
-    justify-content: center;
-    font-size: 14px;
-    padding: 12px 16px;
-  }
-  .fl-cta-kicker::after {
-    right: 50%;
-    transform: translateX(50%);
-  }
 }
 </style>
-<!-- ▲ フローティングCTA用CSS -->
-
     <meta property="og:site_name" content="食品安全パートナーズ">
 
     <script type="application/ld+json">
@@ -276,126 +134,282 @@
 }
 </script>
 </head>
-
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="./index.html"><img src="./assets/img/logo.png" alt="食品安全パートナーズ"></a>
-        <a class="btn" href="./index.html#consult">無料相談</a>
-      </div>
+
+<div id="progress"></div>
+<a id="toTop" href="#">↑</a>
+
+<header class="header">
+<div class="container nav">
+<a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+  <img src="./assets/img/logo.png" alt="食品安全パートナーズ ロゴ" style="height:40px; width:auto;">
+</a>
+<nav class="menu">
+<a href="./column.html">コラム一覧</a>
+<a href="./download.html">無料特典</a>
+<a href="./index.html#consult">無料相談</a>
+</nav>
+<a class="btn primary" href="./index.html#consult">無料相談</a>
+</div>
+</header>
+
+<section class="section">
+<div class="container">
+
+<h1 class="h1">「うちは大丈夫」が一番危ない。ある食品テロが証明した「監視カメラ」より恐ろしい経営の死角</h1>
+<div class="meta">
+  <span class="tag">組織文化</span>
+  <span class="tag">食品テロ</span>
+  <span class="tag">マネジメント</span>
+  <span>読了目安：約6分</span>
+</div>
+
+<div class="card" style="margin-top:24px">
+<div class="prose">
+
+    <p>「HACCPを導入し、監視カメラも増設し、ルールも厳格化した。これでうちは安全だ」<br>
+    もしあなたがそう信じているなら、非常に危険な状態にあります。</p>
+
+    <p>過去に、ある冷凍食品工場で起きた農薬混入事件を覚えていますでしょうか？同工場は最新の設備と厳格な衛生管理マニュアルを備えていました。しかし、従業員による「意図的な食品テロ」を防ぐことはできませんでした。</p>
+
+    <p>なぜか？<br>
+    それは、ルールや設備という「文明」は完璧でも、職場の人間関係や不満という「文化」が崩壊していた可能性が高いからです。監視カメラの死角を突くのは、他ならぬ内部の人間です。放置すれば、企業存続を揺るがす致命的なリスクを孕んでいます。</p>
+
+    <p>真の原因は、ルールを破る個人の問題ではなく、雰囲気が及ぼす<strong>「組織文化（トライブ）」</strong>にあります。</p>
+
+    <h2>「文明」と「文化」の違い。なぜルールだけでは失敗するのか？</h2>
+
+    <p>まず、食品安全における「文明」と「文化」を明確に言語化しましょう。</p>
+
+    <ul>
+        <li><strong>文明（マニュアル・設備）</strong>：HACCPシステムや監視カメラ。お金で買え、他社でも容易にコピーできる客観的な仕組み。</li>
+        <li><strong>文化（カルチャー）</strong>：誰も見ていない時に、現場がどう行動するか。お金では買えない、その組織独自の価値観と実践。</li>
+    </ul>
+
+    <p>ここで「文化（Culture）」の語源に目を向けると、その本質がより鮮明になります。<br>
+    英語のCultureの語源は、ラテン語の<strong>「colere」（耕す、自然に手を加えて育てる）</strong>にあります。土地を耕し、種をまき、作物を手間暇かけて育てるように、人間の心や組織の価値観を耕し、育てていくプロセスそのものが「文化」なのです。</p>
+
+    <p>文化の類義語には「組織風土」や「教養」があります。これらはいずれも、長い時間をかけて耕され、蓄積されたものです。</p>
+
+    <p>一方で、文化の反対語は<strong>「自然（Nature：人の手が加わらないもの）」</strong>です。<br>
+    人間が意志を持って耕すことを放棄すれば、畑が雑草だらけの荒れ地に戻ります。<br>
+    組織の規律も耕し続けなければ、もう一つの反対語である<strong>「野蛮・未開（ルールを無視し、手抜きや不正行為が横行する無法状態）」</strong>へと逆戻りします。</p>
+
+    <p>物質的・技術的な発展を指す対義語の<strong>「文明（Civilization：ラテン語civis・市民社会の法や制度に由来）」</strong>という「器」をいくら立派にしても、内なる精神を育てる「文化（耕すこと）」を怠れば、現場はすぐに荒廃します。多くの工場は「文明」への投資に偏り、「文化」の醸成を放置した結果、意図的な犯罪や隠蔽の温床を作り出しているのです。</p>
+
+    <h2>ルールの土台を支える「四層構造」のピラミッド</h2>
+
+    <p>組織の行動は、単一のルールではなく、以下のような「四層構造」のピラミッドで成り立っています。</p>
+
+    <div style="margin:40px auto; max-width:500px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+          <defs>
+            <linearGradient id="gRule" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#475569" />
+              <stop offset="100%" stop-color="#334155" />
+            </linearGradient>
+            <linearGradient id="gCulture" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f59e0b" />
+              <stop offset="100%" stop-color="#d97706" />
+            </linearGradient>
+            <linearGradient id="gClimate" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#10b981" />
+              <stop offset="100%" stop-color="#059669" />
+            </linearGradient>
+            <linearGradient id="gAtmosphere" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3b82f6" />
+              <stop offset="100%" stop-color="#2563eb" />
+            </linearGradient>
+            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <g filter="url(#shadow)">
+            <polygon points="200,20 245,85 155,85" fill="url(#gRule)" stroke="#000000" stroke-width="1.5"/>
+            <text x="200" y="66" fill="#fff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">ルール</text>
+            <text x="200" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="10" text-anchor="middle">(表層)</text>
+            <polygon points="155,85 245,85 290,150 110,150" fill="url(#gCulture)" stroke="#000000" stroke-width="1.5"/>
+            <text x="200" y="122" fill="#fff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">文 化</text>
+            <text x="200" y="142" fill="#fef3c7" font-family="sans-serif" font-size="11" text-anchor="middle">(中層: 共有された価値観)</text>
+            <polygon points="110,150 290,150 335,215 65,215" fill="url(#gClimate)" stroke="#000000" stroke-width="1.5"/>
+            <text x="200" y="187" fill="#fff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">風 土</text>
+            <text x="200" y="207" fill="#d1fae5" font-family="sans-serif" font-size="11" text-anchor="middle">(深層: 組織に定着した気質)</text>
+            <polygon points="65,215 335,215 380,280 20,280" fill="url(#gAtmosphere)" stroke="#000000" stroke-width="1.5"/>
+            <text x="200" y="252" fill="#fff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">雰 囲 気</text>
+            <text x="200" y="272" fill="#dbeafe" font-family="sans-serif" font-size="11" text-anchor="middle">(最深層: 日々の感情やムード)</text>
+          </g>
+        </svg>
     </div>
-  </header>
 
-  <main class="container">
-    <article class="article-content">
-      <div class="article-header">
-        <h1 class="article-title">【一発合格】専門家ゼロの50人工場が「JFS-B」を最短取得する“引き算”の戦略</h1>
-        <div class="article-meta">公開日：2026年5月12日 ｜ カテゴリ：JFS規格・コンサルティング</div>
-      </div>
+    <ol>
+        <li><strong>雰囲気（最深層）</strong>：日々の感情やムード。食品安全で言えば、「床に落ちた原料を誰も拾おうとしない」「クレーム報告を面倒がる」といった日替わりのムードです。</li>
+        <li><strong>風土（深層）</strong>：長い年月で自然に定着した気質。食品安全で言えば、「うちの工場では昔からこうだから」「多少の異物混入は仕方ない」という諦めが定着してしまった、組織の「当たり前」です。</li>
+        <li><strong>文化（中層）</strong>：意志を持って人為的に共有した強固な価値観。「お客様の口に入るものだから、ルールで言われなくても衛生手袋を自発的に替える」といった状態です。</li>
+        <li><strong>ルール（表層）</strong>：マニュアルや規定、および日々の業務で守るべき決まり事。</li>
+    </ol>
 
-      <img src="./assets/img/jfsb_factory_line.png" alt="クリーンな食品工場ライン" class="article-img">
+    <p>ルール（表層）だけを厳しくしても、待遇への不満や孤立感といった雰囲気（最深層）が最悪なら、長年蓄積された風土を通じて、文化（中層）は「隠蔽」や「反発」へと向かいます。これが1人の意図的な手抜きや不正行為を生み、致命的な損失を引き起こすのです。</p>
 
-      <p>「取引先の要望でJFS-Bを取得したいが、社内にHACCPの専門家が一人もいない」<br>
-      「予算はあるが、何から手をつければいいか分からず、時間だけが過ぎている」</p>
+    <h2>世界的組織論『トライブ』で見る工場の5つのステージ</h2>
 
-      <p>そんな悩みを抱える50人規模の食品工場の経営者様へ。</p>
+    <p>では、自社の組織は今どのレベルにあるのか？<br>
+    組織心理学の名著、デイブ・ローガンの『トライブ（Tribe）』理論を当てはめると、工場は5つのステージに分類されます。その構成比は、統計的に以下のような正規分布の曲線を描きます。</p>
 
-      <p>結論から申し上げます。<br>
-      JFS-Bの適合証明は、正しいガイドさえいれば、<strong>社内に専門家がいなくても驚くほどスムーズに、かつ「一発合格」で取得することが可能</strong>です。</p>
+    <div style="margin:40px auto; max-width:600px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="100%" height="100%">
+          <defs>
+            <linearGradient id="bellGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="rgba(59, 130, 246, 0.6)" />
+              <stop offset="100%" stop-color="rgba(59, 130, 246, 0.1)" />
+            </linearGradient>
+          </defs>
+          <rect width="600" height="300" fill="#f8fafc" />
+          <line x1="50" y1="250" x2="550" y2="250" stroke="#cbd5e1" stroke-width="2" />
+          <line x1="50" y1="250" x2="50" y2="20" stroke="#cbd5e1" stroke-width="2" />
+          <text x="40" y="255" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="end">0%</text>
+          <text x="40" y="135" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="end">34%</text>
+          <text x="40" y="45" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="end">68%</text>
+          <path d="M 50,248 C 150,248 200,40 300,40 C 400,40 450,248 550,248" fill="none" stroke="#2563eb" stroke-width="4" />
+          <path d="M 50,248 C 150,248 200,40 300,40 C 400,40 450,248 550,248 L 550,248 L 50,248 Z" fill="url(#bellGradient)" />
+          <line x1="140" y1="250" x2="140" y2="230" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4" />
+          <line x1="230" y1="250" x2="230" y2="80" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4" />
+          <line x1="370" y1="250" x2="370" y2="80" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4" />
+          <line x1="460" y1="250" x2="460" y2="230" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4" />
+          <line x1="300" y1="250" x2="300" y2="40" stroke="#cbd5e1" stroke-width="1" />
+          <text x="95" y="270" fill="#334155" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Stage 1</text>
+          <text x="185" y="270" fill="#334155" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Stage 2</text>
+          <text x="300" y="270" fill="#334155" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Stage 3</text>
+          <text x="415" y="270" fill="#334155" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Stage 4</text>
+          <text x="505" y="270" fill="#334155" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Stage 5</text>
+          <text x="95" y="240" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">約2%</text>
+          <text x="185" y="210" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">約14%</text>
+          <text x="300" y="160" fill="#64748b" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">約68%</text>
+          <text x="415" y="210" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">約14%</text>
+          <text x="505" y="240" fill="#64748b" font-family="sans-serif" font-size="12" text-anchor="middle">約2%</text>
+        </svg>
+    </div>
 
-      <p>今回は、限られた経営資源（時間・人材）を無駄にせず、最短距離でJFS-Bを取得するための「引き算の戦略」と、プロを活用する絶対的なメリットをお伝えします。</p>
+    <table style="width:100%; border-collapse: collapse; margin-bottom: 20px;">
+        <thead>
+            <tr style="background-color: var(--soft); text-align: left;">
+                <th style="padding: 12px; border: 1px solid var(--line);">ステージ</th>
+                <th style="padding: 12px; border: 1px solid var(--line);">状態（組織の口癖）</th>
+                <th style="padding: 12px; border: 1px solid var(--line);">割合</th>
+                <th style="padding: 12px; border: 1px solid var(--line);">特徴・解説</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 12px; border: 1px solid var(--line);"><strong>Stage 1</strong></td>
+                <td style="padding: 12px; border: 1px solid var(--line);">人生は最低だ</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">約2%</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">ルール無視が横行。意図的な内部犯行や事故の温床。</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid var(--line);"><strong>Stage 2</strong></td>
+                <td style="padding: 12px; border: 1px solid var(--line);">私の人生は最低だ</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">約14%</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">「言われたことだけやる」。無関心が支配する形骸化した工場。</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid var(--line);"><strong>Stage 3</strong></td>
+                <td style="padding: 12px; border: 1px solid var(--line);">私は素晴らしい</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">約68%</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">品質管理担当者が孤軍奮闘し現場と対立。多くの組織のボリュームゾーン。</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid var(--line);"><strong>Stage 4</strong></td>
+                <td style="padding: 12px; border: 1px solid var(--line);">私たちは素晴らしい</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">約14%</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">現場自らがブランドを守ると誓う。SDGs等でステークホルダー全体を良くしようとする組織。</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid var(--line);"><strong>Stage 5</strong></td>
+                <td style="padding: 12px; border: 1px solid var(--line);">人生は素晴らしい</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">約2%</td>
+                <td style="padding: 12px; border: 1px solid var(--line);">業界の絶対的基準となるトップ企業。</td>
+            </tr>
+        </tbody>
+    </table>
 
-      <!-- セクション1 -->
-      <h2>1. JFS-B取得は「引き算」が成功の鍵</h2>
+    <p>現在、SDGs等に取り組んでいる先進的な組織は、この「Stage 4」を強く意識し、ステークホルダー全体を良くしようと行動しています。</p>
 
-      <p>JFS-Bの取得に向けて、多くの中小企業が犯してしまう最大の失敗。<br>
-      それは「あれもこれもやらなければ」という強迫観念から、現場を混乱させてしまうことです。</p>
+    <h2>まずは「言葉使い」を変え、理想を掲げることから</h2>
 
-      <p>実は、JFS-Bの要求事項を満たす上で、<strong>不要なプロセスをいかに削ぎ落とすか</strong>が成否を分けます。</p>
+    <p>Stage 2や3のボリュームゾーンから抜け出すために大事なのは、「言葉使い」です。組織がどのような言葉を使っているかが、文化のレベルを如実に表します。</p>
 
-      <p><strong>やらなくていいことの代表例：</strong></p>
-      <ul>
-        <li><strong>過剰な記録と分厚いマニュアル</strong>：審査に通るためだけの、現場が読まないマニュアルは無意味です。分厚い書類の作成に貴重なリソースを溶かすのはやめましょう。</li>
-        <li><strong>現場の実態に合わない背伸びした設備改修</strong>：基準を誤解し、本来不要なパーテーションや高価な手洗い機を慌てて導入してしまうのは典型的な失敗です。</li>
-      </ul>
+    <p><strong>Stageは個人によって変化します。</strong> 組織は個人の集合体であり、全員が同じStageにいるとは限りません。また、昨日のStageと今日のStageが同じとも限りません。<br>
+    だからこそ、<strong>目指すべき「理想」を高く掲げ続けることが最も重要なのです。</strong> まずは自分の立ち位置（現在地）を正確に把握し、理想へ向かう言葉使いを始めることが、強固な文化を築くための第一歩となります。</p>
 
-      <div class="callout">
-        <div class="callout-title">💡 重要なのは「動くルール」を作ること</div>
-        <p>50人の現場スタッフが「今日から迷わず実行できる、スリムで実用的なルール」を作ることこそが、一発合格の最大の鍵となります。背伸びしたシステムは必ず破綻し、審査での不適合に直結します。</p>
-      </div>
+    <p>下記は、マザー・テレサの名言です。</p>
 
-      <!-- セクション2 -->
-      <h2>2. なぜ「コンサルタント活用」が最短ルートなのか？</h2>
+    <div class="callout-info">
+        <p>思考に気をつけなさい、それは言葉になるから。<br><br>
+        言葉に気をつけなさい、それは行動になるから。<br><br>
+        行動に気をつけなさい、それは習慣になるから。<br><br>
+        習慣に気をつけなさい、それは性格になるから。<br><br>
+        性格に気をつけなさい、それは運命になるから。</p>
+    </div>
 
-      <p>資金に余裕がある企業が陥りやすいのが、「よく分からないから、とりあえず設備投資をして審査員にアピールしよう」という考えです。</p>
+    <h2>無料で「自社の現在地」を診断しませんか？</h2>
 
-      <p>しかし、基準を正しく解釈せずに床を塗り替えたり、高価なシステムを導入したりするのは、完全な<strong>「過剰投資（無駄な支出）」</strong>です。</p>
+    <p>とは言え、自社の目に見えない「文化」をどう評価すれば良いのか？<br>
+    食品安全パートナーズでは、完全無料の<strong>「食品安全文化『ありたい姿』診断」</strong>を公開しました。</p>
 
-      <p>外部の食品安全コンサルタントをパートナーにする最大のメリットは、この<strong>「試行錯誤と無駄遣いをゼロにする」</strong>ことにあります。</p>
+    <ul>
+        <li><strong>所要時間約1分</strong>：全7問に直感で答えるだけ。</li>
+        <li><strong>全10タイプのハイブリッド判定</strong>：イノベーター型、システム・ハッカー型など、四象限マトリクスで自社のポジションを明確化。</li>
+        <li><strong>3つの限定無料レポート提供</strong>：
+            <ol>
+                <li>工場掲示用ステートメント（FOOD SAFETY CULTURE STATEMENT）</li>
+                <li>貴社組織の「強み」の詳細分析</li>
+                <li>放置した場合の「致命的リスク」レポート</li>
+            </ol>
+        </li>
+    </ul>
 
-      <ol>
-        <li><strong>解釈の迷いをなくす</strong>：難解な要求事項を、あなたの工場の実態に合わせて翻訳します。ネットの情報を集めて悩む数百時間をショートカットできます。</li>
-        <li><strong>一発合格の確実性</strong>：準備段階で審査基準を完璧にクリアする仕組みを構築するため、当日の審査で慌てることなく、一発合格を勝ち取ることができます。</li>
-      </ol>
+    <p>診断結果から自動生成される「ステートメント」を現場に掲示し、組織の「言葉使い」を変え、理想を掲げるきっかけにしてください。<br>
+    監視カメラを増やす前に、まずはたった1分の診断で「組織の深層」と向き合うこと。それが、致命的な内部リスクを防ぎ、組織を守る最大の防御策です。</p>
 
-      <p>コンサルティング費用は「出費」ではなく、無駄な設備投資や、従業員が調べ物に費やす残業代を防ぐための<strong>「投資」</strong>です。トータルで見れば、圧倒的なコスト削減に繋がります。</p>
+    <div style="text-align:center; margin-top:40px; margin-bottom:40px;">
+        <a href="./lp.html" class="btn primary" style="font-size: 18px; padding: 18px 36px; display:inline-flex;">👉 【完全無料】食品安全文化「ありたい姿」診断をはじめる</a>
+    </div>
 
-      <!-- セクション3 -->
-      <h2>3. 社内に「専門家」を育てなくてもいい理由</h2>
+</div>
+</div>
 
-      <p>「でも、自社に品質管理の専門家がいないと、取得後が不安だ」<br>
-      そう思われるかもしれません。</p>
+</div>
+</section>
 
-      <p>しかし、50人規模の工場において、一人の「スーパー専門家」に依存するのは非常にリスキーです。その人が退職すれば、システムが崩壊してしまうからです。</p>
+<footer class="footer">
+  <div class="container">
+    © 食品安全パートナーズ<br>
+  </div>
+</footer>
 
-      <p>プロのコンサルタントが提供するのは、スタッフに高度な理論を教え込む「教育」ではなく、<strong>誰がやっても同じ衛生レベルが保てる「仕組み（システム）」</strong>です。</p>
-
-      <p>必要な時、必要なフェーズだけ専門的な知見を持つプロの力を借りて「仕組み」を作り上げれば、自社で専門家をゼロから育成・採用する莫大なコストを抑えることができます。</p>
-
-      <!-- セクション4 -->
-      <h2>4. 経営としての「投資対効果」を最大化する</h2>
-
-      <p>JFS-Bの一発合格は、単に証明書をもらえるというだけではありません。</p>
-
-      <p>「自分たちのやり方で、一度で審査をクリアできた」という事実は、現場スタッフの大きな自信に繋がります。この成功体験こそが、その後のルール遵守（コンプライアンス）の強固な土壌となるのです。</p>
-
-      <div class="callout">
-        <div class="callout-title">💰 経営者の役割とは</div>
-        <p>経営者は、計画通りにJFS-Bを取得し、本来の事業活動（営業や商品開発）に全集中する。これが、経営戦略としての最も正しいJFS-Bの活用法であり、コンサルティングを活用する最大の目的です。</p>
-      </div>
-
-      <!-- まとめ -->
-      <h2>5. あなたの工場の「現在地」は？</h2>
-
-      <p>専門家不在の不安を抱えたまま、手探りで準備を進めるのは今日で終わりにしませんか。<br>
-      最短距離を走る「確信」を手に入れてください。</p>
-
-      <p>御社の現状から、一発合格への最短ルートを割り出します。まずは、無料でできる「現在地チェック」から始めてみましょう。</p>
-
-      <div class="callout" style="text-align: center;">
-        <h3 style="margin-top:0; border:none; text-align:center;">まずは自社の現在地を知ることから</h3>
-        <p>現役審査員が設計したチェックで、自社のHACCP/JFS-B準備度と弱点が可視化される無料の【HACCP診断アプリ】をご用意しています。</p>
-        <a href="https://haccp-shindan.web.app/" target="_blank" class="btn" style="margin-top: 10px;">無料でHACCPレベルを診断する →</a>
-      </div>
-
-    </article>
-  </main>
-
-  <footer class="footer">
-    <div class="container">© 食品安全パートナーズ</div>
-  </footer>
+<script>
+  const toTop = document.getElementById("toTop");
+  const bar = document.getElementById("progress");
+  window.addEventListener("scroll", () => {
+    let max = document.body.scrollHeight - window.innerHeight;
+    bar.style.width = (window.scrollY / max) * 100 + "%";
+    if (window.scrollY > 300) {
+      toTop.classList.add("show");
+    } else {
+      toTop.classList.remove("show");
+    }
+  });
+</script>
 
 <!-- ▼ フローティングCTA -->
 <div class="fl-cta-wrap">
-  <div class="fl-cta-kicker">＼実務の時間を大幅短縮！／</div>
-  <a href="./download.html" class="fl-cta-btn" aria-label="HACCP構築テンプレートを無料でダウンロード">
-    <span class="fl-cta-icon">🎁</span>
-    <span>HACCP構築Excelシート（無料）</span>
+  <div class="fl-cta-kicker">＼まずは現状をチェック／</div>
+  <a href="./lp.html" class="fl-cta-btn">
+    <span class="fl-cta-icon">📲</span>
+    <span>食品安全文化 無料診断</span>
   </a>
 </div>
 <!-- ▲ フローティングCTA -->
 
 </body>
-
 </html>

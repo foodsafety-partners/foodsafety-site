@@ -3,7 +3,7 @@
 // ============================================
 
 // ★★★ ここにGASのウェブアプリURLを貼り付ける ★★★
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyjwnMUhYZhISnVUSTzXgLYfIzkLSPZ_WhocMI_hBd_ThYs199URRHbWNUWp2pitqLk/exec';
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwLut-lS-q7TQH3btEyqtB5d6BBb2MtVctiDyGkCGYXyIq9IKMWP3HsFcEvr-Xcg_WZ/exec';
 
 const QUESTIONS = [
   {
@@ -178,7 +178,8 @@ const state = {
   scores: { a: 0, b: 0, c: 0, d: 0 },
   email: '',
   emailProvided: false,
-  resultKey: ''
+  resultKey: '',
+  isSending: false
 };
 
 function $(sel) { return document.querySelector(sel); }
@@ -405,13 +406,16 @@ function saveLead(typeName, resultKey, isHybrid) {
 }
 
 function sendToGAS(data) {
+  if (state.isSending) return; // 二重送信防止
+
   if (!GAS_ENDPOINT) {
     console.warn('⚠️ GAS_ENDPOINT未設定。localStorageのみ保存。');
     updateSendStatus('warn', '⚠️ バックエンド未設定（ローカル保存のみ）');
     return;
   }
 
-  updateSendStatus('sending', '📤 データ送信中...');
+  state.isSending = true; // 送信中フラグON
+  updateSendStatus('sending', '📤 レポートを準備してメール送信中...');
 
   fetch(GAS_ENDPOINT, {
     method: 'POST',
@@ -420,13 +424,15 @@ function sendToGAS(data) {
     body: JSON.stringify(data)
   })
   .then(() => {
+    state.isSending = false; // 送信中フラグOFF
     console.log('✅ GAS送信完了');
-    updateSendStatus('success', '✅ スプレッドシートに保存しました');
+    updateSendStatus('success', '✅ 診断レポートをメールで送信しました');
     setTimeout(() => updateSendStatus('hide'), 4000);
   })
   .catch(err => {
+    state.isSending = false; // 送信中フラグOFF
     console.error('❌ GAS送信エラー:', err);
-    updateSendStatus('error', '⚠️ 送信エラー（ローカルに保存済み）');
+    updateSendStatus('error', '⚠️ 送信エラー（通信環境を確認してください）');
   });
 }
 

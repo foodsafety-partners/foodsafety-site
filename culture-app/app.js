@@ -3,7 +3,7 @@
 // ============================================
 
 // ★★★ ここにGASのウェブアプリURLを貼り付ける ★★★
-const GAS_ENDPOINT = '';
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyjwnMUhYZhISnVUSTzXgLYfIzkLSPZ_WhocMI_hBd_ThYs199URRHbWNUWp2pitqLk/exec';
 
 const QUESTIONS = [
   {

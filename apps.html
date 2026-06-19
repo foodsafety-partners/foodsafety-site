@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <!-- Search Console verification -->
+  <meta name="google-site-verification" content="M9sBRfhnvKEn96W_RlYFbuy9_WDfgd11KCCqLQrDwU4" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8KX0R29GW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-F8KX0R29GW');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>無料アプリ一覧｜食品安全パートナーズ</title>
+  <meta name="description"
+    content="食品安全の「見える化」と「実践」をサポートする無料アプリ一覧。HACCP診断、JFS-Bセルフチェック、食品安全教育、食品安全文化診断など、現場ですぐに使えるツールを随時追加しています。">
+
+  <!-- ★検索エンジン向け -->
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/apps.html">
+
+  <!-- ★favicon -->
+  <link rel="icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" type="image/png">
+  <link rel="shortcut icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png"
+    type="image/png">
+  <link rel="apple-touch-icon" href="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png">
+
+  <style>
+    :root {
+      --ink: #1b2533;
+      --muted: #5a6475;
+      --line: #d9dde6;
+      --accent: #e0872a;
+      --accent2: #2c567a;
+      --soft: #eef1f6;
+      --shadow: 0 16px 40px rgba(24, 32, 48, .18);
+      --w: 1180px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--soft);
+      color: var(--ink)
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .container {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 18px
+    }
+
+    #progress {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      z-index: 9999
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .86);
+      backdrop-filter: saturate(1.2) blur(10px);
+      border-bottom: 1px solid rgba(27, 37, 51, .08)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .brand img {
+      height: 42px;
+      width: auto
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 900;
+      font-size: 14px;
+      color: #243042;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    .menu a {
+      opacity: .82;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    .menu a:hover {
+      opacity: 1
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-weight: 1000;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .25);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .14)
+    }
+
+    .btn.dark {
+      background: var(--accent2);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .18)
+    }
+
+    .section {
+      padding: 56px 0 66px
+    }
+
+    .sectionTitle {
+      text-align: center;
+      margin: 0 0 14px;
+      font-size: 28px
+    }
+
+    .sectionLead {
+      text-align: center;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 14px;
+      max-width: 860px;
+      line-height: 1.9
+    }
+
+    .altWrap {
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 26px rgba(24, 32, 48, .10);
+      margin-top: 14px;
+    }
+
+    .altCard {
+      background: #fff;
+      border: 1px solid rgba(27, 37, 51, .10);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .altCard:hover {
+      border-color: rgba(44, 86, 122, .25)
+    }
+
+    .altTitle {
+      font-weight: 1000;
+      margin: 0 0 6px;
+      font-size: 20px;
+    }
+
+    .altDesc {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+      line-height: 1.85
+    }
+
+    .altBadges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .altBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 37, 51, .12);
+      background: #fff;
+      color: #243042;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .footer {
+      padding: 18px 0 28px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fff;
+      text-align: center;
+    }
+
+    @media (prefers-reduced-motion:no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: .7s ease
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: none
+      }
+
+      .hoverlift {
+        transition: transform .18s ease, box-shadow .18s ease
+      }
+
+      .hoverlift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, .18)
+      }
+    }
+
+    @media(max-width:980px) {
+      .menu {
+        display: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="progress"></div>
+
+  <header class="header">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="./index.html" aria-label="食品安全パートナーズ">
+          <img src="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" alt="食品安全パートナーズ ロゴ">
+        </a>
+
+        <nav class="menu" aria-label="メニュー（主要導線）">
+          <a href="./service.html">サービス</a>
+          <a href="./apps.html">無料アプリ</a>
+          <a href="./chusho.html">中小企業向け</a>
+          <a href="./index.html#download">無料特典</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./column.html">コラム</a>
+          <a href="./index.html#contact">お問い合わせ</a>
+        </nav>
+
+        <a class="btn primary" href="./index.html#consult">無料相談</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <h1 class="sectionTitle reveal">無料アプリ一覧</h1>
+      <p class="sectionLead reveal" style="max-width: 800px; line-height: 2.0; margin-bottom: 24px;">
+        食品安全の仕組みを現場に定着させるためには、<br>
+        日々の「見える化」と「教育」、そして「文化」の醸成が不可欠です。<br>
+        食品安全パートナーズでは、現場ですぐに使える無料ツールを随時追加・提供しています。
+      </p>
+
+      <!-- 1. HACCP無料診断アプリ -->
+      <div class="reveal altWrap hoverlift"
+        style="background:linear-gradient(135deg,#e0872a 0%,#c0641a 100%);border:none;">
+        <div class="altCard" style="background:rgba(255,255,255,0.97);border:none">
+          <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;width:100%">
+            <div style="min-width:260px;flex:1 1 400px">
+              <p class="altTitle" style="color:#e0872a">🩺 HACCP無料診断アプリ</p>
+              <p class="altDesc">
+                監査員の視点で、あなたのHACCP運用を10問で診断。<br>
+                レーダーチャートで弱点を可視化し、改善ヒント付き詳細レポートを無料でお届けします。<br>
+                <strong style="color:#333">登録不要・費用0円・たったの3分。</strong>
+              </p>
+              <div class="altBadges">
+                <span class="altBadge">✅ 完全無料</span>
+                <span class="altBadge">📊 レーダーチャート</span>
+                <span class="altBadge">📋 改善ヒント付き</span>
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px">
+                <a class="btn primary" href="https://haccp-shindan.web.app" target="_blank"
+                   style="padding:15px 30px;font-size:16px;background:#e0872a;border-color:rgba(255,255,255,.25)">今すぐ診断する（外部サイト） →</a>
+                <a class="btn" href="./haccp-check.html">アプリの詳細を見る</a>
+              </div>
+            </div>
+            <div style="flex:0 1 300px;text-align:center">
+              <img src="https://foodsafety-partners.github.io/foodsafety-site/assets/img/haccp-result-ss.png" alt="HACCP診断 レーダーチャート結果画面"
+                style="width:100%;max-width:280px;border-radius:16px;border:1px solid rgba(27,37,51,.10);box-shadow:0 12px 30px rgba(0,0,0,.12)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. JFS-B セルフチェックアプリ -->
+      <div class="reveal altWrap hoverlift"
+        style="background: linear-gradient(135deg, #004a99 0%, #002d5e 100%); border: 6px solid #004a99; margin-top:30px; padding: 4px;">
+        <div class="altCard" style="background:rgba(255,255,255,0.97); border:none; padding: 20px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; flex-wrap: wrap; width: 100%;">
+            <div style="flex: 1; min-width: 300px;">
+              <p class="altTitle" style="color: #004a99;">📱 JFS-B セルフチェックアプリ</p>
+              <p class="altDesc" style="color:#333; font-weight:800; margin-bottom:15px; line-height:1.8">
+                要求事項を現場ですぐにセルフ監査。診断から報告書作成まで、スマホ一つで完結します。
+              </p>
+              <ul style="line-height: 2; font-weight: 800; font-size: 13px; margin-bottom: 25px; color:#555; padding-left: 18px;">
+                <li>書籍「JFS-B 規格徹底解説」の内容と完全連動</li>
+                <li>監査員の視点での「確認ポイント」を全項目に搭載</li>
+                <li>ワンタップでPDF報告書を出力・共有</li>
+              </ul>
+              <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+                <a class="btn primary" href="https://foodsafety-partners.github.io/foodsafety-site/jfs-b-check.html" target="_blank"
+                   style="padding: 15px 30px; font-size: 16px; background: #004a99; border-color: rgba(255,255,255,0.25);">アプリを試す（外部サイト）</a>
+                <a class="btn" href="./index.html#books">関連書籍を見る</a>
+              </div>
+            </div>
+            <!-- アプリスクリーンショット -->
+            <div style="flex: 1; min-width: 300px; max-height: 300px; overflow-y: auto; padding-right: 10px; border-radius: 14px; background: #f9f9f9; border: 1px solid rgba(0,0,0,0.05);">
+              <div style="display: flex; flex-direction: column; gap: 20px; padding: 10px;">
+                <img src="https://foodsafety-partners.github.io/foodsafety-site/assets/img/jfsb-dashboard-ss.png" alt="JFS-B ダッシュボード画面" style="width:100%;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 食品安全教育アプリ -->
+      <div class="reveal altWrap hoverlift"
+        style="background: linear-gradient(135deg, #166534 0%, #14532d 100%); border: 6px solid #166534; margin-top:30px; padding: 4px;">
+        <div class="altCard" style="background:rgba(255,255,255,0.97); border:none; padding: 20px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; flex-wrap: wrap; width: 100%;">
+            <div style="flex: 1; min-width: 300px;">
+              <p class="altTitle" style="color: #166534;">🎓 食品安全教育アプリ</p>
+              <p class="altDesc" style="color:#333; font-weight:800; margin-bottom:15px; line-height:1.8">
+                スマホひとつで現場からすぐ受講！座学の時間が取れない現場でも、スキマ時間で確かな知識の定着を図る、食品工場のための衛生教育アプリです。（4言語対応）
+              </p>
+              <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                <a class="btn primary" href="./education-app.html"
+                   style="padding: 15px 30px; font-size: 16px; background: #166534; border-color: rgba(255,255,255,0.25);">アプリの詳細を見る</a>
+              </div>
+            </div>
+            <!-- アプリイメージ -->
+            <div style="flex:0 1 300px;text-align:center">
+              <img src="https://foodsafety-partners.github.io/foodsafety-site/assets/img/education_app_mockup.png" alt="食品安全教育アプリ イメージ"
+                style="width:100%;max-width:200px;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.12)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 食品安全文化診断アプリ -->
+      <div class="reveal altWrap hoverlift"
+        style="background: linear-gradient(135deg, #6b21a8 0%, #4c1d95 100%); border: 6px solid #6b21a8; margin-top:30px; padding: 4px;">
+        <div class="altCard" style="background:rgba(255,255,255,0.97); border:none; padding: 20px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; flex-wrap: wrap; width: 100%;">
+            <div style="flex: 1; min-width: 300px;">
+              <p class="altTitle" style="color: #6b21a8;">🌱 食品安全文化 診断アプリ</p>
+              <p class="altDesc" style="color:#333; font-weight:800; margin-bottom:15px; line-height:1.8">
+                JFS-BやHACCPの定着に不可欠な「文化（カルチャー）」を測定。<br>
+                従業員の意識やコミュニケーションの課題をスコア化し、改善の第一歩を踏み出します。
+              </p>
+              <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                <a class="btn primary" href="./culture-assessment.html"
+                   style="padding: 15px 30px; font-size: 16px; background: #6b21a8; border-color: rgba(255,255,255,0.25);">アプリの詳細を見る</a>
+                <a class="btn" href="./column-22.html" target="_blank"
+                   style="padding: 15px 30px; font-size: 16px; border-color: #6b21a8; color: #6b21a8;">💡 食品安全文化に取り組む理由</a>
+              </div>
+            </div>
+            <!-- アプリイメージ -->
+            <div style="flex:0 1 300px;text-align:center;display:flex;align-items:center;justify-content:center;">
+              <div style="font-size: 60px;">📊</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Coming Soon -->
+      <div class="reveal altWrap hoverlift"
+        style="background: #eef1f6; border: 2px dashed #b0b8c6; margin-top:30px; padding: 4px;">
+        <div class="altCard" style="background: transparent; border:none; padding: 20px; justify-content: center; text-align: center;">
+          <div>
+            <p style="font-size: 24px; font-weight: 1000; color: #5a6475; margin: 0 0 10px;">Coming Soon...</p>
+            <p class="altDesc" style="color: #5a6475;">現場の課題を解決する無料アプリを、今後も随時追加予定です。<br>ご期待ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI開発 & 無料相談の訴求セクション -->
+      <div class="reveal altWrap" style="background: linear-gradient(135deg, var(--accent2) 0%, #1b2533 100%); border: none; margin: 40px auto 0; max-width: 800px; padding: 24px;">
+        <div style="color: #fff; text-align: center;">
+          <p style="font-size: 13px; color: var(--accent); font-weight: 1000; margin: 0 0 8px; letter-spacing: 0.05em;">【自社専用の仕組みを作りたい方へ】</p>
+          <h2 style="font-size: 18px; font-weight: 1000; margin: 0 0 12px; color: #fff; line-height: 1.5;">AIを駆使し、組織に最適化したオリジナルアプリを開発・運用する方法も指導可能</h2>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.8; margin: 0 0 18px; font-weight: 850;">
+            「紙の管理や形骸化したマニュアルを放置し、現場のミスや監査での不適合リスクを抱え続けていませんか？」<br>
+            当パートナーズでは、AIを駆使して自社に100%適合する専用アプリを圧倒的低コストで開発する手法を教えています。
+          </p>
+          <a class="btn primary hoverlift" href="./index.html#consult" style="background: var(--accent); border: none; padding: 12px 28px; font-size: 14px; font-weight: 1000; color: #fff; display: inline-flex; align-items: center; gap: 8px;">
+            AIアプリ開発について無料相談する →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © 食品安全パートナーズ<br>
+      <a href="./privacy-policy.html" style="font-size:12px; text-decoration:underline;">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+  <script>(() => {
+      const bar = document.getElementById("progress");
+      const onScroll = () => {
+        const d = document.documentElement;
+        const max = (d.scrollHeight - d.clientHeight) || 1;
+        bar.style.width = (d.scrollTop / max) * 100 + "%";
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const targets = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+        }, { threshold: 0.12 });
+        targets.forEach(el => io.observe(el));
+      }
+    })();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>食品安全規格ウォッチ（無料メルマガ）｜食品安全パートナーズ</title>
+  <meta name="description" content="FSSC 22000 / ISO 22000 の海外公式1次情報を、毎月「事実」と「客観的解説」に分けて無料配信。食品安全パートナーズのメールマガジン登録ページ。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/newsletter.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1b2533;
+      --muted: #5a6475;
+      --line: #d9dde6;
+      --accent: #e0872a;      /* オレンジ */
+      --accent2: #2c567a;     /* 濃い青 */
+      --soft: #eef1f6;        /* 淡いグレーブルー */
+      --shadow: 0 16px 40px rgba(24, 32, 48, .12);
+      --w: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .wrap-sm {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--accent2);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: saturate(1.2) blur(10px);
+      border-bottom: 1px solid rgba(27, 37, 51, .08);
+      padding: 12px 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #243042;
+    }
+
+    .menu a {
+      opacity: .82;
+    }
+
+    .menu a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, #101c20 0%, #1c2b3a 100%);
+      color: #fff;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 4px 14px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 900;
+      line-height: 1.4;
+      letter-spacing: .02em;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(15px, 2.5vw, 17px);
+      color: #cbd5e1;
+      max-width: 720px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 10px 20px rgba(224, 135, 42, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #f0983d;
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    /* Strong points */
+    .features {
+      padding: 60px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      margin: 12px auto 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid rgba(27, 37, 51, 0.05);
+    }
+
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--accent2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Content Sample */
+    .section-sample {
+      padding: 60px 0;
+    }
+
+    .sample-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .sample-card.sub-card {
+      background: #f8fafc;
+      border-style: dashed;
+      box-shadow: none;
+    }
+
+    .sample-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(224, 135, 42, 0.1);
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .sample-tag.sub-tag {
+      color: var(--muted);
+      background: rgba(90, 100, 117, 0.1);
+    }
+
+    .sample-card h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 8px;
+    }
+
+    .sample-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .spec-block {
+      background: var(--soft);
+      border-left: 4px solid var(--accent2);
+      padding: 16px;
+      margin-top: 16px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .spec-block.sub-block {
+      border-left-color: var(--muted);
+    }
+
+    .spec-block strong {
+      display: block;
+      font-size: 13px;
+      color: var(--accent2);
+      margin-bottom: 6px;
+    }
+
+    .spec-block.sub-block strong {
+      color: var(--muted);
+    }
+
+    .spec-block p {
+      font-size: 13.5px;
+      color: var(--ink);
+      margin: 0;
+    }
+
+
+
+    /* Register & Unsubscribe */
+    .section-register {
+      background: var(--accent2);
+      color: #fff;
+      padding: 60px 0;
+    }
+
+    .register-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .register-card h2 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .register-card p.sub {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Kit Form Area */
+    .kit-form-area {
+      background: #fff;
+      color: var(--ink);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* Kitフォーム用のシンプルなスタイル上書き */
+    .formkit-form {
+      padding: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    /* 不要なKit側のヘッダーや保証文は非表示にしてLP側に統一する */
+    .formkit-header, .formkit-subheader, .formkit-guarantee {
+      display: none !important;
+    }
+
+    .kit-placeholder-text {
+      text-align: center;
+      padding: 30px 10px;
+      border: 2px dashed var(--line);
+      border-radius: 8px;
+    }
+
+    .kit-placeholder-text p.label {
+      font-weight: 700;
+      color: var(--accent2);
+      margin-bottom: 8px;
+    }
+
+    .kit-placeholder-text p.desc {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .register-note {
+      font-size: 12px;
+      color: #cbd5e1;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .register-note a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Unsubscribe section */
+    .unsubscribe-info {
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 30px;
+      text-align: center;
+    }
+
+    .unsubscribe-info h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .unsubscribe-info p {
+      font-size: 13px;
+      color: #cbd5e1;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Related Links */
+    .related {
+      padding: 50px 0;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .related h2 {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .related-links {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .related-links a {
+      border: 1px solid var(--accent2);
+      color: var(--accent2);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .related-links a:hover {
+      background: var(--accent2);
+      color: #fff;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 24px 0;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .menu {
+        font-size: 13px;
+        gap: 12px;
+      }
+      .register-card {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html">
+          <img src="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" alt="食品安全パートナーズ">
+        </a>
+      </div>
+      <nav class="menu" aria-label="サイト内リンク">
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/service.html">サービス</a>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/apps.html">無料アプリ</a>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/column.html">コラム</a>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/pricing.html">料金</a>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html#consult" class="btn" style="padding: 6px 12px; font-size: 13px; box-shadow: none; border-radius: 4px;">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">無料メルマガ・月1回配信</span>
+      <h1>海外の公式1次情報を、<br><em>客観的事実</em>のまま日本語で。</h1>
+      <p class="lede">
+        「食品安全規格ウォッチ」は、FSSC 22000・ISO 22000の海外公式発表（英語）を最速で翻訳・整理。
+        規格改訂の動きやスケジュールといった客観的な「事実」と、専門家による解説のみを整理して毎月お届けするニュースレターです。
+      </p>
+      <div>
+        <a class="btn" href="#register">無料で購読登録する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features (Our Strength) -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">本配信の3つの強み</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9"/></svg>
+            英語1次情報の最速日本語化
+          </h3>
+          <p>
+            FSSC財団やISOのワーキンググループ（WG）が発信する英語の公式リリースを直接翻訳。
+            国内の代理店やセミナーが発表する数週間〜数ヶ月前に、海外の一次情報をダイレクトにキャッチできます。
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            客観的データに基づくタイムライン
+          </h3>
+          <p>
+            公式が発表した確定スケジュールと、準備期間の目安を客観的な指標のみで整理。
+            自社で冷静に規格変更の判断を下すための確実な指標としてご活用いただけます。
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+            周辺の関連規格も臨時カバー
+          </h3>
+          <p>
+            FSSCとISO 22000を軸にしつつ、フードロス管理規格（ISO 20001等）など、食品に関連する周辺規格が新しく出た際もおまけ（臨時情報）として分かりやすくお届けします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Content (2026年7月号の実績ベース) -->
+  <section class="section-sample">
+    <div class="container wrap-sm">
+      <h2 class="section-title">配信サンプル（2026年7月号より抜粋）</h2>
+
+      <!-- Sample 1: FSSC -->
+      <div class="sample-card">
+        <span class="sample-tag">FSSC 22000 動向</span>
+        <h3>■ FSSC 22000 Version 7（V7）スキーム文書・FAQ公開</h3>
+        <p class="sample-meta">情報源: Foundation FSSC 公式発表ページ</p>
+        <p><strong>【確認された事実】</strong></p>
+        <ul style="padding-left: 20px; margin: 10px 0;">
+          <li>FSSC 22000 V7のスキーム文書および公式FAQが一般公開されました。</li>
+          <li>V7では、従来のVersion 6を土台としつつ、新たにパッケージデザインに関する食品ロス削減要求事項（Save Food Packaging）が追加されます。</li>
+          <li>2026年9月2日に、新たなガイダンス文書の解説を目的とした公式ウェビナー「FSSC Development Program: Navigating the New Guidance Documents」の開催が決定。</li>
+          <li>現在の世界的なFSSC 22000認証組織数は42,302組織、ライセンスパートナー数は118となっています。</li>
+        </ul>
+        <div class="spec-block">
+          <strong>審査員視点の客観的解説</strong>
+          <p>
+            FSSC 22000は本格的にV7への移行準備期に入りました。特にパッケージセクター以外でも「パッケージデザイン」関連の要件が自社にどう影響するか、2026年9月公開予定のガイダンス文書とウェビナーの解説を確認し、現状システムとのギャップ分析に着手することを推奨します。
+          </p>
+        </div>
+      </div>
+
+      <!-- Sample 2: ISO 22000 -->
+      <div class="sample-card">
+        <span class="sample-tag">ISO 22000 動向</span>
+        <h3>■ 次期改訂版「ISO/DIS 22000 (第3版)」が国際意見投票中</h3>
+        <p class="sample-meta">情報源: ISO/TC 34/SC 17/WG 8 公式改訂ステータス</p>
+        <p><strong>【確認された事実】</strong></p>
+        <ul style="padding-left: 20px; margin: 10px 0;">
+          <li>次期改訂版となる「ISO/DIS 22000（第3版）」の策定プロセスが進められています。</li>
+          <li>2026年5月6日より、12週間のDIS投票（国際規格案に対する各国の意見・賛否受付）がスタートし、現在はStage 40.20のフェーズです。</li>
+          <li>この規格が正式発行された場合、現行のISO 22000:2018は廃止され、新版へと置き換わります。</li>
+        </ul>
+        <div class="spec-block">
+          <strong>審査員視点の客観的解説</strong>
+          <p>
+            改訂作業はDIS段階に入っており、順調です。投票締切後は、各国から寄せられた膨大なコメント of 審議を経て、最終国際規格案（FDIS）のフェーズへと進みます。発行後にFSSCがこの内容をどう取り込むか、今後のスケジュールの推移を注視する必要があります。
+          </p>
+        </div>
+      </div>
+
+      <!-- Sample 3: ISO 20001 (おまけ・臨時) -->
+      <div class="sample-card sub-card">
+        <span class="sample-tag sub-tag">臨時お知らせ：食品関連の新規格</span>
+        <h3>■ フードロス削減規格「ISO/FDIS 20001」2026年9月発行へ</h3>
+        <p class="sample-meta">情報源: ISO/TC 34/SC 17/WG 20 公式ステータス</p>
+        <p><strong>【確認された事実】</strong></p>
+        <ul style="padding-left: 20px; margin: 10px 0;">
+          <li>食品廃棄・ロス（FLW）防止マネジメント規格「ISO/FDIS 20001」が最終投票フェーズ（Stage 50.20）に入りました。順調に進めば2026年9月に正式発行予定です。</li>
+        </ul>
+        <div class="spec-block sub-block">
+          <strong>専門家のワンポイント解説</strong>
+          <p>
+            フードロス管理に特化した初の国際規格です。FSSC 22000などの既存システムとフードロス削減活動を統合・整理する上で、非常に有用なガイドラインとなります。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register Form Section -->
+  <section class="section-register" id="register">
+    <div class="container">
+      <div class="register-card">
+        <h2>無料メルマガ購読</h2>
+        <p class="sub">ご登録完了後、まずは<strong>直近号のバックナンバー（最新号）をメールにて即時お届け</strong>します。その後は毎月1日に自動配信されます。</p>
+        
+        <div class="kit-form-area">
+          <script async data-uid="19f94a6b79" src="https://exceptional-architect-3776.kit.com/19f94a6b79/index.js"></script>
+        </div>
+
+        <p class="register-note">
+          ご登録いただいたメールアドレスは本メルマガの配信のみに使用し、第三者への提供は行いません。
+          いつでも購読を停止できます。<br>
+          <a href="https://foodsafety-partners.github.io/foodsafety-site/privacy-policy.html">プライバシーポリシー</a>
+        </p>
+
+        <!-- 配信停止（オプトアウト）の明記 -->
+        <div class="unsubscribe-info">
+          <h3>配信の停止（オプトアウト）について</h3>
+          <p>
+            メルマガの配信停止はいつでも簡単に行うことができます。毎月届くメールの最下部にある「配信解除（Unsubscribe）」のリンクをクリックするだけで、即座に配信リストから削除され、以後の配信は停止します。しつこい引き止めや不要なアンケートへの回答義務などは一切ありませんので、ご安心ください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="related">
+    <div class="container">
+      <h2>あわせてご覧ください</h2>
+      <div class="related-links">
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/download.html">無料テンプレート（HACCP構築）</a>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/column.html">コラムで学ぶ</a>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html#consult">30分オンライン無料相談</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 食品安全パートナーズ</span>
+      <a href="https://foodsafety-partners.github.io/foodsafety-site/privacy-policy.html">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+</body>
+</html>

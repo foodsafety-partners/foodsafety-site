@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>会員専用アプリポータル｜食品安全パートナーズ</title>
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    :root {
+      --ink: #1b2533; --muted: #5a6475; --line: #d9dde6;
+      --accent: #e0872a; --accent2: #2c567a; --soft: #eef1f6;
+      --shadow: 0 16px 40px rgba(24, 32, 48, .18); --w: 1180px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans JP", sans-serif; background: var(--soft); color: var(--ink); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--w); margin: 0 auto; padding: 0 18px; }
+    .header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .86); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(27, 37, 51, .08); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand img { height: 42px; width: auto; }
+    
+    .hero { text-align: center; padding: 60px 18px 40px; }
+    .hero h1 { font-size: 32px; font-weight: 1000; color: var(--accent2); margin: 0 0 15px; }
+    .hero p { font-size: 16px; font-weight: 700; color: var(--muted); max-width: 700px; margin: 0 auto; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; padding-bottom: 80px; }
+    
+    .app-card { background: #fff; border-radius: 16px; border: 1px solid var(--line); padding: 24px; box-shadow: 0 10px 20px rgba(0,0,0,.05); display: flex; flex-direction: column; height: 100%; transition: transform .2s, box-shadow .2s; }
+    .app-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,.1); border-color: rgba(44, 86, 122, .25); }
+    
+    .app-card h3 { font-size: 20px; font-weight: 900; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+    .app-card p { font-size: 14px; font-weight: 700; color: #4a5b66; margin: 0 0 20px; line-height: 1.8; flex-grow: 1; }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; border-radius: 8px; font-weight: 900; background: var(--accent); color: #fff; border: 1px solid rgba(255,255,255,.2); box-shadow: 0 8px 16px rgba(224, 135, 42, .25); font-size: 15px; transition: transform .2s; width: 100%; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.dark { background: var(--accent2); box-shadow: 0 8px 16px rgba(44, 86, 122, .25); }
+    .btn.green { background: #166534; box-shadow: 0 8px 16px rgba(22, 101, 52, .25); }
+    .btn.purple { background: #6b21a8; box-shadow: 0 8px 16px rgba(107, 33, 168, .25); }
+
+    .footer { text-align: center; padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; font-weight: 600; margin-top: auto; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="https://foodsafety-partners.github.io/foodsafety-site/index.html" class="brand">
+        <img src="https://foodsafety-partners.github.io/foodsafety-site/assets/img/logo.png" alt="食品安全パートナーズ">
+      </a>
+      <div style="font-weight:900; color:var(--accent2); font-size: 14px;">メルマガ会員専用ポータル</div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>ご利用いただけるアプリ一覧</h1>
+    <p>ご登録ありがとうございます。以下の各種アプリおよびツールは、すべて無料で何度でもご利用いただけます。現場の定着・訓練にお役立てください。</p>
+  </div>
+
+  <div class="container grid">
+    <!-- 1. 回収訓練アプリ -->
+    <a href="food-recall-training-app_5.html" class="app-card">
+      <h3 style="color:#b91c1c;">🚨 食品回収対応訓練アプリ</h3>
+      <p>厚生労働省の事故事例データをもとにした実践的な回収訓練アプリ。自社の業種と製品情報を入力するだけで、リアルな事故シナリオと想定被害額を自動生成します。</p>
+      <span class="btn" style="background:#b91c1c;">アプリを起動する</span>
+    </a>
+
+    <!-- 2. JFS-Bチェック -->
+    <a href="https://foodsafety-partners.github.io/foodsafety-site/jfs-b-check.html" target="_blank" class="app-card">
+      <h3 style="color:var(--accent2);">📱 JFS-B セルフチェックアプリ</h3>
+      <p>JFS-B要求事項を現場ですぐにセルフ監査。監査員の視点での「確認ポイント」を全項目に搭載し、ワンタップでPDF報告書を出力・共有できます。</p>
+      <span class="btn dark">アプリを起動する</span>
+    </a>
+
+    <!-- 3. HACCP診断 -->
+    <a href="https://haccp-shindan.web.app" target="_blank" class="app-card">
+      <h3 style="color:var(--accent);">🩺 HACCP無料診断アプリ</h3>
+      <p>監査員の視点で、あなたのHACCP運用を10問で診断。レーダーチャートで弱点を可視化し、改善ヒント付き詳細レポートを無料で確認できます。</p>
+      <span class="btn">アプリを起動する</span>
+    </a>
+
+    <!-- 4. 食品安全教育 -->
+    <a href="education-app.html" target="_blank" class="app-card">
+      <h3 style="color:#166534;">🎓 食品安全教育アプリ</h3>
+      <p>座学の時間が取れない現場でも、スキマ時間で確かな知識の定着を図る、食品工場のための衛生教育アプリです。（4言語対応）</p>
+      <span class="btn green">アプリを起動する</span>
+    </a>
+
+    <!-- 5. 文化診断 -->
+    <a href="culture-assessment.html" target="_blank" class="app-card">
+      <h3 style="color:#6b21a8;">🌱 食品安全文化 診断アプリ</h3>
+      <p>JFS-BやHACCPの定着に不可欠な「文化（カルチャー）」を測定。従業員の意識やコミュニケーションの課題をスコア化し、改善の第一歩を踏み出します。</p>
+      <span class="btn purple">アプリを起動する</span>
+    </a>
+  </div>
+
+  <footer class="footer">
+    © 食品安全パートナーズ
+  </footer>
+</body>
+</html>

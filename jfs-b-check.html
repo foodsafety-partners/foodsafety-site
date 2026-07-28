@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -589,6 +589,16 @@
 </style>
 <!-- ▲ フローティングCTA用CSS -->
 
+    <meta property="og:site_name" content="食品安全パートナーズ">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "食品安全パートナーズ",
+  "url": "https://foodsafety-partners.github.io/foodsafety-site/"
+}
+</script>
 </head>
 
 <body>
@@ -614,7 +624,7 @@
             <div style="animation: fadeInUp 1.4s ease-out both;">
                 <!-- Directly links to the Google Form -->
                 <button class="cta-button"
-                    onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform'">今すぐ無料で始める</button>
+                    onclick="document.getElementById('register-form').scrollIntoView({behavior: 'smooth'})">今すぐ無料で始める</button>
             </div>
         </div>
     </section>
@@ -711,7 +721,7 @@
         <p style="margin-bottom: 50px; opacity: 0.9;">複雑な設定は不要。メールアドレス一つで始められます。</p>
         <!-- Directly links to the Google Form -->
         <button class="cta-button" style="background: white; color: var(--primary-color);"
-            onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSek6NzhHN1-bjReNlH0gG4uGo86wUC3xINbPty9rDC2QmsPTQ/viewform'">無料でアプリを開く</button>
+            onclick="document.getElementById('register-form').scrollIntoView({behavior: 'smooth'})">無料でアプリを開く</button>
         <div style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 40px;">
             <p>&copy; 2026 食品安全パートナーズ. All Rights Reserved.</p>
             <div style="margin-top: 20px;">
@@ -734,6 +744,17 @@
 </div>
 <!-- ▲ フローティングCTA -->
 
+
+    <section id="register-form" style="padding: 60px 20px; background: #fff; text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="color: var(--primary-color); margin-bottom: 20px;">メルマガ登録で今すぐ無料利用</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.9rem;">HACCP・JFS-Bの最新ノウハウをお届けするメルマガに登録すると、すぐに各種アプリをご利用いただけます。</p>
+            <!-- ▼ Kit（ConvertKit）フォーム -->
+            <script async data-uid="cab9aaf36e" src="https://exceptional-architect-3776.kit.com/cab9aaf36e/index.js"></script>
+        </div>
+    </section>
+
 </body>
 
 </html>
+

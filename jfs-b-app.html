@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -845,6 +845,16 @@
 </style>
 <!-- ▲ フローティングCTA用CSS -->
 
+    <meta property="og:site_name" content="食品安全パートナーズ">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "食品安全パートナーズ",
+  "url": "https://foodsafety-partners.github.io/foodsafety-site/"
+}
+</script>
 </head>
 
 <body>
@@ -885,26 +895,8 @@
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 style="color: var(--primary-color); margin-top: 0;">アプリを始める</h2>
             <p style="color: var(--text-muted); margin-bottom: 30px;">氏名とメールアドレスを入力して、<br>すぐにアプリをご利用いただけます。</p>
-            <form id="leadForm">
-                <div class="form-group">
-                    <label for="userName">お名前（氏名）</label>
-                    <input type="text" id="userName" name="name" placeholder="例：食品 太郎" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 15px;">
-                    <label for="userEmail">メールアドレス</label>
-                    <input type="email" id="userEmail" name="email" placeholder="例：example@mail.com" required>
-                </div>
-                <div
-                    style="margin-bottom: 25px; font-size: 0.8rem; display: flex; gap: 10px; align-items: flex-start; background: #fff8f0; padding: 10px; border-radius: 8px;">
-                    <input type="checkbox" id="consent" required
-                        style="width: 18px; height: 18px; margin-top: 2px; cursor: pointer;">
-                    <label for="consent" style="color: #666; cursor: pointer; line-height: 1.5;">
-                        <span onclick="openPolicy()"
-                            style="color: var(--primary-color); font-weight: bold; text-decoration: underline; cursor: pointer;">プライバシーポリシー</span>に同意し、食品安全パートナーズからの案内を受け取る。
-                    </label>
-                </div>
-                <button type="submit" class="submit-button">アプリを無料で開く</button>
-            </form>
+            <!-- ▼ Kit（ConvertKit）フォーム -->
+            <script async data-uid="cab9aaf36e" src="https://exceptional-architect-3776.kit.com/cab9aaf36e/index.js"></script>
         </div>
     </div>
 
@@ -1157,3 +1149,4 @@
 </body>
 
 </html>
+

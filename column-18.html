@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【HACCP義務化】中小企業は何からすればいい？最小コストで対応する3ステップ｜食品安全パートナーズ</title>
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://foodsafety-partners.github.io/foodsafety-site/column-18.html">
+<meta name="description" content="HACCP義務化に未対応のまま放置すると、取引先からの要求に応えられず受注機会を失います。中小企業が「最小コスト・最短距離」で対応する3ステップと、よくある「やりすぎ」の失敗例を現役審査員が解説。無料テンプレート配布中。">
+<meta name="keywords" content="HACCP義務化, 中小企業, 何すればいい, HACCP 始め方, 食品安全, JFS-B, 衛生管理">
+<style>:root{
+  --ink:#1b2533; --muted:#5a6475; --line:#d9dde6;
+  --accent:#e0872a; --accent2:#2c567a;
+  --soft:#eef1f6; --warning:#d9534f; --shadow:0 16px 40px rgba(24,32,48,.18);
+  --w:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--soft);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--w);margin:0 auto;padding:0 18px}
+
+#progress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999}
+#toTop{position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;
+  box-shadow:0 10px 24px rgba(0,0,0,.12);font-weight:1000;opacity:0;transform:translateY(8px);transition:.25s ease;z-index:9999}
+#toTop.show{opacity:1;transform:none}
+
+.header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.menu{display:flex;gap:16px;font-weight:900;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:12px;font-weight:1000;border:1px solid var(--line);background:#fff; transition:.2s ease;}
+.btn.primary{background:var(--accent);color:#fff;border:none; box-shadow:0 8px 20px rgba(224,135,42,.2)}
+.btn.primary:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(224,135,42,.3)}
+.section{padding:50px 0}
+.h1{font-size:32px;font-weight:1000;line-height:1.4; margin-bottom:12px;}
+.meta{color:var(--muted);font-size:13px;font-weight:800;margin-top:6px; display:flex; gap:12px;}
+.meta .tag{background:var(--soft); padding:4px 8px; border-radius:6px; color:var(--accent2);}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 24px;box-shadow:var(--shadow)}
+.prose{line-height:2.1;font-weight:600; color:#334155; font-size:16px;}
+.prose h2{margin-top:48px;font-size:24px; color:var(--accent2); border-bottom:2px solid var(--soft); padding-bottom:10px;}
+.prose h3{margin-top:36px;font-size:20px; color:#1e293b; border-left:5px solid var(--accent); padding-left:12px;}
+.prose p{margin-bottom:20px;}
+.prose ul{margin:12px 0 20px 20px; padding:0;}
+.prose li{margin:8px 0; line-height:1.9;}
+.prose strong{color:var(--ink);}
+.callout{border-left:6px solid var(--warning);background:#fff5f5;border:1px solid #fed7d7;border-left-width:6px;border-radius:12px;padding:18px;margin:28px 0; color:#9b2c2c;}
+.callout-success{border-left:6px solid var(--accent);background:#fcf7f3;border:1px solid #f6e6d9;border-left-width:6px;border-radius:12px;padding:18px;margin:28px 0; color:#7a4f22;}
+.callout-info{border-left:6px solid var(--accent2);background:#f0f4f8;border:1px solid #d0d8e4;border-left-width:6px;border-radius:12px;padding:18px;margin:28px 0; color:#2c567a;}
+.step-badge{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:1000;font-size:16px;margin-right:10px;flex-shrink:0;}
+.compare-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:12px}
+.compare-table th{background:#f3f6f9;font-weight:bold;text-align:left;color:var(--ink)}
+.compare-table tbody tr:hover{background:#fafbfc}
+.ctaCard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:40px}
+.footer{padding:24px;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--line);background:#fff; font-weight:700;}
+@media(max-width:980px){
+.menu{display:none}
+.h1{font-size:24px}
+.compare-table th,.compare-table td{padding:8px;font-size:13px}
+}
+</style>
+
+<!-- ▼ フローティングCTA用CSS -->
+<style id="floating-cta-style">
+.fl-cta-wrap {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.fl-cta-kicker {
+  background: #1b2533;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+  letter-spacing: 0.05em;
+}
+.fl-cta-kicker::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 20px;
+  border-width: 4px 4px 0;
+  border-style: solid;
+  border-color: #1b2533 transparent transparent;
+}
+.fl-cta-btn {
+  background: #e0872a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(224, 135, 42, 0.4);
+  border: 2px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.fl-cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(224, 135, 42, 0.5);
+  color: #fff;
+}
+.fl-cta-icon {
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .fl-cta-wrap {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    align-items: center;
+  }
+  .fl-cta-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  .fl-cta-kicker::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+</style>
+<!-- ▲ フローティングCTA用CSS -->
+    <meta property="og:site_name" content="食品安全パートナーズ">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "食品安全パートナーズ",
+  "url": "https://foodsafety-partners.github.io/foodsafety-site/"
+}
+</script>
+</head>
+<body>
+
+<div id="progress"></div>
+<a id="toTop" href="#">↑</a>
+
+<header class="header">
+<div class="container nav">
+<a href="./index.html"><strong>食品安全パートナーズ</strong></a>
+<nav class="menu">
+<a href="./column.html">コラム一覧</a>
+<a href="./download.html">無料特典</a>
+        <a href="https://foodsafety-partners.github.io/foodsafety-site/newsletter.html">メルマガ</a>
+<a href="./index.html#consult">無料相談</a>
+</nav>
+<a class="btn primary" href="./index.html#consult">無料相談</a>
+</div>
+</header>
+
+<section class="section">
+<div class="container">
+
+<h1 class="h1">【HACCP義務化】中小企業は何からすればいい？<br>最小コストで対応する3ステップ</h1>
+<div class="meta">
+  <span class="tag">HACCP義務化</span>
+  <span class="tag">中小企業</span>
+  <span>読了目安：約8分</span>
+</div>
+
+<div class="card" style="margin-top:24px">
+<div class="prose">
+
+<div style="margin-bottom:32px;text-align:center;">
+  <img src="./assets/img/column18_hero.png" alt="HACCP義務化に対応する中小食品工場のイメージ" style="width:100%; max-width:800px; border-radius:12px; box-shadow:0 12px 24px rgba(27,37,51,.2);">
+</div>
+
+<p>
+「HACCP義務化って聞いたけど、うちみたいな小さい工場は何をすればいいの？」<br>
+「とりあえず手引書をダウンロードしたけど、50ページもあって読む気がしない…」
+</p>
+
+<p>
+もしそう思ったまま放置しているなら、<strong>今すぐ動き始めることを強くおすすめします。</strong>
+</p>
+
+<div class="callout">
+<strong>⚠ 放置のリスクは「罰則」だけではありません</strong><br>
+HACCP未対応がすぐに取引停止になるケースは多くありませんが、問題は<strong>「知らないうちに信用が落ちている」</strong>ことです。取引先はあなたに直接言わずとも、水面下で<strong>代替サプライヤーへの切り替えを検討</strong>しています。気づいたときには手遅れ──それがHACCP未対応の本当の怖さです。
+</div>
+
+<p>
+しかし、安心してください。<br>
+<strong>中小企業のHACCP対応は、大企業のような大掛かりなシステム構築ではありません。</strong><br>
+正しい順番で、必要最小限のことをやれば、<strong>自社対応でコストをかけずに、1〜3ヶ月</strong>で十分に対応可能です。
+</p>
+
+<p>
+本記事では、500以上の食品工場を審査・支援してきた現役審査員が、中小企業が<strong>「最小コスト・最短距離」</strong>でHACCP義務化に対応するための3ステップを解説します。
+</p>
+
+<!-- ===================================== -->
+<h2>そもそもHACCP義務化とは？──中小企業に求められるレベル</h2>
+
+<p>
+2021年6月、改正食品衛生法の完全施行により、<strong>原則すべての食品等事業者にHACCPに沿った衛生管理が義務化</strong>されました。
+</p>
+
+<p>
+ここで重要なのは、中小企業（小規模事業者）に求められているのは「HACCPの考え方を取り入れた衛生管理」であり、大企業向けの「HACCPに基づく衛生管理」とは<strong>明確にレベルが異なる</strong>という点です。
+</p>
+
+<table class="compare-table">
+<thead>
+<tr>
+<th></th>
+<th>大企業向け<br>（HACCPに基づく衛生管理）</th>
+<th>中小企業向け<br>（HACCPの考え方を取り入れた衛生管理）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>対象</strong></td>
+<td>大規模事業者、と畜場など</td>
+<td>小規模事業者、飲食店、販売店など</td>
+</tr>
+<tr>
+<td><strong>求められること</strong></td>
+<td>7原則12手順に基づくフルHACCP</td>
+<td>業界団体の手引書に沿った簡易的な衛生管理</td>
+</tr>
+<tr>
+<td><strong>文書量の目安</strong></td>
+<td colspan="2">どちらも大きな差はありません。必要な文書の種類（衛生管理計画、手順書、記録様式等）は共通しており、<strong>自社の規模に合った適正な量</strong>にすることが重要です。</td>
+</tr>
+<tr>
+<td><strong>外部認証</strong></td>
+<td colspan="2">どちらも法律上は義務ではありません。<strong>取引先からの要求や、自社がどこまで食品安全に取り組むか</strong>によって判断します。</td>
+</tr>
+<tr>
+<td><strong>コスト目安<br>（自社対応）</strong></td>
+<td colspan="2"><strong>どちらも自社で対応すれば実質0円</strong>で構築可能です。外部コンサルに依頼する場合のみ費用が発生します。</td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout-info">
+<strong>💡 審査員からのアドバイス：「HACCPの考え方」だけでは不十分な時代</strong><br>
+法律上は「HACCPの考え方を取り入れた衛生管理」で足りますが、現実には<strong>取引先は「それだけでは不十分」と考えている</strong>ケースが増えています。今後を見据えるなら、最初から<strong>JFS-Bの要求事項に沿って構築する</strong>ことをおすすめします。JFS-Bを基準にすれば、HACCP義務化への対応はもちろん、取引先からの信頼獲得にも直結します。
+</div>
+
+<!-- ===================================== -->
+<h2>中小企業がまずやるべき「3ステップ」</h2>
+
+<h3><span class="step-badge">1</span>自社の「手引書」を入手する（所要時間：30分）</h3>
+
+<p>
+最初にやるべきことは、<strong>自社の業種に対応した「手引書」を厚生労働省のサイトからダウンロードする</strong>ことです。
+</p>
+
+<p>
+厚生労働省は、業種ごとに業界団体が作成した手引書を公開しています。「菓子製造業」「水産加工業」「惣菜製造業」など、自社に該当するものを探してください。
+</p>
+
+<ul>
+<li><strong>手引書の入手先</strong>：厚生労働省「HACCPの考え方を取り入れた衛生管理のための手引書」で検索</li>
+<li><strong>ポイント</strong>：手引書には「何をすべきか」の雛形がすでに書かれています。ゼロから作る必要はありません</li>
+</ul>
+
+<div class="callout-success">
+<strong>✅ ここが「最小コスト」のポイント</strong><br>
+手引書は<strong>無料で公開</strong>されています。高額なコンサル費用を払う前に、まずこの手引書を読むだけで、全体像の7割は把握できます。
+</div>
+
+<h3><span class="step-badge">2</span>「一般的衛生管理」を整える（所要時間：1〜2週間）</h3>
+
+<p>
+HACCP対応と聞くと「ハザード分析」「CCP（重要管理点）」といった専門用語が頭に浮かびますが、<strong>中小企業がまず取り組むべきは、その土台となる「一般的衛生管理」</strong>です。
+</p>
+
+<p>
+一般的衛生管理とは、どの食品事業者にも共通する基本的な衛生ルールのことです。具体的には：
+</p>
+
+<ul>
+<li><strong>施設の衛生管理</strong>：清掃・洗浄・消毒のルール</li>
+<li><strong>従業員の健康管理</strong>：体調不良時の対応ルール</li>
+<li><strong>手洗い</strong>：いつ、どのように手洗いするか</li>
+<li><strong>原材料の受入管理</strong>：温度確認、品質確認</li>
+<li><strong>トイレの衛生管理</strong>：専用履物、手洗い設備</li>
+</ul>
+
+<p>
+多くの中小企業では、これらを<strong>「すでにやっているが、ルールとして明文化していない」</strong>状態にあります。つまり、今やっていることを「紙に書き出す」だけで、大きな前進です。
+</p>
+
+<div class="callout-info">
+<strong>💡 現役審査員が見てきた現実</strong><br>
+500以上の工場を審査してきましたが、最も危険な状態は「やっているつもりで書いていない」工場です。保健所の立入調査で「HACCPに取り組んでいる証拠は？」と聞かれたとき、<strong>口頭では説明できても書類がなければ「未対応」と判断されます。</strong>
+</div>
+
+<h3><span class="step-badge">3</span>手引書に沿って「危害分析」を行い、CCPを決める（所要時間：1日）</h3>
+
+<p>
+最後のステップは、手引書に記載された手順に沿って<strong>「危害分析（ハザード分析）」</strong>を行い、自社の製造工程における重要管理点（CCP）を特定することです。
+</p>
+
+<div class="callout">
+<strong>⚠ よくある間違い：「加熱工程があるからCCP」ではありません</strong><br>
+CCPは「工程の種類」で決めるものではなく、<strong>危害分析の結果として導き出される</strong>ものです。「加熱工程があるからCCPにする」という考え方は、本質を見誤った危険なアプローチです。手引書に沿って正しく危害分析を行えば、自社にとって本当に管理すべきポイントが自然と明らかになります。
+</div>
+
+<p>
+CCPが特定できたら、それぞれに対して以下の3つを決めます：
+</p>
+
+<ul>
+<li><strong>管理基準</strong>：何℃以上（以下）にするか等の具体的な数値基準</li>
+<li><strong>モニタリング方法</strong>：いつ、誰が、どうやって確認するか</li>
+<li><strong>逸脱時の対応</strong>：基準を外れたらどうするか（例：再加熱する、廃棄する、上長に報告する）</li>
+</ul>
+
+<div class="callout-info">
+<strong>💡 手引書を頼りにすれば、迷わない</strong><br>
+業種別の手引書には、その業種で一般的なCCPの例や危害分析の進め方が記載されています。教科書的な理論に振り回されるよりも、<strong>手引書の記載に沿って進める</strong>のが、中小企業にとって最も確実で現実的なアプローチです。
+</div>
+
+<!-- ===================================== -->
+<h2>3ステップの全体像まとめ</h2>
+
+<table class="compare-table">
+<thead>
+<tr>
+<th>ステップ</th>
+<th>やること</th>
+<th>所要時間</th>
+<th>コスト</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Step 1</strong></td>
+<td>業種別の手引書をダウンロード</td>
+<td>30分</td>
+<td>無料</td>
+</tr>
+<tr>
+<td><strong>Step 2</strong></td>
+<td>一般的衛生管理の明文化<br>（今やっていることを書き出す）</td>
+<td>1〜2週間</td>
+<td>無料</td>
+</tr>
+<tr>
+<td><strong>Step 3</strong></td>
+<td>手引書に沿って危害分析を行い、CCPを特定・管理ルールを設定</td>
+<td>1日</td>
+<td>無料</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+合計で<strong>約2〜3週間、コストはほぼゼロ</strong>で、法律が求めるレベルのHACCP対応は完了します。
+</p>
+
+<!-- ===================================== -->
+<h2>「自分でやる」か「プロに頼む」か──判断基準</h2>
+
+<p>
+上記の3ステップは自力で対応可能ですが、以下に該当する場合は<strong>プロの支援を検討する価値</strong>があります：
+</p>
+
+<ul>
+<li><strong>取引先からJFS-B認証を求められている</strong>：法的義務の「HACCP対応」と「JFS-B認証取得」は全く別レベルの対応が必要です</li>
+<li><strong>保健所の立入調査で「改善指導」を受けた</strong>：放置すると営業停止のリスクがあります</li>
+<li><strong>担当者が1人で、相談相手がいない</strong>：属人化は最大のリスク。退職した瞬間にすべてが崩壊します</li>
+<li><strong>過去にコンサルに丸投げして、形骸化した経験がある</strong>：「作っただけ」で終わらない、運用重視の支援が必要です</li>
+</ul>
+
+<div class="callout-success">
+<strong>食品安全パートナーズの特徴</strong><br>
+私たちは書類を「代行」する丸投げ型コンサルではありません。<strong>1クールの支援で「自社だけで運用・改善できる体制」を作る伴走型の支援</strong>を行っています。<br><br>
+<strong>料金の目安</strong>：食品安全体制診断 10万円〜、3ヶ月改善支援 45万円〜<br>
+相場（100〜300万円）の1/3以下で、現役審査員の知見を活用いただけます。<br>
+👉 <a href="./pricing.html" style="color:var(--accent);font-weight:bold;text-decoration:underline;">料金の詳細はこちら</a>
+</div>
+
+<!-- ===================================== -->
+<h2>まずは3分で、今のレベルをチェック</h2>
+
+<p>
+「うちのHACCP対応、本当にこれで大丈夫？」<br>
+「取引先に聞かれたとき、自信を持って答えられる？」
+</p>
+
+<p>
+現役審査員の視点で設計した<strong>「HACCP無料診断」</strong>で、今の対応レベルを確認してみてください。<br>
+スマホで3分、10問に答えるだけで、あなたの工場の管理レベル（S/A/B/C）がわかります。
+</p>
+
+<p style="text-align:center; margin:24px 0;">
+<a class="btn primary" href="./haccp-check.html" style="font-size:16px; padding:14px 28px;">🔍 HACCP無料診断を受けてみる（3分・無料）</a>
+</p>
+
+<p>
+<strong>「大丈夫だと思っていた」が一番怖い。</strong> 確認するのは無料です。
+</p>
+
+</div>
+</div>
+
+<!-- 通常CTA -->
+<div class="ctaCard" style="border:2px solid var(--accent); padding:24px; position:relative; overflow:hidden;">
+  <div style="position:absolute; top:-20px; right:-20px; opacity:0.03; font-size:120px; transform:rotate(-15deg); pointer-events:none;">📄</div>
+  <h3 style="margin:0 0 12px; font-size:20px; color:var(--ink);">HACCP構築の「最小セット」を、今すぐ手に入れませんか？</h3>
+  <p style="margin:0 0 16px; line-height:1.8; color:var(--muted); font-size:14px; font-weight:700;">
+    「何から始めればいいか分からない」「我流で作って審査で不適合になるのは避けたい」<br>
+    現役審査員が監修した、JFS-B適合も見据えたプロ仕様のHACCP構築Excelテンプレートを無料で配布しています。空白を埋めるだけで「最小セット」のHACCP文書が完成します。
+  </p>
+  <a class="btn primary" href="./download.html" style="width:100%; font-size:16px; padding:14px; text-align:center;">🎁 今すぐHACCPテンプレートを無料で受け取る</a>
+</div>
+
+<!-- ▼ アプリ＆書籍 導線 -->
+<div class="ctaCard" style="border-top: 4px solid var(--accent); margin-top: 40px; margin-bottom: 30px;">
+  <h3 style="margin-top:0; font-size:20px;">無料で実践＆体系的に学ぶ</h3>
+  
+  <div style="margin-bottom: 20px;">
+    <h4 style="margin:0 0 8px; color:var(--accent2);">📱 食品安全・無料診断アプリ</h4>
+    <p style="margin:0 0 10px; font-size:14px;">現場の課題を可視化。現役監査員が設計したプロ仕様の診断ツールです。</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <a class="btn primary" href="./haccp-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">HACCP無料診断</a>
+      <a class="btn primary" href="./jfs-b-check.html" target="_blank" style="font-size:14px; padding:8px 16px;">JFS-Bセルフチェック</a>
+      <a class="btn primary" href="./pricing.html#apps" target="_blank" style="font-size:14px; padding:8px 16px;">食品安全教育アプリ</a>
+    </div>
+  </div>
+
+  <div style="border-top: 1px dashed var(--line); padding-top: 16px;">
+    <h4 style="margin:0 0 8px; color:var(--accent2);">📘 現場で使える専門書籍</h4>
+    <p style="margin:0 0 10px; font-size:14px;">「HACCP構築」「JFS-B審査」を分かりやすく解説。Kindle Unlimitedなら無料で読めます。</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <a class="btn" href="https://www.amazon.co.jp/dp/B0DS1Y43H6" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：HACCP実践編</a>
+      <a class="btn" href="https://www.amazon.co.jp/dp/B0GMWP6JP7" target="_blank" rel="noopener noreferrer" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent2); color:var(--accent2); background:#fff;">書籍：JFS-B審査編</a>
+    </div>
+  </div>
+  <p style="margin-top:16px; font-size:12px; color:var(--muted); line-height:1.6;">
+    ※当サイトはAmazonアソシエイト・プログラムの参加者です。
+  </p>
+</div>
+<!-- ▲ アプリ＆書籍 導線 -->
+
+<!-- 関連コラム -->
+<div class="ctaCard" style="margin-top:24px; padding:24px;">
+  <h3 style="margin:0 0 16px; font-size:18px; color:var(--accent2);">📖 関連コラム</h3>
+  <ul style="margin:0; padding:0 0 0 20px; line-height:2.2;">
+    <li><a href="./column-1.html" style="color:var(--accent2); text-decoration:underline; font-weight:700;">HACCP構築のコツ：JFS-Bを見据えた「現場で回る仕組み」の作り方</a></li>
+    <li><a href="./column-2.html" style="color:var(--accent2); text-decoration:underline; font-weight:700;">HACCPの"記録が続かない"を解決する運用設計と定着のコツ</a></li>
+    <li><a href="./column-15.html" style="color:var(--accent2); text-decoration:underline; font-weight:700;">HACCP義務化、中小企業は何からすればいい？現役コンサルが解説</a></li>
+    <li><a href="./column-16.html" style="color:var(--accent2); text-decoration:underline; font-weight:700;">JFS-B取得費用の相場は？審査・コンサル料金の比較と補助金活用術</a></li>
+  </ul>
+</div>
+
+<div style="margin-top:30px; display:flex; justify-content:space-between;">
+<a href="./column-17.html" style="font-weight:1000;color:var(--accent2);text-decoration:underline">← 前の記事</a>
+<a href="./column.html" style="font-weight:1000;color:var(--accent2);text-decoration:underline">コラム一覧へ →</a>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+© 食品安全パートナーズ
+</footer>
+
+<script>
+const bar=document.getElementById("progress");
+const toTop=document.getElementById("toTop");
+window.addEventListener("scroll",()=>{
+const d=document.documentElement;
+bar.style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100+"%";
+toTop.classList.toggle("show",d.scrollTop>400);
+});
+</script>
+
+<!-- ▼ フローティングCTA -->
+<div class="fl-cta-wrap">
+  <div class="fl-cta-kicker">＼実務の時間を大幅短縮！／</div>
+  <a href="./download.html" class="fl-cta-btn" aria-label="HACCP構築テンプレートを無料でダウンロード">
+    <span class="fl-cta-icon">🎁</span>
+    <span>HACCP構築Excelシート（無料）</span>
+  </a>
+</div>
+<!-- ▲ フローティングCTA -->
+
+</body>
+</html>
